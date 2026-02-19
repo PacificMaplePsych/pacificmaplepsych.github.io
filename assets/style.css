@@ -437,13 +437,13 @@ body {
 }
 
 .footer-inner {
-  width: min(1100px, calc(100% - 40px));
+  width: min(1280px, calc(100% - 60px));
   margin: 0 auto;
   padding: 34px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  gap: 18px;
+  gap: 56px;
 }
 
 .footer-title {
@@ -478,7 +478,7 @@ body {
 }
 
 .footer-bottom {
-  background: #7a5d7c;
+  background: #453346;
   color: #ffffff;
 }
 
