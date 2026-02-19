@@ -1,4 +1,3 @@
-
 // ===== Inject header and footer so you do not copy/paste per page =====
 async function injectPartial(targetId, partialPath) {
   const el = document.getElementById(targetId);
@@ -11,6 +10,12 @@ async function injectPartial(targetId, partialPath) {
   } catch (err) {
     console.error(err);
   }
+}
+
+// ===== Footer year =====
+function setFooterYear() {
+  const y = document.getElementById("footerYear");
+  if (y) y.textContent = String(new Date().getFullYear());
 }
 
 // ===== Navbar behavior (scroll hide/show, hamburger, mobile dropdowns) =====
@@ -36,7 +41,7 @@ function bindNavbarInteractions() {
 
   if (!navbar || !navbarLinks) return;
 
-  // Track scroll inside mobile menu so we do not collapse the menu while user scrolls menu
+  // Detect scroll inside the mobile menu
   navbarLinks.addEventListener("scroll", () => {
     isScrollingMenu = true;
     clearTimeout(navbarLinks.scrollTimeout);
@@ -45,14 +50,14 @@ function bindNavbarInteractions() {
     }, 150);
   });
 
-  // Hide navbar on scroll down, show on scroll up
+  // Scroll listener for page scroll: hide on down, show on up
   window.addEventListener(
     "scroll",
-    function () {
+    () => {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const navbarHeight = navbar.offsetHeight;
 
-      // If mobile menu open and user is scrolling inside it, do nothing
+      // If mobile menu is open and user is scrolling inside it, do nothing
       if (window.innerWidth <= 900 && navbarLinks.classList.contains("active") && isScrollingMenu) {
         return;
       }
@@ -74,7 +79,7 @@ function bindNavbarInteractions() {
     false
   );
 
-  // Close mobile menu when a link is clicked
+  // Close mobile menu when any nav link is clicked
   document.querySelectorAll(".navbar-link").forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 900 && navbarLinks.classList.contains("active")) {
@@ -119,22 +124,6 @@ function toggleMenu() {
 
 // Make toggleMenu globally available
 window.toggleMenu = toggleMenu;
-
-document.addEventListener("DOMContentLoaded", async () => {
-  // If you have placeholders, inject header/footer
-  await injectPartial("site-header", "/assets/header.html");
-  await injectPartial("site-footer", "/assets/footer.html");
-
-  // Bind interactions after injection (or if header is already in the page)
-  bindNavbarInteractions();
-});
-
-
-
-function setFooterYear() {
-  const y = document.getElementById("footerYear");
-  if (y) y.textContent = String(new Date().getFullYear());
-}
 
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartial("site-header", "/assets/header.html");
