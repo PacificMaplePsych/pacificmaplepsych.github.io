@@ -128,3 +128,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Bind interactions after injection (or if header is already in the page)
   bindNavbarInteractions();
 });
+
+
+
+function setFooterYear() {
+  const y = document.getElementById("footerYear");
+  if (y) y.textContent = String(new Date().getFullYear());
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await injectPartial("site-header", "/assets/header.html");
+  await injectPartial("site-footer", "/assets/footer.html");
+
+  setFooterYear();
+  bindNavbarInteractions();
+});
