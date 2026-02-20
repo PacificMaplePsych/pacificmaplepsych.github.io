@@ -6,6 +6,12 @@
 
   --home-blue: #c9d1d9;
   --home-plum: #d4c3cf;
+
+  --nav-h: 120px;
+  --nav-h-mobile: 110px;
+
+  /* NEW: fixed tab width for equal overlines */
+  --nav-link-w: 120px;
 }
 
 /* ===== Global ===== */
@@ -20,9 +26,13 @@ body {
   background: #fff;
 }
 
-/* Add top padding so page content is not hidden behind fixed navbar */
+/* Make the page content begin exactly under the navbar */
 .entry-content {
-  padding-top: 160px;
+  padding-top: var(--nav-h);
+}
+
+@media (max-width: 900px) {
+  .entry-content { padding-top: var(--nav-h-mobile); }
 }
 
 /* Typography targets you specified */
@@ -87,7 +97,6 @@ body {
 .home-band-plum { background: var(--home-plum); }
 
 /* ===== Checkerboard service rows ===== */
-/* Two equal columns so they meet perfectly in the middle */
 .service-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -134,8 +143,6 @@ body {
 }
 
 /* ===== Buttons ===== */
-/* Default: black background, white text, purple shadow */
-/* Hover: purple background, white text */
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -163,50 +170,23 @@ body {
   box-shadow: 0 12px 22px rgba(122, 93, 124, 0.45);
 }
 
-.btn-pill:active {
-  transform: translateY(1px);
-}
+.btn-pill:active { transform: translateY(1px); }
 
 /* ===== Mobile stacking for services ===== */
 @media (max-width: 900px) {
   .home-hero { min-height: 460px; padding: 28px 0; }
 
-  .service-row {
-    grid-template-columns: 1fr;
-  }
+  .service-row { grid-template-columns: 1fr; }
 
   .service-media,
-  .service-card {
-    min-height: auto;
-  }
+  .service-card { min-height: auto; }
 
-  .service-img {
-    height: 260px;
-  }
+  .service-img { height: 260px; }
 
-  .service-card-inner {
-    padding: 24px 0;
-  }
+  .service-card-inner { padding: 24px 0; }
 }
 
-/* ===== PMPC Navbar (rebuilt) ===== */
-
-:root {
-  --nav-h: 120px;
-  --nav-h-mobile: 110px;
-}
-
-/* Make the page content begin exactly under the navbar */
-.entry-content {
-  padding-top: var(--nav-h);
-}
-
-@media (max-width: 900px) {
-  .entry-content {
-    padding-top: var(--nav-h-mobile);
-  }
-}
-
+/* ===== PMPC Navbar ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -223,7 +203,6 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo: give it stable space so it never gets squished */
 .logo-link {
   display: flex;
   align-items: center;
@@ -232,10 +211,11 @@ body {
   padding-right: 10px;
 }
 
+/* Logo ~25% bigger (mainly via max-width and slightly taller height) */
 .logo {
-  height: calc(var(--nav-h) - 22px);
+  height: calc(var(--nav-h) - 16px);
   width: auto;
-  max-width: 420px;
+  max-width: 525px;
   object-fit: contain;
 }
 
@@ -244,17 +224,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 22px;
+
+  /* slightly tighter gaps so you don't crowd the right edge */
+  gap: 12px;
+
   margin-left: auto;
+
+  /* desktop-only right padding to avoid clipped Book Now dropdown */
+  padding-right: 20px;
 }
 
-/* Overline: pseudo-element so it never affects layout */
+/* Top-level link tabs */
 .nav-link {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 8px 8px;
+
+  /* equal overline width for ALL links */
+  width: var(--nav-link-w);
+
+  padding: 10px 0 8px;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 700;
@@ -263,12 +253,16 @@ body {
   white-space: nowrap;
 }
 
+/* Overline that does not affect layout */
 .nav-link::before {
   content: "";
   position: absolute;
   top: 2px;
-  left: 6px;
-  right: 6px;
+
+  /* full width of tab */
+  left: 0;
+  right: 0;
+
   height: 2px;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 999px;
@@ -287,12 +281,9 @@ body {
   opacity: 0.95;
 }
 
-/* Optional emphasis for Book Now (keeps your style simple) */
-.nav-cta {
-  font-weight: 800;
-}
+.nav-cta { font-weight: 800; }
 
-/* Hamburger button (desktop hidden) */
+/* Hamburger (desktop hidden) */
 .hamburger {
   display: none;
   margin-left: auto;
@@ -305,7 +296,7 @@ body {
   padding: 10px 10px;
 }
 
-/* Mobile: hamburger can hide on scroll without moving anything */
+/* Hamburger hides on scroll on mobile */
 .hamburger.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -313,9 +304,7 @@ body {
 }
 
 /* ===== Dropdowns (desktop) ===== */
-.dropdown {
-  position: relative;
-}
+.dropdown { position: relative; }
 
 .dropdown-content {
   display: none;
@@ -325,7 +314,9 @@ body {
   transform: translateX(-50%);
   margin-top: 10px;
 
-  background-color: var(--pmpc-blue);
+  /* NEW: dropdown background */
+  background-color: #c9d1d9;
+
   padding: 10px 12px;
   border-radius: 12px;
   box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.22);
@@ -363,7 +354,7 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Show dropdown on hover AND keep it open when hovering content */
+/* Show dropdown on hover AND keep it open */
 @media (min-width: 901px) {
   .dropdown:hover .dropdown-content,
   .dropdown:focus-within .dropdown-content {
@@ -379,9 +370,10 @@ body {
     gap: 10px;
   }
 
+  /* Larger logo on mobile too */
   .logo {
-    height: calc(var(--nav-h-mobile) - 18px);
-    max-width: 320px;
+    height: calc(var(--nav-h-mobile) - 12px);
+    max-width: 400px;
   }
 
   .hamburger {
@@ -408,15 +400,15 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 998;
+
+    /* remove desktop-only right padding in mobile */
+    padding-right: 0;
   }
 
-  .navbar-links.active {
-    display: flex;
-  }
+  .navbar-links.active { display: flex; }
 
   .nav-link {
     width: min(520px, 92%);
-    justify-content: center;
     padding: 14px 12px 12px;
   }
 
@@ -449,18 +441,18 @@ body {
     width: min(520px, 92%);
   }
 
-  .dropdown-content.open {
-    display: block;
-  }
+  .dropdown-content.open { display: block; }
 
   .dropdown-link {
     text-align: center;
-    background: var(--pmpc-blue);
+
+    /* NEW: dropdown link background on mobile too */
+    background: #c9d1d9;
+
     border: 1px solid rgba(0,0,0,0.10);
     margin: 8px 0 0;
   }
 }
-
 
 /* ===== PMPC Footer ===== */
 .site-footer { width: 100%; }
