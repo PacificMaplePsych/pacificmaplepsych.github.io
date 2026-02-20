@@ -34,4 +34,98 @@ function bindNavbarInteractions() {
     if (!isOpen) {
       document.querySelectorAll(".dropdown-content.open").forEach((dc) => dc.classList.remove("open"));
       document.querySelectorAll(".dropdown-toggle[aria-expanded='true']").forEach((t) =>
-        t.setAttribute("aria-expanded
+        t.setAttribute("aria-expanded", "false")
+      );
+    }
+  }
+
+  burger.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("active");
+    setMenuOpen(!isOpen);
+  });
+
+  // Mobile dropdown toggle: clicking the toggle should NOT close the whole menu
+  document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+    const content = dropdown.querySelector(".dropdown-content");
+    if (!toggle || !content) return;
+
+    toggle.addEventListener("click", (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+
+        const willOpen = !content.classList.contains("open");
+        content.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      }
+    });
+  });
+
+  // Close menu when clicking a normal link (not dropdown toggles) on mobile
+  menu.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const isDropdownToggle = a.classList.contains("dropdown-toggle");
+    if (window.innerWidth <= 900 && menu.classList.contains("active") && !isDropdownToggle) {
+      setMenuOpen(false);
+    }
+  });
+
+  // Hide ONLY the hamburger on scroll on mobile; navbar stays
+  let lastY = window.scrollY;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.innerWidth > 900) {
+        burger.classList.remove("is-hidden");
+        return;
+      }
+
+      // If menu is open, keep hamburger visible
+      if (menu.classList.contains("active")) {
+        burger.classList.remove("is-hidden");
+        lastY = window.scrollY;
+        return;
+      }
+
+      const y = window.scrollY;
+
+      // Don't start hiding right at the very top
+      if (y < 10) {
+        burger.classList.remove("is-hidden");
+        lastY = y;
+        return;
+      }
+
+      const delta = y - lastY;
+
+      // Require threshold so it isn't jittery
+      if (delta > 6) {
+        burger.classList.add("is-hidden");
+      } else if (delta < -6) {
+        burger.classList.remove("is-hidden");
+      }
+
+      lastY = y;
+    },
+    { passive: true }
+  );
+
+  // On resize, close the mobile menu to prevent weird states
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      setMenuOpen(false);
+      burger.classList.remove("is-hidden");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await injectPartial("site-header", "/assets/header.html");
+  await injectPartial("site-footer", "/assets/footer.html");
+
+  setFooterYear();
+  bindNavbarInteractions();
+});
