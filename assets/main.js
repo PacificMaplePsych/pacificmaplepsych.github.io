@@ -43,6 +43,7 @@ function bindNavbarInteractions() {
     setMenuOpen(!isOpen);
   });
 
+  // Mobile dropdown toggle
   document.querySelectorAll(".dropdown").forEach((dropdown) => {
     const toggle = dropdown.querySelector(".dropdown-toggle");
     const content = dropdown.querySelector(".dropdown-content");
@@ -58,6 +59,7 @@ function bindNavbarInteractions() {
     });
   });
 
+  // Close menu when clicking a normal link (not dropdown toggles) on mobile
   menu.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
@@ -68,6 +70,7 @@ function bindNavbarInteractions() {
     }
   });
 
+  // Hide ONLY the hamburger on scroll on mobile
   let lastY = window.scrollY;
 
   window.addEventListener(
@@ -102,6 +105,7 @@ function bindNavbarInteractions() {
     { passive: true }
   );
 
+  // On resize: reset states cleanly
   window.addEventListener("resize", () => {
     if (window.innerWidth > BREAKPOINT) {
       setMenuOpen(false);
