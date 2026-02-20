@@ -18,112 +18,98 @@ function setFooterYear() {
   if (y) y.textContent = String(new Date().getFullYear());
 }
 
-// ===== Navbar behavior (scroll hide/show, hamburger, mobile dropdowns) =====
-let lastScrollTop = 0;
-let isScrollingMenu = false;
-
-function updateNavbarLinksPosition() {
-  const navbar = document.querySelector(".navbar");
-  const navbarLinks = document.querySelector(".navbar-links");
-
-  if (window.innerWidth <= 900 && navbar && navbarLinks) {
-    const navbarHeight = navbar.offsetHeight;
-    navbarLinks.style.top = navbarHeight + "px";
-  } else if (navbarLinks) {
-    navbarLinks.style.top = "";
-  }
-}
-
+// ===== Navbar behavior (mobile menu + mobile dropdowns + hide hamburger on scroll) =====
 function bindNavbarInteractions() {
-  const navbar = document.querySelector(".navbar");
-  const navbarLinks = document.querySelector(".navbar-links");
-  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".navbar");
+  const menu = document.querySelector(".navbar-links");
+  const burger = document.querySelector(".hamburger");
+  if (!nav || !menu || !burger) return;
 
-  if (!navbar || !navbarLinks) return;
+  // Toggle menu open/close
+  function setMenuOpen(isOpen) {
+    menu.classList.toggle("active", isOpen);
+    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
 
-  // Detect scroll inside the mobile menu
-  navbarLinks.addEventListener("scroll", () => {
-    isScrollingMenu = true;
-    clearTimeout(navbarLinks.scrollTimeout);
-    navbarLinks.scrollTimeout = setTimeout(() => {
-      isScrollingMenu = false;
-    }, 150);
+    // When closing menu, also close any open mobile dropdowns
+    if (!isOpen) {
+      document.querySelectorAll(".dropdown-content.open").forEach((dc) => dc.classList.remove("open"));
+      document.querySelectorAll(".dropdown-toggle[aria-expanded='true']").forEach((t) =>
+        t.setAttribute("aria-expanded", "false")
+      );
+    }
+  }
+
+  burger.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("active");
+    setMenuOpen(!isOpen);
   });
 
-  // Scroll listener for page scroll: hide on down, show on up
+  // Mobile dropdown toggle: clicking the toggle should NOT close the whole menu
+  document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+    const content = dropdown.querySelector(".dropdown-content");
+    if (!toggle || !content) return;
+
+    toggle.addEventListener("click", (e) => {
+      if (window.innerWidth <= 900) {
+        // Prevent navigation on mobile so it can toggle
+        e.preventDefault();
+
+        const willOpen = !content.classList.contains("open");
+        content.classList.toggle("open", willOpen);
+        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      }
+    });
+  });
+
+  // Close menu when clicking a normal link (not dropdown toggles) on mobile
+  menu.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const isDropdownToggle = a.classList.contains("dropdown-toggle");
+    if (window.innerWidth <= 900 && menu.classList.contains("active") && !isDropdownToggle) {
+      setMenuOpen(false);
+    }
+  });
+
+  // Hide ONLY the hamburger on scroll on mobile; navbar stays
+  let lastY = window.scrollY;
+
   window.addEventListener(
     "scroll",
     () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const navbarHeight = navbar.offsetHeight;
-
-      // If mobile menu is open and user is scrolling inside it, do nothing
-      if (window.innerWidth <= 900 && navbarLinks.classList.contains("active") && isScrollingMenu) {
+      if (window.innerWidth > 900) {
+        burger.classList.remove("is-hidden");
         return;
       }
 
-      if (currentScroll > lastScrollTop) {
-        navbar.style.top = `-${navbarHeight}px`;
-
-        // Close mobile menu on actual page scroll
-        if (window.innerWidth <= 900 && navbarLinks.classList.contains("active")) {
-          navbarLinks.classList.remove("active");
-          if (hamburger) hamburger.setAttribute("aria-expanded", "false");
-        }
-      } else {
-        navbar.style.top = "0";
+      // If menu is open, keep hamburger visible
+      if (menu.classList.contains("active")) {
+        burger.classList.remove("is-hidden");
+        return;
       }
 
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      const y = window.scrollY;
+      const goingDown = y > lastY + 2;
+      const goingUp = y < lastY - 2;
+
+      if (goingDown) burger.classList.add("is-hidden");
+      if (goingUp) burger.classList.remove("is-hidden");
+
+      lastY = y;
     },
-    false
+    { passive: true }
   );
 
-  // Close mobile menu when any nav link is clicked
-  document.querySelectorAll(".navbar-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 900 && navbarLinks.classList.contains("active")) {
-        navbarLinks.classList.remove("active");
-        if (hamburger) hamburger.setAttribute("aria-expanded", "false");
-      }
-    });
+  // On resize, close the mobile menu to prevent weird states
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      setMenuOpen(false);
+      burger.classList.remove("is-hidden");
+    }
   });
-
-  // Mobile dropdown toggle
-  document.querySelectorAll(".dropdown").forEach((dropdown) => {
-    const title = dropdown.querySelector(".dropdown-title");
-    const content = dropdown.querySelector(".dropdown-content");
-    if (!title || !content) return;
-
-    title.addEventListener("click", (e) => {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        content.classList.toggle("mobile-active");
-      }
-    });
-  });
-
-  updateNavbarLinksPosition();
-  window.addEventListener("resize", updateNavbarLinksPosition);
 }
-
-// Called by inline onclick in header.html
-function toggleMenu() {
-  const navbarLinks = document.querySelector(".navbar-links");
-  const hamburger = document.querySelector(".hamburger");
-  if (!navbarLinks) return;
-
-  navbarLinks.classList.toggle("active");
-  updateNavbarLinksPosition();
-
-  if (hamburger) {
-    const isOpen = navbarLinks.classList.contains("active");
-    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  }
-}
-
-// Make toggleMenu globally available
-window.toggleMenu = toggleMenu;
 
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartial("site-header", "/assets/header.html");
