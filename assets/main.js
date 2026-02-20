@@ -20,41 +20,58 @@ function setFooterYear() {
 
 // ===== Navbar behavior (mobile menu + mobile dropdowns + hide hamburger on scroll) =====
 function bindNavbarInteractions() {
+  const nav = document.querySelector(".navbar");
   const menu = document.querySelector(".navbar-links");
   const burger = document.querySelector(".hamburger");
-  if (!menu || !burger) return;
+  if (!nav || !menu || !burger) return;
 
-  const BREAKPOINT = 900;
+  const navBreakPx = 1050; // must match CSS --nav-break
+
+  function closeAllDropdowns() {
+    document.querySelectorAll(".dropdown-content.open").forEach((dc) => dc.classList.remove("open"));
+    document.querySelectorAll(".dropdown-toggle[aria-expanded='true']").forEach((t) =>
+      t.setAttribute("aria-expanded", "false")
+    );
+  }
 
   function setMenuOpen(isOpen) {
     menu.classList.toggle("active", isOpen);
     burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
 
     if (!isOpen) {
-      document.querySelectorAll(".dropdown-content.open").forEach((dc) => dc.classList.remove("open"));
-      document.querySelectorAll(".dropdown-toggle[aria-expanded='true']").forEach((t) =>
-        t.setAttribute("aria-expanded", "false")
-      );
+      closeAllDropdowns();
     }
   }
 
+  // Toggle hamburger menu open/close
   burger.addEventListener("click", () => {
     const isOpen = menu.classList.contains("active");
     setMenuOpen(!isOpen);
   });
 
-  // Mobile dropdown toggle
+  // (4) Mobile: only one dropdown open at a time
   document.querySelectorAll(".dropdown").forEach((dropdown) => {
     const toggle = dropdown.querySelector(".dropdown-toggle");
     const content = dropdown.querySelector(".dropdown-content");
     if (!toggle || !content) return;
 
     toggle.addEventListener("click", (e) => {
-      if (window.innerWidth <= BREAKPOINT) {
+      if (window.innerWidth <= navBreakPx) {
         e.preventDefault();
+
         const willOpen = !content.classList.contains("open");
-        content.classList.toggle("open", willOpen);
-        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+
+        // close others first
+        closeAllDropdowns();
+
+        // then open this one if requested
+        if (willOpen) {
+          content.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+        } else {
+          content.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
       }
     });
   });
@@ -65,49 +82,49 @@ function bindNavbarInteractions() {
     if (!a) return;
 
     const isDropdownToggle = a.classList.contains("dropdown-toggle");
-    if (window.innerWidth <= BREAKPOINT && menu.classList.contains("active") && !isDropdownToggle) {
+    if (window.innerWidth <= navBreakPx && menu.classList.contains("active") && !isDropdownToggle) {
       setMenuOpen(false);
     }
   });
 
-  // Hide ONLY the hamburger on scroll on mobile
+  // (5) Mobile: if user scrolls while menu is open, collapse it.
+  // Also hide ONLY hamburger on scroll when menu is closed.
   let lastY = window.scrollY;
 
   window.addEventListener(
     "scroll",
     () => {
-      if (window.innerWidth > BREAKPOINT) {
+      if (window.innerWidth > navBreakPx) {
         burger.classList.remove("is-hidden");
         return;
       }
 
+      // If menu is open, collapse it on any meaningful scroll
       if (menu.classList.contains("active")) {
+        const yNow = window.scrollY;
+        if (Math.abs(yNow - lastY) > 6) {
+          setMenuOpen(false);
+        }
+        lastY = yNow;
         burger.classList.remove("is-hidden");
-        lastY = window.scrollY;
         return;
       }
 
       const y = window.scrollY;
+      const goingDown = y > lastY + 2;
+      const goingUp = y < lastY - 2;
 
-      if (y < 10) {
-        burger.classList.remove("is-hidden");
-        lastY = y;
-        return;
-      }
-
-      const delta = y - lastY;
-
-      if (delta > 6) burger.classList.add("is-hidden");
-      else if (delta < -6) burger.classList.remove("is-hidden");
+      if (goingDown) burger.classList.add("is-hidden");
+      if (goingUp) burger.classList.remove("is-hidden");
 
       lastY = y;
     },
     { passive: true }
   );
 
-  // On resize: reset states cleanly
+  // On resize, close the mobile menu to prevent weird states
   window.addEventListener("resize", () => {
-    if (window.innerWidth > BREAKPOINT) {
+    if (window.innerWidth > navBreakPx) {
       setMenuOpen(false);
       burger.classList.remove("is-hidden");
     }
