@@ -25,12 +25,10 @@ function bindNavbarInteractions() {
   const burger = document.querySelector(".hamburger");
   if (!nav || !menu || !burger) return;
 
-  // Toggle menu open/close
   function setMenuOpen(isOpen) {
     menu.classList.toggle("active", isOpen);
     burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
 
-    // When closing menu, also close any open mobile dropdowns
     if (!isOpen) {
       document.querySelectorAll(".dropdown-content.open").forEach((dc) => dc.classList.remove("open"));
       document.querySelectorAll(".dropdown-toggle[aria-expanded='true']").forEach((t) =>
@@ -44,7 +42,6 @@ function bindNavbarInteractions() {
     setMenuOpen(!isOpen);
   });
 
-  // Mobile dropdown toggle: clicking the toggle should NOT close the whole menu
   document.querySelectorAll(".dropdown").forEach((dropdown) => {
     const toggle = dropdown.querySelector(".dropdown-toggle");
     const content = dropdown.querySelector(".dropdown-content");
@@ -53,7 +50,6 @@ function bindNavbarInteractions() {
     toggle.addEventListener("click", (e) => {
       if (window.innerWidth <= 900) {
         e.preventDefault();
-
         const willOpen = !content.classList.contains("open");
         content.classList.toggle("open", willOpen);
         toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
@@ -61,7 +57,6 @@ function bindNavbarInteractions() {
     });
   });
 
-  // Close menu when clicking a normal link (not dropdown toggles) on mobile
   menu.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
@@ -72,7 +67,6 @@ function bindNavbarInteractions() {
     }
   });
 
-  // Hide ONLY the hamburger on scroll on mobile; navbar stays
   let lastY = window.scrollY;
 
   window.addEventListener(
@@ -83,7 +77,6 @@ function bindNavbarInteractions() {
         return;
       }
 
-      // If menu is open, keep hamburger visible
       if (menu.classList.contains("active")) {
         burger.classList.remove("is-hidden");
         lastY = window.scrollY;
@@ -92,7 +85,6 @@ function bindNavbarInteractions() {
 
       const y = window.scrollY;
 
-      // Don't start hiding right at the very top
       if (y < 10) {
         burger.classList.remove("is-hidden");
         lastY = y;
@@ -101,7 +93,6 @@ function bindNavbarInteractions() {
 
       const delta = y - lastY;
 
-      // Require threshold so it isn't jittery
       if (delta > 6) {
         burger.classList.add("is-hidden");
       } else if (delta < -6) {
@@ -113,7 +104,6 @@ function bindNavbarInteractions() {
     { passive: true }
   );
 
-  // On resize, close the mobile menu to prevent weird states
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) {
       setMenuOpen(false);
