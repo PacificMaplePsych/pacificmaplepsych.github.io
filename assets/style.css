@@ -10,8 +10,8 @@
   --nav-h: 120px;
   --nav-h-mobile: 110px;
 
-  /* NEW: fixed tab width for equal overlines */
-  --nav-link-w: 120px;
+  /* NEW: fixed overline width (match "Policies") */
+  --nav-overline-w: 82px;
 }
 
 /* ===== Global ===== */
@@ -203,19 +203,20 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
+/* Give the logo guaranteed space so it can actually be bigger */
 .logo-link {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
   height: 100%;
-  padding-right: 10px;
+  padding-right: 14px;
+  min-width: 380px; /* NEW: makes it stop squishing on desktop */
 }
 
-/* Logo ~25% bigger (mainly via max-width and slightly taller height) */
 .logo {
-  height: calc(var(--nav-h) - 16px);
+  height: calc(var(--nav-h) - 10px); /* NEW: larger */
   width: auto;
-  max-width: 525px;
+  max-width: 620px; /* NEW: allows a bigger render */
   object-fit: contain;
 }
 
@@ -224,27 +225,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  /* slightly tighter gaps so you don't crowd the right edge */
-  gap: 12px;
-
+  gap: 18px;
   margin-left: auto;
 
   /* desktop-only right padding to avoid clipped Book Now dropdown */
   padding-right: 20px;
 }
 
-/* Top-level link tabs */
+/* Top-level link */
 .nav-link {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  /* equal overline width for ALL links */
-  width: var(--nav-link-w);
-
-  padding: 10px 0 8px;
+  padding: 10px 8px 8px;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 700;
@@ -253,16 +248,14 @@ body {
   white-space: nowrap;
 }
 
-/* Overline that does not affect layout */
+/* Overline: fixed width, centered, matches "Policies" */
 .nav-link::before {
   content: "";
   position: absolute;
   top: 2px;
-
-  /* full width of tab */
-  left: 0;
-  right: 0;
-
+  left: 50%;
+  width: var(--nav-overline-w);
+  transform: translateX(-50%);
   height: 2px;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 999px;
@@ -314,7 +307,6 @@ body {
   transform: translateX(-50%);
   margin-top: 10px;
 
-  /* NEW: dropdown background */
   background-color: #c9d1d9;
 
   padding: 10px 12px;
@@ -327,7 +319,7 @@ body {
   white-space: nowrap;
 }
 
-/* Hover bridge so it DOESN'T disappear when moving mouse into the dropdown */
+/* Hover bridge */
 .dropdown-content::before {
   content: "";
   position: absolute;
@@ -370,10 +362,12 @@ body {
     gap: 10px;
   }
 
-  /* Larger logo on mobile too */
+  /* Remove desktop min-width so it doesn't break mobile layout */
+  .logo-link { min-width: 0; }
+
   .logo {
-    height: calc(var(--nav-h-mobile) - 12px);
-    max-width: 400px;
+    height: calc(var(--nav-h-mobile) - 8px);
+    max-width: 460px;
   }
 
   .hamburger {
@@ -400,8 +394,6 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 998;
-
-    /* remove desktop-only right padding in mobile */
     padding-right: 0;
   }
 
@@ -414,8 +406,7 @@ body {
 
   .nav-link::before {
     top: 4px;
-    left: 12px;
-    right: 12px;
+    width: var(--nav-overline-w);
   }
 
   /* Mobile dropdown: inline, toggled by JS */
@@ -445,10 +436,7 @@ body {
 
   .dropdown-link {
     text-align: center;
-
-    /* NEW: dropdown link background on mobile too */
     background: #c9d1d9;
-
     border: 1px solid rgba(0,0,0,0.10);
     margin: 8px 0 0;
   }
