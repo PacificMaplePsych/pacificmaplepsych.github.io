@@ -20,10 +20,11 @@ function setFooterYear() {
 
 // ===== Navbar behavior (mobile menu + mobile dropdowns + hide hamburger on scroll) =====
 function bindNavbarInteractions() {
-  const nav = document.querySelector(".navbar");
   const menu = document.querySelector(".navbar-links");
   const burger = document.querySelector(".hamburger");
-  if (!nav || !menu || !burger) return;
+  if (!menu || !burger) return;
+
+  const BREAKPOINT = 1100;
 
   function setMenuOpen(isOpen) {
     menu.classList.toggle("active", isOpen);
@@ -48,7 +49,7 @@ function bindNavbarInteractions() {
     if (!toggle || !content) return;
 
     toggle.addEventListener("click", (e) => {
-      if (window.innerWidth <= 900) {
+      if (window.innerWidth <= BREAKPOINT) {
         e.preventDefault();
         const willOpen = !content.classList.contains("open");
         content.classList.toggle("open", willOpen);
@@ -62,7 +63,7 @@ function bindNavbarInteractions() {
     if (!a) return;
 
     const isDropdownToggle = a.classList.contains("dropdown-toggle");
-    if (window.innerWidth <= 900 && menu.classList.contains("active") && !isDropdownToggle) {
+    if (window.innerWidth <= BREAKPOINT && menu.classList.contains("active") && !isDropdownToggle) {
       setMenuOpen(false);
     }
   });
@@ -72,7 +73,7 @@ function bindNavbarInteractions() {
   window.addEventListener(
     "scroll",
     () => {
-      if (window.innerWidth > 900) {
+      if (window.innerWidth > BREAKPOINT) {
         burger.classList.remove("is-hidden");
         return;
       }
@@ -102,7 +103,7 @@ function bindNavbarInteractions() {
   );
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > BREAKPOINT) {
       setMenuOpen(false);
       burger.classList.remove("is-hidden");
     }
