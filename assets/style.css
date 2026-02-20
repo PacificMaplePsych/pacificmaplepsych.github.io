@@ -319,6 +319,17 @@ body {
   text-align: center;
 }
 
+/* ✅ Desktop-only: make Team + Book Now dropdowns a bit less wide */
+@media (min-width: 1051px) {
+  .dropdown.dropdown-team .dropdown-content {
+    min-width: 210px;
+  }
+
+  .dropdown.dropdown-book .dropdown-content {
+    min-width: 210px;
+  }
+}
+
 /* Hover bridge: prevents “disappears when moving mouse into dropdown” */
 .dropdown-content::before {
   content: "";
