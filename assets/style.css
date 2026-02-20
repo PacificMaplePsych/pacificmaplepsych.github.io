@@ -7,16 +7,23 @@
   --home-blue: #c9d1d9;
   --home-plum: #d4c3cf;
 
-  --nav-h: 120px;
-  --nav-h-mobile: 110px;
+  /* Navbar sizing */
+  --nav-h: 150px;           /* was 120px */
+  --nav-h-mobile: 120px;    /* was 110px */
 
-  /* NEW: fixed overline width (match "Policies") */
-  --nav-overline-w: 82px;
+  /* Nav typography */
+  --nav-font-size: 16px;
+
+  /* Overline widths */
+  --line-policies: 86px;    /* tune if needed */
+  --line-booknow: 112px;    /* tune if needed */
+
+  /* Slot width prevents line overlap */
+  --nav-slot-w: 118px;      /* tune: 110–130 usually */
 }
 
 /* ===== Global ===== */
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -26,14 +33,9 @@ body {
   background: #fff;
 }
 
-/* Make the page content begin exactly under the navbar */
-.entry-content {
-  padding-top: var(--nav-h);
-}
-
-@media (max-width: 900px) {
-  .entry-content { padding-top: var(--nav-h-mobile); }
-}
+/* Make content start exactly under navbar */
+.entry-content { padding-top: var(--nav-h); }
+@media (max-width: 900px) { .entry-content { padding-top: var(--nav-h-mobile); } }
 
 /* Typography targets you specified */
 .p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
@@ -105,9 +107,7 @@ body {
 }
 
 .service-media,
-.service-card {
-  min-height: 420px;
-}
+.service-card { min-height: 420px; }
 
 .service-media {
   background: #fff;
@@ -149,16 +149,12 @@ body {
   justify-content: center;
   padding: 10px 18px;
   border-radius: 999px;
-
   background: #111;
   color: #fff;
-
   font-weight: 700;
   text-decoration: none;
-
   border: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 10px 18px rgba(122, 93, 124, 0.35);
-
   transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
@@ -172,21 +168,18 @@ body {
 
 .btn-pill:active { transform: translateY(1px); }
 
-/* ===== Mobile stacking for services ===== */
+/* Mobile stacking for services */
 @media (max-width: 900px) {
   .home-hero { min-height: 460px; padding: 28px 0; }
-
   .service-row { grid-template-columns: 1fr; }
-
-  .service-media,
-  .service-card { min-height: auto; }
-
+  .service-media, .service-card { min-height: auto; }
   .service-img { height: 260px; }
-
   .service-card-inner { padding: 24px 0; }
 }
 
-/* ===== PMPC Navbar ===== */
+/* =========================
+   PMPC Navbar
+   ========================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -203,58 +196,65 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Give the logo guaranteed space so it can actually be bigger */
+/* Logo: more real space + bigger */
 .logo-link {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
   height: 100%;
   padding-right: 14px;
-  min-width: 380px; /* NEW: makes it stop squishing on desktop */
+  min-width: 460px;
 }
 
 .logo {
-  height: calc(var(--nav-h) - 10px); /* NEW: larger */
+  height: calc(var(--nav-h) - 14px);
   width: auto;
-  max-width: 620px; /* NEW: allows a bigger render */
+  max-width: 760px;
   object-fit: contain;
 }
 
-/* Desktop nav links */
+/* Desktop nav */
 .navbar-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 18px;
   margin-left: auto;
-
-  /* desktop-only right padding to avoid clipped Book Now dropdown */
-  padding-right: 20px;
+  padding-right: 20px; /* prevent right-side clipping */
 }
 
-/* Top-level link */
+/* Each link gets a slot so lines never overlap */
 .nav-link {
+  --line-w: var(--line-policies); /* default line width like Policies */
   position: relative;
+
+  width: var(--nav-slot-w);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 10px 8px 8px;
+  padding: 12px 6px 10px;
+
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: var(--nav-font-size);
   font-weight: 700;
   color: var(--pmpc-black);
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Overline: fixed width, centered, matches "Policies" */
+/* Book Now override: line should match Book Now */
+.nav-link.nav-cta {
+  --line-w: var(--line-booknow);
+  font-weight: 800;
+}
+
+/* Overline */
 .nav-link::before {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 4px;
   left: 50%;
-  width: var(--nav-overline-w);
+  width: var(--line-w);
   transform: translateX(-50%);
   height: 2px;
   background: rgba(0, 0, 0, 0.35);
@@ -264,17 +264,13 @@ body {
 }
 
 .nav-link:hover,
-.nav-link:focus {
-  color: var(--pmpc-purple);
-}
+.nav-link:focus { color: var(--pmpc-purple); }
 
 .nav-link:hover::before,
 .nav-link:focus::before {
   background: var(--pmpc-purple);
   opacity: 0.95;
 }
-
-.nav-cta { font-weight: 800; }
 
 /* Hamburger (desktop hidden) */
 .hamburger {
@@ -289,14 +285,13 @@ body {
   padding: 10px 10px;
 }
 
-/* Hamburger hides on scroll on mobile */
 .hamburger.is-hidden {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.18s ease;
 }
 
-/* ===== Dropdowns (desktop) ===== */
+/* Dropdowns */
 .dropdown { position: relative; }
 
 .dropdown-content {
@@ -319,7 +314,6 @@ body {
   white-space: nowrap;
 }
 
-/* Hover bridge */
 .dropdown-content::before {
   content: "";
   position: absolute;
@@ -346,7 +340,6 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Show dropdown on hover AND keep it open */
 @media (min-width: 901px) {
   .dropdown:hover .dropdown-content,
   .dropdown:focus-within .dropdown-content {
@@ -362,12 +355,11 @@ body {
     gap: 10px;
   }
 
-  /* Remove desktop min-width so it doesn't break mobile layout */
   .logo-link { min-width: 0; }
 
   .logo {
-    height: calc(var(--nav-h-mobile) - 8px);
-    max-width: 460px;
+    height: calc(var(--nav-h-mobile) - 10px);
+    max-width: 520px;
   }
 
   .hamburger {
@@ -376,7 +368,6 @@ body {
     justify-content: center;
   }
 
-  /* Mobile menu panel */
   .navbar-links {
     display: none;
     position: fixed;
@@ -386,7 +377,6 @@ body {
     background: #fff;
     flex-direction: column;
     align-items: center;
-    gap: 0;
     padding: 12px 0 18px;
     border-bottom: 1px solid rgba(0,0,0,0.18);
     box-shadow: 0 14px 24px rgba(0, 0, 0, 0.10);
@@ -394,22 +384,21 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 998;
-    padding-right: 0;
   }
 
   .navbar-links.active { display: flex; }
 
   .nav-link {
     width: min(520px, 92%);
-    padding: 14px 12px 12px;
+    padding: 16px 12px 14px;
+    font-size: 18px;
   }
 
   .nav-link::before {
-    top: 4px;
-    width: var(--nav-overline-w);
+    top: 6px;
+    width: var(--line-w);
   }
 
-  /* Mobile dropdown: inline, toggled by JS */
   .dropdown {
     width: 100%;
     display: flex;
