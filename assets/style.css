@@ -7,22 +7,15 @@
   --home-blue: #c9d1d9;
   --home-plum: #d4c3cf;
 
-  /* Navbar sizing */
   --nav-h: 150px;
   --nav-h-mobile: 120px;
 
-  /* Nav typography */
   --nav-font-size: 16px;
 
-  /* Overline widths */
   --line-policies: 86px;
   --line-booknow: 112px;
 
-  /* Slot width prevents line overlap */
   --nav-slot-w: 118px;
-
-  /* NEW: switch to hamburger earlier to avoid disappearing links */
-  --nav-break: 1100px;
 }
 
 /* ===== Global ===== */
@@ -36,18 +29,20 @@ body {
   background: #fff;
 }
 
-/* Make content start exactly under navbar */
+/* Content starts under navbar */
 .entry-content { padding-top: var(--nav-h); }
-@media (max-width: var(--nav-break)) { .entry-content { padding-top: var(--nav-h-mobile); } }
+@media (max-width: 1100px) {
+  .entry-content { padding-top: var(--nav-h-mobile); }
+}
 
-/* Typography targets you specified */
+/* Typography */
 .p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
 .hero-h1 { font-size: 45px; font-weight: 700; line-height: 1.15; margin: 0 0 14px 0; }
 .hero-sub { font-size: 25px; font-weight: 700; margin: 0 0 18px 0; }
 .section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
 .service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
 
-@media (max-width: var(--nav-break)) {
+@media (max-width: 1100px) {
   .hero-h1 { font-size: 34px; }
   .section-h2 { font-size: 38px; }
 }
@@ -101,7 +96,7 @@ body {
 .home-band-blue { background: var(--home-blue); }
 .home-band-plum { background: var(--home-plum); }
 
-/* ===== Checkerboard service rows ===== */
+/* ===== Checkerboard ===== */
 .service-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -145,7 +140,7 @@ body {
   justify-content: center;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -172,7 +167,7 @@ body {
 .btn-pill:active { transform: translateY(1px); }
 
 /* Mobile stacking for services */
-@media (max-width: var(--nav-break)) {
+@media (max-width: 1100px) {
   .home-hero { min-height: 460px; padding: 28px 0; }
   .service-row { grid-template-columns: 1fr; }
   .service-media, .service-card { min-height: auto; }
@@ -199,14 +194,13 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo: reduce reserved min width so links can move left on thinner screens */
 .logo-link {
   display: flex;
   align-items: center;
   flex: 0 1 auto;
   height: 100%;
   padding-right: 14px;
-  min-width: 320px; /* was 460px */
+  min-width: 320px;
 }
 
 .logo {
@@ -216,22 +210,15 @@ body {
   object-fit: contain;
 }
 
-/* Desktop nav */
 .navbar-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
-
-  /* keep a bit of right padding so Book Now dropdown never clips */
   padding-right: 24px;
-
-  /* allow tighter spacing before we switch to hamburger */
   column-gap: 18px;
-  row-gap: 0;
 }
 
-/* Each link gets a slot so lines never overlap */
 .nav-link {
   --line-w: var(--line-policies);
   position: relative;
@@ -242,24 +229,22 @@ body {
   justify-content: center;
 
   padding: 12px 6px 10px;
-  line-height: 1;            /* keeps all text aligned */
-  vertical-align: middle;    /* consistent baseline */
+  line-height: 1;
+  vertical-align: middle;
 
   font-family: Helvetica, Arial, sans-serif;
   font-size: var(--nav-font-size);
-  font-weight: 700;          /* keep all bold baseline */
+  font-weight: 700;
   color: var(--pmpc-black);
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Only Book Now remains heavier */
 .nav-link.nav-cta {
   --line-w: var(--line-booknow);
   font-weight: 800;
 }
 
-/* Overline */
 .nav-link::before {
   content: "";
   position: absolute;
@@ -302,10 +287,9 @@ body {
   transition: opacity 0.18s ease;
 }
 
-/* Dropdowns */
+/* Dropdowns (desktop) */
 .dropdown { position: relative; }
 
-/* dropdown panel: centered, clamped so it doesn't run off-screen */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -321,14 +305,12 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.10);
   z-index: 1000;
 
-  /* key: don't become overly wide */
   width: max-content;
   max-width: min(420px, calc(100vw - 24px));
   white-space: nowrap;
   overflow: hidden;
 }
 
-/* Hover bridge so it DOESN'T disappear */
 .dropdown-content::before {
   content: "";
   position: absolute;
@@ -338,7 +320,6 @@ body {
   height: 12px;
 }
 
-/* Center dropdown text */
 .dropdown-link {
   display: block;
   text-decoration: none;
@@ -357,7 +338,8 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-@media (min-width: calc(var(--nav-break) + 1px)) {
+/* Desktop dropdown show */
+@media (min-width: 1101px) {
   .dropdown:hover .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: block;
@@ -365,7 +347,7 @@ body {
 }
 
 /* ===== Mobile nav ===== */
-@media (max-width: var(--nav-break)) {
+@media (max-width: 1100px) {
   .navbar {
     height: var(--nav-h-mobile);
     padding: 0 18px;
@@ -373,6 +355,7 @@ body {
   }
 
   .logo-link { min-width: 0; }
+
   .logo {
     height: calc(var(--nav-h-mobile) - 10px);
     max-width: 520px;
@@ -405,8 +388,8 @@ body {
   .navbar-links.active { display: flex; }
 
   .nav-link {
-    width: auto;                /* key: do not stretch full width */
-    min-width: 220px;           /* consistent button size */
+    width: auto;
+    min-width: 220px;
     padding: 16px 18px 14px;
     font-size: 18px;
   }
@@ -423,7 +406,6 @@ body {
     align-items: center;
   }
 
-  /* Mobile dropdown container shrinks to content */
   .dropdown-content {
     display: none;
     position: relative;
@@ -443,13 +425,11 @@ body {
 
   .dropdown-content.open { display: block; }
 
-  /* The “buttons”: all same width as widest item, centered */
   .dropdown-link {
     display: block;
     width: max-content;
-    min-width: 320px; /* gives nice consistency; adjust if you want tighter */
+    min-width: 320px;
     max-width: calc(100vw - 40px);
-
     text-align: center;
     background: #c9d1d9;
     border: 1px solid rgba(0,0,0,0.10);
@@ -533,7 +513,7 @@ body {
   font-size: 13px;
 }
 
-@media (max-width: var(--nav-break)) {
+@media (max-width: 1100px) {
   .footer-map { height: 260px; }
 
   .footer-inner {
