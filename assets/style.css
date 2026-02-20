@@ -8,18 +8,21 @@
   --home-plum: #d4c3cf;
 
   /* Navbar sizing */
-  --nav-h: 150px;           /* was 120px */
-  --nav-h-mobile: 120px;    /* was 110px */
+  --nav-h: 150px;
+  --nav-h-mobile: 120px;
 
   /* Nav typography */
   --nav-font-size: 16px;
 
   /* Overline widths */
-  --line-policies: 86px;    /* tune if needed */
-  --line-booknow: 112px;    /* tune if needed */
+  --line-policies: 86px;
+  --line-booknow: 112px;
 
   /* Slot width prevents line overlap */
-  --nav-slot-w: 118px;      /* tune: 110–130 usually */
+  --nav-slot-w: 118px;
+
+  /* NEW: switch to hamburger earlier to avoid disappearing links */
+  --nav-break: 1100px;
 }
 
 /* ===== Global ===== */
@@ -35,7 +38,7 @@ body {
 
 /* Make content start exactly under navbar */
 .entry-content { padding-top: var(--nav-h); }
-@media (max-width: 900px) { .entry-content { padding-top: var(--nav-h-mobile); } }
+@media (max-width: var(--nav-break)) { .entry-content { padding-top: var(--nav-h-mobile); } }
 
 /* Typography targets you specified */
 .p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
@@ -44,7 +47,7 @@ body {
 .section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
 .service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
 
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .hero-h1 { font-size: 34px; }
   .section-h2 { font-size: 38px; }
 }
@@ -169,7 +172,7 @@ body {
 .btn-pill:active { transform: translateY(1px); }
 
 /* Mobile stacking for services */
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .home-hero { min-height: 460px; padding: 28px 0; }
   .service-row { grid-template-columns: 1fr; }
   .service-media, .service-card { min-height: auto; }
@@ -196,14 +199,14 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo: more real space + bigger */
+/* Logo: reduce reserved min width so links can move left on thinner screens */
 .logo-link {
   display: flex;
   align-items: center;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   height: 100%;
   padding-right: 14px;
-  min-width: 460px;
+  min-width: 320px; /* was 460px */
 }
 
 .logo {
@@ -219,12 +222,18 @@ body {
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
-  padding-right: 20px; /* prevent right-side clipping */
+
+  /* keep a bit of right padding so Book Now dropdown never clips */
+  padding-right: 24px;
+
+  /* allow tighter spacing before we switch to hamburger */
+  column-gap: 18px;
+  row-gap: 0;
 }
 
 /* Each link gets a slot so lines never overlap */
 .nav-link {
-  --line-w: var(--line-policies); /* default line width like Policies */
+  --line-w: var(--line-policies);
   position: relative;
 
   width: var(--nav-slot-w);
@@ -233,16 +242,18 @@ body {
   justify-content: center;
 
   padding: 12px 6px 10px;
+  line-height: 1;            /* keeps all text aligned */
+  vertical-align: middle;    /* consistent baseline */
 
   font-family: Helvetica, Arial, sans-serif;
   font-size: var(--nav-font-size);
-  font-weight: 700;
+  font-weight: 700;          /* keep all bold baseline */
   color: var(--pmpc-black);
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Book Now override: line should match Book Now */
+/* Only Book Now remains heavier */
 .nav-link.nav-cta {
   --line-w: var(--line-booknow);
   font-weight: 800;
@@ -294,6 +305,7 @@ body {
 /* Dropdowns */
 .dropdown { position: relative; }
 
+/* dropdown panel: centered, clamped so it doesn't run off-screen */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -303,17 +315,20 @@ body {
   margin-top: 10px;
 
   background-color: #c9d1d9;
-
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-radius: 12px;
   box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.22);
   border: 1px solid rgba(0, 0, 0, 0.10);
   z-index: 1000;
 
-  min-width: 240px;
+  /* key: don't become overly wide */
+  width: max-content;
+  max-width: min(420px, calc(100vw - 24px));
   white-space: nowrap;
+  overflow: hidden;
 }
 
+/* Hover bridge so it DOESN'T disappear */
 .dropdown-content::before {
   content: "";
   position: absolute;
@@ -323,6 +338,7 @@ body {
   height: 12px;
 }
 
+/* Center dropdown text */
 .dropdown-link {
   display: block;
   text-decoration: none;
@@ -330,8 +346,9 @@ body {
   font-weight: 700;
   font-size: 14px;
   color: var(--pmpc-black);
-  padding: 9px 10px;
+  padding: 9px 14px;
   border-radius: 10px;
+  text-align: center;
 }
 
 .dropdown-link:hover,
@@ -340,7 +357,7 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-@media (min-width: 901px) {
+@media (min-width: calc(var(--nav-break) + 1px)) {
   .dropdown:hover .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: block;
@@ -348,7 +365,7 @@ body {
 }
 
 /* ===== Mobile nav ===== */
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .navbar {
     height: var(--nav-h-mobile);
     padding: 0 18px;
@@ -356,7 +373,6 @@ body {
   }
 
   .logo-link { min-width: 0; }
-
   .logo {
     height: calc(var(--nav-h-mobile) - 10px);
     max-width: 520px;
@@ -389,8 +405,9 @@ body {
   .navbar-links.active { display: flex; }
 
   .nav-link {
-    width: min(520px, 92%);
-    padding: 16px 12px 14px;
+    width: auto;                /* key: do not stretch full width */
+    min-width: 220px;           /* consistent button size */
+    padding: 16px 18px 14px;
     font-size: 18px;
   }
 
@@ -406,6 +423,7 @@ body {
     align-items: center;
   }
 
+  /* Mobile dropdown container shrinks to content */
   .dropdown-content {
     display: none;
     position: relative;
@@ -413,21 +431,29 @@ body {
     left: 0;
     transform: none;
     margin-top: 8px;
+
     background: transparent;
     border: none;
     box-shadow: none;
     padding: 0;
-    min-width: 0;
-    width: min(520px, 92%);
+
+    width: max-content;
+    max-width: calc(100vw - 24px);
   }
 
   .dropdown-content.open { display: block; }
 
+  /* The “buttons”: all same width as widest item, centered */
   .dropdown-link {
+    display: block;
+    width: max-content;
+    min-width: 320px; /* gives nice consistency; adjust if you want tighter */
+    max-width: calc(100vw - 40px);
+
     text-align: center;
     background: #c9d1d9;
     border: 1px solid rgba(0,0,0,0.10);
-    margin: 8px 0 0;
+    margin: 8px auto 0;
   }
 }
 
@@ -507,7 +533,7 @@ body {
   font-size: 13px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .footer-map { height: 260px; }
 
   .footer-inner {
