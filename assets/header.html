@@ -18,14 +18,19 @@
   </button>
 
   <nav class="navbar-links" id="primaryNav" aria-label="Primary navigation">
-    <a href="/index.html" class="nav-link">Home</a>
     <a href="/about.html" class="nav-link">About</a>
 
     <div class="dropdown">
-      <a href="/services.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <a
+        href="/services.html"
+        class="nav-link dropdown-toggle"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="servicesMenu"
+      >
         Services
       </a>
-      <div class="dropdown-content" aria-label="Services submenu">
+      <div class="dropdown-content" id="servicesMenu" aria-label="Services submenu">
         <a href="/services/psychological-assessment.html" class="dropdown-link">Psychological Assessment</a>
         <a href="/services/individual-therapy.html" class="dropdown-link">Individual Therapy</a>
         <a href="/services/group-therapy.html" class="dropdown-link">Group Therapy</a>
@@ -35,10 +40,16 @@
     </div>
 
     <div class="dropdown">
-      <a href="/team.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <a
+        href="/team.html"
+        class="nav-link dropdown-toggle"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="teamMenu"
+      >
         Team
       </a>
-      <div class="dropdown-content" aria-label="Team submenu">
+      <div class="dropdown-content" id="teamMenu" aria-label="Team submenu">
         <a href="/team.html#Doctors" class="dropdown-link">Doctors</a>
         <a href="/team.html#Psychometrists" class="dropdown-link">Psychometrists</a>
         <a href="/team.html#Masters%20Psychologists" class="dropdown-link">Masters Psychologists</a>
@@ -51,10 +62,16 @@
     <a href="/blog.html" class="nav-link">Blog</a>
 
     <div class="dropdown">
-      <a href="/book.html" class="nav-link dropdown-toggle nav-cta" aria-haspopup="true" aria-expanded="false">
+      <a
+        href="/book.html"
+        class="nav-link dropdown-toggle nav-cta"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="bookingMenu"
+      >
         Book Now
       </a>
-      <div class="dropdown-content" aria-label="Booking submenu">
+      <div class="dropdown-content" id="bookingMenu" aria-label="Booking submenu">
         <a href="/booking/book-assessment.html" class="dropdown-link">Book Assessment</a>
         <a href="/booking/book-group-therapy.html" class="dropdown-link">Book Group Therapy</a>
         <a href="/booking/book-therapy-session.html" class="dropdown-link">Book Therapy Session</a>
