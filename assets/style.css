@@ -31,7 +31,7 @@ body {
 
 /* Content starts under navbar */
 .entry-content { padding-top: var(--nav-h); }
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .entry-content { padding-top: var(--nav-h-mobile); }
 }
 
@@ -42,7 +42,7 @@ body {
 .section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
 .service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .hero-h1 { font-size: 34px; }
   .section-h2 { font-size: 38px; }
 }
@@ -167,7 +167,7 @@ body {
 .btn-pill:active { transform: translateY(1px); }
 
 /* Mobile stacking for services */
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .home-hero { min-height: 460px; padding: 28px 0; }
   .service-row { grid-template-columns: 1fr; }
   .service-media, .service-card { min-height: auto; }
@@ -215,7 +215,10 @@ body {
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
-  padding-right: 24px;
+
+  /* extra right padding so dropdown never clips */
+  padding-right: 20px;
+
   column-gap: 18px;
 }
 
@@ -290,13 +293,16 @@ body {
 /* Dropdowns (desktop) */
 .dropdown { position: relative; }
 
+/*
+  IMPORTANT: make dropdown overlap/bridge gap so hover doesn't break.
+  We anchor under the toggle and add a hover-bridge.
+*/
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% - 6px); /* pulls dropdown up slightly to eliminate hover gap */
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 10px;
 
   background-color: #c9d1d9;
   padding: 12px 14px;
@@ -311,15 +317,17 @@ body {
   overflow: hidden;
 }
 
+/* Hover bridge */
 .dropdown-content::before {
   content: "";
   position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  height: 12px;
+  top: -18px;
+  left: -12px;
+  right: -12px;
+  height: 18px;
 }
 
+/* Center the dropdown items */
 .dropdown-link {
   display: block;
   text-decoration: none;
@@ -338,8 +346,8 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Desktop dropdown show */
-@media (min-width: 1101px) {
+/* Desktop dropdown show and keep open */
+@media (min-width: 901px) {
   .dropdown:hover .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: block;
@@ -347,7 +355,7 @@ body {
 }
 
 /* ===== Mobile nav ===== */
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .navbar {
     height: var(--nav-h-mobile);
     padding: 0 18px;
@@ -412,8 +420,8 @@ body {
     top: 0;
     left: 0;
     transform: none;
-    margin-top: 8px;
 
+    margin-top: 8px;
     background: transparent;
     border: none;
     box-shadow: none;
@@ -513,7 +521,7 @@ body {
   font-size: 13px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .footer-map { height: 260px; }
 
   .footer-inner {
