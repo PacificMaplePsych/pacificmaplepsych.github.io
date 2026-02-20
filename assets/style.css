@@ -7,19 +7,17 @@
   --home-blue: #c9d1d9;
   --home-plum: #d4c3cf;
 
-  --nav-h: 150px;
-  --nav-h-mobile: 120px;
+  /* Navbar sizing + responsive breakpoint */
+  --nav-h: 120px;
+  --nav-h-mobile: 110px;
 
-  --nav-font-size: 16px;
-
-  --line-policies: 86px;
-  --line-booknow: 112px;
-
-  --nav-slot-w: 118px;
+  /* Make hamburger happen earlier (bigger number = earlier collapse) */
+  --nav-break: 1050px;
 }
 
 /* ===== Global ===== */
 * { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -29,20 +27,25 @@ body {
   background: #fff;
 }
 
-/* Content starts under navbar */
-.entry-content { padding-top: var(--nav-h); }
-@media (max-width: 900px) {
-  .entry-content { padding-top: var(--nav-h-mobile); }
+/* Make the page content begin exactly under the navbar */
+.entry-content {
+  padding-top: var(--nav-h);
 }
 
-/* Typography */
+@media (max-width: var(--nav-break)) {
+  .entry-content {
+    padding-top: var(--nav-h-mobile);
+  }
+}
+
+/* Typography targets you specified */
 .p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
 .hero-h1 { font-size: 45px; font-weight: 700; line-height: 1.15; margin: 0 0 14px 0; }
 .hero-sub { font-size: 25px; font-weight: 700; margin: 0 0 18px 0; }
 .section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
 .service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
 
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .hero-h1 { font-size: 34px; }
   .section-h2 { font-size: 38px; }
 }
@@ -96,7 +99,7 @@ body {
 .home-band-blue { background: var(--home-blue); }
 .home-band-plum { background: var(--home-plum); }
 
-/* ===== Checkerboard ===== */
+/* ===== Checkerboard service rows ===== */
 .service-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -105,7 +108,9 @@ body {
 }
 
 .service-media,
-.service-card { min-height: 420px; }
+.service-card {
+  min-height: 420px;
+}
 
 .service-media {
   background: #fff;
@@ -140,19 +145,23 @@ body {
   justify-content: center;
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px 18px;
   border-radius: 999px;
+
   background: #111;
   color: #fff;
+
   font-weight: 700;
   text-decoration: none;
+
   border: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 10px 18px rgba(122, 93, 124, 0.35);
+
   transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
@@ -164,20 +173,25 @@ body {
   box-shadow: 0 12px 22px rgba(122, 93, 124, 0.45);
 }
 
-.btn-pill:active { transform: translateY(1px); }
+.btn-pill:active {
+  transform: translateY(1px);
+}
 
-/* Mobile stacking for services */
-@media (max-width: 900px) {
+/* ===== Mobile stacking for services ===== */
+@media (max-width: var(--nav-break)) {
   .home-hero { min-height: 460px; padding: 28px 0; }
+
   .service-row { grid-template-columns: 1fr; }
-  .service-media, .service-card { min-height: auto; }
+
+  .service-media,
+  .service-card { min-height: auto; }
+
   .service-img { height: 260px; }
+
   .service-card-inner { padding: 24px 0; }
 }
 
-/* =========================
-   PMPC Navbar
-   ========================= */
+/* ===== PMPC Navbar ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -189,72 +203,71 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 0 24px;
+  padding: 0 24px 0 24px;
   border-bottom: 1px solid var(--pmpc-line);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
+/* Logo */
 .logo-link {
   display: flex;
   align-items: center;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   height: 100%;
-  padding-right: 14px;
-  min-width: 320px;
+  padding-right: 10px;
 }
 
 .logo {
-  height: calc(var(--nav-h) - 14px);
+  height: calc(var(--nav-h) - 22px);
   width: auto;
-  max-width: 760px;
+  max-width: 520px;
   object-fit: contain;
 }
 
+/* Desktop nav */
 .navbar-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
 
-  /* extra right padding so dropdown never clips */
-  padding-right: 20px;
-
-  column-gap: 18px;
+  /* (1) HORIZONTAL spacing halved (was ~22px) */
+  gap: 11px;
+  padding-right: 20px; /* helps prevent Book Now dropdown clipping */
 }
 
+/* Link styling */
 .nav-link {
-  --line-w: var(--line-policies);
   position: relative;
-
-  width: var(--nav-slot-w);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 12px 6px 10px;
-  line-height: 1;
-  vertical-align: middle;
-
+  padding: 10px 10px 8px;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: var(--nav-font-size);
+  font-size: 15px;
   font-weight: 700;
   color: var(--pmpc-black);
   text-decoration: none;
   white-space: nowrap;
 }
 
-.nav-link.nav-cta {
-  --line-w: var(--line-booknow);
-  font-weight: 800;
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--pmpc-purple);
 }
 
+/* Overline (pseudo-element, no layout shifting) */
 .nav-link::before {
   content: "";
   position: absolute;
-  top: 4px;
+  top: 2px;
+
+  /* default line width (Policies width) */
+  width: 78px;
   left: 50%;
-  width: var(--line-w);
   transform: translateX(-50%);
+
   height: 2px;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 999px;
@@ -262,13 +275,19 @@ body {
   pointer-events: none;
 }
 
-.nav-link:hover,
-.nav-link:focus { color: var(--pmpc-purple); }
-
 .nav-link:hover::before,
 .nav-link:focus::before {
   background: var(--pmpc-purple);
   opacity: 0.95;
+}
+
+/* Book Now: line matches Book Now width */
+.nav-cta {
+  font-weight: 800;
+}
+
+.nav-cta::before {
+  width: 96px;
 }
 
 /* Hamburger (desktop hidden) */
@@ -284,50 +303,48 @@ body {
   padding: 10px 10px;
 }
 
+/* Hide hamburger on scroll (mobile only) */
 .hamburger.is-hidden {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.18s ease;
 }
 
-/* Dropdowns (desktop) */
+/* ===== Dropdowns (desktop) ===== */
 .dropdown { position: relative; }
 
-/*
-  IMPORTANT: make dropdown overlap/bridge gap so hover doesn't break.
-  We anchor under the toggle and add a hover-bridge.
-*/
 .dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% - 6px); /* pulls dropdown up slightly to eliminate hover gap */
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
+  margin-top: 10px;
 
-  background-color: #c9d1d9;
-  padding: 12px 14px;
+  /* New dropdown background per your request earlier */
+  background-color: var(--home-blue);
+
+  padding: 10px 12px;
   border-radius: 12px;
   box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.22);
   border: 1px solid rgba(0, 0, 0, 0.10);
   z-index: 1000;
 
-  width: max-content;
-  max-width: min(420px, calc(100vw - 24px));
+  min-width: 240px;
   white-space: nowrap;
-  overflow: hidden;
+  text-align: center; /* center text */
 }
 
-/* Hover bridge */
+/* Hover bridge so it doesn't disappear moving into it */
 .dropdown-content::before {
   content: "";
   position: absolute;
-  top: -18px;
-  left: -12px;
-  right: -12px;
-  height: 18px;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
-/* Center the dropdown items */
 .dropdown-link {
   display: block;
   text-decoration: none;
@@ -335,7 +352,8 @@ body {
   font-weight: 700;
   font-size: 14px;
   color: var(--pmpc-black);
-  padding: 9px 14px;
+
+  padding: 9px 12px;
   border-radius: 10px;
   text-align: center;
 }
@@ -346,8 +364,8 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Desktop dropdown show and keep open */
-@media (min-width: 901px) {
+/* Keep dropdown open on hover/focus */
+@media (min-width: calc(var(--nav-break) + 1px)) {
   .dropdown:hover .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: block;
@@ -355,18 +373,16 @@ body {
 }
 
 /* ===== Mobile nav ===== */
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .navbar {
     height: var(--nav-h-mobile);
     padding: 0 18px;
     gap: 10px;
   }
 
-  .logo-link { min-width: 0; }
-
   .logo {
-    height: calc(var(--nav-h-mobile) - 10px);
-    max-width: 520px;
+    height: calc(var(--nav-h-mobile) - 18px);
+    max-width: 360px;
   }
 
   .hamburger {
@@ -375,6 +391,7 @@ body {
     justify-content: center;
   }
 
+  /* Mobile menu panel */
   .navbar-links {
     display: none;
     position: fixed;
@@ -384,6 +401,7 @@ body {
     background: #fff;
     flex-direction: column;
     align-items: center;
+    gap: 0;
     padding: 12px 0 18px;
     border-bottom: 1px solid rgba(0,0,0,0.18);
     box-shadow: 0 14px 24px rgba(0, 0, 0, 0.10);
@@ -391,22 +409,23 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 998;
+
+    padding-right: 0; /* desktop padding-right not needed */
   }
 
   .navbar-links.active { display: flex; }
 
   .nav-link {
-    width: auto;
-    min-width: 220px;
-    padding: 16px 18px 14px;
-    font-size: 18px;
+    width: min(520px, 92%);
+    justify-content: center;
+    padding: 14px 12px 12px;
   }
 
   .nav-link::before {
-    top: 6px;
-    width: var(--line-w);
+    top: 4px;
   }
 
+  /* Mobile dropdown container */
   .dropdown {
     width: 100%;
     display: flex;
@@ -420,28 +439,33 @@ body {
     top: 0;
     left: 0;
     transform: none;
-
     margin-top: 8px;
+
     background: transparent;
     border: none;
     box-shadow: none;
-    padding: 0;
 
-    width: max-content;
-    max-width: calc(100vw - 24px);
+    padding: 0;
+    min-width: 0;
+    width: min(520px, 92%);
+
+    text-align: center;
   }
 
-  .dropdown-content.open { display: block; }
+  .dropdown-content.open {
+    display: block;
+  }
 
   .dropdown-link {
-    display: block;
-    width: max-content;
-    min-width: 320px;
-    max-width: calc(100vw - 40px);
     text-align: center;
-    background: #c9d1d9;
+    background: var(--home-blue);
     border: 1px solid rgba(0,0,0,0.10);
-    margin: 8px auto 0;
+    margin: 8px 0 0;
+  }
+
+  /* (3) Mobile-only padding after last dropdown item */
+  .dropdown-content.open {
+    padding-bottom: 12px;
   }
 }
 
@@ -521,7 +545,7 @@ body {
   font-size: 13px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: var(--nav-break)) {
   .footer-map { height: 260px; }
 
   .footer-inner {
