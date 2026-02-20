@@ -322,11 +322,11 @@ body {
 /* ✅ Desktop-only: make Team + Book Now dropdowns a bit less wide */
 @media (min-width: 1051px) {
   .dropdown.dropdown-team .dropdown-content {
-    min-width: 210px;
+    min-width: 200px;
   }
 
   .dropdown.dropdown-book .dropdown-content {
-    min-width: 210px;
+    min-width: 200px;
   }
 }
 
