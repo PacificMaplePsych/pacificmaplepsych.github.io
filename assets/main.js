@@ -24,7 +24,7 @@ function bindNavbarInteractions() {
   const burger = document.querySelector(".hamburger");
   if (!menu || !burger) return;
 
-  const BREAKPOINT = 1100;
+  const BREAKPOINT = 900;
 
   function setMenuOpen(isOpen) {
     menu.classList.toggle("active", isOpen);
