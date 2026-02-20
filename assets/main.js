@@ -93,11 +93,8 @@ function bindNavbarInteractions() {
 
       const delta = y - lastY;
 
-      if (delta > 6) {
-        burger.classList.add("is-hidden");
-      } else if (delta < -6) {
-        burger.classList.remove("is-hidden");
-      }
+      if (delta > 6) burger.classList.add("is-hidden");
+      else if (delta < -6) burger.classList.remove("is-hidden");
 
       lastY = y;
     },
