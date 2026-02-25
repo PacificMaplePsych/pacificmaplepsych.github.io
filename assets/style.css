@@ -570,14 +570,50 @@ body {
   }
 }
 
+/* Left column becomes a 2-row grid:
+   Row 1 = photo
+   Row 2 = takes remaining height and centers the logo in it */
+.about-left{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+}
+
+/* Your existing photo styles can stay, just keep margin:0 */
+.about-photo{
+  margin: 0;
+}
+.about-photo img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+/* This is the key: it centers the logo within the remaining white space */
 .about-logo-under-photo{
   display: flex;
   justify-content: center;
-  margin-top: 18px;
+  align-items: center;
+  padding-top: clamp(18px, 3vw, 40px);  /* creates the “gap” under the photo */
+  padding-bottom: clamp(18px, 3vw, 40px);
 }
 
 .about-logo-under-photo img{
-  width: 120px;
+  width: 140px;
   height: auto;
   opacity: 0.95;
+}
+
+/* On mobile (1-column), don't create a big vertical “empty space” */
+@media (max-width: 900px){
+  .about-left{
+    grid-template-rows: auto auto;
+  }
+  .about-logo-under-photo{
+    padding-top: 18px;
+    padding-bottom: 0;
+  }
 }
