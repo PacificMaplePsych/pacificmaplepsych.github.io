@@ -60,11 +60,12 @@
       margin: 0 0 34px 0;
     }
 
-    /* Use your existing .btn-pill styling, just ensure black look */
-    .book-now-page .book-actions .btn-pill {
-      background: #111;
-      color: #fff;
-    }
+    /*
+      IMPORTANT:
+      Do NOT override .btn-pill base/hover styles here.
+      On the home page, .btn-pill already turns purple on hover via global CSS.
+      Previously, overriding background/color here prevented the hover from showing.
+    */
 
     .book-now-page .book-card {
       width: min(520px, calc(100% - 44px));
