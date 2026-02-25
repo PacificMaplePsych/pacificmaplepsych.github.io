@@ -47,65 +47,6 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <link rel="stylesheet" href="/assets/style.css" />
-
-  <!-- Page-only layout helpers -->
-  <style>
-    .page-title-band {
-      background: var(--pmpc-blue);
-      padding: clamp(42px, 7vw, 78px) 0;
-      border-top: 1px solid var(--pmpc-line);
-      border-bottom: 1px solid var(--pmpc-line);
-    }
-    .page-title-band h1 {
-      margin: 0;
-      text-align: center;
-      letter-spacing: 0.04em;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--pmpc-black);
-      font-size: clamp(40px, 5.2vw, 72px);
-      line-height: 1.05;
-    }
-
-    .about-wrap {
-      padding: clamp(34px, 5vw, 64px) 0;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(260px, 520px) 1fr;
-      gap: clamp(18px, 3.2vw, 44px);
-      align-items: start;
-    }
-
-    .about-photo {
-      margin: 0;
-    }
-    .about-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(0, 0, 0, 0.10);
-    }
-
-    .about-text .p-body {
-      margin-top: 0;
-    }
-    .about-text .p-body + .p-body {
-      margin-top: 16px;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-photo {
-        max-width: 560px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -116,7 +57,7 @@
 
   <div id="site-header"></div>
 
-  <main class="entry-content">
+  <main class="entry-content about-page">
 
     <!-- TOP TITLE BAND -->
     <section class="page-title-band" aria-label="About title">
@@ -130,30 +71,30 @@
       <div class="container-narrow">
         <div class="about-grid">
 
-          <!-- Left: floating image -->
+          <!-- Left: floating image + centered logo below -->
           <div class="about-left">
-  <figure class="about-photo">
-    <img
-      src="/images/about-pmpc.jpg"
-      alt="A room at Pacific Maple Psych Centre"
-      loading="lazy"
-      decoding="async"
-      width="1200"
-      height="800"
-    />
-  </figure>
+            <figure class="about-photo">
+              <img
+                src="/images/about-pmpc.jpg"
+                alt="A room at Pacific Maple Psych Centre"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800"
+              />
+            </figure>
 
-  <div class="about-logo-under-photo" aria-hidden="true">
-    <img
-      src="/images/Simple%20Logo%20180x180.png"
-      alt=""
-      loading="lazy"
-      decoding="async"
-      width="180"
-      height="180"
-    />
-  </div>
-</div>
+            <div class="about-logo-under-photo" aria-hidden="true">
+              <img
+                src="/images/Full%20Logo.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                width="360"
+                height="360"
+              />
+            </div>
+          </div>
 
           <!-- Right: text -->
           <div class="about-text">
