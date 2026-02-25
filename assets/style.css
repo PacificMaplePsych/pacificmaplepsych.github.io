@@ -630,9 +630,9 @@ body {
 
 /* Full logo size constraints */
 .about-page .about-logo-under-photo img {
-  width: min(360px, 100%);
-  max-width: 360px;
-  max-height: 360px;
+  width: min(306px, 100%);   /* 360px reduced by 15% */
+  max-width: 306px;
+  max-height: 306px;
   height: auto;
   object-fit: contain;
   opacity: 0.98;
