@@ -18,7 +18,7 @@ function setFooterYear() {
   if (y) y.textContent = String(new Date().getFullYear());
 }
 
-// ===== Navbar behavior (mobile menu + mobile dropdowns + hamburger hide on scroll + collapse on scroll) =====
+// ===== Navbar behavior (mobile menu + mobile dropdowns + collapse opened menu on scroll) =====
 function bindNavbarInteractions() {
   const menu = document.querySelector(".navbar-links");
   const burger = document.querySelector(".hamburger");
@@ -79,32 +79,20 @@ function bindNavbarInteractions() {
     }
   });
 
-  // Hide hamburger on scroll on mobile, but collapse menu if open
+  // Mobile: if menu is open and user scrolls, collapse it
   let lastY = window.scrollY;
 
   window.addEventListener(
     "scroll",
     () => {
-      if (window.innerWidth > navBreakPx) {
-        burger.classList.remove("is-hidden");
-        return;
-      }
+      if (window.innerWidth > navBreakPx) return;
 
       const yNow = window.scrollY;
 
-      // If menu is open, collapse it when user scrolls
+      // If menu is open, collapse it when user scrolls (but keep hamburger visible/clickable)
       if (menu.classList.contains("active")) {
         if (Math.abs(yNow - lastY) > 6) setMenuOpen(false);
-        burger.classList.remove("is-hidden");
-        lastY = yNow;
-        return;
       }
-
-      const goingDown = yNow > lastY + 2;
-      const goingUp = yNow < lastY - 2;
-
-      if (goingDown) burger.classList.add("is-hidden");
-      if (goingUp) burger.classList.remove("is-hidden");
 
       lastY = yNow;
     },
@@ -115,7 +103,6 @@ function bindNavbarInteractions() {
   window.addEventListener("resize", () => {
     if (window.innerWidth > navBreakPx) {
       setMenuOpen(false);
-      burger.classList.remove("is-hidden");
     }
   });
 }
