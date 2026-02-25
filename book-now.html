@@ -48,9 +48,12 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific styling for button row + white info card inside plum band -->
+  <!-- Page-specific styling for button row + PURPLE info card on WHITE section -->
   <style>
-    .book-now-page .book-band { padding: 54px 0; }
+    .book-now-page .book-band {
+      padding: 54px 0;
+      background: #fff; /* invert: section is white now */
+    }
 
     .book-now-page .book-actions {
       display: flex;
@@ -64,13 +67,12 @@
       IMPORTANT:
       Do NOT override .btn-pill base/hover styles here.
       On the home page, .btn-pill already turns purple on hover via global CSS.
-      Previously, overriding background/color here prevented the hover from showing.
     */
 
     .book-now-page .book-card {
-      width: min(520px, calc(100% - 44px));
+      width: min(560px, calc(100% - 44px));
       margin: 0 auto;
-      background: #fff;
+      background: var(--home-plum); /* invert: card is plum now */
       border-radius: 14px;
       padding: 30px 26px;
       text-align: center;
@@ -126,8 +128,8 @@
       </div>
     </section>
 
-    <!-- Plum band section (like home page) -->
-    <section class="home-band home-band-plum book-band" aria-label="Booking options">
+    <!-- Booking section (now white background) -->
+    <section class="book-band" aria-label="Booking options">
       <div class="container-narrow">
 
         <div class="book-actions" aria-label="Booking buttons">
