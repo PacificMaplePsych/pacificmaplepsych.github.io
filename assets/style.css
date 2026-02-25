@@ -32,7 +32,8 @@ body {
 /* Typography targets */
 .p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
 .hero-h1 { font-size: 45px; font-weight: 700; line-height: 1.15; margin: 0 0 14px 0; }
-.hero-sub { font-size: 25px; font-weight: 700; margin: 0 0 18px 0; }
+.hero-sub { font-size: 25px; font-weight: 700; margin: 0 0 10px 0; }
+.hero-tagline { font-size: 0.875rem; margin: 0 0 18px 0; text-align: center; }
 .section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
 .service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
 
@@ -74,6 +75,8 @@ body {
   width: min(980px, calc(100% - 44px));
   padding: 22px 18px;
 }
+
+.hero-actions { margin-top: 6px; }
 
 /* ===== Sections and Bands ===== */
 .home-section {
@@ -344,13 +347,8 @@ body {
 
 /* Desktop-only: make Team + Book Now dropdowns a bit less wide */
 @media (min-width: 1049px) {
-  .dropdown.dropdown-team .dropdown-content {
-    min-width: 190px;
-  }
-
-  .dropdown.dropdown-book .dropdown-content {
-    min-width: 190px;
-  }
+  .dropdown.dropdown-team .dropdown-content { min-width: 190px; }
+  .dropdown.dropdown-book .dropdown-content { min-width: 190px; }
 }
 
 /* Hover bridge */
