@@ -569,3 +569,15 @@ body {
     text-align: center;
   }
 }
+
+.about-logo-under-photo{
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.about-logo-under-photo img{
+  width: 120px;
+  height: auto;
+  opacity: 0.95;
+}
