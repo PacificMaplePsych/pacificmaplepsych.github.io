@@ -47,6 +47,31 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <link rel="stylesheet" href="/assets/style.css" />
+
+  <!-- Page-specific tweaks (keeps global font sizes unchanged) -->
+  <style>
+    /* Center the left column text within its column */
+    .blog-page .about-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 220px;
+    }
+
+    /* Center the right column image and keep it 180x180 (no stretching) */
+    .blog-page .about-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-page .about-photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
@@ -57,7 +82,7 @@
 
   <div id="site-header"></div>
 
-  <main class="entry-content about-page">
+  <main class="entry-content about-page blog-page">
 
     <!-- TOP TITLE BAND -->
     <section class="page-title-band" aria-label="Blog title">
@@ -71,12 +96,12 @@
       <div class="container-narrow">
         <div class="about-grid">
 
-          <!-- Left: text -->
+          <!-- Left: centered text -->
           <div class="about-text">
             <p class="p-body">Blog coming soon!</p>
           </div>
 
-          <!-- Right: single image -->
+          <!-- Right: centered 180x180 image -->
           <div class="about-left">
             <figure class="about-photo">
               <img
