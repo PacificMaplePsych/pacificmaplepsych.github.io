@@ -7,18 +7,23 @@
   <title>Pacific Maple Psych Centre | Psychological Assessments and Therapy in Vancouver, BC</title>
   <meta name="description" content="Pacific Maple Psych Centre offers psychological assessments, individual therapy, group therapy, ASD assessments, and couples therapy in Vancouver and across British Columbia." />
 
+  <meta name="theme-color" content="#7a5d7c" />
+
   <!-- Social previews (Open Graph + Twitter) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
+  <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Pacific Maple Psych Centre | Psychological Assessments and Therapy" />
   <meta property="og:description" content="Psychological assessments and therapy in Vancouver and across British Columbia. ASD assessments, individual, group, and couples therapy." />
   <meta property="og:url" content="https://pacificmaplepsych.com/" />
   <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
+  <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Pacific Maple Psych Centre | Psychological Assessments and Therapy" />
   <meta name="twitter:description" content="Psychological assessments and therapy in Vancouver and across British Columbia." />
   <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
+  <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://pacificmaplepsych.com/" />
@@ -32,39 +37,52 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-  <!-- Structured data (Local business) -->
+  <!-- Structured data (Organization + MedicalBusiness + WebSite) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Pacific Maple Psych Centre",
-    "url": "https://pacificmaplepsych.com/",
-    "logo": "https://pacificmaplepsych.com/images/Simple%20Logo%20180x180.png",
-    "image": "https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg",
-    "telephone": "+1-604-774-5501",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Unit #619 - 470 Granville St.",
-      "addressLocality": "Vancouver",
-      "addressRegion": "BC",
-      "postalCode": "V6C 1V4",
-      "addressCountry": "CA"
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
+        "@type": "Organization",
+        "@id": "https://pacificmaplepsych.com/#organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com/",
+        "logo": "https://pacificmaplepsych.com/images/Simple%20Logo%20180x180.png"
+      },
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://pacificmaplepsych.com/#medicalbusiness",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com/",
+        "image": "https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg",
+        "telephone": "+1-604-774-5501",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Unit #619 - 470 Granville St.",
+          "addressLocality": "Vancouver",
+          "addressRegion": "BC",
+          "postalCode": "V6C 1V4",
+          "addressCountry": "CA"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "areaServed": ["Vancouver, BC", "British Columbia"],
+        "medicalSpecialty": ["Psychology", "Psychotherapy"],
+        "parentOrganization": { "@id": "https://pacificmaplepsych.com/#organization" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://pacificmaplepsych.com/#website",
+        "url": "https://pacificmaplepsych.com/",
+        "name": "Pacific Maple Psych Centre",
+        "publisher": { "@id": "https://pacificmaplepsych.com/#organization" }
       }
-    ],
-    "areaServed": [
-      "Vancouver, BC",
-      "British Columbia"
-    ],
-    "medicalSpecialty": [
-      "Psychology",
-      "Psychotherapy"
     ]
   }
   </script>
@@ -87,8 +105,11 @@
         </h1>
 
         <p class="hero-sub">Welcome to <b>Pacific Maple Psych Centre</b></p>
-<centre><font size=3><i>Enhancing clarity, growth, and healing</i></font></centre><br/><br/>
-        <a class="btn-pill" href="#services-start">Our Services</a>
+        <p class="hero-tagline"><em>Enhancing clarity, growth, and healing</em></p>
+
+        <div class="hero-actions">
+          <a class="btn-pill" href="#services-start">Our Services</a>
+        </div>
       </div>
     </section>
 
@@ -117,12 +138,10 @@
 
         <p class="p-body">
           At Pacific Maple Psych Centre, we understand that every person's journey is unique. That's why we offer a range of personalized services tailored to meet your specific needs, with in-person appointments in downtown Vancouver and virtual care throughout British Columbia.
-          
         </p>
 
         <p class="p-body">
           Whether you are seeking a psychological assessment, individual therapy, group therapy, or Autism Spectrum Disorder (ASD) assessments, our experienced and compassionate professionals are here to support you every step of the way.
-          
         </p>
       </div>
     </section>
@@ -149,14 +168,30 @@
       </div>
 
       <div class="service-media">
-        <img src="/images/service-psychological-assessment.jpg" alt="Psychological assessment" class="service-img" />
+        <img
+          src="/images/service-psychological-assessment.jpg"
+          alt="Psychological assessment"
+          class="service-img"
+          loading="lazy"
+          decoding="async"
+          width="900"
+          height="600"
+        />
       </div>
     </section>
 
     <!-- 2) Individual Therapy (image LEFT) -->
     <section class="service-row">
       <div class="service-media">
-        <img src="/images/service-individual-therapy.jpg" alt="Individual therapy" class="service-img" />
+        <img
+          src="/images/service-individual-therapy.jpg"
+          alt="Individual therapy"
+          class="service-img"
+          loading="lazy"
+          decoding="async"
+          width="900"
+          height="600"
+        />
       </div>
 
       <div class="service-card home-band-blue">
@@ -201,14 +236,30 @@
       </div>
 
       <div class="service-media">
-        <img src="/images/service-group-therapy.jpg" alt="Group therapy" class="service-img" />
+        <img
+          src="/images/service-group-therapy.jpg"
+          alt="Group therapy"
+          class="service-img"
+          loading="lazy"
+          decoding="async"
+          width="900"
+          height="600"
+        />
       </div>
     </section>
 
     <!-- 4) ASD Assessments (image LEFT) -->
     <section class="service-row">
       <div class="service-media">
-        <img src="/images/service-ASD-assessment.jpg" alt="ASD assessment" class="service-img" />
+        <img
+          src="/images/service-ASD-assessment.jpg"
+          alt="ASD assessment"
+          class="service-img"
+          loading="lazy"
+          decoding="async"
+          width="900"
+          height="600"
+        />
       </div>
 
       <div class="service-card home-band-blue">
@@ -220,7 +271,7 @@
           </p>
 
           <p class="p-body">
-            Together, we unlock a deeper understanding of autism and empower individuals to realize their full potential. You will receive clear feedback, written documentation, and recommendations that can guide supports at school, work, and home. Our team is dedicated to guiding you on this transformative journey of awareness and growth. 
+            Together, we unlock a deeper understanding of autism and empower individuals to realize their full potential. You will receive clear feedback, written documentation, and recommendations that can guide supports at school, work, and home. Our team is dedicated to guiding you on this transformative journey of awareness and growth.
           </p>
 
           <div class="service-actions">
@@ -238,7 +289,7 @@
           <h3 class="service-h3">Couples Therapy</h3>
 
           <p class="p-body">
-            At Pacific Maple Psych Centre, we understand that relationships can be both incredibly fulfilling and deeply challenging. Even the strongest partnerships can experience periods of conflict, distance, or misunderstanding. Couples therapy helps partners rebuild connection, improve communication, and work through conflict in a supportive, structured setting. 
+            At Pacific Maple Psych Centre, we understand that relationships can be both incredibly fulfilling and deeply challenging. Even the strongest partnerships can experience periods of conflict, distance, or misunderstanding. Couples therapy helps partners rebuild connection, improve communication, and work through conflict in a supportive, structured setting.
           </p>
 
           <p class="p-body">
@@ -253,7 +304,15 @@
       </div>
 
       <div class="service-media">
-        <img src="/images/service-couples-therapy.jpg" alt="Couples therapy" class="service-img" />
+        <img
+          src="/images/service-couples-therapy.jpg"
+          alt="Couples therapy"
+          class="service-img"
+          loading="lazy"
+          decoding="async"
+          width="900"
+          height="600"
+        />
       </div>
     </section>
 
@@ -263,7 +322,7 @@
         <h2 class="section-h2">Professional. Supportive. Confidential.</h2>
 
         <p class="p-body">
-         We prioritize your privacy and well-being. Our mental health professionals adhere to strict ethical guidelines and evidence-based practices to support a safe, professional, and effective care experience.
+          We prioritize your privacy and well-being. Our mental health professionals adhere to strict ethical guidelines and evidence-based practices to support a safe, professional, and effective care experience.
         </p>
 
         <p class="p-body">
