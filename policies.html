@@ -47,19 +47,18 @@
   <link rel="stylesheet" href="/assets/style.css" />
 
   <style>
-    /* Page-specific layout to match the old Policies page: label left, body right */
     .policies-page .policies-wrap { padding: clamp(34px, 5vw, 64px) 0; }
 
-    /* Slightly narrower than container-narrow to feel more centered like old site */
+    /* Narrower overall block to match old site */
     .policies-page .policies-inner {
-      width: min(900px, calc(100% - 44px));
+      width: min(820px, calc(100% - 44px));
       margin: 0 auto;
     }
 
     .policies-page .policies-grid {
       display: grid;
-      grid-template-columns: 160px 1fr;  /* narrow left column for headings */
-      column-gap: 46px;
+      grid-template-columns: 150px 1fr; /* slightly narrower label col */
+      column-gap: 28px;                /* snugger gap like old site */
       row-gap: 34px;
       align-items: start;
     }
