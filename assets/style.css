@@ -570,20 +570,47 @@ body {
   }
 }
 
-/* Left column becomes a 2-row grid:
-   Row 1 = photo
-   Row 2 = takes remaining height and centers the logo in it */
-.about-left{
+/* ===== About page only ===== */
+/* Add this class to about.html:
+   <main class="entry-content about-page"> */
+.about-page .page-title-band {
+  background: var(--pmpc-blue);
+  padding: clamp(42px, 7vw, 78px) 0;
+  border-top: 1px solid var(--pmpc-line);
+  border-bottom: 1px solid var(--pmpc-line);
+}
+
+.about-page .page-title-band h1 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--pmpc-black);
+  font-size: clamp(40px, 5.2vw, 72px);
+  line-height: 1.05;
+}
+
+.about-page .about-wrap {
+  padding: clamp(34px, 5vw, 64px) 0;
+}
+
+.about-page .about-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 520px) 1fr;
+  gap: clamp(18px, 3.2vw, 44px);
+  align-items: start;
+}
+
+.about-page .about-left {
   display: grid;
   grid-template-rows: auto 1fr;
   align-items: start;
 }
 
-/* Your existing photo styles can stay, just keep margin:0 */
-.about-photo{
-  margin: 0;
-}
-.about-photo img{
+.about-page .about-photo { margin: 0; }
+
+.about-page .about-photo img {
   display: block;
   width: 100%;
   height: auto;
@@ -592,27 +619,30 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
-/* This is the key: it centers the logo within the remaining white space */
-.about-logo-under-photo{
+.about-page .about-logo-under-photo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: clamp(18px, 3vw, 40px);  /* creates the “gap” under the photo */
+  padding-top: clamp(18px, 3vw, 40px);
   padding-bottom: clamp(18px, 3vw, 40px);
 }
 
-.about-logo-under-photo img{
+.about-page .about-logo-under-photo img {
   width: 140px;
   height: auto;
   opacity: 0.95;
 }
 
-/* On mobile (1-column), don't create a big vertical “empty space” */
-@media (max-width: 900px){
-  .about-left{
+@media (max-width: 900px) {
+  .about-page .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .about-left {
     grid-template-rows: auto auto;
   }
-  .about-logo-under-photo{
+
+  .about-page .about-logo-under-photo {
     padding-top: 18px;
     padding-bottom: 0;
   }
