@@ -113,6 +113,7 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 
 .service-card {
@@ -166,12 +167,45 @@ body {
 
 .btn-pill:active { transform: translateY(1px); }
 
-/* Mobile stacking for services */
+/* ===== Services responsiveness ===== */
+
+/* Tablet range: hamburger may show, but keep the 2-column checkerboard */
 @media (max-width: 1050px) {
   .home-hero { min-height: 460px; padding: 28px 0; }
-  .service-row { grid-template-columns: 1fr; }
-  .service-media, .service-card { min-height: auto; }
-  .service-img { height: 260px; }
+
+  .service-row { grid-template-columns: 1fr 1fr; }
+
+  .service-media,
+  .service-card {
+    min-height: 360px;
+  }
+
+  /* Bias crops upward so faces/hands are less likely to be cut off */
+  .service-img { object-position: center top; }
+
+  .service-card-inner { padding: 24px 0; }
+}
+
+/* True mobile: stack, but enforce image then text for every section */
+@media (max-width: 780px) {
+  .service-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-media { order: 1; }
+  .service-card { order: 2; }
+
+  .service-media,
+  .service-card {
+    min-height: auto;
+  }
+
+  .service-img {
+    height: 260px;
+    object-position: center top;
+  }
+
   .service-card-inner { padding: 24px 0; }
 }
 
@@ -193,7 +227,7 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo sizing: keep it big (like your “perfect size” state) */
+/* Logo sizing */
 .logo-link {
   display: flex;
   align-items: center;
@@ -216,11 +250,8 @@ body {
   justify-content: flex-end;
 
   margin-left: auto;
-
-  /* not crowded */
   gap: 18px;
 
-  /* keeps dropdown from clipping on the right */
   padding-right: 20px;
 }
 
@@ -232,7 +263,6 @@ body {
   align-items: center;
   justify-content: center;
 
-  /* keep text nicely centered under the overline */
   padding: 14px 10px 8px;
 
   font-family: Helvetica, Arial, sans-serif;
@@ -247,13 +277,13 @@ body {
 .nav-link:hover,
 .nav-link:focus { color: var(--pmpc-purple); }
 
-/* Overline: uniform width for all normal links */
+/* Overline */
 .nav-link::before {
   content: "";
   position: absolute;
   top: 6px;
 
-  width: 78px;              /* matches “Policies” vibe */
+  width: 78px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -270,7 +300,7 @@ body {
   opacity: 0.95;
 }
 
-/* Book Now stays bold and line matches Book Now width exactly */
+/* Book Now */
 .nav-cta { font-weight: 800; }
 .nav-cta::before { width: 96px; }
 
@@ -299,7 +329,6 @@ body {
   transform: translateX(-50%);
   margin-top: 10px;
 
-  /* your requested dropdown background */
   background-color: var(--home-blue);
 
   padding: 10px 12px;
@@ -313,7 +342,7 @@ body {
   text-align: center;
 }
 
-/* ✅ Desktop-only: make Team + Book Now dropdowns a bit less wide */
+/* Desktop-only: make Team + Book Now dropdowns a bit less wide */
 @media (min-width: 1049px) {
   .dropdown.dropdown-team .dropdown-content {
     min-width: 190px;
@@ -324,7 +353,7 @@ body {
   }
 }
 
-/* Hover bridge: prevents “disappears when moving mouse into dropdown” */
+/* Hover bridge */
 .dropdown-content::before {
   content: "";
   position: absolute;
@@ -372,14 +401,14 @@ body {
     max-width: 440px;
   }
 
-  /* show hamburger on mobile widths */
+  /* show hamburger */
   .hamburger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* hide the horizontal link row entirely at mobile widths */
+  /* hide horizontal links until opened */
   .navbar-links {
     display: none;
     position: fixed;
@@ -428,10 +457,9 @@ body {
     border: none;
     box-shadow: none;
 
-    padding: 0 0 12px 0; /* bottom space before next main link */
+    padding: 0 0 12px 0;
     min-width: 0;
 
-    /* do not be excessively wide */
     width: auto;
     max-width: min(520px, 92%);
     text-align: center;
@@ -453,7 +481,7 @@ body {
   }
 }
 
-/* ===== PMPC Footer (unchanged) ===== */
+/* ===== PMPC Footer ===== */
 .site-footer { width: 100%; }
 
 .footer-map {
