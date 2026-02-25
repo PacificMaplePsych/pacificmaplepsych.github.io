@@ -571,7 +571,7 @@ body {
 }
 
 /* ===== About page only ===== */
-/* Add this class to about.html:
+/* Make sure about.html has:
    <main class="entry-content about-page"> */
 .about-page .page-title-band {
   background: var(--pmpc-blue);
@@ -584,7 +584,7 @@ body {
   margin: 0;
   text-align: center;
   letter-spacing: 0.04em;
-  font-weight: 800;
+  font-weight: 400; /* regular (less bold) */
   text-transform: uppercase;
   color: var(--pmpc-black);
   font-size: clamp(40px, 5.2vw, 72px);
@@ -619,6 +619,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
+/* Centers the logo within remaining left-column space, and adds a gap below the photo */
 .about-page .about-logo-under-photo {
   display: flex;
   justify-content: center;
@@ -627,10 +628,14 @@ body {
   padding-bottom: clamp(18px, 3vw, 40px);
 }
 
+/* Full logo size constraints */
 .about-page .about-logo-under-photo img {
-  width: 140px;
+  width: min(360px, 100%);
+  max-width: 360px;
+  max-height: 360px;
   height: auto;
-  opacity: 0.95;
+  object-fit: contain;
+  opacity: 0.98;
 }
 
 @media (max-width: 900px) {
