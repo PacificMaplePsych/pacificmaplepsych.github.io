@@ -48,10 +48,23 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific tweaks (keeps global font sizes unchanged) -->
+  <!-- Page-specific tweaks to restore 2-column layout + floating styled image -->
   <style>
-    /* Center the left column text within its column */
-    .blog-page .about-text {
+    /* Ensure we ALWAYS have the 2-column grid on desktop, regardless of global CSS changes */
+    .blog-page .blog-wrap {
+      padding: clamp(34px, 5vw, 64px) 0;
+      background: #fff;
+    }
+
+    .blog-page .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 260px; /* text left, image right */
+      gap: clamp(18px, 3.2vw, 44px);
+      align-items: center;
+    }
+
+    /* Center the text block within the left column */
+    .blog-page .blog-text {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,17 +72,33 @@
       min-height: 220px;
     }
 
-    /* Center the right column image and keep it 180x180 (no stretching) */
-    .blog-page .about-left {
+    /* Right column image: rounded corners + shadow like About */
+    .blog-page .blog-logo {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .blog-page .about-photo img {
+
+    .blog-page .blog-logo img {
       width: 180px;
       height: 180px;
       object-fit: contain;
       display: block;
+
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+      border: 1px solid rgba(0, 0, 0, 0.10);
+      background: #fff;
+    }
+
+    /* Mobile: stack, keep text above image */
+    @media (max-width: 900px) {
+      .blog-page .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .blog-page .blog-text { min-height: auto; }
     }
   </style>
 </head>
@@ -82,7 +111,7 @@
 
   <div id="site-header"></div>
 
-  <main class="entry-content about-page blog-page">
+  <main class="entry-content blog-page">
 
     <!-- TOP TITLE BAND -->
     <section class="page-title-band" aria-label="Blog title">
@@ -92,27 +121,25 @@
     </section>
 
     <!-- CONTENT -->
-    <section class="about-wrap" aria-label="Pacific Maple Psych Centre blog">
+    <section class="blog-wrap" aria-label="Pacific Maple Psych Centre blog">
       <div class="container-narrow">
-        <div class="about-grid">
+        <div class="blog-grid">
 
           <!-- Left: centered text -->
-          <div class="about-text">
+          <div class="blog-text">
             <p class="p-body">Blog coming soon!</p>
           </div>
 
-          <!-- Right: centered 180x180 image -->
-          <div class="about-left">
-            <figure class="about-photo">
-              <img
-                src="/images/Simple%20Logo%20180x180.png"
-                alt="Pacific Maple Psych Centre logo"
-                loading="lazy"
-                decoding="async"
-                width="180"
-                height="180"
-              />
-            </figure>
+          <!-- Right: floating styled image -->
+          <div class="blog-logo">
+            <img
+              src="/images/Simple%20Logo%20180x180.png"
+              alt="Pacific Maple Psych Centre logo"
+              loading="lazy"
+              decoding="async"
+              width="180"
+              height="180"
+            />
           </div>
 
         </div>
