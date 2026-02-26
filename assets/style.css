@@ -48,6 +48,27 @@ body {
   margin: 0 auto;
 }
 
+/* ===== Global Title Band (used on About/Blog/Policies/Book Now/Services/etc.) ===== */
+.page-title-band {
+  background: var(--home-blue); /* #c9d1d9 */
+  padding: clamp(42px, 7vw, 78px) 0;
+  border-top: 1px solid var(--pmpc-line);
+  border-bottom: 1px solid var(--pmpc-line);
+}
+
+/* Use on both <h1> and <h2> inside the title band */
+.page-title-band h1,
+.page-title-band h2 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--pmpc-black);
+  font-size: clamp(40px, 5.2vw, 72px);
+  line-height: 1.05;
+}
+
 /* ===== Home Hero ===== */
 .home-hero {
   position: relative;
