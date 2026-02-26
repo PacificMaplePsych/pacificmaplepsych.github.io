@@ -50,7 +50,6 @@
 
   <!-- Page-specific tweaks to restore 2-column layout + floating styled image -->
   <style>
-    /* Ensure we ALWAYS have the 2-column grid on desktop, regardless of global CSS changes */
     .blog-page .blog-wrap {
       padding: clamp(34px, 5vw, 64px) 0;
       background: #fff;
@@ -58,12 +57,11 @@
 
     .blog-page .blog-grid {
       display: grid;
-      grid-template-columns: 1fr 260px; /* text left, image right */
+      grid-template-columns: 1fr 200px; /* narrower right column pulls image left */
       gap: clamp(18px, 3.2vw, 44px);
       align-items: center;
     }
 
-    /* Center the text block within the left column */
     .blog-page .blog-text {
       display: flex;
       align-items: center;
@@ -72,11 +70,11 @@
       min-height: 220px;
     }
 
-    /* Right column image: rounded corners + shadow like About */
+    /* Right column: align image toward the center by pinning it to left edge of the right column */
     .blog-page .blog-logo {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .blog-page .blog-logo img {
@@ -91,7 +89,6 @@
       background: #fff;
     }
 
-    /* Mobile: stack, keep text above image */
     @media (max-width: 900px) {
       .blog-page .blog-grid {
         grid-template-columns: 1fr;
@@ -99,6 +96,7 @@
       }
 
       .blog-page .blog-text { min-height: auto; }
+      .blog-page .blog-logo { justify-content: center; }
     }
   </style>
 </head>
@@ -125,12 +123,10 @@
       <div class="container-narrow">
         <div class="blog-grid">
 
-          <!-- Left: centered text -->
           <div class="blog-text">
             <p class="p-body">Blog coming soon!</p>
           </div>
 
-          <!-- Right: floating styled image -->
           <div class="blog-logo">
             <img
               src="/images/Simple%20Logo%20180x180.png"
