@@ -121,12 +121,12 @@
       border: 0;
     }
 
-    /* Process split (image left, text right) */
+    /* Process split (image left, text right) - NOW PLUM BACKGROUND */
     .asd-page .process-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: stretch;
-      background: #fff;
+      background: var(--home-plum);
     }
 
     .asd-page .process-left {
@@ -146,7 +146,7 @@
     }
 
     .asd-page .process-right {
-      background: #fff;
+      background: var(--home-plum);
       padding: clamp(26px, 3.2vw, 44px);
       display: flex;
       align-items: center;
@@ -197,8 +197,12 @@
       color: #fff;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      font-size: clamp(26px, 4.4vw, 54px);
-      line-height: 1.1;
+      font-size: clamp(22px, 3.6vw, 42px); /* smaller so it stays to ~2 lines */
+      line-height: 1.12;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      text-wrap: balance;
     }
 
     /* Included columns */
@@ -319,6 +323,11 @@
       .asd-page .cta-actions {
         justify-content: center;
       }
+
+      /* On small screens allow wrapping naturally */
+      .asd-page .included-band h2 {
+        font-size: clamp(20px, 5.2vw, 34px);
+      }
     }
   </style>
 </head>
@@ -430,14 +439,14 @@
     </section>
 
     <!-- INCLUDED BAND (dark blue) -->
-    <section class="included-band" aria-label="What is included title">
+    <section class="included-band" aria-label="Report contents title">
       <div class="container-narrow">
-        <h2>What Included Upon<br/>Completion of the Report</h2>
+        <h2>Contents of the Final Report</h2>
       </div>
     </section>
 
     <!-- INCLUDED COLUMNS -->
-    <section class="split-wrap" aria-label="What is included">
+    <section class="split-wrap" aria-label="Report contents">
       <div class="included-grid">
         <div class="included-col plum" aria-label="Children inclusions">
           <h3>Children</h3>
