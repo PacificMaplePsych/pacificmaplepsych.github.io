@@ -77,6 +77,7 @@
       justify-content: center;
     }
 
+    /* Middle split */
     .couples-therapy-page .split-wrap {
       background: #fff;
       padding: 0;
@@ -88,33 +89,48 @@
       align-items: stretch;
     }
 
+    /* LEFT: keep the text block centered within the left half */
     .couples-therapy-page .split-left {
       background: #fff;
-      padding: clamp(24px, 3vw, 40px);
+      padding: clamp(26px, 3.2vw, 44px);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 14px;
+      align-items: center;   /* centers the inner column horizontally */
     }
 
-    .couples-therapy-page .split-left .p-body {
-      margin: 0;
+    .couples-therapy-page .split-left-inner {
+      width: 100%;
+      max-width: 560px;      /* prevents the "spread out" feeling */
+      margin: 0 auto;        /* centers inside the left column */
+      text-align: left;
     }
 
+    .couples-therapy-page .split-left-inner .p-body {
+      margin: 0 0 16px;
+    }
+
+    .couples-therapy-page .split-left-inner .p-body:last-child {
+      margin-bottom: 0;
+    }
+
+    /* RIGHT: avoid cropping/zooming */
     .couples-therapy-page .split-right {
       background: #fff;
-      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
     .couples-therapy-page .split-right img {
       width: 100%;
-      height: 100%;
+      height: clamp(280px, 36vw, 430px);
       display: block;
-      object-fit: cover;
+      object-fit: contain;     /* key change: no crop */
       object-position: center;
       border: 0;
     }
 
+    /* Bottom band */
     .couples-therapy-page .cta-band {
       text-align: center;
       padding: clamp(34px, 5vw, 62px) 0;
@@ -147,8 +163,12 @@
         grid-template-columns: 1fr;
       }
 
-      .couples-therapy-page .split-right {
-        min-height: 260px;
+      .couples-therapy-page .split-right img {
+        height: clamp(240px, 55vw, 380px);
+      }
+
+      .couples-therapy-page .split-left {
+        padding: 22px 18px;
       }
     }
   </style>
@@ -164,7 +184,7 @@
 
   <main class="entry-content couples-therapy-page">
 
-    <!-- TOP HERO BAND (use same blue band styling as Services page) -->
+    <!-- TOP HERO BAND -->
     <section class="page-title-band hero-band" aria-label="Couples Therapy hero">
       <div class="container-narrow">
         <h1>Couples Therapy</h1>
@@ -177,21 +197,23 @@
       </div>
     </section>
 
-    <!-- MIDDLE SPLIT: white text block (left) + image (right) -->
+    <!-- MIDDLE SPLIT -->
     <section class="split-wrap" aria-label="Couples therapy overview">
       <div class="split-grid">
         <div class="split-left">
-          <p class="p-body">
-            At Pacific Maple Psych Centre, we recognize that relationships are one of the most significant aspects of our lives, yet they can also be the source of some of our greatest challenges.
-          </p>
+          <div class="split-left-inner">
+            <p class="p-body">
+              At Pacific Maple Psych Centre, we recognize that relationships are one of the most significant aspects of our lives, yet they can also be the source of some of our greatest challenges.
+            </p>
 
-          <p class="p-body">
-            Our couples therapy services are designed to support couples in navigating the complexities of their relationships with the aim of fostering healthy communication, deeper connection, and greater emotional intimacy.
-          </p>
+            <p class="p-body">
+              Our couples therapy services are designed to support couples in navigating the complexities of their relationships with the aim of fostering healthy communication, deeper connection, and greater emotional intimacy.
+            </p>
 
-          <p class="p-body">
-            Whether you and your partner are facing conflicts, struggling with communication, feeling emotionally distant, or dealing with specific challenges such as infidelity, parenting challenges, or life transitions, we are here to help.
-          </p>
+            <p class="p-body">
+              Whether you and your partner are facing conflicts, struggling with communication, feeling emotionally distant, or dealing with specific challenges such as infidelity, parenting challenges, or life transitions, we are here to help.
+            </p>
+          </div>
         </div>
 
         <div class="split-right">
