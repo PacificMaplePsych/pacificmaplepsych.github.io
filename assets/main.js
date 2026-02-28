@@ -114,3 +114,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   setFooterYear();
   bindNavbarInteractions();
 });
+
+// Floating "Book Now" button (site-wide)
+(function addFloatingBookNow() {
+  if (document.querySelector('.floating-book-now')) return;
+
+  const btn = document.createElement('div');
+  btn.className = 'floating-book-now';
+
+  btn.innerHTML = `
+    <a href="/book-now.html" aria-label="Book now">Book Now</a>
+  `;
+
+  document.body.appendChild(btn);
+})();
