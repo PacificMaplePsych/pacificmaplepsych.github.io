@@ -136,12 +136,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-    <url>
+  <url>
     <loc>https://pacificmaplepsych.com/team/jasmin-gish.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-    <url>
+  <url>
     <loc>https://pacificmaplepsych.com/team/yasmin-abdoulraman.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -193,4 +193,67 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Regional pages (Psychologists & Psychotherapists) -->
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-abbotsford.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-burnaby.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-coquitlam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-delta.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-kamloops.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-kelowna.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-langley.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-nanaimo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-richmond.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-saanich.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-surrey.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/regions/psychologists-psychotherapist-victoria.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
