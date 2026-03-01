@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Meet the Team | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Meet the team at Pacific Maple Psych Centre. Learn about our psychiatrists, psychologists, psychometrists, doctoral students, and administrative staff." />
+  <meta name="description" content="Meet the team at Pacific Maple Psych Centre." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,7 +23,7 @@
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Meet the Team | Pacific Maple Psych Centre" />
-  <meta property="og:description" content="Meet the team at Pacific Maple Psych Centre. Learn about our psychiatrists, psychologists, psychometrists, doctoral students, and administrative staff." />
+  <meta property="og:description" content="Meet the team at Pacific Maple Psych Centre." />
   <meta property="og:url" content="https://pacificmaplepsych.com/team.html" />
   <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
@@ -34,7 +34,6 @@
   <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://pacificmaplepsych.com/team.html" />
 
   <!-- Favicons -->
@@ -42,186 +41,165 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/Simple%20Logo%2016x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/Simple%20Logo%20180x180.png" />
 
-  <!-- Indexing basics (HTML-side only) -->
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <link rel="stylesheet" href="/assets/style.css" />
 
   <style>
-    .team-page .team-wrap {
-      padding: clamp(34px, 5.5vw, 62px) 0;
+    .team-page { background: #fff; }
+
+    /* Top anchor target */
+    #top { scroll-margin-top: calc(var(--nav-h, 120px) + 12px); }
+    @media (max-width: 1050px) {
+      #top { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 12px); }
+    }
+
+    /* Section anchors (so fixed navbar doesn't cover headings) */
+    .team-anchor { scroll-margin-top: calc(var(--nav-h, 120px) + 18px); }
+    @media (max-width: 1050px) {
+      .team-anchor { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 18px); }
+    }
+
+    .team-wrap {
+      padding: clamp(28px, 4vw, 46px) 0 clamp(60px, 6vw, 88px);
       background: #fff;
       text-align: center;
     }
 
-    .team-page .section-title {
-      margin: 0;
-      font-size: clamp(30px, 4.2vw, 54px);
-      font-weight: 800;
-      line-height: 1.05;
-      color: #111;
-      letter-spacing: 0.02em;
-    }
-
-    /* breathing room under each section header */
-    .team-page .section-head {
-      padding-bottom: 22px;
-    }
-
-    .team-page .section-sub {
-      margin: 0 auto 18px;
-      width: min(900px, calc(100% - 44px));
-      font-size: 18px;
-      line-height: 1.5;
-      color: #111;
-    }
-
-    /* Top section jump buttons */
+    /* Jump buttons */
     .team-jump {
+      width: min(1120px, calc(100% - 44px));
+      margin: 0 auto 26px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       justify-content: center;
-      margin: 18px auto 0;
-      width: min(980px, calc(100% - 44px));
     }
 
-    .team-jump a {
+    .jump-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 10px 16px;
       border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.14);
       background: #111;
       color: #fff;
       text-decoration: none;
       font-weight: 800;
-      border: 1px solid rgba(0,0,0,0.15);
-      box-shadow: 0 10px 18px rgba(122, 93, 124, 0.28);
+      font-size: 0.9rem;
+      box-shadow: 0 10px 18px rgba(122, 93, 124, 0.25);
       transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-      font-size: 14px;
-      letter-spacing: 0.03em;
     }
 
-    .team-jump a:hover,
-    .team-jump a:focus {
-      background: var(--pmpc-purple);
+    .jump-btn:hover,
+    .jump-btn:focus {
+      background: var(--pmpc-purple, #7a5d7c);
       color: #fff;
-      box-shadow: 0 12px 22px rgba(122, 93, 124, 0.45);
-    }
-
-    .team-jump a:active { transform: translateY(1px); }
-
-    /* Top anchor (for Back to top) */
-    #top { scroll-margin-top: calc(var(--nav-h, 120px) + 14px); }
-    @media (max-width: 1050px) {
-      #top { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 14px); }
-    }
-
-    /* Section anchor offset so headings are not hidden under fixed nav */
-    .team-anchor {
-      scroll-margin-top: calc(var(--nav-h, 120px) + 18px);
-    }
-    @media (max-width: 1050px) {
-      .team-anchor { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 18px); }
-    }
-
-    /* Grid */
-    .team-grid {
-      width: min(1280px, calc(100% - 60px));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-      align-items: start;
-    }
-
-    @media (max-width: 1050px) {
-      .team-grid {
-        width: min(980px, calc(100% - 44px));
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .team-grid {
-        width: min(560px, calc(100% - 32px));
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-    }
-
-    /* when a row has only 2 people, center them */
-    .team-grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      width: min(900px, calc(100% - 60px));
-      justify-content: center;
-    }
-    @media (max-width: 1050px) {
-      .team-grid.two { width: min(980px, calc(100% - 44px)); }
-    }
-    @media (max-width: 640px) {
-      .team-grid.two { grid-template-columns: 1fr; width: min(560px, calc(100% - 32px)); }
-    }
-
-    /* Person card */
-    .person {
-      text-align: center;
-      padding: 8px 6px 0;
-    }
-
-    .person a.photo-link {
-      display: inline-block;
+      box-shadow: 0 12px 22px rgba(122, 93, 124, 0.35);
       text-decoration: none;
     }
 
-    .person-photo {
-      width: 132px;
-      height: 132px;
+    .jump-btn:active { transform: translateY(1px); }
+
+    /* Section divider + title block */
+    .team-section {
+      width: min(1240px, calc(100% - 44px));
+      margin: 0 auto;
+      border-top: 1px solid rgba(0,0,0,0.14);
+      padding: 0;
+    }
+
+    /* THIS is the key change:
+       padding-top and padding-bottom are identical, so the gap below the header
+       matches the gap above it (between the divider line and the header). */
+    .section-head {
+      padding: 56px 0 56px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(38px, 5.2vw, 64px);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      color: #111;
+    }
+
+    .people-grid {
+      padding: 0 0 56px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* centers rows with 1 or 2 people */
+      gap: 54px 72px;
+    }
+
+    .person {
+      width: 320px;
+      max-width: 92vw;
+      text-align: center;
+    }
+
+    .person-photo-link {
+      display: inline-block;
       border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.16);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .person-photo-link:hover,
+    .person-photo-link:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+    }
+
+    .person-photo {
+      width: 112px;
+      height: 112px;
       object-fit: cover;
-      border: 1px solid rgba(0,0,0,0.14);
-      box-shadow: 0 14px 26px rgba(0,0,0,0.08);
-      background: #f2f2f2;
+      display: block;
     }
 
     .person-name {
-      margin: 12px 0 2px 0;
-      font-size: 18px;
-      font-weight: 800;
+      margin: 14px 0 2px;
+      font-size: 1.08rem;
+      font-weight: 900;
       line-height: 1.15;
-      color: #111;
     }
 
-    .person-role {
-      margin: 0 0 10px 0;
-      font-size: 14px;
-      font-weight: 600;
-      color: #111;
+    .person-sub {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.25;
     }
 
     .person-meta {
-      margin: 0 auto;
-      width: min(340px, 100%);
-      font-size: 13px;
-      line-height: 1.35;
-      color: #111;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin: 0 auto 14px;
+      width: min(320px, 100%);
     }
 
-    .person-meta .row { margin: 6px 0; }
-    .person-meta .label { font-weight: 800; margin-right: 4px; }
+    .person-meta .row {
+      margin: 0;
+    }
+
+    .person-meta b {
+      font-weight: 900;
+    }
 
     .person-actions {
-      margin-top: 14px;
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
       gap: 12px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .btn-team {
+    .btn-dark {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -231,28 +209,54 @@
       color: #fff;
       text-decoration: none;
       font-weight: 800;
-      border: 1px solid rgba(0,0,0,0.15);
+      font-size: 0.92rem;
+      border: 1px solid rgba(0,0,0,0.12);
       box-shadow: 0 10px 18px rgba(122, 93, 124, 0.25);
       transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-      font-size: 14px;
-      min-width: 126px;
+      min-width: 128px;
     }
 
-    .btn-team:hover,
-    .btn-team:focus {
-      background: var(--pmpc-purple);
+    .btn-dark:hover,
+    .btn-dark:focus {
+      background: var(--pmpc-purple, #7a5d7c);
       color: #fff;
-      box-shadow: 0 12px 22px rgba(122, 93, 124, 0.45);
+      text-decoration: none;
+      box-shadow: 0 12px 22px rgba(122, 93, 124, 0.35);
     }
 
-    .btn-team:active { transform: translateY(1px); }
+    .btn-dark:active { transform: translateY(1px); }
 
-    /* Spacing between sections */
-    .team-divider {
-      width: min(980px, calc(100% - 44px));
+    .back-top-wrap {
+      width: min(1240px, calc(100% - 44px));
       margin: 0 auto;
-      border: none;
-      border-top: 1px solid rgba(0,0,0,0.10);
+      padding: 0 0 56px;
+      text-align: center;
+    }
+
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.14);
+      background: rgba(144,181,197,0.28);
+      color: #111;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .back-top:hover,
+    .back-top:focus {
+      background: var(--pmpc-purple, #7a5d7c);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .people-grid { gap: 42px 28px; padding-bottom: 44px; }
+      .section-head { padding: 44px 0 44px; }
     }
   </style>
 </head>
@@ -268,450 +272,380 @@
   <main class="entry-content team-page">
 
     <!-- TOP TITLE BAND -->
-    <section class="page-title-band" id="top" aria-label="Meet the team title">
-      <div class="container-narrow">
+    <section class="page-title-band" aria-label="Meet the team title">
+      <div class="container-narrow" id="top">
         <h1>Meet the Team</h1>
       </div>
     </section>
 
-    <!-- TOP NAV BUTTONS -->
-    <section class="team-wrap" aria-label="Team sections navigation">
-      <div class="container-narrow">
-        <p class="section-sub" style="margin-bottom:0;">
-          Browse by role below, or select a section to jump to the group you are looking for.
-        </p>
+    <section class="team-wrap" aria-label="Team directory">
+      <nav class="team-jump" aria-label="Jump to team sections">
+        <a class="jump-btn" href="/team.html#Doctors">Doctors</a>
+        <a class="jump-btn" href="/team.html#Psychometrists">Psychometrists</a>
+        <a class="jump-btn" href="/team.html#Masters%20Psychologists">Masters Psychologists</a>
+        <a class="jump-btn" href="/team.html#Doctoral%20Students">Doctoral Students</a>
+        <a class="jump-btn" href="/team.html#Admin">Admin</a>
+      </nav>
 
-        <nav class="team-jump" aria-label="Jump to team sections">
-          <a href="/team.html#Doctors">Doctors</a>
-          <a href="/team.html#Psychometrists">Psychometrists</a>
-          <a href="/team.html#Masters%20Psychologists">Masters Psychologists</a>
-          <a href="/team.html#Doctoral%20Students">Doctoral Students</a>
-          <a href="/team.html#Admin">Admin</a>
-        </nav>
+      <!-- DOCTORS -->
+      <section class="team-section team-anchor" id="Doctors" aria-label="Doctors">
+        <div class="section-head">
+          <h2 class="section-title">Doctors</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <!-- 1) Patricia (first) -->
+          <div class="person">
+            <a class="person-photo-link" href="/team/patricia-celan.html" aria-label="Learn more about Dr. Patricia Celan">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/patricia-celan.jpg" alt="Dr. Patricia Celan" />
+            </a>
+            <div class="person-name">Dr. Patricia Celan, M.D.</div>
+            <div class="person-sub">Owner &amp; Director, Doctor of Psychiatry</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Trauma, Autism, Depression, Anxiety</p>
+              <p class="row"><b>Population:</b> Young Adults</p>
+              <p class="row"><b>Scope:</b> Assessments and Therapy</p>
+              <p class="row"><b>Language:</b> English, French, Romanian</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/patricia-celan.html">Learn More</a>
+            </div>
+          </div>
+
+          <!-- 2) Mickey -->
+          <div class="person">
+            <a class="person-photo-link" href="/team/mickey-stein.html" aria-label="Learn more about Dr. Mickey Stein">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/mickey-stein-mini.jpg" alt="Dr. Mickey Stein" />
+            </a>
+            <div class="person-name">Dr. Mickey Stein, Ph.D.</div>
+            <div class="person-sub">Registered Psychologist, #2413</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> CBT and Psychodynamic</p>
+              <p class="row"><b>Population:</b> Youth and Adults</p>
+              <p class="row"><b>Scope:</b> Assessments, Individual and Group Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/mickey-stein.html#book-with-mickey">Book Now</a>
+              <a class="btn-dark" href="/team/mickey-stein.html">Learn More</a>
+            </div>
+          </div>
+
+          <!-- 3) Howard -->
+          <div class="person">
+            <a class="person-photo-link" href="/team/howard-wong.html" aria-label="Learn more about Dr. Howard Wong">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/howard-wong.jpg" alt="Dr. Howard Wong" />
+            </a>
+            <div class="person-name">Dr. Howard Wong, Psy.D.</div>
+            <div class="person-sub">Registered Psychologist #04174</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Depressive and Anxiety Disorders, PTSD, Grief, Substance Use, Couple Relationships</p>
+              <p class="row"><b>Population:</b> Youth and Adults</p>
+              <p class="row"><b>Scope:</b> Assessments and Individual/Couples Therapy</p>
+              <p class="row"><b>Language:</b> English, Cantonese, Mandarin</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/howard-wong.html#book-with-howard">Book Now</a>
+              <a class="btn-dark" href="/team/howard-wong.html">Learn More</a>
+            </div>
+          </div>
+
+          <!-- 4) Camille -->
+          <div class="person">
+            <a class="person-photo-link" href="/team/camille-mori.html" aria-label="Learn more about Dr. Camille Mori">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/camille-mori.jpg" alt="Dr. Camille Mori" />
+            </a>
+            <div class="person-name">Camille Mori, Ph.D.</div>
+            <div class="person-sub">Doctor of Clinical Psychology</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Mood and Anxiety</p>
+              <p class="row"><b>Population:</b> Adults and Youth</p>
+              <p class="row"><b>Scope:</b> Assessment and Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/camille-mori.html">Learn More</a>
+            </div>
+          </div>
+
+          <!-- 5) Cosette -->
+          <div class="person">
+            <a class="person-photo-link" href="/team/cosette-leblanc.html" aria-label="Learn more about Dr. Cosette LeBlanc">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/cosette-leblanc.jpg" alt="Dr. Cosette LeBlanc" />
+            </a>
+            <div class="person-name">Cosette LeBlanc, Psy.D.</div>
+            <div class="person-sub">Doctor of Clinical Psychology</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Depression, Anxiety, Grief, Trauma, Identity &amp; Relationship Issues, Substance Use, ADHD</p>
+              <p class="row"><b>Population:</b> Adults</p>
+              <p class="row"><b>Scope:</b> Assessments and Individual/Couples Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/cosette-leblanc.html#book-with-cosette">Book Now</a>
+              <a class="btn-dark" href="/team/cosette-leblanc.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PSYCHOMETRISTS -->
+      <section class="team-section team-anchor" id="Psychometrists" aria-label="Psychometrists">
+        <div class="section-head">
+          <h2 class="section-title">Psychometrists</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/cara-anne-storey.html" aria-label="Learn more about Cara-Anne Storey">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/cara-anne-storey.jpg" alt="Cara-Anne Storey" />
+            </a>
+            <div class="person-name">Cara-Anne Storey, A.A. (Psych)</div>
+            <div class="person-sub">Lead Psychometrist</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/cara-anne-storey.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/samantha-mason.html" aria-label="Learn more about Samantha Mason">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/samantha-mason.jpg" alt="Samantha Mason" />
+            </a>
+            <div class="person-name">Samantha Mason, B.A.</div>
+            <div class="person-sub">Psychometrist</div>
+            <div class="person-meta">
+              <p class="row"><b>Population:</b> Adults</p>
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/samantha-mason.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/peg-caughill.html" aria-label="Learn more about Peg Caughill">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/peg-caughill.jpg" alt="Peg Caughill" />
+            </a>
+            <div class="person-name">Peg Caughill, M.A.</div>
+            <div class="person-sub">Psychometrist</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/peg-caughill.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MASTERS PSYCHOLOGISTS -->
+      <section class="team-section team-anchor" id="Masters Psychologists" aria-label="Masters Psychologists">
+        <div class="section-head">
+          <h2 class="section-title">Masters Psychologists</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/ilona-oszadszky.html" aria-label="Learn more about Ilona Oszadszky">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/ilona-oszadszky.jpg" alt="Ilona Oszadszky" />
+            </a>
+            <div class="person-name">Ilona Oszadszky, M.A.</div>
+            <div class="person-sub">Licensed School Psychologist, #3134</div>
+            <div class="person-meta">
+              <p class="row"><b>Population:</b> Children and Youth</p>
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/ilona-oszadszky.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/linda-sawyer.html" aria-label="Learn more about Linda Sawyer">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/linda-sawyer.jpg" alt="Linda Sawyer" />
+            </a>
+            <div class="person-name">Linda Sawyer, M.A.</div>
+            <div class="person-sub">Associate Psychologist</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Emotion Based Therapy</p>
+              <p class="row"><b>Population:</b> Young Adults and Adults</p>
+              <p class="row"><b>Scope:</b> Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/linda-sawyer.html#book-with-linda">Book Now</a>
+              <a class="btn-dark" href="/team/linda-sawyer.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- DOCTORAL STUDENTS -->
+      <section class="team-section team-anchor" id="Doctoral Students" aria-label="Doctoral Students">
+        <div class="section-head">
+          <h2 class="section-title">Doctoral Students</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/colleen-rainey.html" aria-label="Learn more about Colleen Rainey">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/colleen-rainey.jpg" alt="Colleen Rainey" />
+            </a>
+            <div class="person-name">Colleen Rainey, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/colleen-rainey.html#book-with-colleen">Book Now</a>
+              <a class="btn-dark" href="/team/colleen-rainey.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/ali-barry.html" aria-label="Learn more about Ali Barry">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/ali-barry.jpg" alt="Ali Barry" />
+            </a>
+            <div class="person-name">Ali Barry, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/ali-barry.html#book-with-ali">Book Now</a>
+              <a class="btn-dark" href="/team/ali-barry.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/theresa-moolman.html" aria-label="Learn more about Theresa Moolman">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/theresa-moolman.jpg" alt="Theresa Moolman" />
+            </a>
+            <div class="person-name">Theresa Moolman, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/theresa-moolman.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/sara-freyvogel.html" aria-label="Learn more about Sara Freyvogel">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/sara-freyvogel.jpg" alt="Sara Freyvogel" />
+            </a>
+            <div class="person-name">Sara Freyvogel, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments, Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/sara-freyvogel.html#book-with-sara">Book Now</a>
+              <a class="btn-dark" href="/team/sara-freyvogel.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/vanessa-hall.html" aria-label="Learn more about Vanessa Hall">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/vanessa-hall.jpg" alt="Vanessa Hall" />
+            </a>
+            <div class="person-name">Vanessa Hall, M.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/vanessa-hall.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/omer-mustufa.html" aria-label="Learn more about Omer Mustufa">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/omer-mustufa.jpg" alt="Omer Mustufa" />
+            </a>
+            <div class="person-name">Omer Mustufa, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments and Therapy</p>
+              <p class="row"><b>Language:</b> English and Urdu</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/omer-mustufa.html#book-with-omer">Book Now</a>
+              <a class="btn-dark" href="/team/omer-mustufa.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ADMIN -->
+      <section class="team-section team-anchor" id="Admin" aria-label="Admin">
+        <div class="section-head">
+          <h2 class="section-title">Admin</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/tsuba-shima.html" aria-label="Learn more about Tsuba Shima">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/tsuba-shima.jpg" alt="Tsuba Shima" />
+            </a>
+            <div class="person-name">Tsuba Shima, B.A.</div>
+            <div class="person-sub">Practice Manager and Data Analyst</div>
+            <div class="person-meta">
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/tsuba-shima.html#book-with-tsuba">Discuss Your Needs</a>
+              <a class="btn-dark" href="/team/tsuba-shima.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/aliza-heiligman.html" aria-label="Learn more about Aliza Heiligman">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/aliza-heiligman.jpg" alt="Aliza Heiligman" />
+            </a>
+            <div class="person-name">Aliza Heiligman, B.S.</div>
+            <div class="person-sub">Marketing Assistant</div>
+            <div class="person-meta">
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/aliza-heiligman.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="back-top-wrap">
+        <a class="back-top" href="/team.html#top">Back to top</a>
       </div>
+
     </section>
-
-    <hr class="team-divider" />
-
-    <!-- DOCTORS -->
-    <section class="team-wrap team-anchor" id="Doctors" aria-label="Doctors">
-      <div class="container-narrow section-head">
-        <h2 class="section-title">Doctors</h2>
-      </div>
-
-      <div class="team-grid">
-
-        <!-- 1) Patricia -->
-        <div class="person">
-          <a class="photo-link" href="/team/patricia-celan.html" aria-label="Learn more about Dr. Patricia Celan">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/patricia-celan.jpg" alt="Dr. Patricia Celan" />
-          </a>
-          <h3 class="person-name">Dr. Patricia Celan, M.D.</h3>
-          <p class="person-role">Owner &amp; Director, Doctor of Psychiatry</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Expertise:</span> Trauma, Autism, Depression, Anxiety</div>
-            <div class="row"><span class="label">Population:</span> Young Adults</div>
-            <div class="row"><span class="label">Scope:</span> Assessments and Therapy</div>
-            <div class="row"><span class="label">Language:</span> English, French, Romanian</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/patricia-celan.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 2) Mickey -->
-        <div class="person">
-          <a class="photo-link" href="/team/mickey-stein.html" aria-label="Learn more about Dr. Mickey Stein">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/mickey-stein-mini.jpg" alt="Dr. Mickey Stein" />
-          </a>
-          <h3 class="person-name">Dr. Mickey Stein, Ph.D.</h3>
-          <p class="person-role">Registered Psychologist, #2413</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Expertise:</span> CBT and Psychodynamic</div>
-            <div class="row"><span class="label">Population:</span> Youth and Adults</div>
-            <div class="row"><span class="label">Scope:</span> Assessments, Individual and Group Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/mickey-stein.html#book-with-mickey">Book Now</a>
-            <a class="btn-team" href="/team/mickey-stein.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 3) Howard -->
-        <div class="person">
-          <a class="photo-link" href="/team/howard-wong.html" aria-label="Learn more about Dr. Howard Wong">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/howard-wong.jpg" alt="Dr. Howard Wong" />
-          </a>
-          <h3 class="person-name">Dr. Howard Wong, Psy.D.</h3>
-          <p class="person-role">Registered Psychologist #04174</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Expertise:</span> Depressive and Anxiety Disorders, PTSD, Grief, Substance Use, Couple Relationships</div>
-            <div class="row"><span class="label">Population:</span> Youth and Adults</div>
-            <div class="row"><span class="label">Scope:</span> Assessments and Individual/Couples Therapy</div>
-            <div class="row"><span class="label">Language:</span> English, Cantonese, Mandarin</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/howard-wong.html#book-with-howard">Book Now</a>
-            <a class="btn-team" href="/team/howard-wong.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 4) Camille -->
-        <div class="person">
-          <a class="photo-link" href="/team/camille-mori.html" aria-label="Learn more about Dr. Camille Mori">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/camille-mori.jpg" alt="Dr. Camille Mori" />
-          </a>
-          <h3 class="person-name">Dr. Camille Mori, Ph.D.</h3>
-          <p class="person-role">Doctor of Clinical Psychology</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Expertise:</span> Mood and Anxiety</div>
-            <div class="row"><span class="label">Population:</span> Adults and Youth</div>
-            <div class="row"><span class="label">Scope:</span> Assessments and Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/camille-mori.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 5) Cosette -->
-        <div class="person">
-          <a class="photo-link" href="/team/cosette-leblanc.html" aria-label="Learn more about Dr. Cosette LeBlanc">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/cosette-leblanc.jpg" alt="Dr. Cosette LeBlanc" />
-          </a>
-          <h3 class="person-name">Dr. Cosette LeBlanc, Psy.D.</h3>
-          <p class="person-role">Doctor of Clinical Psychology</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Expertise:</span> Depression, Anxiety, Grief, Trauma, Identity and Relationship Issues, Substance Use, ADHD, etc.</div>
-            <div class="row"><span class="label">Population:</span> Adults</div>
-            <div class="row"><span class="label">Scope:</span> Assessments and Individual/Couples Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/cosette-leblanc.html#book-with-cosette">Book Now</a>
-            <a class="btn-team" href="/team/cosette-leblanc.html">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="team-divider" />
-
-    <!-- PSYCHOMETRISTS -->
-    <section class="team-wrap team-anchor" id="Psychometrists" aria-label="Psychometrists">
-      <div class="container-narrow section-head">
-        <h2 class="section-title">Psychometrists</h2>
-      </div>
-
-      <div class="team-grid">
-
-        <!-- 1) Cara-Anne -->
-        <div class="person">
-          <a class="photo-link" href="/team/cara-anne-storey.html" aria-label="Learn more about Cara-Anne Storey">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/cara-anne-storey.jpg" alt="Cara-Anne Storey" />
-          </a>
-          <h3 class="person-name">Cara-Anne Storey, A.A. (Psych)</h3>
-          <p class="person-role">Lead Psychometrist</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Assessments</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/cara-anne-storey.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 2) Samantha -->
-        <div class="person">
-          <a class="photo-link" href="/team/samantha-mason.html" aria-label="Learn more about Samantha Mason">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/samantha-mason.jpg" alt="Samantha Mason" />
-          </a>
-          <h3 class="person-name">Samantha Mason, B.A.</h3>
-          <p class="person-role">Psychometrist</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Population:</span> Adults</div>
-            <div class="row"><span class="label">Scope:</span> Assessments</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/samantha-mason.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 3) Peg -->
-        <div class="person">
-          <a class="photo-link" href="/team/peg-caughill.html" aria-label="Learn more about Peg Caughill">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/peg-caughill.jpg" alt="Peg Caughill" />
-          </a>
-          <h3 class="person-name">Peg Caughill, M.A.</h3>
-          <p class="person-role">Psychometrist</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Assessments</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/peg-caughill.html">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="team-divider" />
-
-    <!-- MASTERS PSYCHOLOGISTS -->
-    <section class="team-wrap team-anchor" id="Masters%20Psychologists" aria-label="Masters Psychologists">
-      <div class="container-narrow section-head">
-        <h2 class="section-title">Masters Psychologists</h2>
-      </div>
-
-      <div class="team-grid two">
-
-        <!-- 1) Ilona -->
-        <div class="person">
-          <a class="photo-link" href="/team/ilona-oszadszky.html" aria-label="Learn more about Ilona Oszadszky">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/ilona-oszadszky.jpg" alt="Ilona Oszadszky" />
-          </a>
-          <h3 class="person-name">Ilona Oszadszky, M.A.</h3>
-          <p class="person-role">Licensed School Psychologist, #3134</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Population:</span> Children and Youth</div>
-            <div class="row"><span class="label">Scope:</span> Assessments</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/ilona-oszadszky.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 2) Linda -->
-        <div class="person">
-          <a class="photo-link" href="/team/linda-sawyer.html" aria-label="Learn more about Linda Sawyer">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/linda-sawyer.jpg" alt="Linda Sawyer" />
-          </a>
-          <h3 class="person-name">Linda Sawyer, M.A.</h3>
-          <p class="person-role">Associate Psychologist</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Expertise:</span> Emotion Based Therapy</div>
-            <div class="row"><span class="label">Population:</span> Young Adults and Adults</div>
-            <div class="row"><span class="label">Scope:</span> Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/linda-sawyer.html#book-with-linda">Book Now</a>
-            <a class="btn-team" href="/team/linda-sawyer.html">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="team-divider" />
-
-    <!-- DOCTORAL STUDENTS -->
-    <section class="team-wrap team-anchor" id="Doctoral%20Students" aria-label="Doctoral Students">
-      <div class="container-narrow section-head">
-        <h2 class="section-title">Doctoral Students</h2>
-      </div>
-
-      <div class="team-grid">
-
-        <!-- 1) Colleen -->
-        <div class="person">
-          <a class="photo-link" href="/team/colleen-rainey.html" aria-label="Learn more about Colleen Rainey">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/colleen-rainey.jpg" alt="Colleen Rainey" />
-          </a>
-          <h3 class="person-name">Colleen Rainey, B.A.</h3>
-          <p class="person-role">Doctoral Student</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/colleen-rainey.html#book-with-colleen">Book Now</a>
-            <a class="btn-team" href="/team/colleen-rainey.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 2) Ali -->
-        <div class="person">
-          <a class="photo-link" href="/team/ali-barry.html" aria-label="Learn more about Ali Barry">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/ali-barry.jpg" alt="Ali Barry" />
-          </a>
-          <h3 class="person-name">Ali Barry, B.A.</h3>
-          <p class="person-role">Doctoral Student</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/ali-barry.html#book-with-ali">Book Now</a>
-            <a class="btn-team" href="/team/ali-barry.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 3) Theresa -->
-        <div class="person">
-          <a class="photo-link" href="/team/theresa-moolman.html" aria-label="Learn more about Theresa Moolman">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/theresa-moolman.jpg" alt="Theresa Moolman" />
-          </a>
-          <h3 class="person-name">Theresa Moolman, B.A.</h3>
-          <p class="person-role">Doctoral Student</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Assessments</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/theresa-moolman.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 4) Sara -->
-        <div class="person">
-          <a class="photo-link" href="/team/sara-freyvogel.html" aria-label="Learn more about Sara Freyvogel">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/sara-freyvogel.jpg" alt="Sara Freyvogel" />
-          </a>
-          <h3 class="person-name">Sara Freyvogel, B.A.</h3>
-          <p class="person-role">Doctoral Student</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Assessments, Therapy</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/sara-freyvogel.html#book-with-sara">Book Now</a>
-            <a class="btn-team" href="/team/sara-freyvogel.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 5) Vanessa -->
-        <div class="person">
-          <a class="photo-link" href="/team/vanessa-hall.html" aria-label="Learn more about Vanessa Hall">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/vanessa-hall.jpg" alt="Vanessa Hall" />
-          </a>
-          <h3 class="person-name">Vanessa Hall, M.A.</h3>
-          <p class="person-role">Doctoral Student</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Assessments</div>
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/vanessa-hall.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 6) Omer -->
-        <div class="person">
-          <a class="photo-link" href="/team/omer-mustufa.html" aria-label="Learn more about Omer Mustufa">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/omer-mustufa.jpg" alt="Omer Mustufa" />
-          </a>
-          <h3 class="person-name">Omer Mustufa, B.A.</h3>
-          <p class="person-role">Doctoral Student</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Scope:</span> Assessments and Therapy</div>
-            <div class="row"><span class="label">Language:</span> English and Urdu</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/omer-mustufa.html#book-with-omer">Book Now</a>
-            <a class="btn-team" href="/team/omer-mustufa.html">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="team-divider" />
-
-    <!-- ADMIN -->
-    <section class="team-wrap team-anchor" id="Admin" aria-label="Admin">
-      <div class="container-narrow section-head">
-        <h2 class="section-title">Admin</h2>
-      </div>
-
-      <div class="team-grid two">
-
-        <!-- 1) Tsuba -->
-        <div class="person">
-          <a class="photo-link" href="/team/tsuba-shima.html" aria-label="Learn more about Tsuba Shima">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/tsuba-shima.jpg" alt="Tsuba Shima" />
-          </a>
-          <h3 class="person-name">Tsuba Shima, B.A.</h3>
-          <p class="person-role">Practice Manager and Data Analyst</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/tsuba-shima.html#book-with-tsuba">Discuss Your Needs</a>
-            <a class="btn-team" href="/team/tsuba-shima.html">Learn More</a>
-          </div>
-        </div>
-
-        <!-- 2) Aliza -->
-        <div class="person">
-          <a class="photo-link" href="/team/aliza-heiligman.html" aria-label="Learn more about Aliza Heiligman">
-            <img class="person-photo" src="https://pacificmaplepsych.com/images/team/aliza-heiligman.jpg" alt="Aliza Heiligman" />
-          </a>
-          <h3 class="person-name">Aliza Heiligman, B.S.</h3>
-          <p class="person-role">Marketing Assistant</p>
-
-          <div class="person-meta">
-            <div class="row"><span class="label">Language:</span> English</div>
-          </div>
-
-          <div class="person-actions">
-            <a class="btn-team" href="/team/aliza-heiligman.html">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Back to top -->
-    <section class="team-wrap" aria-label="Back to top">
-      <div class="container-narrow">
-        <a class="btn-team" href="/team.html#top" style="min-width:auto;">Back to top</a>
-      </div>
-    </section>
-
   </main>
 
   <div id="site-footer"></div>
-
   <script src="/assets/main.js" defer></script>
 </body>
 </html>
