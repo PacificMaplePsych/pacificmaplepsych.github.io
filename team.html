@@ -111,11 +111,9 @@
       padding: 0;
     }
 
-    /* THIS is the key change:
-       padding-top and padding-bottom are identical, so the gap below the header
-       matches the gap above it (between the divider line and the header). */
+    /* More space under headings + underline */
     .section-head {
-      padding: 56px 0 56px;
+      padding: 56px 0 70px; /* increased bottom padding */
     }
 
     .section-title {
@@ -125,6 +123,10 @@
       letter-spacing: 0.01em;
       line-height: 1.05;
       color: #111;
+
+      display: inline-block;
+      padding-bottom: 10px;
+      border-bottom: 3px solid rgba(0,0,0,0.18);
     }
 
     .people-grid {
@@ -184,19 +186,17 @@
       width: min(320px, 100%);
     }
 
-    .person-meta .row {
-      margin: 0;
-    }
+    .person-meta .row { margin: 0; }
 
-    .person-meta b {
-      font-weight: 900;
-    }
+    .person-meta b { font-weight: 900; }
 
+    /* Buttons side-by-side by default */
     .person-actions {
-      display: inline-flex;
+      display: flex;
       gap: 12px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;         /* prevents stacking */
       justify-content: center;
+      align-items: center;
     }
 
     .btn-dark {
@@ -214,6 +214,7 @@
       box-shadow: 0 10px 18px rgba(122, 93, 124, 0.25);
       transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
       min-width: 128px;
+      white-space: nowrap;
     }
 
     .btn-dark:hover,
@@ -225,6 +226,11 @@
     }
 
     .btn-dark:active { transform: translateY(1px); }
+
+    /* If the viewport gets super narrow, allow stacking */
+    @media (max-width: 360px) {
+      .person-actions { flex-wrap: wrap; }
+    }
 
     .back-top-wrap {
       width: min(1240px, calc(100% - 44px));
@@ -256,7 +262,7 @@
 
     @media (max-width: 700px) {
       .people-grid { gap: 42px 28px; padding-bottom: 44px; }
-      .section-head { padding: 44px 0 44px; }
+      .section-head { padding: 44px 0 58px; } /* also increased bottom */
     }
   </style>
 </head>
@@ -625,7 +631,7 @@
             <a class="person-photo-link" href="/team/aliza-heiligman.html" aria-label="Learn more about Aliza Heiligman">
               <img class="person-photo" src="https://pacificmaplepsych.com/images/team/aliza-heiligman.jpg" alt="Aliza Heiligman" />
             </a>
-            <div class="person-name">Aliza Heiligman, B.S.</div>
+            <div class="person-name">Aliza Heiligman, B.Sc.</div>
             <div class="person-sub">Marketing Assistant</div>
             <div class="person-meta">
               <p class="row"><b>Language:</b> English</p>
