@@ -52,14 +52,10 @@
 
   <style>
     /* ==== Layout ==== */
-    .team-page {
-      padding: 0 0 56px;
-    }
+    .team-page { padding: 0 0 56px; }
 
     /* Compensate for fixed/sticky navbar height */
-    .team-page-offset {
-      padding-top: calc(var(--nav-h, 120px) + 28px);
-    }
+    .team-page-offset { padding-top: calc(var(--nav-h, 120px) + 28px); }
 
     .team-container {
       width: min(1200px, calc(100% - 32px));
@@ -81,9 +77,7 @@
       overflow: hidden;
     }
 
-    .card-inner {
-      padding: 22px;
-    }
+    .card-inner { padding: 22px; }
 
     .profile-top {
       display: grid;
@@ -110,15 +104,16 @@
     }
 
     .profile-sub {
-      margin: 8px 0 0 0;
-      font-size: 1.02rem;
+      margin: 6px 0 0 0;
+      font-size: 0.98rem;
       opacity: 0.9;
     }
 
+    /* Make the text block beside the photo smaller and tighter */
     .profile-meta {
-      margin-top: 12px;
-      line-height: 1.6;
-      font-size: 1.0rem;
+      margin-top: 10px;
+      line-height: 1.35;
+      font-size: 0.92rem;
     }
 
     .profile-meta .label {
@@ -126,13 +121,11 @@
       margin-right: 6px;
     }
 
-    .profile-meta .meta-row {
-      margin: 4px 0;
-    }
+    .profile-meta .meta-row { margin: 2px 0; }
 
     .cert-block {
-      margin-top: 12px;
-      padding-top: 12px;
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px solid rgba(0,0,0,0.10);
     }
 
@@ -146,27 +139,36 @@
       padding-left: 18px;
     }
 
+    .cert-list li { margin: 2px 0; }
+
     .profile-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
+    /* CV button: light blue bg, black text; hover deep purple with white text */
     .btn-cv {
       display: inline-block;
       padding: 12px 16px;
       border-radius: 999px;
       border: 1px solid rgba(0,0,0,0.14);
-      background: #111;
-      color: #fff;
+      background: rgba(144,181,197,0.28);
+      color: #111;
       text-decoration: none;
       font-weight: 800;
       font-size: 0.98rem;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
     }
-    .btn-cv:hover { opacity: 0.92; }
+    .btn-cv:hover {
+      background: var(--pmpc-purple, #7a5d7c);
+      color: #fff;
+      border-color: rgba(0,0,0,0.0);
+      transform: translateY(-1px);
+    }
 
-    /* Book button should ONLY show on hamburger widths (mobile/menu collapse) */
+    /* Book button should ONLY show on hamburger widths */
     .btn-book-mobile {
       display: none;
       padding: 12px 16px;
@@ -232,28 +234,17 @@
 
     /* ==== Responsive ==== */
     @media (max-width: 980px) {
-      .profile-grid {
-        grid-template-columns: 1fr;
-      }
-      .schedule-card {
-        position: static;
-      }
+      .profile-grid { grid-template-columns: 1fr; }
+      .schedule-card { position: static; }
     }
 
     @media (max-width: 640px) {
-      .team-page-offset {
-        padding-top: calc(var(--nav-h-mobile, 110px) + 22px);
-      }
-      .profile-top {
-        grid-template-columns: 1fr;
-      }
-      .profile-photo {
-        width: 100%;
-        height: 320px;
-      }
+      .team-page-offset { padding-top: calc(var(--nav-h-mobile, 110px) + 22px); }
+      .profile-top { grid-template-columns: 1fr; }
+      .profile-photo { width: 100%; height: 320px; }
     }
 
-    /* Hamburger breakpoint used in your JS previously: 1050px */
+    /* Hamburger breakpoint used in your JS: 1050px */
     @media (max-width: 1050px) {
       .btn-book-mobile { display: inline-block; }
     }
@@ -342,7 +333,7 @@
 
               <section class="bio-block" aria-label="Biography">
                 <p>
-                  I earned my doctorate in Clinical Psychology from the University of Palo Alto. My dissertation was an exploration of psychotherapy treatment outcomes in a training clinic. I also interned at the Alaska Psychiatric Institute. These highly-ranked training programs, accredited by the American Psychological Association, allow me to be of effective use to my clientele. Moreover, I also completed a postdoctoral fellowship through Back in Motion in Vancouver, B.C.
+                  I earned my doctorate in Clinical Psychology from the University of Palo Alto. My dissertation explored psychotherapy treatment outcomes in a training clinic. I also interned at the Alaska Psychiatric Institute. These highly ranked training programs, accredited by the American Psychological Association, allow me to be of effective use to my clientele. Moreover, I completed a postdoctoral fellowship through Back in Motion in Vancouver, B.C.
                 </p>
 
                 <p>
@@ -350,7 +341,7 @@
                 </p>
 
                 <p>
-                  My scholarly research is an active part of my work, fundamentally informing the daily work I do with my clientele. I also lecture regularly on CBT, an active area of specialization and professional interest. In addition, in these settings I conducted a range of psychological assessments. Having trained in a variety of clinical and research-based environments, I have the necessary expertise and wherewithal to support my clients on their journey to self-actualization.
+                  My scholarly research is an active part of my work and fundamentally informs the daily work I do with my clientele. I also lecture regularly on CBT, an active area of specialization and professional interest. In these settings, I conducted a range of psychological assessments. Having trained in a variety of clinical and research-based environments, I have the necessary expertise and wherewithal to support my clients on their journey to self-actualization.
                 </p>
 
                 <p>
@@ -358,7 +349,7 @@
                 </p>
 
                 <p>
-                  Prior to my graduate training in psychology, I completed an Honors degree in psychology from the University of Winnipeg where I focused on animal learning and worked in a rat laboratory, examining the impact of alcohol dependency and scalar timing theory. Before receiving formal training in psychology, I worked with underserved youth, including those with various mental health issues and fetal alcohol syndrome. Since early adolescence, I was exposed to a number of camp-related experiences, which instilled in me a desire to cooperate, learn from, and acquire a good familiarity with cultural adjustment. My desire to understand human nature has been prevalent since early adolescence and it’s also been the greatest impetus behind my work as a registered psychologist.
+                  Prior to my graduate training in psychology, I completed an Honours degree in psychology from the University of Winnipeg, where I focused on animal learning and worked in a rat laboratory examining the impact of alcohol dependency and scalar timing theory. Before receiving formal training in psychology, I worked with underserved youth, including those with various mental health issues and fetal alcohol syndrome. Since early adolescence, I was exposed to a number of camp-related experiences, which instilled in me a desire to cooperate, learn from, and acquire familiarity with cultural adjustment. My desire to understand human nature has been prevalent since early adolescence, and it has also been the greatest impetus behind my work as a registered psychologist.
                 </p>
 
                 <p>
