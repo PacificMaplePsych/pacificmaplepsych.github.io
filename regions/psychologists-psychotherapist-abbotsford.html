@@ -101,13 +101,16 @@
   <link rel="stylesheet" href="/assets/style.css" />
 
   <style>
-    /* Page-scoped styling to imitate the old Wix page layout */
+    /* Page-scoped styling */
     .region-page {
       --region-plum: #d7c9cc;
       --region-blue: #c9d4dd;
       --region-card: #cfd6dd;
       --region-ink: #111;
       --region-max: 1180px;
+
+      /* Use the same purple as your theme color for hover */
+      --region-purple: #7a5d7c;
     }
 
     .region-page .wrap {
@@ -115,10 +118,47 @@
       margin: 0 auto;
     }
 
+    /* ===== Buttons: match index (black -> purple on hover), no white outline ===== */
+    .region-page a.btn-pill,
+    .region-page .btn-pill {
+      background: #111 !important;
+      color: #fff !important;
+      border: 1px solid #111 !important; /* remove the white outline */
+      border-radius: 999px;
+      padding: 10px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1;
+      transition: background 160ms ease, border-color 160ms ease, transform 120ms ease;
+    }
+
+    .region-page a.btn-pill:hover,
+    .region-page a.btn-pill:focus-visible,
+    .region-page .btn-pill:hover,
+    .region-page .btn-pill:focus-visible {
+      background: var(--region-purple) !important;
+      border-color: var(--region-purple) !important;
+      color: #fff !important;
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    /* ===== Headings: smaller, consistent sizing, not bold ===== */
+    .region-page h1,
+    .region-page h2 {
+      font-weight: 500; /* not bold */
+      letter-spacing: 0.01em;
+      color: var(--region-ink);
+    }
+
     /* HERO */
     .region-page .hero {
       position: relative;
-      padding: clamp(46px, 7vw, 92px) 0 clamp(28px, 4vw, 46px);
+      padding: clamp(44px, 6vw, 78px) 0 clamp(26px, 3.6vw, 40px);
       text-align: center;
       overflow: hidden;
       background: #eef2f6;
@@ -137,16 +177,13 @@
     .region-page .hero h1 {
       position: relative;
       margin: 0;
-      font-weight: 800;
-      color: var(--region-ink);
-      letter-spacing: 0.01em;
-      font-size: clamp(34px, 4.8vw, 62px);
+      font-size: clamp(32px, 3.8vw, 46px); /* smaller so it stays ~2 lines */
       line-height: 1.08;
     }
 
     .region-page .hero .hero-sub {
       position: relative;
-      margin: 18px auto 20px;
+      margin: 16px auto 18px;
       max-width: 760px;
       font-size: 14px;
       line-height: 1.7;
@@ -157,19 +194,6 @@
       position: relative;
       display: flex;
       justify-content: center;
-    }
-
-    /* Make sure the button hover inverts like your older site */
-    .region-page .btn-pill,
-    .region-page a.btn-pill {
-      border: 1px solid #fff;
-    }
-    .region-page a.btn-pill:hover,
-    .region-page a.btn-pill:focus-visible {
-      background: #fff !important;
-      color: #111 !important;
-      border-color: #111 !important;
-      outline: none;
     }
 
     /* SPLIT (About) */
@@ -227,10 +251,8 @@
     .region-page .services-band h2 {
       margin: 0 0 26px;
       text-align: center;
-      font-weight: 800;
-      color: var(--region-ink);
-      font-size: clamp(30px, 4.4vw, 56px);
-      line-height: 1.05;
+      font-size: clamp(28px, 3.6vw, 42px); /* consistent heading size */
+      line-height: 1.08;
     }
 
     .region-page .services-grid {
@@ -244,7 +266,7 @@
     }
 
     .region-page .service-label {
-      font-weight: 800;
+      font-weight: 700;
       text-decoration: underline;
       color: var(--region-ink);
       font-size: 15px;
@@ -280,10 +302,8 @@
 
     .region-page .why h2 {
       margin: 0 0 22px;
-      font-weight: 800;
-      color: var(--region-ink);
-      font-size: clamp(34px, 4.8vw, 64px);
-      line-height: 1.05;
+      font-size: clamp(28px, 3.6vw, 42px); /* same as other headers */
+      line-height: 1.08;
     }
 
     .region-page .why .why-item {
@@ -297,7 +317,7 @@
 
     .region-page .why .why-title {
       margin: 0 0 6px;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--region-ink);
       font-size: 14px;
     }
@@ -325,10 +345,8 @@
 
     .region-page .problems h2 {
       margin: 0;
-      font-weight: 900;
-      color: var(--region-ink);
-      font-size: clamp(30px, 4.4vw, 58px);
-      line-height: 1.02;
+      font-size: clamp(28px, 3.6vw, 42px); /* same as other headers */
+      line-height: 1.08;
       text-align: left;
     }
 
@@ -354,10 +372,8 @@
 
     .region-page .team h2 {
       margin: 0 0 10px;
-      font-weight: 900;
-      color: var(--region-ink);
-      font-size: clamp(32px, 4.6vw, 60px);
-      line-height: 1.05;
+      font-size: clamp(28px, 3.6vw, 42px); /* same as other headers */
+      line-height: 1.08;
     }
 
     .region-page .team .team-sub {
@@ -398,19 +414,20 @@
       transform: translateY(-2px);
     }
 
+    /* Photos: force rectangles and crop SIDES (not heads) */
     .region-page .person-photo {
       width: 100%;
-      height: 260px;
+      height: 220px;                 /* rectangular */
       display: block;
       object-fit: cover;
-      object-position: center;
+      object-position: center;        /* keep faces centered */
       background: #fff;
     }
 
-    /* Linda is a square photo, so we crop it to a more rectangular frame */
-    .region-page .person-photo.is-square-crop {
-      object-position: center 25%;
-    }
+    /* Slightly favor keeping faces in frame */
+    .region-page .person-photo.mickey { object-position: center 35%; }
+    .region-page .person-photo.camille { object-position: center 30%; }
+    .region-page .person-photo.linda { object-position: center 28%; }
 
     .region-page .person-body {
       padding: 16px 16px 18px;
@@ -419,7 +436,7 @@
 
     .region-page .person-name {
       margin: 0 0 2px;
-      font-weight: 900;
+      font-weight: 700;
       color: var(--region-ink);
       font-size: 16px;
       line-height: 1.2;
@@ -472,10 +489,8 @@
 
     .region-page .final-left h2 {
       margin: 0 0 14px;
-      font-weight: 900;
-      color: var(--region-ink);
-      font-size: clamp(30px, 4.2vw, 58px);
-      line-height: 1.05;
+      font-size: clamp(28px, 3.6vw, 42px); /* same as other headers */
+      line-height: 1.08;
     }
 
     .region-page .final-left .p-body {
@@ -540,7 +555,7 @@
       }
 
       .region-page .person-photo {
-        height: 300px;
+        height: 240px;
       }
 
       .region-page .final-left-inner {
@@ -569,7 +584,10 @@
     <!-- HERO -->
     <section class="hero" aria-label="Abbotsford hero">
       <div class="wrap">
-        <h1>Welcome to Pacific Maple Psych Centre<br/>Serving Abbotsford and Across BC</h1>
+        <h1>
+          Welcome to Pacific Maple Psych Centre<br/>
+          Serving Abbotsford and Across BC
+        </h1>
 
         <p class="hero-sub">Your path to mental well-being starts here</p>
 
@@ -701,7 +719,7 @@
     <section class="problems" aria-label="Problems we address">
       <div class="wrap">
         <div class="problems-grid">
-          <h2>Problems We<br/>Address</h2>
+          <h2>Problems We Address</h2>
 
           <ul>
             <li>Anxiety and panic disorders</li>
@@ -730,12 +748,12 @@
           <!-- Left: Mickey -->
           <a class="person-card" href="https://pacificmaplepsych.com/team/mickey-stein.html" aria-label="Dr. Mickey Stein profile">
             <img
-              class="person-photo"
+              class="person-photo mickey"
               src="https://pacificmaplepsych.com/images/team/mickey-stein-mini.jpg"
               alt="Dr. Mickey Stein"
               loading="lazy"
               decoding="async"
-              width="900"
+              width="1200"
               height="900"
             />
             <div class="person-body">
@@ -750,12 +768,12 @@
           <!-- Middle: Camille -->
           <a class="person-card" href="https://pacificmaplepsych.com/team/camille-mori.html" aria-label="Dr. Camille Mori profile">
             <img
-              class="person-photo"
+              class="person-photo camille"
               src="https://pacificmaplepsych.com/images/team/camille-mori.jpg"
               alt="Dr. Camille Mori"
               loading="lazy"
               decoding="async"
-              width="900"
+              width="1200"
               height="900"
             />
             <div class="person-body">
@@ -770,12 +788,12 @@
           <!-- Right: Linda -->
           <a class="person-card" href="https://pacificmaplepsych.com/team/linda-sawyer.html" aria-label="Linda Sawyer profile">
             <img
-              class="person-photo is-square-crop"
+              class="person-photo linda"
               src="https://pacificmaplepsych.com/images/team/linda-sawyer.jpg"
               alt="Linda Sawyer"
               loading="lazy"
               decoding="async"
-              width="900"
+              width="1200"
               height="900"
             />
             <div class="person-body">
