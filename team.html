@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -56,12 +56,17 @@
     }
 
     .team-page .section-title {
-      margin: 0 0 10px 0;
+      margin: 0;
       font-size: clamp(30px, 4.2vw, 54px);
       font-weight: 800;
       line-height: 1.05;
       color: #111;
       letter-spacing: 0.02em;
+    }
+
+    /* NEW: add breathing room under each section header */
+    .team-page .section-head {
+      padding-bottom: 22px;
     }
 
     .team-page .section-sub {
@@ -108,6 +113,12 @@
 
     .team-jump a:active { transform: translateY(1px); }
 
+    /* Top anchor (for Back to top) */
+    #top { scroll-margin-top: calc(var(--nav-h, 120px) + 14px); }
+    @media (max-width: 1050px) {
+      #top { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 14px); }
+    }
+
     /* Section anchor offset so headings are not hidden under fixed nav */
     .team-anchor {
       scroll-margin-top: calc(var(--nav-h, 120px) + 18px);
@@ -119,7 +130,7 @@
     /* Grid */
     .team-grid {
       width: min(1280px, calc(100% - 60px));
-      margin: 22px auto 0;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 28px;
@@ -140,6 +151,19 @@
         grid-template-columns: 1fr;
         gap: 18px;
       }
+    }
+
+    /* NEW: when a row has only 2 people, center them */
+    .team-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: min(900px, calc(100% - 60px));
+      justify-content: center;
+    }
+    @media (max-width: 1050px) {
+      .team-grid.two { width: min(980px, calc(100% - 44px)); }
+    }
+    @media (max-width: 640px) {
+      .team-grid.two { grid-template-columns: 1fr; width: min(560px, calc(100% - 32px)); }
     }
 
     /* Person card */
@@ -244,7 +268,7 @@
   <main class="entry-content team-page">
 
     <!-- TOP TITLE BAND -->
-    <section class="page-title-band" aria-label="Meet the team title">
+    <section class="page-title-band" id="top" aria-label="Meet the team title">
       <div class="container-narrow">
         <h1>Meet the Team</h1>
       </div>
@@ -271,7 +295,7 @@
 
     <!-- DOCTORS -->
     <section class="team-wrap team-anchor" id="Doctors" aria-label="Doctors">
-      <div class="container-narrow">
+      <div class="container-narrow section-head">
         <h2 class="section-title">Doctors</h2>
       </div>
 
@@ -387,7 +411,7 @@
 
     <!-- PSYCHOMETRISTS -->
     <section class="team-wrap team-anchor" id="Psychometrists" aria-label="Psychometrists">
-      <div class="container-narrow">
+      <div class="container-narrow section-head">
         <h2 class="section-title">Psychometrists</h2>
       </div>
 
@@ -455,11 +479,12 @@
 
     <!-- MASTERS PSYCHOLOGISTS -->
     <section class="team-wrap team-anchor" id="Masters%20Psychologists" aria-label="Masters Psychologists">
-      <div class="container-narrow">
+      <div class="container-narrow section-head">
         <h2 class="section-title">Masters Psychologists</h2>
       </div>
 
-      <div class="team-grid">
+      <!-- only 2 people: center them -->
+      <div class="team-grid two">
 
         <!-- 1) Ilona -->
         <div class="person">
@@ -508,7 +533,7 @@
 
     <!-- DOCTORAL STUDENTS -->
     <section class="team-wrap team-anchor" id="Doctoral%20Students" aria-label="Doctoral Students">
-      <div class="container-narrow">
+      <div class="container-narrow section-head">
         <h2 class="section-title">Doctoral Students</h2>
       </div>
 
@@ -633,11 +658,12 @@
 
     <!-- ADMIN -->
     <section class="team-wrap team-anchor" id="Admin" aria-label="Admin">
-      <div class="container-narrow">
+      <div class="container-narrow section-head">
         <h2 class="section-title">Admin</h2>
       </div>
 
-      <div class="team-grid">
+      <!-- only 2 people: center them -->
+      <div class="team-grid two">
 
         <!-- 1) Tsuba -->
         <div class="person">
@@ -677,10 +703,10 @@
       </div>
     </section>
 
-    <!-- (Optional) Quick jump back up -->
+    <!-- Back to top -->
     <section class="team-wrap" aria-label="Back to top">
       <div class="container-narrow">
-        <a class="btn-team" href="/team.html#Doctors" style="min-width:auto;">Back to Doctors</a>
+        <a class="btn-team" href="/team.html#top" style="min-width:auto;">Back to top</a>
       </div>
     </section>
 
