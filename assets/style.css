@@ -1,131 +1,651 @@
-// ===== Inject header and footer so you do not copy/paste per page =====
-async function injectPartial(targetId, partialPath) {
-  const el = document.getElementById(targetId);
-  if (!el) return;
+:root {
+  --pmpc-purple: #7a5d7c;
+  --pmpc-blue: #c9d1d9;
+  --pmpc-black: #111111;
+  --pmpc-line: rgba(0, 0, 0, 0.12);
 
-  try {
-    const res = await fetch(partialPath, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load ${partialPath}: ${res.status}`);
-    el.innerHTML = await res.text();
-  } catch (err) {
-    console.error(err);
+  --home-blue: #c9d1d9;
+  --home-plum: #d4c3cf;
+
+  --nav-h: 120px;
+  --nav-h-mobile: 110px;
+}
+
+/* ===== Global ===== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+/* Start content under fixed navbar */
+.entry-content { padding-top: var(--nav-h); }
+@media (max-width: 1050px) {
+  .entry-content { padding-top: var(--nav-h-mobile); }
+}
+
+/* Typography targets */
+.p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
+.hero-h1 { font-size: 45px; font-weight: 700; line-height: 1.15; margin: 0 0 14px 0; }
+.hero-sub { font-size: 25px; font-weight: 700; margin: 0 0 10px 0; }
+.hero-tagline { font-size: 0.99rem; margin: 0 0 18px 0; text-align: center; }
+.section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
+.service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
+
+@media (max-width: 1050px) {
+  .hero-h1 { font-size: 34px; }
+  .section-h2 { font-size: 38px; }
+}
+
+/* Containers */
+.container-narrow {
+  width: min(980px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+/* ===== Global Title Band (used on About/Blog/Policies/Book Now/Services/etc.) ===== */
+.page-title-band {
+  background: var(--home-blue); /* #c9d1d9 */
+  padding: clamp(42px, 7vw, 78px) 0;
+  border-top: 1px solid var(--pmpc-line);
+  border-bottom: 1px solid var(--pmpc-line);
+}
+
+/* Use on both <h1> and <h2> inside the title band */
+.page-title-band h1,
+.page-title-band h2 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--pmpc-black);
+  font-size: clamp(40px, 5.2vw, 72px);
+  line-height: 1.05;
+}
+
+/* ===== Home Hero ===== */
+.home-hero {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 48px 0;
+}
+
+.home-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0.70)),
+    url("/images/hero-pacific-mountains.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.home-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(980px, calc(100% - 44px));
+  padding: 22px 18px;
+}
+
+.hero-actions { margin-top: 6px; }
+
+/* ===== Sections and Bands ===== */
+.home-section {
+  padding: 44px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.home-band {
+  padding: 44px 0;
+  text-align: center;
+}
+
+.home-band-blue { background: var(--home-blue); }
+.home-band-plum { background: var(--home-plum); }
+
+/* ===== Checkerboard service rows ===== */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.service-media,
+.service-card {
+  min-height: 420px;
+}
+
+.service-media {
+  background: #fff;
+  overflow: hidden;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-inner {
+  width: min(720px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 34px 0;
+  text-align: center;
+}
+
+.service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+/* ===== Buttons ===== */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: #111;
+  color: #fff;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 10px 18px rgba(122, 93, 124, 0.35);
+
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.btn-pill:hover,
+.btn-pill:focus {
+  background: var(--pmpc-purple);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 12px 22px rgba(122, 93, 124, 0.45);
+}
+
+.btn-pill:active { transform: translateY(1px); }
+
+/* ===== Floating Book Now button (site-wide) =====
+   Note: you'll add the element once via /assets/main.js
+*/
+.floating-book-now {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+}
+
+.floating-book-now a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+
+  background: #453346;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  border-radius: 6px;
+
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+.floating-book-now a:hover,
+.floating-book-now a:focus {
+  filter: brightness(0.96);
+}
+
+.floating-book-now a:active {
+  transform: translateY(1px);
+}
+
+.floating-book-now a:focus-visible {
+  outline: 3px solid rgba(61, 103, 128, 0.65);
+  outline-offset: 4px;
+}
+
+/* Keep it from covering mobile UI too much */
+@media (max-width: 600px) {
+  .floating-book-now {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .floating-book-now a {
+    padding: 12px 18px;
+    font-size: 13px;
+    border-width: 3px;
   }
 }
 
-// ===== Footer year =====
-function setFooterYear() {
-  const y = document.getElementById("footerYear");
-  if (y) y.textContent = String(new Date().getFullYear());
-}
+/* ===== Services responsiveness ===== */
 
-// ===== Navbar behavior (mobile menu + mobile dropdowns + collapse opened menu on scroll) =====
-function bindNavbarInteractions() {
-  const menu = document.querySelector(".navbar-links");
-  const burger = document.querySelector(".hamburger");
-  if (!menu || !burger) return;
+/* Tablet range: hamburger may show, but keep the 2-column checkerboard */
+@media (max-width: 1050px) {
+  .home-hero { min-height: 460px; padding: 28px 0; }
 
-  const navBreakPx = 1050;
+  .service-row { grid-template-columns: 1fr 1fr; }
 
-  function closeAllDropdowns() {
-    document.querySelectorAll(".dropdown-content.open").forEach((dc) => dc.classList.remove("open"));
-    document.querySelectorAll(".dropdown-toggle[aria-expanded='true']").forEach((t) =>
-      t.setAttribute("aria-expanded", "false")
-    );
+  .service-media,
+  .service-card {
+    min-height: 360px;
   }
 
-  function setMenuOpen(isOpen) {
-    menu.classList.toggle("active", isOpen);
-    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    if (!isOpen) closeAllDropdowns();
-  }
+  /* Bias crops upward so faces/hands are less likely to be cut off */
+  .service-img { object-position: center top; }
 
-  // Hamburger click
-  burger.addEventListener("click", () => {
-    setMenuOpen(!menu.classList.contains("active"));
-  });
-
-  // Mobile dropdown toggle: only one open at a time
-  document.querySelectorAll(".dropdown").forEach((dropdown) => {
-    const toggle = dropdown.querySelector(".dropdown-toggle");
-    const content = dropdown.querySelector(".dropdown-content");
-    if (!toggle || !content) return;
-
-    toggle.addEventListener("click", (e) => {
-      if (window.innerWidth <= navBreakPx) {
-        e.preventDefault();
-
-        const willOpen = !content.classList.contains("open");
-        closeAllDropdowns();
-
-        if (willOpen) {
-          content.classList.add("open");
-          toggle.setAttribute("aria-expanded", "true");
-        } else {
-          content.classList.remove("open");
-          toggle.setAttribute("aria-expanded", "false");
-        }
-      }
-    });
-  });
-
-  // Close menu when clicking a normal link on mobile
-  menu.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const isToggle = a.classList.contains("dropdown-toggle");
-    if (window.innerWidth <= navBreakPx && menu.classList.contains("active") && !isToggle) {
-      setMenuOpen(false);
-    }
-  });
-
-  // Mobile: if menu is open and user scrolls, collapse it
-  let lastY = window.scrollY;
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (window.innerWidth > navBreakPx) return;
-
-      const yNow = window.scrollY;
-
-      // If menu is open, collapse it when user scrolls (but keep hamburger visible/clickable)
-      if (menu.classList.contains("active")) {
-        if (Math.abs(yNow - lastY) > 6) setMenuOpen(false);
-      }
-
-      lastY = yNow;
-    },
-    { passive: true }
-  );
-
-  // On resize, close the mobile menu to prevent weird states
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > navBreakPx) {
-      setMenuOpen(false);
-    }
-  });
+  .service-card-inner { padding: 24px 0; }
 }
 
-// Floating "Book Now" button (site-wide), hidden on booking pages + the hub page
-(function addFloatingBookNow() {
-  const path = window.location.pathname;
+/* True mobile: stack, but enforce image then text for every section */
+@media (max-width: 780px) {
+  .service-row {
+    display: flex;
+    flex-direction: column;
+  }
 
-  // Hide on booking hub + all booking pages
-  if (path === "/book-now.html" || path.startsWith("/booking/")) return;
+  .service-media { order: 1; }
+  .service-card { order: 2; }
 
-  if (document.querySelector(".floating-book-now")) return;
+  .service-media,
+  .service-card {
+    min-height: auto;
+  }
 
-  const btn = document.createElement("div");
-  btn.className = "floating-book-now";
-  btn.innerHTML = `<a href="/book-now.html" aria-label="Book now">Book Now</a>`;
-  document.body.appendChild(btn);
-})();
+  .service-img {
+    height: 260px;
+    object-position: center top;
+  }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await injectPartial("site-header", "/assets/header.html");
-  await injectPartial("site-footer", "/assets/footer.html");
+  .service-card-inner { padding: 24px 0; }
+}
 
-  setFooterYear();
-  bindNavbarInteractions();
-});
+/* ===== PMPC Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  background: #fff;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+  border-bottom: 1px solid var(--pmpc-line);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo sizing */
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 100%;
+  padding-right: 18px;
+}
+
+.logo {
+  height: calc(var(--nav-h) - 14px);
+  width: auto;
+  max-width: 560px;
+  object-fit: contain;
+}
+
+/* Desktop nav links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  margin-left: auto;
+  gap: 18px;
+
+  padding-right: 20px;
+}
+
+/* Link styling */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 10px 8px;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--pmpc-black);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
+.nav-link:hover,
+.nav-link:focus { color: var(--pmpc-purple); }
+
+/* Overline */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+
+  width: 78px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.nav-link:hover::before,
+.nav-link:focus::before {
+  background: var(--pmpc-purple);
+  opacity: 0.95;
+}
+
+/* Book Now */
+.nav-cta { font-weight: 800; }
+.nav-cta::before { width: 96px; }
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--pmpc-black);
+  padding: 10px 10px;
+}
+
+/* ===== Dropdowns (desktop) ===== */
+.dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+
+  background-color: var(--home-blue);
+
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  z-index: 1000;
+
+  min-width: 240px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Desktop-only: make Team + Book Now dropdowns a bit less wide */
+@media (min-width: 1049px) {
+  .dropdown.dropdown-team .dropdown-content { min-width: 190px; }
+  .dropdown.dropdown-book .dropdown-content { min-width: 190px; }
+}
+
+/* Hover bridge */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.dropdown-link {
+  display: block;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--pmpc-black);
+  padding: 9px 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus {
+  color: var(--pmpc-purple);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Desktop: dropdown on hover + focus-within */
+@media (min-width: 1051px) {
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content {
+    display: block;
+  }
+}
+
+/* ===== Mobile nav ===== */
+@media (max-width: 1050px) {
+  .navbar {
+    height: var(--nav-h-mobile);
+    padding: 0 18px;
+  }
+
+  .logo {
+    height: calc(var(--nav-h-mobile) - 10px);
+    max-width: 440px;
+  }
+
+  /* show hamburger */
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* hide horizontal links until opened */
+  .navbar-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h-mobile);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 12px 0 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.18);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.10);
+    max-height: calc(100vh - var(--nav-h-mobile));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 998;
+    padding-right: 0;
+  }
+
+  .navbar-links.active { display: flex; }
+
+  .nav-link {
+    width: min(520px, 92%);
+    padding: 14px 12px 12px;
+  }
+
+  .nav-link::before { top: 6px; }
+
+  .dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 8px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    padding: 0 0 12px 0;
+    min-width: 0;
+
+    width: auto;
+    max-width: min(520px, 92%);
+    text-align: center;
+  }
+
+  .dropdown-content.open { display: inline-block; }
+
+  .dropdown-link {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 8px auto 0;
+    padding: 10px 18px;
+    text-align: center;
+
+    background: var(--home-blue);
+    border: 1px solid rgba(0,0,0,0.10);
+    border-radius: 12px;
+  }
+}
+
+/* ===== PMPC Footer ===== */
+.site-footer { width: 100%; }
+
+.footer-map {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.footer-main {
+  background: #3d6780;
+  color: #ffffff;
+}
+
+.footer-inner {
+  width: min(1280px, calc(100% - 60px));
+  margin: 0 auto;
+  padding: 34px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-left { align-items: flex-start; text-align: left; }
+.footer-mid { align-items: center; text-align: center; }
+.footer-right { align-items: flex-end; text-align: right; }
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-bottom {
+  background: #453346;
+  color: #ffffff;
+}
+
+.footer-bottom-inner {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 14px 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+@media (max-width: 1050px) {
+  .footer-map { height: 260px; }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 26px 0;
+  }
+
+  .footer-left, .footer-mid, .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+}
