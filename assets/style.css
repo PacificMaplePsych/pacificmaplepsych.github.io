@@ -191,9 +191,7 @@ body {
 
 .btn-pill:active { transform: translateY(1px); }
 
-/* ===== Floating Book Now button (site-wide) =====
-   Note: you'll add the element once via /assets/main.js
-*/
+/* ===== Floating Book Now button (site-wide) ===== */
 .floating-book-now {
   position: fixed;
   right: 22px;
@@ -215,16 +213,19 @@ body {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 
-  border: 3px solid rgba(255, 255, 255, 0.92);
+  border: 2px solid #ffffff;
   border-radius: 6px;
 
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-  transition: transform 0.15s ease, filter 0.2s ease;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
 }
 
+/* Hover invert (matches old site behavior) */
 .floating-book-now a:hover,
 .floating-book-now a:focus {
-  filter: brightness(0.96);
+  background: #ffffff;   /* rectangle goes white */
+  color: #111111;        /* text goes black */
+  border-color: #111111; /* outline goes black */
 }
 
 .floating-book-now a:active {
@@ -246,7 +247,6 @@ body {
   .floating-book-now a {
     padding: 12px 18px;
     font-size: 13px;
-    border-width: 3px;
   }
 }
 
