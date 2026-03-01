@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Mickey Stein, Ph.D. | Registered Psychologist (#2413) | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Mickey Stein, Ph.D. is a Registered Psychologist (#2413) at Pacific Maple Psych Centre. Expertise in CBT and Psychodynamic therapy. Youth and adults. Assessments, individual and group therapy." />
+  <meta name="description" content="Mickey Stein, Ph.D. is a Registered Psychologist (#2413) at Pacific Maple Psych Centre. Expertise in CBT and Psychodynamic. Youth and adults. Assessments, individual and group therapy." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -50,27 +50,20 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific layout polish -->
   <style>
+    /* ==== Layout ==== */
     .team-page {
-      padding: 40px 0;
+      padding: 0 0 56px;
+    }
+
+    /* Compensate for fixed/sticky navbar height */
+    .team-page-offset {
+      padding-top: calc(var(--nav-h, 120px) + 28px);
     }
 
     .team-container {
       width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
-    }
-
-    .breadcrumbs {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-bottom: 18px;
-    }
-    .breadcrumbs a {
-      text-decoration: none;
-    }
-    .breadcrumbs a:hover {
-      text-decoration: underline;
     }
 
     .profile-grid {
@@ -80,7 +73,7 @@
       align-items: start;
     }
 
-    .profile-card, .schedule-card {
+    .card {
       background: #fff;
       border: 1px solid rgba(0,0,0,0.10);
       border-radius: 18px;
@@ -88,7 +81,7 @@
       overflow: hidden;
     }
 
-    .profile-card-inner {
+    .card-inner {
       padding: 22px;
     }
 
@@ -122,30 +115,42 @@
       opacity: 0.9;
     }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+    .profile-meta {
+      margin-top: 12px;
+      line-height: 1.6;
+      font-size: 1.0rem;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,0.12);
-      background: rgba(122,93,124,0.06);
-      font-size: 0.95rem;
+    .profile-meta .label {
+      font-weight: 800;
+      margin-right: 6px;
     }
-    .pill b { font-weight: 700; }
+
+    .profile-meta .meta-row {
+      margin: 4px 0;
+    }
+
+    .cert-block {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0,0,0,0.10);
+    }
+
+    .cert-title {
+      font-weight: 800;
+      margin: 0 0 6px 0;
+    }
+
+    .cert-list {
+      margin: 0;
+      padding-left: 18px;
+    }
 
     .profile-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
     .btn-cv {
@@ -156,23 +161,24 @@
       background: #111;
       color: #fff;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.98rem;
     }
     .btn-cv:hover { opacity: 0.92; }
 
-    .btn-ghost {
-      display: inline-block;
+    /* Book button should ONLY show on hamburger widths (mobile/menu collapse) */
+    .btn-book-mobile {
+      display: none;
       padding: 12px 16px;
       border-radius: 999px;
       border: 1px solid rgba(0,0,0,0.14);
       background: #fff;
       color: #111;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.98rem;
     }
-    .btn-ghost:hover { background: rgba(0,0,0,0.04); }
+    .btn-book-mobile:hover { background: rgba(0,0,0,0.04); }
 
     .bio-block {
       margin-top: 18px;
@@ -180,45 +186,17 @@
       border-top: 1px solid rgba(0,0,0,0.10);
     }
 
-    .bio-lede {
-      margin: 0;
+    .bio-block p {
+      margin: 0 0 14px 0;
+      line-height: 1.75;
       font-size: 1.02rem;
-      line-height: 1.7;
     }
+    .bio-block p:last-child { margin-bottom: 0; }
 
-    .bio-sections {
-      margin-top: 16px;
-      display: grid;
-      gap: 10px;
-    }
-
-    details.bio-item {
-      border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 14px;
-      background: rgba(144,181,197,0.12);
-      overflow: hidden;
-    }
-
-    details.bio-item summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 14px 16px;
-      font-weight: 800;
-    }
-    details.bio-item summary::-webkit-details-marker { display:none; }
-
-    details.bio-item .bio-item-body {
-      padding: 0 16px 16px 16px;
-      line-height: 1.7;
-      font-size: 1.0rem;
-    }
-    details.bio-item .bio-item-body p {
-      margin: 10px 0 0 0;
-    }
-
+    /* ==== Scheduler card ==== */
     .schedule-card {
       position: sticky;
-      top: 140px; /* stays below your navbar */
+      top: calc(var(--nav-h, 120px) + 16px);
     }
 
     .schedule-head {
@@ -252,7 +230,7 @@
       background: #fff;
     }
 
-    /* Mobile */
+    /* ==== Responsive ==== */
     @media (max-width: 980px) {
       .profile-grid {
         grid-template-columns: 1fr;
@@ -263,6 +241,9 @@
     }
 
     @media (max-width: 640px) {
+      .team-page-offset {
+        padding-top: calc(var(--nav-h-mobile, 110px) + 22px);
+      }
       .profile-top {
         grid-template-columns: 1fr;
       }
@@ -271,9 +252,13 @@
         height: 320px;
       }
     }
+
+    /* Hamburger breakpoint used in your JS previously: 1050px */
+    @media (max-width: 1050px) {
+      .btn-book-mobile { display: inline-block; }
+    }
   </style>
 
-  <!-- Structured data (Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -303,141 +288,110 @@
   <div id="site-header"></div>
 
   <main class="entry-content team-page">
-    <div class="team-container">
+    <section class="team-page-offset">
+      <div class="team-container">
 
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/team.html">Meet Our Team</a> <span aria-hidden="true">›</span> <span>Mickey Stein</span>
-      </nav>
+        <div class="profile-grid">
 
-      <div class="profile-grid">
+          <!-- LEFT: Profile + Bio -->
+          <article class="card" aria-label="Mickey Stein profile">
+            <div class="card-inner">
 
-        <!-- LEFT: Profile + Bio -->
-        <article class="profile-card" aria-label="Mickey Stein profile">
-          <div class="profile-card-inner">
+              <div class="profile-top">
+                <img
+                  src="https://pacificmaplepsych.com/images/team/mickey-stein.jpg"
+                  alt="Mickey Stein, Ph.D."
+                  class="profile-photo"
+                  loading="eager"
+                  decoding="async"
+                  width="440"
+                  height="440"
+                />
 
-            <div class="profile-top">
-              <img
-                src="https://pacificmaplepsych.com/images/team/mickey-stein.jpg"
-                alt="Mickey Stein, Ph.D."
-                class="profile-photo"
-                loading="eager"
-                decoding="async"
-                width="440"
-                height="440"
-              />
+                <div>
+                  <h1 class="profile-name">Mickey Stein, Ph.D.</h1>
+                  <p class="profile-sub">Registered Psychologist, <b>#2413</b></p>
 
-              <div>
-                <h1 class="profile-name">Mickey Stein, Ph.D.</h1>
-                <p class="profile-sub">
-                  Registered Psychologist, <b>#2413</b>
+                  <div class="profile-meta" aria-label="Clinician details">
+                    <div class="meta-row"><span class="label">Expertise:</span> CBT and Psychodynamic</div>
+                    <div class="meta-row"><span class="label">Population:</span> Youth and Adults</div>
+                    <div class="meta-row"><span class="label">Scope:</span> Assessments, Individual and Group Therapy</div>
+                    <div class="meta-row"><span class="label">Language:</span> English</div>
+
+                    <div class="cert-block">
+                      <p class="cert-title">Certification:</p>
+                      <ul class="cert-list">
+                        <li>Autism Diagnostic Observation Schedule, Second Edition (ADOS-2)</li>
+                        <li>Autism Diagnostic Interview – Revised (ADI-R)</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="profile-actions">
+                    <a class="btn-cv" href="https://pacificmaplepsych.com/team/Mickey%20Stein%20CV.pdf" target="_blank" rel="noopener">
+                      See C.V.
+                    </a>
+
+                    <!-- Only appears at hamburger widths -->
+                    <a class="btn-book-mobile" href="#book-with-mickey">
+                      Book with Mickey
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <section class="bio-block" aria-label="Biography">
+                <p>
+                  I earned my doctorate in Clinical Psychology from the University of Palo Alto. My dissertation was an exploration of psychotherapy treatment outcomes in a training clinic. I also interned at the Alaska Psychiatric Institute. These highly-ranked training programs, accredited by the American Psychological Association, allow me to be of effective use to my clientele. Moreover, I also completed a postdoctoral fellowship through Back in Motion in Vancouver, B.C.
                 </p>
 
-                <div class="pill-row" aria-label="Quick details">
-                  <span class="pill"><b>Expertise:</b> CBT and Psychodynamic</span>
-                  <span class="pill"><b>Population:</b> Youth and Adults</span>
-                  <span class="pill"><b>Scope:</b> Assessments, Individual and Group Therapy</span>
-                  <span class="pill"><b>Language:</b> English</span>
-                </div>
+                <p>
+                  In addition to private practice, I provide clinical supervision to Master’s, Psy.D., and Ph.D. candidates in the clinical psychology programs at Simon Fraser University (SFU) and Adler University. As well, I teach cognitive and behavioural interventions to doctoral students. With regard to my research, I have focused on eating disorders through the Department of Psychiatry & Behavioural Sciences at Stanford University and the Mental Illness Research Center at the Palo Alto VA.
+                </p>
 
-                <div class="pill-row" aria-label="Certifications">
-                  <span class="pill"><b>Certification:</b> ADOS-2</span>
-                  <span class="pill"><b>Certification:</b> ADI-R</span>
-                </div>
+                <p>
+                  My scholarly research is an active part of my work, fundamentally informing the daily work I do with my clientele. I also lecture regularly on CBT, an active area of specialization and professional interest. In addition, in these settings I conducted a range of psychological assessments. Having trained in a variety of clinical and research-based environments, I have the necessary expertise and wherewithal to support my clients on their journey to self-actualization.
+                </p>
 
-                <div class="profile-actions">
-                  <a class="btn-cv" href="https://pacificmaplepsych.com/team/Mickey%20Stein%20CV.pdf" target="_blank" rel="noopener">
-                    See C.V.
-                  </a>
-                  <a class="btn-ghost" href="#book-with-mickey">
-                    Book with Mickey
-                  </a>
-                </div>
-              </div>
+                <p>
+                  My clinical training consisted of private practice, therapeutic outdoor camps, psychiatric hospitals, community mental health agencies, providing psychiatric stabilization services as a mobile crisis interventionist in San Francisco, as well as child and family treatment settings. Academically, I worked as a graduate teaching assistant throughout my scholarly training.
+                </p>
+
+                <p>
+                  Prior to my graduate training in psychology, I completed an Honors degree in psychology from the University of Winnipeg where I focused on animal learning and worked in a rat laboratory, examining the impact of alcohol dependency and scalar timing theory. Before receiving formal training in psychology, I worked with underserved youth, including those with various mental health issues and fetal alcohol syndrome. Since early adolescence, I was exposed to a number of camp-related experiences, which instilled in me a desire to cooperate, learn from, and acquire a good familiarity with cultural adjustment. My desire to understand human nature has been prevalent since early adolescence and it’s also been the greatest impetus behind my work as a registered psychologist.
+                </p>
+
+                <p>
+                  In my free time, I enjoy exploring the outdoors, travel, new innovations in technology, strategic games, and, last but not least, my dog.
+                </p>
+              </section>
+
+            </div>
+          </article>
+
+          <!-- RIGHT: Scheduling -->
+          <aside class="card schedule-card" id="book-with-mickey" aria-label="Book with Mickey Stein">
+            <div class="schedule-head">
+              <h2>Book with Mickey</h2>
+              <p>
+                Select a service and appointment time below. If you have questions about fit, you can also start with a consultation.
+              </p>
             </div>
 
-            <section class="bio-block" aria-label="Biography">
-              <p class="bio-lede">
-                I earned my doctorate in Clinical Psychology from the University of Palo Alto. My dissertation explored psychotherapy treatment outcomes in a training clinic. I also interned at the Alaska Psychiatric Institute and completed a postdoctoral fellowship through Back in Motion in Vancouver, B.C.
-              </p>
+            <div class="schedule-body">
+              <iframe
+                src="https://app.acuityscheduling.com/schedule.php?owner=30141793&calendarID=8905163"
+                title="Schedule Appointment"
+                class="schedule-iframe"
+                frameborder="0">
+              </iframe>
+              <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+            </div>
+          </aside>
 
-              <div class="bio-sections">
-
-                <details class="bio-item" open>
-                  <summary>Clinical supervision and teaching</summary>
-                  <div class="bio-item-body">
-                    <p>
-                      In addition to private practice, I provide clinical supervision to Master’s, Psy.D., and Ph.D. candidates in the clinical psychology programs at Simon Fraser University (SFU) and Adler University. I also teach cognitive and behavioural interventions to doctoral students.
-                    </p>
-                  </div>
-                </details>
-
-                <details class="bio-item">
-                  <summary>Research and assessment experience</summary>
-                  <div class="bio-item-body">
-                    <p>
-                      With regard to my research, I have focused on eating disorders through the Department of Psychiatry & Behavioural Sciences at Stanford University and the Mental Illness Research Center at the Palo Alto VA.
-                    </p>
-                    <p>
-                      My scholarly research is an active part of my work and informs the daily work I do with my clientele. I also lecture regularly on CBT, an active area of specialization and professional interest. In these settings, I conducted a range of psychological assessments.
-                    </p>
-                  </div>
-                </details>
-
-                <details class="bio-item">
-                  <summary>Training background</summary>
-                  <div class="bio-item-body">
-                    <p>
-                      My clinical training included private practice, therapeutic outdoor camps, psychiatric hospitals, community mental health agencies, child and family treatment settings, and providing psychiatric stabilization services as a mobile crisis interventionist in San Francisco.
-                    </p>
-                    <p>
-                      Academically, I worked as a graduate teaching assistant throughout my scholarly training.
-                    </p>
-                  </div>
-                </details>
-
-                <details class="bio-item">
-                  <summary>Earlier experience and interests</summary>
-                  <div class="bio-item-body">
-                    <p>
-                      Prior to graduate training in psychology, I completed an Honors degree in psychology from the University of Winnipeg, where I focused on animal learning and worked in a rat laboratory examining the impact of alcohol dependency and scalar timing theory.
-                    </p>
-                    <p>
-                      Before receiving formal training in psychology, I worked with underserved youth, including those with various mental health issues and fetal alcohol syndrome. Since early adolescence, I was exposed to a number of camp-related experiences, which supported cultural adjustment and a desire to understand human nature.
-                    </p>
-                    <p>
-                      In my free time, I enjoy exploring the outdoors, travel, new innovations in technology, strategic games, and my dog.
-                    </p>
-                  </div>
-                </details>
-
-              </div>
-            </section>
-
-          </div>
-        </article>
-
-        <!-- RIGHT: Scheduling -->
-        <aside class="schedule-card" id="book-with-mickey" aria-label="Book with Mickey Stein">
-          <div class="schedule-head">
-            <h2>Book with Mickey</h2>
-            <p>
-              Select a service and appointment time below. If you have questions about fit, you can also start with a consultation.
-            </p>
-          </div>
-
-          <div class="schedule-body">
-            <iframe
-              src="https://app.acuityscheduling.com/schedule.php?owner=30141793&calendarID=8905163"
-              title="Schedule Appointment"
-              class="schedule-iframe"
-              frameborder="0">
-            </iframe>
-            <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
-          </div>
-        </aside>
-
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <div id="site-footer"></div>
