@@ -107,6 +107,21 @@ function bindNavbarInteractions() {
   });
 }
 
+// Floating "Book Now" button (site-wide), hidden on booking pages + the hub page
+(function addFloatingBookNow() {
+  const path = window.location.pathname;
+
+  // Hide on booking hub + all booking pages
+  if (path === "/book-now.html" || path.startsWith("/booking/")) return;
+
+  if (document.querySelector(".floating-book-now")) return;
+
+  const btn = document.createElement("div");
+  btn.className = "floating-book-now";
+  btn.innerHTML = `<a href="/book-now.html" aria-label="Book now">Book Now</a>`;
+  document.body.appendChild(btn);
+})();
+
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartial("site-header", "/assets/header.html");
   await injectPartial("site-footer", "/assets/footer.html");
@@ -114,17 +129,3 @@ document.addEventListener("DOMContentLoaded", async () => {
   setFooterYear();
   bindNavbarInteractions();
 });
-
-// Floating "Book Now" button (site-wide)
-(function addFloatingBookNow() {
-  if (document.querySelector('.floating-book-now')) return;
-
-  const btn = document.createElement('div');
-  btn.className = 'floating-book-now';
-
-  btn.innerHTML = `
-    <a href="/book-now.html" aria-label="Book now">Book Now</a>
-  `;
-
-  document.body.appendChild(btn);
-})();
