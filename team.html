@@ -1,651 +1,651 @@
-:root {
-  --pmpc-purple: #7a5d7c;
-  --pmpc-blue: #c9d1d9;
-  --pmpc-black: #111111;
-  --pmpc-line: rgba(0, 0, 0, 0.12);
-
-  --home-blue: #c9d1d9;
-  --home-plum: #d4c3cf;
-
-  --nav-h: 120px;
-  --nav-h-mobile: 110px;
-}
-
-/* ===== Global ===== */
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #fff;
-}
-
-/* Start content under fixed navbar */
-.entry-content { padding-top: var(--nav-h); }
-@media (max-width: 1050px) {
-  .entry-content { padding-top: var(--nav-h-mobile); }
-}
-
-/* Typography targets */
-.p-body { font-size: 18px; line-height: 1.45; margin: 0 0 14px 0; }
-.hero-h1 { font-size: 45px; font-weight: 700; line-height: 1.15; margin: 0 0 14px 0; }
-.hero-sub { font-size: 25px; font-weight: 700; margin: 0 0 10px 0; }
-.hero-tagline { font-size: 0.99rem; margin: 0 0 18px 0; text-align: center; }
-.section-h2 { font-size: 56px; font-weight: 700; margin: 0 0 14px 0; }
-.service-h3 { font-size: 25px; font-weight: 700; margin: 0 0 12px 0; }
-
-@media (max-width: 1050px) {
-  .hero-h1 { font-size: 34px; }
-  .section-h2 { font-size: 38px; }
-}
-
-/* Containers */
-.container-narrow {
-  width: min(980px, calc(100% - 44px));
-  margin: 0 auto;
-}
-
-/* ===== Global Title Band (used on About/Blog/Policies/Book Now/Services/etc.) ===== */
-.page-title-band {
-  background: var(--home-blue); /* #c9d1d9 */
-  padding: clamp(42px, 7vw, 78px) 0;
-  border-top: 1px solid var(--pmpc-line);
-  border-bottom: 1px solid var(--pmpc-line);
-}
-
-/* Use on both <h1> and <h2> inside the title band */
-.page-title-band h1,
-.page-title-band h2 {
-  margin: 0;
-  text-align: center;
-  letter-spacing: 0.04em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: var(--pmpc-black);
-  font-size: clamp(40px, 5.2vw, 72px);
-  line-height: 1.05;
-}
-
-/* ===== Home Hero ===== */
-.home-hero {
-  position: relative;
-  min-height: 520px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 48px 0;
-}
-
-.home-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0.70)),
-    url("/images/hero-pacific-mountains.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.home-hero-inner {
-  position: relative;
-  z-index: 1;
-  width: min(980px, calc(100% - 44px));
-  padding: 22px 18px;
-}
-
-.hero-actions { margin-top: 6px; }
-
-/* ===== Sections and Bands ===== */
-.home-section {
-  padding: 44px 0;
-  background: #fff;
-  text-align: center;
-}
-
-.home-band {
-  padding: 44px 0;
-  text-align: center;
-}
-
-.home-band-blue { background: var(--home-blue); }
-.home-band-plum { background: var(--home-plum); }
-
-/* ===== Checkerboard service rows ===== */
-.service-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: stretch;
-}
-
-.service-media,
-.service-card {
-  min-height: 420px;
-}
-
-.service-media {
-  background: #fff;
-  overflow: hidden;
-}
-
-.service-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-.service-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.service-card-inner {
-  width: min(720px, calc(100% - 44px));
-  margin: 0 auto;
-  padding: 34px 0;
-  text-align: center;
-}
-
-.service-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 18px;
-  justify-content: center;
-}
-
-/* ===== Buttons ===== */
-.btn-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border-radius: 999px;
-
-  background: #111;
-  color: #fff;
-
-  font-weight: 700;
-  text-decoration: none;
-
-  border: 1px solid rgba(0,0,0,0.15);
-  box-shadow: 0 10px 18px rgba(122, 93, 124, 0.35);
-
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-}
-
-.btn-pill:hover,
-.btn-pill:focus {
-  background: var(--pmpc-purple);
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 12px 22px rgba(122, 93, 124, 0.45);
-}
-
-.btn-pill:active { transform: translateY(1px); }
-
-/* ===== Floating Book Now button (site-wide) =====
-   Note: you'll add the element once via /assets/main.js
-*/
-.floating-book-now {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 9999;
-}
-
-.floating-book-now a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 26px;
-
-  background: #453346;
-  color: #ffffff;
-
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-
-  border: 3px solid rgba(255, 255, 255, 0.92);
-  border-radius: 6px;
-
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-  transition: transform 0.15s ease, filter 0.2s ease;
-}
-
-.floating-book-now a:hover,
-.floating-book-now a:focus {
-  filter: brightness(0.96);
-}
-
-.floating-book-now a:active {
-  transform: translateY(1px);
-}
-
-.floating-book-now a:focus-visible {
-  outline: 3px solid rgba(61, 103, 128, 0.65);
-  outline-offset: 4px;
-}
-
-/* Keep it from covering mobile UI too much */
-@media (max-width: 600px) {
-  .floating-book-now {
-    right: 14px;
-    bottom: 14px;
-  }
-
-  .floating-book-now a {
-    padding: 12px 18px;
-    font-size: 13px;
-    border-width: 3px;
-  }
-}
-
-/* ===== Services responsiveness ===== */
-
-/* Tablet range: hamburger may show, but keep the 2-column checkerboard */
-@media (max-width: 1050px) {
-  .home-hero { min-height: 460px; padding: 28px 0; }
-
-  .service-row { grid-template-columns: 1fr 1fr; }
-
-  .service-media,
-  .service-card {
-    min-height: 360px;
-  }
-
-  /* Bias crops upward so faces/hands are less likely to be cut off */
-  .service-img { object-position: center top; }
-
-  .service-card-inner { padding: 24px 0; }
-}
-
-/* True mobile: stack, but enforce image then text for every section */
-@media (max-width: 780px) {
-  .service-row {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .service-media { order: 1; }
-  .service-card { order: 2; }
-
-  .service-media,
-  .service-card {
-    min-height: auto;
-  }
-
-  .service-img {
-    height: 260px;
-    object-position: center top;
-  }
-
-  .service-card-inner { padding: 24px 0; }
-}
-
-/* ===== PMPC Navbar ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--nav-h);
-  background: #fff;
-  z-index: 999;
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 24px;
-  border-bottom: 1px solid var(--pmpc-line);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-}
-
-/* Logo sizing */
-.logo-link {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  height: 100%;
-  padding-right: 18px;
-}
-
-.logo {
-  height: calc(var(--nav-h) - 14px);
-  width: auto;
-  max-width: 560px;
-  object-fit: contain;
-}
-
-/* Desktop nav links */
-.navbar-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  margin-left: auto;
-  gap: 18px;
-
-  padding-right: 20px;
-}
-
-/* Link styling */
-.nav-link {
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 10px 8px;
-
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--pmpc-black);
-  text-decoration: none;
-  white-space: nowrap;
-  line-height: 1.1;
-}
-
-.nav-link:hover,
-.nav-link:focus { color: var(--pmpc-purple); }
-
-/* Overline */
-.nav-link::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-
-  width: 78px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  height: 2px;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 999px;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
-  pointer-events: none;
-}
-
-.nav-link:hover::before,
-.nav-link:focus::before {
-  background: var(--pmpc-purple);
-  opacity: 0.95;
-}
-
-/* Book Now */
-.nav-cta { font-weight: 800; }
-.nav-cta::before { width: 96px; }
-
-/* Hamburger (hidden on desktop) */
-.hamburger {
-  display: none;
-  margin-left: auto;
-  border: none;
-  background: transparent;
-  font-size: 30px;
-  line-height: 1;
-  cursor: pointer;
-  color: var(--pmpc-black);
-  padding: 10px 10px;
-}
-
-/* ===== Dropdowns (desktop) ===== */
-.dropdown { position: relative; }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-
-  background-color: var(--home-blue);
-
-  padding: 10px 12px;
-  border-radius: 12px;
-  box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  z-index: 1000;
-
-  min-width: 240px;
-  white-space: nowrap;
-  text-align: center;
-}
-
-/* Desktop-only: make Team + Book Now dropdowns a bit less wide */
-@media (min-width: 1049px) {
-  .dropdown.dropdown-team .dropdown-content { min-width: 190px; }
-  .dropdown.dropdown-book .dropdown-content { min-width: 190px; }
-}
-
-/* Hover bridge */
-.dropdown-content::before {
-  content: "";
-  position: absolute;
-  top: -14px;
-  left: 0;
-  right: 0;
-  height: 14px;
-}
-
-.dropdown-link {
-  display: block;
-  text-decoration: none;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--pmpc-black);
-  padding: 9px 12px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.dropdown-link:hover,
-.dropdown-link:focus {
-  color: var(--pmpc-purple);
-  background: rgba(255, 255, 255, 0.35);
-}
-
-/* Desktop: dropdown on hover + focus-within */
-@media (min-width: 1051px) {
-  .dropdown:hover .dropdown-content,
-  .dropdown:focus-within .dropdown-content {
-    display: block;
-  }
-}
-
-/* ===== Mobile nav ===== */
-@media (max-width: 1050px) {
-  .navbar {
-    height: var(--nav-h-mobile);
-    padding: 0 18px;
-  }
-
-  .logo {
-    height: calc(var(--nav-h-mobile) - 10px);
-    max-width: 440px;
-  }
-
-  /* show hamburger */
-  .hamburger {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* hide horizontal links until opened */
-  .navbar-links {
-    display: none;
-    position: fixed;
-    top: var(--nav-h-mobile);
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding: 12px 0 18px;
-    border-bottom: 1px solid rgba(0,0,0,0.18);
-    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.10);
-    max-height: calc(100vh - var(--nav-h-mobile));
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    z-index: 998;
-    padding-right: 0;
-  }
-
-  .navbar-links.active { display: flex; }
-
-  .nav-link {
-    width: min(520px, 92%);
-    padding: 14px 12px 12px;
-  }
-
-  .nav-link::before { top: 6px; }
-
-  .dropdown {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    margin-top: 8px;
-
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
-    padding: 0 0 12px 0;
-    min-width: 0;
-
-    width: auto;
-    max-width: min(520px, 92%);
-    text-align: center;
-  }
-
-  .dropdown-content.open { display: inline-block; }
-
-  .dropdown-link {
-    display: block;
-    width: fit-content;
-    max-width: 100%;
-    margin: 8px auto 0;
-    padding: 10px 18px;
-    text-align: center;
-
-    background: var(--home-blue);
-    border: 1px solid rgba(0,0,0,0.10);
-    border-radius: 12px;
-  }
-}
-
-/* ===== PMPC Footer ===== */
-.site-footer { width: 100%; }
-
-.footer-map {
-  width: 100%;
-  height: 360px;
-  overflow: hidden;
-}
-
-.footer-map iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.footer-main {
-  background: #3d6780;
-  color: #ffffff;
-}
-
-.footer-inner {
-  width: min(1280px, calc(100% - 60px));
-  margin: 0 auto;
-  padding: 34px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  gap: 56px;
-}
-
-.footer-title {
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-}
-
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.footer-left { align-items: flex-start; text-align: left; }
-.footer-mid { align-items: center; text-align: center; }
-.footer-right { align-items: flex-end; text-align: right; }
-
-.footer-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.35;
-}
-
-.footer-link:hover,
-.footer-link:focus {
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.footer-bottom {
-  background: #453346;
-  color: #ffffff;
-}
-
-.footer-bottom-inner {
-  width: min(1100px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 14px 0;
-  text-align: center;
-  font-weight: 600;
-  font-size: 13px;
-}
-
-@media (max-width: 1050px) {
-  .footer-map { height: 260px; }
-
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 26px 0;
-  }
-
-  .footer-left, .footer-mid, .footer-right {
-    align-items: center;
-    text-align: center;
-  }
-}
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PQ2LJL5F');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Meet the Team | Pacific Maple Psych Centre</title>
+  <meta name="description" content="Meet the team at Pacific Maple Psych Centre." />
+
+  <meta name="theme-color" content="#7a5d7c" />
+
+  <!-- Social previews (Open Graph + Twitter) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pacific Maple Psych Centre" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:title" content="Meet the Team | Pacific Maple Psych Centre" />
+  <meta property="og:description" content="Meet the team at Pacific Maple Psych Centre." />
+  <meta property="og:url" content="https://pacificmaplepsych.com/team.html" />
+  <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
+  <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Meet the Team | Pacific Maple Psych Centre" />
+  <meta name="twitter:description" content="Meet the team at Pacific Maple Psych Centre." />
+  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
+  <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
+
+  <link rel="canonical" href="https://pacificmaplepsych.com/team.html" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Simple%20Logo%2032x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Simple%20Logo%2016x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Simple%20Logo%20180x180.png" />
+
+  <meta name="robots" content="index,follow" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <link rel="stylesheet" href="/assets/style.css" />
+
+  <style>
+    .team-page { background: #fff; }
+
+    /* Top anchor target */
+    #top { scroll-margin-top: calc(var(--nav-h, 120px) + 12px); }
+    @media (max-width: 1050px) {
+      #top { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 12px); }
+    }
+
+    /* Section anchors */
+    .team-anchor { scroll-margin-top: calc(var(--nav-h, 120px) + 18px); }
+    @media (max-width: 1050px) {
+      .team-anchor { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 18px); }
+    }
+
+    .team-wrap {
+      padding: clamp(28px, 4vw, 46px) 0 clamp(60px, 6vw, 88px);
+      background: #fff;
+      text-align: center;
+    }
+
+    /* Jump buttons */
+    .team-jump {
+      width: min(1120px, calc(100% - 44px));
+      margin: 0 auto 52px; /* UPDATED: doubled-ish space below buttons */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .jump-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.14);
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 18px rgba(122, 93, 124, 0.25);
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+    .jump-btn:hover,
+    .jump-btn:focus {
+      background: var(--pmpc-purple, #7a5d7c);
+      color: #fff;
+      box-shadow: 0 12px 22px rgba(122, 93, 124, 0.35);
+      text-decoration: none;
+    }
+
+    .jump-btn:active { transform: translateY(1px); }
+
+    /* Section divider + title block */
+    .team-section {
+      width: min(1240px, calc(100% - 44px));
+      margin: 0 auto;
+      border-top: 1px solid rgba(0,0,0,0.14);
+      padding: 0;
+    }
+
+    .section-head { padding: 56px 0 70px; }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(38px, 5.2vw, 64px);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      color: #111;
+
+      display: inline-block;
+      padding-bottom: 10px;
+      border-bottom: 3px solid rgba(0,0,0,0.18);
+    }
+
+    .people-grid {
+      padding: 0 0 56px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 54px 72px;
+    }
+
+    .person {
+      width: 320px;
+      max-width: 92vw;
+      text-align: center;
+    }
+
+    .person-photo-link {
+      display: inline-block;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.16);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .person-photo-link:hover,
+    .person-photo-link:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+    }
+
+    .person-photo {
+      width: 112px;
+      height: 112px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .person-name {
+      margin: 14px 0 2px;
+      font-size: 1.08rem;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .person-sub {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .person-meta {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin: 0 auto 14px;
+      width: min(320px, 100%);
+    }
+
+    .person-meta .row { margin: 0; }
+    .person-meta b { font-weight: 900; }
+
+    .person-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      box-shadow: 0 10px 18px rgba(122, 93, 124, 0.25);
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+      min-width: 128px;
+      white-space: nowrap;
+    }
+
+    .btn-dark:hover,
+    .btn-dark:focus {
+      background: var(--pmpc-purple, #7a5d7c);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 12px 22px rgba(122, 93, 124, 0.35);
+    }
+
+    .btn-dark:active { transform: translateY(1px); }
+
+    @media (max-width: 360px) {
+      .person-actions { flex-wrap: wrap; }
+    }
+
+    /* UPDATED SPACING: more above, less below */
+    .back-top-wrap {
+      width: min(1240px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 0 0 28px;
+      text-align: center;
+    }
+
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.14);
+      background: rgba(144,181,197,0.28);
+      color: #111;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      margin-top: 44px;
+    }
+
+    .back-top:hover,
+    .back-top:focus {
+      background: var(--pmpc-purple, #7a5d7c);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .people-grid { gap: 42px 28px; padding-bottom: 44px; }
+      .section-head { padding: 44px 0 58px; }
+      .back-top { margin-top: 38px; }
+      .back-top-wrap { padding-bottom: 22px; }
+      .team-jump { margin-bottom: 46px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ2LJL5F"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="site-header"></div>
+
+  <main class="entry-content team-page">
+
+    <!-- TOP TITLE BAND -->
+    <section class="page-title-band" aria-label="Meet the team title">
+      <div class="container-narrow" id="top">
+        <h1>Meet the Team</h1>
+      </div>
+    </section>
+
+    <section class="team-wrap" aria-label="Team directory">
+      <nav class="team-jump" aria-label="Jump to team sections">
+        <a class="jump-btn" href="/team.html#Doctors">Doctors</a>
+        <a class="jump-btn" href="/team.html#Psychometrists">Psychometrists</a>
+        <a class="jump-btn" href="/team.html#Masters%20Psychologists">Masters Psychologists</a>
+        <a class="jump-btn" href="/team.html#Doctoral%20Students">Doctoral Students</a>
+        <a class="jump-btn" href="/team.html#Admin">Admin</a>
+      </nav>
+
+      <!-- DOCTORS -->
+      <section class="team-section team-anchor" id="Doctors" aria-label="Doctors">
+        <div class="section-head">
+          <h2 class="section-title">Doctors</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/patricia-celan.html" aria-label="Learn more about Dr. Patricia Celan">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/patricia-celan.jpg" alt="Dr. Patricia Celan" />
+            </a>
+            <div class="person-name">Dr. Patricia Celan, M.D.</div>
+            <div class="person-sub">Owner &amp; Director, Doctor of Psychiatry</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Trauma, Autism, Depression, Anxiety, EMDR, IFS</p>
+              <p class="row"><b>Population:</b> Young Adults</p>
+              <p class="row"><b>Scope:</b> Assessments and Therapy</p>
+              <p class="row"><b>Language:</b> English, French, Romanian</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/patricia-celan.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/mickey-stein.html" aria-label="Learn more about Dr. Mickey Stein">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/mickey-stein-mini.jpg" alt="Dr. Mickey Stein" />
+            </a>
+            <div class="person-name">Dr. Mickey Stein, Ph.D.</div>
+            <div class="person-sub">Registered Psychologist, #2413</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> CBT and Psychodynamic</p>
+              <p class="row"><b>Population:</b> Youth and Adults</p>
+              <p class="row"><b>Scope:</b> Assessments, Individual and Group Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/mickey-stein.html#book-with-mickey">Book Now</a>
+              <a class="btn-dark" href="/team/mickey-stein.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/howard-wong.html" aria-label="Learn more about Dr. Howard Wong">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/howard-wong.jpg" alt="Dr. Howard Wong" />
+            </a>
+            <div class="person-name">Dr. Howard Wong, Psy.D.</div>
+            <div class="person-sub">Registered Psychologist #04174</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Depressive and Anxiety Disorders, PTSD, Grief, Substance Use, Couple Relationships</p>
+              <p class="row"><b>Population:</b> Youth and Adults</p>
+              <p class="row"><b>Scope:</b> Assessments and Individual/Couples Therapy</p>
+              <p class="row"><b>Language:</b> English, Cantonese, Mandarin</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/howard-wong.html#book-with-howard">Book Now</a>
+              <a class="btn-dark" href="/team/howard-wong.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/camille-mori.html" aria-label="Learn more about Dr. Camille Mori">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/camille-mori.jpg" alt="Dr. Camille Mori" />
+            </a>
+            <div class="person-name">Dr. Camille Mori, Ph.D.</div>
+            <div class="person-sub">Doctor of Clinical Psychology</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Mood and Anxiety</p>
+              <p class="row"><b>Population:</b> Adults and Youth</p>
+              <p class="row"><b>Scope:</b> Assessment and Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/camille-mori.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/cosette-leblanc.html" aria-label="Learn more about Dr. Cosette LeBlanc">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/cosette-leblanc.jpg" alt="Dr. Cosette LeBlanc" />
+            </a>
+            <div class="person-name">Dr. Cosette LeBlanc, Psy.D.</div>
+            <div class="person-sub">Doctor of Clinical Psychology</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Depression, Anxiety, Grief, Trauma, Identity &amp; Relationship Issues, Substance Use, ADHD</p>
+              <p class="row"><b>Population:</b> Adults</p>
+              <p class="row"><b>Scope:</b> Assessments and Individual/Couples Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/cosette-leblanc.html#book-with-cosette">Book Now</a>
+              <a class="btn-dark" href="/team/cosette-leblanc.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PSYCHOMETRISTS -->
+      <section class="team-section team-anchor" id="Psychometrists" aria-label="Psychometrists">
+        <div class="section-head">
+          <h2 class="section-title">Psychometrists</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/cara-anne-storey.html" aria-label="Learn more about Cara-Anne Storey">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/cara-anne-storey.jpg" alt="Cara-Anne Storey" />
+            </a>
+            <div class="person-name">Cara-Anne Storey, A.A. (Psych)</div>
+            <div class="person-sub">Lead Psychometrist</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/cara-anne-storey.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/samantha-mason.html" aria-label="Learn more about Samantha Mason">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/samantha-mason.jpg" alt="Samantha Mason" />
+            </a>
+            <div class="person-name">Samantha Mason, B.A.</div>
+            <div class="person-sub">Psychometrist</div>
+            <div class="person-meta">
+              <p class="row"><b>Population:</b> Adults</p>
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/samantha-mason.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/peg-caughill.html" aria-label="Learn more about Peg Caughill">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/peg-caughill.jpg" alt="Peg Caughill" />
+            </a>
+            <div class="person-name">Peg Caughill, M.A.</div>
+            <div class="person-sub">Psychometrist</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/peg-caughill.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MASTERS PSYCHOLOGISTS -->
+      <section class="team-section team-anchor" id="Masters Psychologists" aria-label="Masters Psychologists">
+        <div class="section-head">
+          <h2 class="section-title">Masters Psychologists</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/ilona-oszadszky.html" aria-label="Learn more about Ilona Oszadszky">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/ilona-oszadszky.jpg" alt="Ilona Oszadszky" />
+            </a>
+            <div class="person-name">Ilona Oszadszky, M.A.</div>
+            <div class="person-sub">Licensed School Psychologist, #3134</div>
+            <div class="person-meta">
+              <p class="row"><b>Population:</b> Children and Youth</p>
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/ilona-oszadszky.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/linda-sawyer.html" aria-label="Learn more about Linda Sawyer">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/linda-sawyer.jpg" alt="Linda Sawyer" />
+            </a>
+            <div class="person-name">Linda Sawyer, M.A.</div>
+            <div class="person-sub">Associate Psychologist</div>
+            <div class="person-meta">
+              <p class="row"><b>Expertise:</b> Emotion Based Therapy</p>
+              <p class="row"><b>Population:</b> Young Adults and Adults</p>
+              <p class="row"><b>Scope:</b> Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/linda-sawyer.html#book-with-linda">Book Now</a>
+              <a class="btn-dark" href="/team/linda-sawyer.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- DOCTORAL STUDENTS -->
+      <section class="team-section team-anchor" id="Doctoral Students" aria-label="Doctoral Students">
+        <div class="section-head">
+          <h2 class="section-title">Doctoral Students</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/colleen-rainey.html" aria-label="Learn more about Colleen Rainey">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/colleen-rainey.jpg" alt="Colleen Rainey" />
+            </a>
+            <div class="person-name">Colleen Rainey, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/colleen-rainey.html#book-with-colleen">Book Now</a>
+              <a class="btn-dark" href="/team/colleen-rainey.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/ali-barry.html" aria-label="Learn more about Ali Barry">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/ali-barry.jpg" alt="Ali Barry" />
+            </a>
+            <div class="person-name">Ali Barry, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/ali-barry.html#book-with-ali">Book Now</a>
+              <a class="btn-dark" href="/team/ali-barry.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/theresa-moolman.html" aria-label="Learn more about Theresa Moolman">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/theresa-moolman.jpg" alt="Theresa Moolman" />
+            </a>
+            <div class="person-name">Theresa Moolman, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/theresa-moolman.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/sara-freyvogel.html" aria-label="Learn more about Sara Freyvogel">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/sara-freyvogel.jpg" alt="Sara Freyvogel" />
+            </a>
+            <div class="person-name">Sara Freyvogel, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments, Therapy</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/sara-freyvogel.html#book-with-sara">Book Now</a>
+              <a class="btn-dark" href="/team/sara-freyvogel.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/vanessa-hall.html" aria-label="Learn more about Vanessa Hall">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/vanessa-hall.jpg" alt="Vanessa Hall" />
+            </a>
+            <div class="person-name">Vanessa Hall, M.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments</p>
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/vanessa-hall.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/omer-mustufa.html" aria-label="Learn more about Omer Mustufa">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/omer-mustufa.jpg" alt="Omer Mustufa" />
+            </a>
+            <div class="person-name">Omer Mustufa, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <div class="person-meta">
+              <p class="row"><b>Scope:</b> Assessments and Therapy</p>
+              <p class="row"><b>Language:</b> English and Urdu</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/omer-mustufa.html#book-with-omer">Book Now</a>
+              <a class="btn-dark" href="/team/omer-mustufa.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ADMIN -->
+      <section class="team-section team-anchor" id="Admin" aria-label="Admin">
+        <div class="section-head">
+          <h2 class="section-title">Admin</h2>
+        </div>
+
+        <div class="people-grid">
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/tsuba-shima.html" aria-label="Learn more about Tsuba Shima">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/tsuba-shima.jpg" alt="Tsuba Shima" />
+            </a>
+            <div class="person-name">Tsuba Shima, B.A.</div>
+            <div class="person-sub">Practice Manager and Data Analyst</div>
+            <div class="person-meta">
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/tsuba-shima.html#book-with-tsuba">Discuss Your Needs</a>
+              <a class="btn-dark" href="/team/tsuba-shima.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="person">
+            <a class="person-photo-link" href="/team/aliza-heiligman.html" aria-label="Learn more about Aliza Heiligman">
+              <img class="person-photo" src="https://pacificmaplepsych.com/images/team/aliza-heiligman.jpg" alt="Aliza Heiligman" />
+            </a>
+            <div class="person-name">Aliza Heiligman, B.Sc.</div>
+            <div class="person-sub">Marketing Assistant</div>
+            <div class="person-meta">
+              <p class="row"><b>Language:</b> English</p>
+            </div>
+            <div class="person-actions">
+              <a class="btn-dark" href="/team/aliza-heiligman.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="back-top-wrap">
+        <a class="back-top" href="/team.html#top">Back to top</a>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/main.js" defer></script>
+</body>
+</html>
