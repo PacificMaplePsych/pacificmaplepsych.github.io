@@ -413,27 +413,26 @@
     }
 
     /*
-      Photos: guaranteed rectangles.
-      Key fix: use aspect-ratio and height:auto so the image area is rectangular,
-      and the text below adds length to the card (not "eclipsing" the photo).
+      VERTICAL rectangle photos (taller than wide)
+      Use a portrait aspect-ratio and keep bio below photo (photo is not overlaid).
     */
     .region-page .person-photo {
       width: 100%;
       height: auto;
-      aspect-ratio: 16 / 10;          /* rectangle, not square */
+      aspect-ratio: 3 / 4;           /* portrait */
       display: block;
       object-fit: cover;
-      object-position: center 35%;
+      object-position: center 30%;
       background: #fff;
     }
 
-    /* Favor faces; still crops sides more than heads */
-    .region-page .person-photo.mickey { object-position: center 35%; }
-    .region-page .person-photo.camille { object-position: center 30%; }
-    .region-page .person-photo.linda { object-position: center 28%; }
+    /* Slightly tweak focal point per image */
+    .region-page .person-photo.mickey { object-position: center 28%; }
+    .region-page .person-photo.camille { object-position: center 26%; }
+    .region-page .person-photo.linda { object-position: center 25%; }
 
     .region-page .person-body {
-      padding: 16px 16px 18px;
+      padding: 14px 16px 16px;
       text-align: left;
     }
 
@@ -452,10 +451,11 @@
       color: var(--region-ink);
     }
 
+    /* keep bio smaller so it "adds a small piece" after the photo */
     .region-page .person-mini {
       margin: 0;
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: 12.5px;
+      line-height: 1.65;
       color: var(--region-ink);
     }
 
@@ -558,7 +558,7 @@
       }
 
       .region-page .person-photo {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 3 / 4;
       }
 
       .region-page .final-left-inner {
@@ -757,13 +757,13 @@
               loading="lazy"
               decoding="async"
               width="1200"
-              height="900"
+              height="1600"
             />
             <div class="person-body">
               <p class="person-name">Dr. Mickey Stein, Ph.D.</p>
               <p class="person-meta">Registered Psychologist</p>
               <p class="person-mini">
-                As a registered clinical psychologist in B.C., I enjoy providing an array of services and examining life questions. Having trained in a variety of clinical and research-based environments, I have the necessary expertise and wherewithal to support my clients on their journey to self-actualization.
+                I offer comprehensive psychological services and help clients navigate important life questions. My training across clinical and research environments equips me with the expertise to guide clients toward meaningful growth and self-actualization.
               </p>
             </div>
           </a>
@@ -777,7 +777,7 @@
               loading="lazy"
               decoding="async"
               width="1200"
-              height="900"
+              height="1600"
             />
             <div class="person-body">
               <p class="person-name">Dr. Camille Mori, Ph.D.</p>
@@ -797,7 +797,7 @@
               loading="lazy"
               decoding="async"
               width="1200"
-              height="900"
+              height="1600"
             />
             <div class="person-body">
               <p class="person-name">Linda Sawyer, M.A.</p>
