@@ -121,7 +121,7 @@
       border: 0;
     }
 
-    /* Process split (image left, text right) - NOW PLUM BACKGROUND */
+    /* Process split (image left, text right) */
     .asd-page .process-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -184,7 +184,7 @@
       margin-top: 14px;
     }
 
-    /* Dark blue band title (replaces black) */
+    /* Dark blue band title */
     .asd-page .included-band {
       background: #3d6780;
       padding: clamp(34px, 4.6vw, 58px) 0;
@@ -197,7 +197,7 @@
       color: #fff;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      font-size: clamp(22px, 3.6vw, 42px); /* smaller so it stays to ~2 lines */
+      font-size: clamp(22px, 3.6vw, 42px);
       line-height: 1.12;
       max-width: 980px;
       margin-left: auto;
@@ -245,7 +245,7 @@
       margin: 8px 0;
     }
 
-    /* Bottom split CTA (text left, image right) */
+    /* Bottom split CTA */
     .asd-page .bottom-cta {
       background: #fff;
       padding: 0;
@@ -301,6 +301,78 @@
       border: 0;
     }
 
+    /* FAQ section */
+    .asd-page .faq-wrap {
+      background: #fff;
+      padding: clamp(42px, 5vw, 72px) 20px clamp(56px, 6vw, 84px);
+    }
+
+    .asd-page .faq-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .asd-page .faq-title {
+      margin: 0 0 24px;
+      color: var(--pmpc-black);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.1;
+    }
+
+    .asd-page .faq-list {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .asd-page .faq-item {
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .asd-page .faq-q {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: 16px;
+      line-height: 1.45;
+      position: relative;
+      padding-right: 54px;
+    }
+
+    .asd-page .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .asd-page .faq-q::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .asd-page .faq-item[open] .faq-q::after {
+      content: "−";
+    }
+
+    .asd-page .faq-a {
+      padding: 0 22px 20px;
+    }
+
+    .asd-page .faq-a .p-body {
+      margin: 0;
+    }
+
     @media (max-width: 900px) {
       .asd-page .split-grid,
       .asd-page .process-grid,
@@ -324,12 +396,100 @@
         justify-content: center;
       }
 
-      /* On small screens allow wrapping naturally */
       .asd-page .included-band h2 {
         font-size: clamp(20px, 5.2vw, 34px);
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Who are ASD assessments for at Pacific Maple Psych Centre?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We provide comprehensive Autism Spectrum Disorder (ASD) assessments for children, adolescents, and adults in Vancouver and across British Columbia. Our process is tailored to the individual’s age, presentation, and support needs."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What does an ASD assessment involve at your clinic?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Our ASD assessments begin with an in-depth intake session to gather developmental history and current concerns. Depending on the individual, the assessment may include interviews, observations, standardized measures, and evaluation of social communication, adaptive functioning, behaviour patterns, and cognitive functioning."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you assess adults for autism?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We offer adult autism assessments as well as assessments for children and adolescents. For adults, the final report may support disability-related purposes, workplace accommodations, educational accommodations, and applications for testing accommodations where appropriate."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you assess children and teens for autism?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We assess children and adolescents for Autism Spectrum Disorder and provide a comprehensive formal report with a clear diagnosis, if applicable, along with practical recommendations and related documentation when needed."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Will I receive a formal autism assessment report?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. You will receive a comprehensive formal report summarizing findings, explaining results, and outlining a diagnosis if applicable. Our reports are designed to provide clear next steps and practical recommendations."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you complete MCFD autism funding forms?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. For children, completion of MCFD (Ministry of Children and Family Development) forms for autism funding is included in the cost of the assessment."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can your autism assessment support CLBC applications?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Where appropriate, we complete and sign the CLBC (Community Living BC) form to support access to adult services."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can your ASD assessment help with school, workplace, or testing accommodations?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Depending on the findings, the report may support disability-related documentation, IEPs, workplace accommodations, and applications for testing accommodations, including professional or standardized examinations."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What makes your clinic’s autism assessments different?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Our team includes psychologists experienced in neurodevelopmental assessment. We focus on more than diagnosis alone by providing a supportive assessment experience, a comprehensive understanding of strengths and needs, and practical recommendations for next steps."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What happens after the autism assessment is complete?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"After the assessment, you receive a formal report and practical recommendations. For adults, there may also be an option for a follow-up consultation to review progress or discuss next steps."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -438,7 +598,7 @@
       </div>
     </section>
 
-    <!-- INCLUDED BAND (dark blue) -->
+    <!-- INCLUDED BAND -->
     <section class="included-band" aria-label="Report contents title">
       <div class="container-narrow">
         <h2>Contents of the Final Report</h2>
@@ -476,7 +636,7 @@
       </div>
     </section>
 
-    <!-- BOTTOM CTA SPLIT (text left, image right) -->
+    <!-- BOTTOM CTA SPLIT -->
     <section class="bottom-cta" aria-label="Book an assessment">
       <div class="cta-grid">
         <div class="cta-left">
@@ -508,6 +668,107 @@
             width="1600"
             height="900"
           />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (centered under content and before footer) -->
+    <section class="faq-wrap" aria-label="Frequently asked questions">
+      <div class="faq-inner">
+        <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-q">Who are ASD assessments for at Pacific Maple Psych Centre?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                We provide comprehensive Autism Spectrum Disorder (ASD) assessments for children, adolescents, and adults in Vancouver and across British Columbia. Our process is tailored to the individual’s age, presentation, and support needs.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What does an ASD assessment involve at your clinic?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Our ASD assessments begin with an in-depth intake session to gather developmental history and current concerns. Depending on the individual, the assessment may include interviews, observations, standardized measures, and evaluation of social communication, adaptive functioning, behaviour patterns, and cognitive functioning.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you assess adults for autism?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. We offer adult autism assessments as well as assessments for children and adolescents. For adults, the final report may support disability-related purposes, workplace accommodations, educational accommodations, and applications for testing accommodations where appropriate.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you assess children and teens for autism?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. We assess children and adolescents for Autism Spectrum Disorder and provide a comprehensive formal report with a clear diagnosis, if applicable, along with practical recommendations and related documentation when needed.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Will I receive a formal autism assessment report?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. You will receive a comprehensive formal report summarizing findings, explaining results, and outlining a diagnosis if applicable. Our reports are designed to provide clear next steps and practical recommendations.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you complete MCFD autism funding forms?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. For children, completion of MCFD (Ministry of Children and Family Development) forms for autism funding is included in the cost of the assessment.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can your autism assessment support CLBC applications?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Where appropriate, we complete and sign the CLBC (Community Living BC) form to support access to adult services.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can your ASD assessment help with school, workplace, or testing accommodations?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Depending on the findings, the report may support disability-related documentation, IEPs, workplace accommodations, and applications for testing accommodations, including professional or standardized examinations.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What makes your clinic’s autism assessments different?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Our team includes psychologists experienced in neurodevelopmental assessment. We focus on more than diagnosis alone by providing a supportive assessment experience, a comprehensive understanding of strengths and needs, and practical recommendations for next steps.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What happens after the autism assessment is complete?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                After the assessment, you receive a formal report and practical recommendations. For adults, there may also be an option for a follow-up consultation to review progress or discuss next steps.
+              </p>
+            </div>
+          </details>
+
         </div>
       </div>
     </section>
