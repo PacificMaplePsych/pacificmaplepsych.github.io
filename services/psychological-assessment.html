@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="en-CA">
 <head>
   <meta charset="utf-8" />
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -376,6 +375,78 @@
       border: 0;
     }
 
+    /* FAQ section */
+    .assessment-page .faq-wrap {
+      background: #fff;
+      padding: clamp(42px, 5vw, 72px) 20px clamp(56px, 6vw, 84px);
+    }
+
+    .assessment-page .faq-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .assessment-page .faq-title {
+      margin: 0 0 24px;
+      color: var(--pmpc-black);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.1;
+    }
+
+    .assessment-page .faq-list {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .assessment-page .faq-item {
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .assessment-page .faq-q {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: 16px;
+      line-height: 1.45;
+      position: relative;
+      padding-right: 54px;
+    }
+
+    .assessment-page .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .assessment-page .faq-q::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .assessment-page .faq-item[open] .faq-q::after {
+      content: "−";
+    }
+
+    .assessment-page .faq-a {
+      padding: 0 22px 20px;
+    }
+
+    .assessment-page .faq-a .p-body {
+      margin: 0;
+    }
+
     @media (max-width: 950px) {
       .assessment-page .types-grid {
         grid-template-columns: 1fr;
@@ -415,6 +486,95 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is included in a psychological assessment at Pacific Maple Psych Centre?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Our psychological assessments typically include a clinical interview, one to three half-days of in-person testing, online questionnaires, optional collateral information with consent, data analysis, a written report, and a feedback session to review results and recommendations."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How long does a psychological assessment take?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The process usually begins with a 1.5- to 2-hour clinical interview, followed by one to three in-person testing sessions that average about 4 hours each. There is also time for questionnaires, scoring, interpretation, report writing, and a 1-hour feedback session."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What kinds of concerns can a psychological assessment help clarify?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Psychological assessments can help clarify a wide range of concerns, including mental health symptoms, ADHD, learning disorders such as dyslexia or dyscalculia, intellectual functioning, giftedness, and other questions about cognitive or emotional functioning."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer ADHD assessments in Vancouver and across British Columbia?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Pacific Maple Psych Centre provides ADHD assessments in Vancouver and across British Columbia. ADHD assessments typically include a clinical interview, standardized questionnaires, and evaluation of executive functioning."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer psychoeducational assessments?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We offer psychoeducational assessments that can evaluate learning disorders, intellectual functioning, and cognitive giftedness. These assessments help clarify the relationship between cognitive abilities and academic achievement and can support tailored recommendations."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer autism assessments as part of your psychological assessment services?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Autism Spectrum Disorder assessments are one of the assessment services available through our clinic. If ASD assessment is the main question, we also provide a dedicated ASD assessment page with more detailed information."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What should I bring to my psychological assessment?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Depending on your situation, it is helpful to bring previous reports prepared by professionals, a resume or curriculum vitae, report cards, and a current medication list."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How quickly can I book a psychological assessment?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Report requests are acknowledged promptly and appointments are typically scheduled within 24 hours. Assessments are often offered within a 1- to 7-week window, depending on availability and the type of assessment needed."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Will I receive a written report after the assessment?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Our process includes a contextual written report that integrates findings and includes a diagnosis when applicable, along with recommendations tailored to the individual."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can a psychological assessment help with treatment planning or next steps?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. One of the main purposes of assessment is to help identify likely contributors to a person’s concerns and provide practical next steps. The report and feedback session are designed to support treatment planning, accommodations, and informed decision-making."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -666,6 +826,107 @@
             width="1600"
             height="900"
           />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-wrap" aria-label="Frequently asked questions">
+      <div class="faq-inner">
+        <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-q">What is included in a psychological assessment at Pacific Maple Psych Centre?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Our psychological assessments typically include a clinical interview, one to three half-days of in-person testing, online questionnaires, optional collateral information with consent, data analysis, a written report, and a feedback session to review results and recommendations.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">How long does a psychological assessment take?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                The process usually begins with a 1.5- to 2-hour clinical interview, followed by one to three in-person testing sessions that average about 4 hours each. There is also time for questionnaires, scoring, interpretation, report writing, and a 1-hour feedback session.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What kinds of concerns can a psychological assessment help clarify?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Psychological assessments can help clarify a wide range of concerns, including mental health symptoms, ADHD, learning disorders such as dyslexia or dyscalculia, intellectual functioning, giftedness, and other questions about cognitive or emotional functioning.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer ADHD assessments in Vancouver and across British Columbia?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Pacific Maple Psych Centre provides ADHD assessments in Vancouver and across British Columbia. ADHD assessments typically include a clinical interview, standardized questionnaires, and evaluation of executive functioning.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer psychoeducational assessments?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. We offer psychoeducational assessments that can evaluate learning disorders, intellectual functioning, and cognitive giftedness. These assessments help clarify the relationship between cognitive abilities and academic achievement and can support tailored recommendations.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer autism assessments as part of your psychological assessment services?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Autism Spectrum Disorder assessments are one of the assessment services available through our clinic. If ASD assessment is the main question, we also provide a dedicated ASD assessment page with more detailed information.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What should I bring to my psychological assessment?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Depending on your situation, it is helpful to bring previous reports prepared by professionals, a resume or curriculum vitae, report cards, and a current medication list.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">How quickly can I book a psychological assessment?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Report requests are acknowledged promptly and appointments are typically scheduled within 24 hours. Assessments are often offered within a 1- to 7-week window, depending on availability and the type of assessment needed.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Will I receive a written report after the assessment?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Our process includes a contextual written report that integrates findings and includes a diagnosis when applicable, along with recommendations tailored to the individual.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can a psychological assessment help with treatment planning or next steps?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. One of the main purposes of assessment is to help identify likely contributors to a person’s concerns and provide practical next steps. The report and feedback session are designed to support treatment planning, accommodations, and informed decision-making.
+              </p>
+            </div>
+          </details>
+
         </div>
       </div>
     </section>
