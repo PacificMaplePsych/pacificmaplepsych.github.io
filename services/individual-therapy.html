@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Individual Therapy | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Individual therapy for adolescents and adults in Vancouver and across British Columbia. Evidence-based support for meaningful, lasting change." />
+  <meta name="description" content="Individual therapy for adolescents and adults in Vancouver and across British Columbia. Evidence-based support for anxiety, depression, trauma, life transitions, and meaningful lasting change." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -268,6 +268,78 @@
       border: 0;
     }
 
+    /* FAQ section */
+    .individual-therapy-page .faq-wrap {
+      background: #fff;
+      padding: clamp(42px, 5vw, 72px) 20px clamp(56px, 6vw, 84px);
+    }
+
+    .individual-therapy-page .faq-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .individual-therapy-page .faq-title {
+      margin: 0 0 24px;
+      color: var(--pmpc-black);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.1;
+    }
+
+    .individual-therapy-page .faq-list {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .individual-therapy-page .faq-item {
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .individual-therapy-page .faq-q {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: 16px;
+      line-height: 1.45;
+      position: relative;
+      padding-right: 54px;
+    }
+
+    .individual-therapy-page .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .individual-therapy-page .faq-q::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .individual-therapy-page .faq-item[open] .faq-q::after {
+      content: "−";
+    }
+
+    .individual-therapy-page .faq-a {
+      padding: 0 22px 20px;
+    }
+
+    .individual-therapy-page .faq-a .p-body {
+      margin: 0;
+    }
+
     @media (max-width: 900px) {
       .individual-therapy-page .split-grid,
       .individual-therapy-page .symptoms-grid,
@@ -291,6 +363,95 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Who is individual therapy for at Pacific Maple Psych Centre?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We offer individual therapy for adolescents and adults in Vancouver and across British Columbia. Therapy is tailored to the individual’s concerns, goals, and stage of life."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What concerns can individual therapy help with?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Individual therapy can support a wide range of concerns, including anxiety, depression, panic attacks, trauma, PTSD, phobias, social anxiety, obsessive-compulsive symptoms, emotion regulation difficulties, self-esteem concerns, work challenges, family difficulties, school difficulties, grief, and major life transitions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer therapy for anxiety in Vancouver and across British Columbia?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Anxiety is one of the main concerns addressed in individual therapy at our clinic. We use evidence-based techniques and tailored interventions to help people better understand anxiety, cope more effectively, and work toward meaningful improvement over time."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you provide therapy for adolescents?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We provide therapy for adolescents and address concerns such as mood, anxiety, trauma, PTSD, self-esteem, behavioural issues, family difficulties, sibling concerns, bereavement, school difficulties, emotion regulation, sexuality, and video game addiction."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you provide therapy for adults?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We provide therapy for adults and address concerns such as depression, anxiety, panic attacks, agoraphobia, trauma and PTSD, phobias, social anxiety, obsessive-compulsive symptoms, family and parenting difficulties, emotion management difficulties, work challenges, and sexual dysfunction."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is your approach to individual therapy?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Our approach is personalized, compassionate, and evidence-based. We focus on understanding thoughts, behaviours, emotions, history, and presenting concerns so that therapy is grounded in a clear understanding of what is contributing to distress and what may support meaningful change."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you use exposure therapy for anxiety?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"When appropriate, we emphasize gradual exposure to anxiety symptoms in a safe and agreed-upon manner. This can help individuals address anxiety more directly, build coping strategies, and regain a stronger sense of control over time."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can individual therapy help with trauma and PTSD?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Trauma and PTSD are among the concerns addressed in therapy for both adolescents and adults at our clinic. Treatment is tailored to the person’s needs and carried out in a supportive, nonjudgmental environment."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is individual therapy like at Pacific Maple Psych Centre?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We aim to create a supportive and nonjudgmental environment where individuals can openly express their thoughts and emotions. Therapy is collaborative and focused on helping each person build insight, resilience, and practical strategies for daily life."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I book an individual therapy session?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"You can book an individual therapy session through our booking page. Our team provides therapy in Vancouver and across British Columbia and can help you take the next step toward support."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -453,6 +614,107 @@
             width="1600"
             height="900"
           />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-wrap" aria-label="Frequently asked questions">
+      <div class="faq-inner">
+        <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-q">Who is individual therapy for at Pacific Maple Psych Centre?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                We offer individual therapy for adolescents and adults in Vancouver and across British Columbia. Therapy is tailored to the individual’s concerns, goals, and stage of life.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What concerns can individual therapy help with?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Individual therapy can support a wide range of concerns, including anxiety, depression, panic attacks, trauma, PTSD, phobias, social anxiety, obsessive-compulsive symptoms, emotion regulation difficulties, self-esteem concerns, work challenges, family difficulties, school difficulties, grief, and major life transitions.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer therapy for anxiety in Vancouver and across British Columbia?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Anxiety is one of the main concerns addressed in individual therapy at our clinic. We use evidence-based techniques and tailored interventions to help people better understand anxiety, cope more effectively, and work toward meaningful improvement over time.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you provide therapy for adolescents?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. We provide therapy for adolescents and address concerns such as mood, anxiety, trauma, PTSD, self-esteem, behavioural issues, family difficulties, sibling concerns, bereavement, school difficulties, emotion regulation, sexuality, and video game addiction.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you provide therapy for adults?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. We provide therapy for adults and address concerns such as depression, anxiety, panic attacks, agoraphobia, trauma and PTSD, phobias, social anxiety, obsessive-compulsive symptoms, family and parenting difficulties, emotion management difficulties, work challenges, and sexual dysfunction.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What is your approach to individual therapy?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Our approach is personalized, compassionate, and evidence-based. We focus on understanding thoughts, behaviours, emotions, history, and presenting concerns so that therapy is grounded in a clear understanding of what is contributing to distress and what may support meaningful change.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you use exposure therapy for anxiety?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                When appropriate, we emphasize gradual exposure to anxiety symptoms in a safe and agreed-upon manner. This can help individuals address anxiety more directly, build coping strategies, and regain a stronger sense of control over time.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can individual therapy help with trauma and PTSD?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Trauma and PTSD are among the concerns addressed in therapy for both adolescents and adults at our clinic. Treatment is tailored to the person’s needs and carried out in a supportive, nonjudgmental environment.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What is individual therapy like at Pacific Maple Psych Centre?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                We aim to create a supportive and nonjudgmental environment where individuals can openly express their thoughts and emotions. Therapy is collaborative and focused on helping each person build insight, resilience, and practical strategies for daily life.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">How do I book an individual therapy session?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                You can book an individual therapy session through our booking page. Our team provides therapy in Vancouver and across British Columbia and can help you take the next step toward support.
+              </p>
+            </div>
+          </details>
+
         </div>
       </div>
     </section>
