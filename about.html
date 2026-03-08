@@ -52,7 +52,7 @@
   <style>
     /* Title band */
     .about-page .page-title-band {
-      background: var(--home-blue); /* #c9d1d9 */
+      background: var(--home-blue);
       padding: clamp(42px, 7vw, 78px) 0;
       border-top: 1px solid var(--pmpc-line);
       border-bottom: 1px solid var(--pmpc-line);
@@ -87,7 +87,9 @@
       align-items: start;
     }
 
-    .about-page .about-photo { margin: 0; }
+    .about-page .about-photo {
+      margin: 0;
+    }
 
     .about-page .about-photo img {
       display: block;
@@ -116,79 +118,191 @@
     }
 
     @media (max-width: 900px) {
-      .about-page .about-grid { grid-template-columns: 1fr; }
-      .about-page .about-left { grid-template-rows: auto auto; }
-      .about-page .about-logo-under-photo { padding-top: 18px; padding-bottom: 0; }
+      .about-page .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-page .about-left {
+        grid-template-rows: auto auto;
+      }
+
+      .about-page .about-logo-under-photo {
+        padding-top: 18px;
+        padding-bottom: 0;
+      }
     }
 
-    /* FAQ section (centered under both columns) */
+    /* FAQ section */
     .about-page .faq-wrap {
-      padding: 0 0 clamp(34px, 5vw, 64px) 0;
+      background: #fff;
+      padding: 0 20px clamp(56px, 6vw, 84px);
     }
 
     .about-page .faq-inner {
-      width: min(980px, calc(100% - 44px));
+      max-width: 980px;
       margin: 0 auto;
+      text-align: center;
       padding-top: 10px;
     }
 
     .about-page .faq-title {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 800;
-      margin: 0 0 18px 0;
+      margin: 0 0 24px;
+      color: var(--pmpc-black);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.1;
     }
 
     .about-page .faq-list {
-      width: min(860px, 100%);
+      display: grid;
+      gap: 14px;
+      text-align: left;
+      max-width: 860px;
       margin: 0 auto;
     }
 
-    .about-page details.faq-item {
-      border-bottom: 1px solid rgba(0,0,0,0.22);
-      padding: 16px 0;
+    .about-page .faq-item {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
     }
 
-    .about-page details.faq-item:first-child {
-      border-top: 1px solid rgba(0,0,0,0.22);
-    }
-
-    .about-page summary.faq-q {
+    .about-page .faq-q {
       list-style: none;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #111;
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: 16px;
+      line-height: 1.45;
+      position: relative;
+      padding-right: 54px;
     }
 
-    .about-page summary.faq-q::-webkit-details-marker { display: none; }
+    .about-page .faq-q::-webkit-details-marker {
+      display: none;
+    }
 
-    .about-page summary.faq-q::after {
-      content: "⌄";
-      font-size: 18px;
+    .about-page .faq-q::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
       line-height: 1;
-      opacity: 0.75;
-      transform: translateY(-1px);
+      font-weight: 400;
     }
 
-    .about-page details[open] summary.faq-q::after {
-      content: "⌃";
-      opacity: 0.85;
+    .about-page .faq-item[open] .faq-q::after {
+      content: "−";
     }
 
     .about-page .faq-a {
-      padding-top: 10px;
+      padding: 0 22px 20px;
     }
 
     .about-page .faq-a .p-body {
-      font-size: 15px;
-      margin-bottom: 0;
+      margin: 0;
+    }
+
+    .about-page .faq-a a,
+    .about-page .faq-a a:visited,
+    .about-page .faq-a a:hover,
+    .about-page .faq-a a:focus {
+      color: #453346;
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What services does Pacific Maple Psych Centre offer?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Pacific Maple Psych Centre offers psychological assessments, autism assessments, individual therapy, group therapy, and couples therapy for a range of ages and concerns."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you provide care in person, virtually, or both?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We provide virtual care across British Columbia, and our physical location is in downtown Vancouver in the Rogers Heritage Building near Waterfront Station and Granville SkyTrain Station."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Who do you work with?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Our clinic supports children, adolescents, adults, couples, and families seeking assessment, therapy, and practical guidance related to mental health, relationships, neurodevelopmental questions, and personal growth."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Are you neurodiversity-affirming and trauma-informed?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Our clinicians are familiar with neurodiversity-affirming care, trauma-informed support, culturally responsive practice, and other inclusive, anti-oppressive approaches."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer autism assessments for children and adults?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Pacific Maple Psych Centre offers autism assessments for all ages and is known for ASD assessment services for children, adolescents, and adults."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer ADHD, psychoeducational, or other psychological assessments?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Our psychological assessment services may include ADHD, psychoeducational, integrated, and other forms of assessment designed to provide diagnostic clarification, practical recommendations, and written reports."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Are your services covered by insurance?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Coverage depends on your specific plan. We recommend checking with your insurance provider regarding coverage for services offered by a registered psychologist or other eligible mental health professional in British Columbia."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I book an appointment?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"You can reach out by phone or email, or book online through the Pacific Maple Psych Centre website. Our team can help direct you to the service that best fits your needs."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you also offer therapy if I am not looking for an assessment?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We offer individual therapy, group therapy, and couples therapy in addition to assessment services."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What if I am not sure which service is right for me?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"That is common. If you are unsure whether you need therapy, an autism assessment, ADHD assessment, psychoeducational assessment, or another service, contacting the clinic is a good first step so we can help guide you toward the best fit."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -265,7 +379,7 @@
       </div>
     </section>
 
-    <!-- FAQ (centered under both columns) -->
+    <!-- FAQ -->
     <section class="faq-wrap" aria-label="Frequently asked questions">
       <div class="faq-inner">
         <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
@@ -273,19 +387,55 @@
         <div class="faq-list">
 
           <details class="faq-item">
-            <summary class="faq-q">What types of services do you offer?</summary>
+            <summary class="faq-q">What services does Pacific Maple Psych Centre offer?</summary>
             <div class="faq-a">
               <p class="p-body">
-                We provide a range of mental health services, including psychological assessment, individual therapy, group therapy, autism spectrum disorder (ASD) assessments, and couples therapy. Our services cater to individuals of all ages.
+                We offer a range of services including <a href="/services/psychological-assessment.html">psychological assessments</a>, <a href="/services/asd-assessment.html">autism assessments</a>, <a href="/services/individual-therapy.html">individual therapy</a>, <a href="/services/group-therapy.html">group therapy</a>, and <a href="/services/couples-therapy.html">couples therapy</a>.
               </p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-q">What qualifications do your professionals possess?</summary>
+            <summary class="faq-q">Do you provide care in person, virtually, or both?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Our registered psychologists and clinical counsellors hold advanced degrees in psychology and related fields, with extensive training and experience. For student therapy, psychology students may offer in-person and teletherapy sessions under supervision.
+                We provide virtual care across British Columbia, and our physical location is in downtown Vancouver in the Rogers Heritage Building, across from Waterfront Station and a short walk from Granville SkyTrain Station.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Who do you work with?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                We support children, adolescents, adults, couples, and families seeking assessment, therapy, and practical guidance related to mental health, relationships, neurodevelopmental questions, and personal growth.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Are you neurodiversity-affirming and trauma-informed?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Our clinicians are familiar with neurodiversity-affirming care, trauma-informed support, culturally responsive practice, and other inclusive, anti-oppressive approaches. We aim to provide care that is respectful, compassionate, and responsive to each person’s context and needs.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer autism assessments for children and adults?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. We offer <a href="/services/asd-assessment.html">Autism Spectrum Disorder assessments</a> for children, adolescents, and adults in Vancouver and across British Columbia.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer ADHD, psychoeducational, or other psychological assessments?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Our <a href="/services/psychological-assessment.html">psychological assessment services</a> may include ADHD, psychoeducational, integrated, and other forms of assessment designed to provide diagnostic clarification, practical recommendations, and written reports.
               </p>
             </div>
           </details>
@@ -294,34 +444,34 @@
             <summary class="faq-q">Are your services covered by insurance?</summary>
             <div class="faq-a">
               <p class="p-body">
-                We recommend checking with your insurance provider regarding coverage for psychological services offered by a registered psychologist in British Columbia. If fees are not covered or you do not have health coverage, psychological services may qualify as a medical expense and may be tax deductible.
+                Coverage depends on your specific plan. We recommend checking with your insurance provider regarding coverage for services offered by a registered psychologist or other eligible mental health professional in British Columbia.
               </p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-q">How can I schedule an appointment?</summary>
+            <summary class="faq-q">Do you also offer therapy if I am not looking for an assessment?</summary>
             <div class="faq-a">
               <p class="p-body">
-                To schedule an appointment, you can reach out by phone or email, or book online through our Book Now page. Our team will help you find a convenient time for an initial consultation or ongoing sessions.
+                Yes. We offer <a href="/services/individual-therapy.html">individual therapy</a>, <a href="/services/group-therapy.html">group therapy</a>, and <a href="/services/couples-therapy.html">couples therapy</a> in addition to assessment services.
               </p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-q">What can I expect during a psychological assessment?</summary>
+            <summary class="faq-q">How do I book an appointment?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Our evaluations may include record reviews, clinical interviews, interviews with parents, siblings, peers, and teachers, rating scales, observations, and standardized tests. This multifaceted approach helps us provide meaningful insights and recommendations.
+                You can reach out by phone or email, or book online through our website. Our team can help direct you to the service that best fits your needs, whether you are looking for therapy, assessment, or diagnostic clarification.
               </p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-q">How long does the psychological assessment process typically take?</summary>
+            <summary class="faq-q">What if I am not sure which service is right for me?</summary>
             <div class="faq-a">
               <p class="p-body">
-                The psychological assessment process typically takes about three days. This allows time for a virtual clinical interview and for evaluations to be completed thoroughly.
+                That is common. If you are unsure whether you need therapy, an autism assessment, an ADHD or psychoeducational assessment, or another service, contacting the clinic is a good first step so we can help guide you toward the best fit.
               </p>
             </div>
           </details>
