@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Couples Therapy | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Strengthen your connection and rediscover harmony with couples therapy at Pacific Maple Psych Centre." />
+  <meta name="description" content="Couples therapy and marriage counselling in Vancouver and across British Columbia. Strengthen communication, rebuild trust, and deepen connection with compassionate professional support." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,14 +23,14 @@
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Couples Therapy | Pacific Maple Psych Centre" />
-  <meta property="og:description" content="Strengthen your connection and rediscover harmony with couples therapy at Pacific Maple Psych Centre." />
+  <meta property="og:description" content="Couples therapy and marriage counselling in Vancouver and across British Columbia. Strengthen communication, rebuild trust, and deepen connection." />
   <meta property="og:url" content="https://pacificmaplepsych.com/services/couples-therapy.html" />
   <meta property="og:image" content="https://pacificmaplepsych.com/images/couples-therapy-page.jpg" />
   <meta property="og:image:alt" content="Couples therapy session" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Couples Therapy | Pacific Maple Psych Centre" />
-  <meta name="twitter:description" content="Strengthen your connection and rediscover harmony with couples therapy at Pacific Maple Psych Centre." />
+  <meta name="twitter:description" content="Couples therapy and marriage counselling in Vancouver and across British Columbia." />
   <meta name="twitter:image" content="https://pacificmaplepsych.com/images/couples-therapy-page.jpg" />
   <meta name="twitter:image:alt" content="Couples therapy session" />
 
@@ -113,30 +113,30 @@
     }
 
     /* RIGHT: make the image match the left column height so no white gap */
-.couples-therapy-page .split-right {
-  background: #fff;
-  padding: 0;
-  align-self: stretch;
-  display: block; /* remove flex centering that can encourage short images */
-}
+    .couples-therapy-page .split-right {
+      background: #fff;
+      padding: 0;
+      align-self: stretch;
+      display: block;
+    }
 
-.couples-therapy-page .split-right img {
-  width: 100%;
-  height: 100%;              /* key change */
-  min-height: 360px;         /* keeps it from getting too short */
-  display: block;
-  object-fit: cover;         /* your preferred option (2) */
-  object-position: center 30%;
-  border: 0;
-}
+    .couples-therapy-page .split-right img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      display: block;
+      object-fit: cover;
+      object-position: center 30%;
+      border: 0;
+    }
 
-/* Mobile: still looks good when stacked */
-@media (max-width: 900px) {
-  .couples-therapy-page .split-right img {
-    height: auto;            /* natural height on stacked layout */
-    min-height: 260px;
-  }
-}
+    /* Mobile: still looks good when stacked */
+    @media (max-width: 900px) {
+      .couples-therapy-page .split-right img {
+        height: auto;
+        min-height: 260px;
+      }
+    }
 
     /* Bottom band */
     .couples-therapy-page .cta-band {
@@ -149,7 +149,7 @@
       margin: 0 0 12px;
       font-weight: 700;
       color: var(--pmpc-black);
-      font-size: clamp(24px, 3.0vw, 38px);
+      font-size: clamp(24px, 3vw, 38px);
       line-height: 1.1;
       max-width: 1100px;
       margin-left: auto;
@@ -169,6 +169,85 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 18px;
+    }
+
+    /* FAQ */
+    .couples-therapy-page .faq-wrap {
+      background: #fff;
+      padding: clamp(42px, 5vw, 72px) 20px clamp(56px, 6vw, 84px);
+    }
+
+    .couples-therapy-page .faq-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .couples-therapy-page .faq-title {
+      margin: 0 0 24px;
+      color: var(--pmpc-black);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.1;
+    }
+
+    .couples-therapy-page .faq-list {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .couples-therapy-page .faq-item {
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .couples-therapy-page .faq-q {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: 16px;
+      line-height: 1.45;
+      position: relative;
+      padding-right: 54px;
+    }
+
+    .couples-therapy-page .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .couples-therapy-page .faq-q::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .couples-therapy-page .faq-item[open] .faq-q::after {
+      content: "−";
+    }
+
+    .couples-therapy-page .faq-a {
+      padding: 0 22px 20px;
+    }
+
+    .couples-therapy-page .faq-a .p-body {
+      margin: 0;
+    }
+
+    .couples-therapy-page .faq-a a,
+    .couples-therapy-page .faq-a a:visited,
+    .couples-therapy-page .faq-a a:hover,
+    .couples-therapy-page .faq-a a:focus {
+      color: #453346;
     }
 
     @media (max-width: 900px) {
@@ -192,6 +271,95 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is couples therapy at Pacific Maple Psych Centre?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Couples therapy at Pacific Maple Psych Centre is designed to help partners navigate relationship challenges, improve communication, deepen connection, and build greater emotional intimacy."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What issues can couples therapy help with?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Couples therapy can help with communication difficulties, recurring conflict, emotional distance, infidelity, parenting challenges, and life transitions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"When should a couple consider couples therapy?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Couples do not need to wait until things feel extreme. Therapy can be helpful when partners feel stuck in repeated conflict, disconnected, misunderstood, or want support navigating a major change together."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can couples therapy help with communication problems?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. One of the main goals of couples therapy is to support healthier communication so partners can better understand each other, express needs more clearly, and respond with greater empathy."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can couples therapy help after infidelity?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Couples therapy may help partners work through the impact of infidelity, understand what has happened in the relationship, and explore whether and how trust can be rebuilt."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can couples therapy help with parenting stress or major life transitions?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Couples therapy can support partners dealing with parenting challenges, changing roles, stress, or major life transitions that are affecting the relationship."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What if one or both partners also need individual support?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Some couples benefit from additional one-to-one support alongside relationship work. You can learn more about our individual therapy services on the Pacific Maple Psych Centre website."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What if a deeper psychological assessment is needed?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"In some situations, one partner may want diagnostic clarification or a more comprehensive evaluation. You can learn more about our psychological assessment services on the Pacific Maple Psych Centre website."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you offer therapy for anxiety, trauma, or other mental health concerns outside of couples therapy?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. In addition to couples therapy, Pacific Maple Psych Centre also offers other therapy and assessment services depending on the concern and type of support needed."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do we book couples therapy?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"You can book couples therapy through our online booking page and reach out to Pacific Maple Psych Centre to learn more about next steps."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -209,7 +377,7 @@
       <div class="container-narrow">
         <h1>Couples Therapy</h1>
         <p class="hero-sub">
-          Strengthen your connection and rediscover harmony with couples therapy at Pacific Maple Psych Centre.
+          Couples therapy and marriage counselling in Vancouver and across British Columbia for communication problems, conflict, emotional distance, trust concerns, parenting stress, and major life transitions.
         </p>
         <div class="hero-actions" aria-label="Hero booking button">
           <a class="btn-pill" href="https://pacificmaplepsych.com/booking/book-therapy-session.html">Book Couples Therapy</a>
@@ -223,15 +391,15 @@
         <div class="split-left">
           <div class="split-left-inner">
             <p class="p-body">
-              At Pacific Maple Psych Centre, we recognize that relationships are one of the most significant aspects of our lives, yet they can also be the source of some of our greatest challenges.
+              At Pacific Maple Psych Centre, we understand that close relationships can be deeply meaningful and deeply challenging. When communication breaks down, trust feels shaken, or disconnection starts to grow, couples therapy can provide a structured space to slow things down and work toward real change.
             </p>
 
             <p class="p-body">
-              Our couples therapy services are designed to support couples in navigating the complexities of their relationships with the aim of fostering healthy communication, deeper connection, and greater emotional intimacy.
+              Our couples therapy services support partners who want to improve communication, reduce recurring conflict, rebuild emotional closeness, and better understand the patterns affecting their relationship. We work with couples facing concerns such as conflict, emotional distance, infidelity, parenting stress, and major life transitions.
             </p>
 
             <p class="p-body">
-              Whether you and your partner are facing conflicts, struggling with communication, feeling emotionally distant, or dealing with specific challenges such as infidelity, parenting challenges, or life transitions, we are here to help.
+              Whether you are feeling stuck in the same arguments, struggling to reconnect, or trying to decide what healthier next steps look like, we are here to help you and your partner move toward a more secure, respectful, and connected relationship.
             </p>
           </div>
         </div>
@@ -260,6 +428,107 @@
 
         <div class="cta-actions" aria-label="Bottom booking button">
           <a class="btn-pill" href="https://pacificmaplepsych.com/booking/book-therapy-session.html">Book Couples Therapy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-wrap" aria-label="Frequently asked questions">
+      <div class="faq-inner">
+        <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-q">What is couples therapy at Pacific Maple Psych Centre?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Couples therapy at Pacific Maple Psych Centre is designed to help partners navigate relationship challenges, improve communication, deepen connection, and build greater emotional intimacy.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What issues can couples therapy help with?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Couples therapy can help with communication difficulties, recurring conflict, emotional distance, infidelity, parenting challenges, and life transitions.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">When should a couple consider couples therapy?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Couples do not need to wait until things feel extreme. Therapy can be helpful when partners feel stuck in repeated conflict, disconnected, misunderstood, or want support navigating a major change together.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can couples therapy help with communication problems?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. One of the main goals of couples therapy is to support healthier communication so partners can better understand each other, express needs more clearly, and respond with greater empathy.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can couples therapy help after infidelity?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Couples therapy may help partners work through the impact of infidelity, understand what has happened in the relationship, and explore whether and how trust can be rebuilt.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can couples therapy help with parenting stress or major life transitions?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Couples therapy can support partners dealing with parenting challenges, changing roles, stress, or major life transitions that are affecting the relationship.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What if one or both partners also need individual support?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Some couples benefit from additional one-to-one support alongside relationship work. You can learn more about our <a href="/services/individual-therapy.html">individual therapy services</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">What if a deeper psychological assessment is needed?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                In some situations, one partner may want diagnostic clarification or a more comprehensive evaluation. You can learn more about our <a href="/services/psychological-assessment.html">psychological assessment services</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Do you offer therapy for anxiety, trauma, or other mental health concerns outside of couples therapy?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. In addition to couples therapy, Pacific Maple Psych Centre also offers other therapy and assessment services depending on the concern and type of support needed, including <a href="/services/individual-therapy.html">individual therapy</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">How do we book couples therapy?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                You can book couples therapy through our <a href="https://pacificmaplepsych.com/booking/book-therapy-session.html">online booking page</a> and reach out to Pacific Maple Psych Centre to learn more about next steps.
+              </p>
+            </div>
+          </details>
+
         </div>
       </div>
     </section>
