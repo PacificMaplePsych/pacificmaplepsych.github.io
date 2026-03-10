@@ -195,6 +195,18 @@
   </url>
   
   <url>
+    <loc>https://pacificmaplepsych.com/resources/disability.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>  
+
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://pacificmaplepsych.com/blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
