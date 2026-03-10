@@ -50,7 +50,7 @@ body {
 
 /* ===== Global Title Band (used on About/Blog/Policies/Book Now/Services/etc.) ===== */
 .page-title-band {
-  background: var(--home-blue); /* #c9d1d9 */
+  background: var(--home-blue);
   padding: clamp(42px, 7vw, 78px) 0;
   border-top: 1px solid var(--pmpc-line);
   border-bottom: 1px solid var(--pmpc-line);
@@ -220,12 +220,12 @@ body {
   transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
 }
 
-/* Hover invert (matches old site behavior) */
+/* Hover invert */
 .floating-book-now a:hover,
 .floating-book-now a:focus {
-  background: #ffffff;   /* rectangle goes white */
-  color: #111111;        /* text goes black */
-  border-color: #111111; /* outline goes black */
+  background: #ffffff;
+  color: #111111;
+  border-color: #111111;
 }
 
 .floating-book-now a:active {
@@ -263,7 +263,6 @@ body {
     min-height: 360px;
   }
 
-  /* Bias crops upward so faces/hands are less likely to be cut off */
   .service-img { object-position: center top; }
 
   .service-card-inner { padding: 24px 0; }
@@ -331,11 +330,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   margin-left: auto;
-  gap: 18px;
-
+  gap: 10px;
   padding-right: 20px;
+}
+
+/* Dropdown wrapper */
+.dropdown {
+  position: relative;
+  flex: 0 0 auto;
 }
 
 /* Link styling */
@@ -346,7 +349,9 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding: 14px 10px 8px;
+  min-width: 108px;
+  min-height: 54px;
+  padding: 14px 8px 8px;
 
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -355,6 +360,7 @@ body {
   text-decoration: none;
   white-space: nowrap;
   line-height: 1.1;
+  text-align: center;
 }
 
 .nav-link:hover,
@@ -366,7 +372,7 @@ body {
   position: absolute;
   top: 6px;
 
-  width: 78px;
+  width: 84px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -384,7 +390,11 @@ body {
 }
 
 /* Book Now */
-.nav-cta { font-weight: 800; }
+.nav-cta {
+  font-weight: 800;
+  min-width: 118px;
+}
+
 .nav-cta::before { width: 96px; }
 
 /* Hamburger (hidden on desktop) */
@@ -401,8 +411,6 @@ body {
 }
 
 /* ===== Dropdowns (desktop) ===== */
-.dropdown { position: relative; }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -420,15 +428,24 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.10);
   z-index: 1000;
 
-  min-width: 240px;
+  min-width: 200px;
+  width: max-content;
   white-space: nowrap;
   text-align: center;
 }
 
-/* Desktop-only: make Team + Book Now dropdowns a bit less wide */
-@media (min-width: 1049px) {
-  .dropdown.dropdown-team .dropdown-content { min-width: 190px; }
-  .dropdown.dropdown-book .dropdown-content { min-width: 190px; }
+/* Desktop-only narrower widths by menu */
+@media (min-width: 1051px) {
+  .dropdown.dropdown-team .dropdown-content,
+  .dropdown.dropdown-book .dropdown-content {
+    min-width: 190px;
+  }
+
+  .dropdown.dropdown-resources .dropdown-content {
+    min-width: 140px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* Hover bridge */
@@ -479,14 +496,12 @@ body {
     max-width: 440px;
   }
 
-  /* show hamburger */
   .hamburger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* hide horizontal links until opened */
   .navbar-links {
     display: none;
     position: fixed;
@@ -511,10 +526,17 @@ body {
 
   .nav-link {
     width: min(520px, 92%);
+    min-width: 0;
+    min-height: auto;
     padding: 14px 12px 12px;
   }
 
-  .nav-link::before { top: 6px; }
+  .nav-link::before {
+    top: 6px;
+    width: 78px;
+  }
+
+  .nav-cta::before { width: 96px; }
 
   .dropdown {
     width: 100%;
@@ -537,7 +559,6 @@ body {
 
     padding: 0 0 12px 0;
     min-width: 0;
-
     width: auto;
     max-width: min(520px, 92%);
     text-align: center;
