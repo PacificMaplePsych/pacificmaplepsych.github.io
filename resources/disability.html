@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Disability Resources | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Disability resources in British Columbia from Pacific Maple Psych Centre. Information on disability forms, accommodations, funding, documentation, autism and ADHD supports, school and workplace needs, and community resources. Resources coming soon." />
+  <meta name="description" content="Disability resources in British Columbia from Pacific Maple Psych Centre, including Disability Tax Credit information, PWD designation, autism funding, inclusive education, employment supports, and community resources." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,16 +23,16 @@
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Disability Resources | Pacific Maple Psych Centre" />
-  <meta property="og:description" content="Disability resources in British Columbia, including information on disability forms, accommodations, funding, documentation, autism and ADHD supports, and community resources. Resources coming soon." />
+  <meta property="og:description" content="Disability resources in British Columbia from Pacific Maple Psych Centre, including Disability Tax Credit information, PWD designation, autism funding, inclusive education, employment supports, and community resources." />
   <meta property="og:url" content="https://pacificmaplepsych.com/resources/disability.html" />
-  <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
-  <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
+  <meta property="og:image" content="https://pacificmaplepsych.com/images/resources-disability.jpg" />
+  <meta property="og:image:alt" content="Disability resources" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Disability Resources | Pacific Maple Psych Centre" />
-  <meta name="twitter:description" content="Disability resources in British Columbia, including information on disability forms, accommodations, funding, documentation, autism and ADHD supports, and community resources. Resources coming soon." />
-  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
-  <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
+  <meta name="twitter:description" content="Disability resources in British Columbia from Pacific Maple Psych Centre, including Disability Tax Credit information, PWD designation, autism funding, inclusive education, employment supports, and community resources." />
+  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/resources-disability.jpg" />
+  <meta name="twitter:image:alt" content="Disability resources" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://pacificmaplepsych.com/resources/disability.html" />
@@ -48,53 +48,103 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific tweaks to restore 2-column layout + floating styled image -->
   <style>
-    .blog-page .blog-wrap {
-      padding: clamp(34px, 5vw, 64px) 0;
-      background: #fff;
-    }
-
-    .blog-page .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: clamp(18px, 3.2vw, 44px);
-      align-items: center;
-    }
-
-    .blog-page .blog-text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .disability-page .hero-band {
+      padding: clamp(44px, 6vw, 76px) 0;
       text-align: center;
-      min-height: 220px;
     }
 
-    .blog-page .blog-logo {
+    .disability-page .hero-band h1 {
+      margin: 0;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: clamp(38px, 5.2vw, 64px);
+      line-height: 1.05;
+    }
+
+    .disability-page .split-wrap {
+      background: #fff;
+      padding: 0;
+    }
+
+    .disability-page .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .disability-page .split-left {
+      background: #fff;
+      padding: clamp(26px, 3.2vw, 44px);
       display: flex;
       align-items: center;
-      justify-content: flex-start;
     }
 
-    .blog-page .blog-logo img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      display: block;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(0, 0, 0, 0.10);
+    .disability-page .split-left-inner {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .disability-page .split-left-inner .p-body {
+      margin: 0 0 16px;
+    }
+
+    .disability-page .split-left-inner .p-body:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .disability-page .resource-list {
+      margin: 18px 0 0;
+      padding-left: 22px;
+      color: var(--pmpc-black);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .disability-page .resource-list li {
+      margin: 10px 0;
+    }
+
+    .disability-page .resource-list a {
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .disability-page .resource-note {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .disability-page .split-right {
       background: #fff;
+      padding: 0;
+      align-self: stretch;
+      display: block;
+    }
+
+    .disability-page .split-right img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border: 0;
     }
 
     @media (max-width: 900px) {
-      .blog-page .blog-grid {
+      .disability-page .split-grid {
         grid-template-columns: 1fr;
-        gap: 22px;
       }
 
-      .blog-page .blog-text { min-height: auto; }
-      .blog-page .blog-logo { justify-content: center; }
+      .disability-page .split-right img {
+        height: auto;
+        min-height: 260px;
+      }
     }
   </style>
 </head>
@@ -107,36 +157,103 @@
 
   <div id="site-header"></div>
 
-  <main class="entry-content blog-page">
+  <main class="entry-content disability-page">
 
-    <!-- TOP TITLE BAND -->
-    <section class="page-title-band" aria-label="Disability resources title">
+    <!-- HERO BAND -->
+    <section class="page-title-band hero-band" aria-label="Disability Resources title">
       <div class="container-narrow">
         <h1>Disability Resources</h1>
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="blog-wrap" aria-label="Pacific Maple Psych Centre disability resources">
-      <div class="container-narrow">
-        <div class="blog-grid">
+    <!-- TOP SPLIT -->
+    <section class="split-wrap" aria-label="British Columbia disability resources">
+      <div class="split-grid">
 
-          <div class="blog-text">
-            <p class="p-body">Resources coming soon!</p>
+        <div class="split-left">
+          <div class="split-left-inner">
+            <p class="p-body">
+              Below are some starting points for disability-related resources in British Columbia. This page is intended as a practical collection of links that may be helpful for funding, forms, benefits, school supports, employment supports, and community information.
+            </p>
+
+            <ul class="resource-list">
+              <li>
+                <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html" target="_blank" rel="noopener noreferrer">Disability Tax Credit (DTC)</a><br />
+                Federal information about the Disability Tax Credit, including eligibility and next steps.
+              </li>
+
+              <li>
+                <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit/how-apply-dtc.html" target="_blank" rel="noopener noreferrer">Form T2201 / How to Apply for the DTC</a><br />
+                Helpful if you are looking for the application process and medical certification information.
+              </li>
+
+              <li>
+                <a href="https://www2.gov.bc.ca/gov/content/family-social-supports/services-for-people-with-disabilities/disability-assistance" target="_blank" rel="noopener noreferrer">B.C. Disability Assistance</a><br />
+                Provincial information on disability assistance, including how the Persons with Disabilities designation works.
+              </li>
+
+              <li>
+                <a href="https://www2.gov.bc.ca/gov/content/governments/policies-for-government/bcea-policy-and-procedure-manual/pwd-designation-and-application/designation-application" target="_blank" rel="noopener noreferrer">Persons with Disabilities (PWD) Designation</a><br />
+                Official B.C. information about eligibility and application requirements for PWD designation.
+              </li>
+
+              <li>
+                <a href="https://www.canada.ca/en/services/benefits/disability/canada-disability-benefit.html" target="_blank" rel="noopener noreferrer">Canada Disability Benefit</a><br />
+                Federal benefit information for eligible adults with disabilities.
+              </li>
+
+              <li>
+                <a href="https://www.canada.ca/en/employment-social-development/programs/disability/savings.html" target="_blank" rel="noopener noreferrer">Registered Disability Savings Plan (RDSP)</a><br />
+                Long-term savings information, including disability savings grants and bonds.
+              </li>
+
+              <li>
+                <a href="https://gov.bc.ca/autismfunding" target="_blank" rel="noopener noreferrer">B.C. Autism Funding</a><br />
+                Provincial information on autism funding for eligible children and youth.
+              </li>
+
+              <li>
+                <a href="https://www2.gov.bc.ca/gov/content/education-training/k-12/teach/resources-for-teachers/inclusive-education" target="_blank" rel="noopener noreferrer">B.C. Inclusive Education Resources</a><br />
+                Information related to inclusive school supports and learning environments for students with disabilities or diverse abilities.
+              </li>
+
+              <li>
+                <a href="https://www.workbc.ca/plan-career/resources/people-disabilities" target="_blank" rel="noopener noreferrer">WorkBC Services for People with Disabilities</a><br />
+                Employment planning, job search support, and connections to local WorkBC centres.
+              </li>
+
+              <li>
+                <a href="https://www.workbc.ca/discover-employment-services/assistive-technology-services" target="_blank" rel="noopener noreferrer">WorkBC Assistive Technology Services</a><br />
+                Information about workplace assistive technology supports for people with disabilities or functional limitations.
+              </li>
+
+              <li>
+                <a href="https://www.bcands.bc.ca/programs-and-services/disability-services/" target="_blank" rel="noopener noreferrer">BCANDS Disability Services</a><br />
+                Indigenous disability-related support, referrals, navigation, and resource information through the British Columbia Aboriginal Network on Disability Society.
+              </li>
+
+              <li>
+                You may also want to keep copies of key documents in one place, such as psychoeducational or psychological assessment reports, diagnostic letters, school documents, accommodation paperwork, and completed application forms.
+              </li>
+
+              <li>
+                More coming soon.
+              </li>
+            </ul>
           </div>
-
-          <div class="blog-logo">
-            <img
-              src="/images/Simple%20Logo%20180x180.png"
-              alt="Pacific Maple Psych Centre logo"
-              loading="lazy"
-              decoding="async"
-              width="180"
-              height="180"
-            />
-          </div>
-
         </div>
+
+        <div class="split-right">
+          <img
+            src="https://pacificmaplepsych.com/images/resources-disability.jpg"
+            alt="Disability resources"
+            loading="lazy"
+            decoding="async"
+            width="1600"
+            height="900"
+          />
+        </div>
+
       </div>
     </section>
 
