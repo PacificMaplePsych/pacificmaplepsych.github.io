@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Resources | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Mental health and community resources from Pacific Maple Psych Centre. Resources coming soon for disability needs in BC, abuse victims, autism and ADHD support, relationship concerns, and psychological well-being." />
+  <meta name="description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources and abuse resources." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,14 +23,14 @@
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Resources | Pacific Maple Psych Centre" />
-  <meta property="og:description" content="Mental health and community resources coming soon, including support for disability needs in BC, abuse victims, autism and ADHD, and other mental health concerns." />
+  <meta property="og:description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources and abuse resources." />
   <meta property="og:url" content="https://pacificmaplepsych.com/resources.html" />
   <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Resources | Pacific Maple Psych Centre" />
-  <meta name="twitter:description" content="Mental health and community resources coming soon, including support for disability needs in BC, abuse victims, autism and ADHD, and other mental health concerns." />
+  <meta name="twitter:description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources and abuse resources." />
   <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
 
@@ -48,55 +48,60 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific tweaks to restore 2-column layout + floating styled image -->
+  <!-- Page-specific styling to match services page -->
   <style>
-    .blog-page .blog-wrap {
+    .resources-page .resources-wrap {
       padding: clamp(34px, 5vw, 64px) 0;
       background: #fff;
     }
 
-    .blog-page .blog-grid {
+    .resources-page .resources-grid {
       display: grid;
-      grid-template-columns: 1fr 200px; /* narrower right column pulls image left */
-      gap: clamp(18px, 3.2vw, 44px);
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px 34px;
+      align-items: start;
     }
 
-    .blog-page .blog-text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 220px;
-    }
-
-    /* Right column: align image toward the center by pinning it to left edge of the right column */
-    .blog-page .blog-logo {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .blog-page .blog-logo img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
+    .resources-page .resource-tile {
       display: block;
+      text-decoration: none;
+      color: #111;
+    }
 
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(0, 0, 0, 0.10);
-      background: #fff;
+    .resources-page .resource-tile img {
+      width: 100%;
+      height: 240px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border: 0;
+    }
+
+    .resources-page .resource-tile .resource-caption {
+      background: var(--home-plum);
+      padding: 12px 14px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .resources-page .resource-tile:focus-visible {
+      outline: 3px solid rgba(122, 93, 124, 0.55);
+      outline-offset: 4px;
+      border-radius: 6px;
     }
 
     @media (max-width: 900px) {
-      .blog-page .blog-grid {
+      .resources-page .resources-grid {
         grid-template-columns: 1fr;
         gap: 22px;
       }
 
-      .blog-page .blog-text { min-height: auto; }
-      .blog-page .blog-logo { justify-content: center; }
+      .resources-page .resource-tile img {
+        height: 220px;
+      }
     }
   </style>
 </head>
@@ -109,7 +114,7 @@
 
   <div id="site-header"></div>
 
-  <main class="entry-content blog-page">
+  <main class="entry-content about-page resources-page">
 
     <!-- TOP TITLE BAND -->
     <section class="page-title-band" aria-label="Resources title">
@@ -118,25 +123,30 @@
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="blog-wrap" aria-label="Pacific Maple Psych Centre resources">
+    <!-- 2 clickable resource boxes -->
+    <section class="resources-wrap" aria-label="Resources list">
       <div class="container-narrow">
-        <div class="blog-grid">
+        <div class="resources-grid">
 
-          <div class="blog-text">
-            <p class="p-body">Resources coming soon!</p>
-          </div>
-
-          <div class="blog-logo">
+          <a class="resource-tile" href="https://pacificmaplepsych.com/resources/disability.html" aria-label="Disability Resources">
             <img
-              src="/images/Simple%20Logo%20180x180.png"
-              alt="Pacific Maple Psych Centre logo"
+              src="https://pacificmaplepsych.com/images/resources-disability.jpg"
+              alt="Disability resources"
               loading="lazy"
               decoding="async"
-              width="180"
-              height="180"
             />
-          </div>
+            <div class="resource-caption">Disability Resources</div>
+          </a>
+
+          <a class="resource-tile" href="https://pacificmaplepsych.com/resources/abuse.html" aria-label="Abuse Resources">
+            <img
+              src="https://pacificmaplepsych.com/images/resources-abuse.jpg"
+              alt="Abuse resources"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="resource-caption">Abuse Resources</div>
+          </a>
 
         </div>
       </div>
