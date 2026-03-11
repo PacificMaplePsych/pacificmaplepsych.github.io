@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Resources | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources and abuse resources." />
+  <meta name="description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources, abuse resources, and blog articles." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,14 +23,14 @@
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Resources | Pacific Maple Psych Centre" />
-  <meta property="og:description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources and abuse resources." />
+  <meta property="og:description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources, abuse resources, and blog articles." />
   <meta property="og:url" content="https://pacificmaplepsych.com/resources.html" />
   <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Resources | Pacific Maple Psych Centre" />
-  <meta name="twitter:description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources and abuse resources." />
+  <meta name="twitter:description" content="Explore community resources from Pacific Maple Psych Centre, including disability resources, abuse resources, and blog articles." />
   <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
 
@@ -93,6 +93,13 @@
       border-radius: 6px;
     }
 
+    .resources-page .resource-tile.resource-blog {
+      grid-column: 1 / -1;
+      max-width: calc((100% - 34px) / 2);
+      width: 100%;
+      justify-self: center;
+    }
+
     @media (max-width: 900px) {
       .resources-page .resources-grid {
         grid-template-columns: 1fr;
@@ -101,6 +108,11 @@
 
       .resources-page .resource-tile img {
         height: 220px;
+      }
+
+      .resources-page .resource-tile.resource-blog {
+        grid-column: auto;
+        max-width: 100%;
       }
     }
   </style>
@@ -123,7 +135,7 @@
       </div>
     </section>
 
-    <!-- 2 clickable resource boxes -->
+    <!-- Resource tiles -->
     <section class="resources-wrap" aria-label="Resources list">
       <div class="container-narrow">
         <div class="resources-grid">
@@ -146,6 +158,16 @@
               decoding="async"
             />
             <div class="resource-caption">Abuse Resources</div>
+          </a>
+
+          <a class="resource-tile resource-blog" href="https://pacificmaplepsych.com/blog.html" aria-label="Blog">
+            <img
+              src="https://pacificmaplepsych.com/images/resources-blog.jpg"
+              alt="Blog"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="resource-caption">Blog</div>
           </a>
 
         </div>
