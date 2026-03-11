@@ -25,14 +25,14 @@
   <meta property="og:title" content="Abuse Resources | Pacific Maple Psych Centre" />
   <meta property="og:description" content="Abuse resources in British Columbia, including support information for emotional, psychological, physical, sexual, and domestic abuse survivors. Resources coming soon." />
   <meta property="og:url" content="https://pacificmaplepsych.com/resources/abuse.html" />
-  <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
-  <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
+  <meta property="og:image" content="https://pacificmaplepsych.com/images/resources-abuse.jpg" />
+  <meta property="og:image:alt" content="Abuse resources" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Abuse Resources | Pacific Maple Psych Centre" />
   <meta name="twitter:description" content="Abuse resources in British Columbia, including support information for emotional, psychological, physical, sexual, and domestic abuse survivors. Resources coming soon." />
-  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
-  <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
+  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/resources-abuse.jpg" />
+  <meta name="twitter:image:alt" content="Abuse resources" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://pacificmaplepsych.com/resources/abuse.html" />
@@ -48,53 +48,76 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific tweaks to restore 2-column layout + floating styled image -->
   <style>
-    .blog-page .blog-wrap {
-      padding: clamp(34px, 5vw, 64px) 0;
-      background: #fff;
-    }
-
-    .blog-page .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      gap: clamp(18px, 3.2vw, 44px);
-      align-items: center;
-    }
-
-    .blog-page .blog-text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .abuse-page .hero-band {
+      padding: clamp(44px, 6vw, 76px) 0;
       text-align: center;
-      min-height: 220px;
     }
 
-    .blog-page .blog-logo {
+    .abuse-page .hero-band h1 {
+      margin: 0;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--pmpc-black);
+      font-size: clamp(38px, 5.2vw, 64px);
+      line-height: 1.05;
+    }
+
+    .abuse-page .split-wrap {
+      background: #fff;
+      padding: 0;
+    }
+
+    .abuse-page .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .abuse-page .split-left {
+      background: #fff;
+      padding: 0;
+      align-self: stretch;
+      display: block;
+    }
+
+    .abuse-page .split-left img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border: 0;
+    }
+
+    .abuse-page .split-right {
+      background: #fff;
+      padding: clamp(26px, 3.2vw, 44px);
       display: flex;
       align-items: center;
-      justify-content: flex-start;
     }
 
-    .blog-page .blog-logo img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      display: block;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(0, 0, 0, 0.10);
-      background: #fff;
+    .abuse-page .split-right-inner {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .abuse-page .split-right-inner .p-body {
+      margin: 0;
     }
 
     @media (max-width: 900px) {
-      .blog-page .blog-grid {
+      .abuse-page .split-grid {
         grid-template-columns: 1fr;
-        gap: 22px;
       }
 
-      .blog-page .blog-text { min-height: auto; }
-      .blog-page .blog-logo { justify-content: center; }
+      .abuse-page .split-left img {
+        height: auto;
+        min-height: 260px;
+      }
     }
   </style>
 </head>
@@ -107,36 +130,36 @@
 
   <div id="site-header"></div>
 
-  <main class="entry-content blog-page">
+  <main class="entry-content abuse-page">
 
-    <!-- TOP TITLE BAND -->
-    <section class="page-title-band" aria-label="Abuse resources title">
+    <!-- HERO BAND -->
+    <section class="page-title-band hero-band" aria-label="Abuse Resources title">
       <div class="container-narrow">
         <h1>Abuse Resources</h1>
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="blog-wrap" aria-label="Pacific Maple Psych Centre abuse resources">
-      <div class="container-narrow">
-        <div class="blog-grid">
+    <!-- TOP SPLIT -->
+    <section class="split-wrap" aria-label="British Columbia abuse resources">
+      <div class="split-grid">
 
-          <div class="blog-text">
+        <div class="split-left">
+          <img
+            src="https://pacificmaplepsych.com/images/resources-abuse.jpg"
+            alt="Abuse resources"
+            loading="lazy"
+            decoding="async"
+            width="1600"
+            height="900"
+          />
+        </div>
+
+        <div class="split-right">
+          <div class="split-right-inner">
             <p class="p-body">Resources coming soon! See IsThatAbuse.com in the interim. Contents will soon be migrated here.</p>
           </div>
-
-          <div class="blog-logo">
-            <img
-              src="/images/Simple%20Logo%20180x180.png"
-              alt="Pacific Maple Psych Centre logo"
-              loading="lazy"
-              decoding="async"
-              width="180"
-              height="180"
-            />
-          </div>
-
         </div>
+
       </div>
     </section>
 
