@@ -23,6 +23,20 @@ body {
   background: #fff;
 }
 
+/* Global content links only, excluding header/footer and button-style links */
+.entry-content a:not(.btn-pill):not(.btn-dark):not(.jump-btn):not(.back-top):not(.footer-link):not(.nav-link):not(.dropdown-link) {
+  color: #453346;
+}
+
+.entry-content a:not(.btn-pill):not(.btn-dark):not(.jump-btn):not(.back-top):not(.footer-link):not(.nav-link):not(.dropdown-link):visited {
+  color: #453346;
+}
+
+.entry-content a:not(.btn-pill):not(.btn-dark):not(.jump-btn):not(.back-top):not(.footer-link):not(.nav-link):not(.dropdown-link):hover,
+.entry-content a:not(.btn-pill):not(.btn-dark):not(.jump-btn):not(.back-top):not(.footer-link):not(.nav-link):not(.dropdown-link):focus {
+  color: #453346;
+}
+
 /* Start content under fixed navbar */
 .entry-content { padding-top: var(--nav-h); }
 @media (max-width: 1050px) {
