@@ -1,0 +1,56 @@
+/* ===== Floating Quick Exit button (abuse pages only) ===== */
+.floating-quick-exit {
+  position: fixed;
+  top: var(--quick-exit-top, 90px);
+  right: 22px;
+  z-index: 9999;
+}
+
+.floating-quick-exit a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+
+  background: #6b1f2b;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+}
+
+.floating-quick-exit a:hover,
+.floating-quick-exit a:focus {
+  background: #ffffff;
+  color: #111111;
+  border-color: #111111;
+}
+
+.floating-quick-exit a:active {
+  transform: translateY(1px);
+}
+
+.floating-quick-exit a:focus-visible {
+  outline: 3px solid rgba(107, 31, 43, 0.4);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .floating-quick-exit {
+    top: var(--quick-exit-top, 78px);
+    right: 14px;
+  }
+
+  .floating-quick-exit a {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
