@@ -4,6 +4,11 @@
   top: var(--quick-exit-top, 90px);
   right: 22px;
   z-index: 9999;
+  visibility: hidden;
+}
+
+.floating-quick-exit.is-ready {
+  visibility: visible;
 }
 
 .floating-quick-exit a {
