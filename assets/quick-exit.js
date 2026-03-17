@@ -3,6 +3,28 @@
   if (document.querySelector(".floating-quick-exit")) return;
 
   const QUICK_EXIT_URL = "https://www.google.com";
+  const QUICK_EXIT_FLAG = "quickExitTriggered";
+
+  function redirectIfReturningAfterQuickExit() {
+    let navType = "";
+
+    try {
+      const navEntries = performance.getEntriesByType("navigation");
+      if (navEntries && navEntries.length) {
+        navType = navEntries[0].type;
+      }
+    } catch (err) {}
+
+    const cameBackViaHistory =
+      navType === "back_forward" ||
+      (window.performance &&
+        window.performance.navigation &&
+        window.performance.navigation.type === 2);
+
+    if (cameBackViaHistory && sessionStorage.getItem(QUICK_EXIT_FLAG) === "true") {
+      window.location.replace(QUICK_EXIT_URL);
+    }
+  }
 
   function positionQuickExit() {
     const btn = document.querySelector(".floating-quick-exit");
@@ -37,6 +59,10 @@
     if (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
+
+        try {
+          sessionStorage.setItem(QUICK_EXIT_FLAG, "true");
+        } catch (err) {}
 
         try {
           window.location.replace(QUICK_EXIT_URL);
@@ -82,6 +108,9 @@
     });
   }
 
+  redirectIfReturningAfterQuickExit();
+
+  window.addEventListener("pageshow", redirectIfReturningAfterQuickExit);
   window.addEventListener("resize", positionQuickExit);
   window.addEventListener("scroll", positionQuickExit, { passive: true });
 
