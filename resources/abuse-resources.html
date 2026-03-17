@@ -69,43 +69,51 @@
       background: #ffffff;
     }
 
+    /* Same narrow container feel as the other abuse pages */
     .abuse-page .resource-content-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 32px);
+    }
+
+    /* Wider wrapper used only for the 3-column table */
+    .abuse-page .province-table-wrap {
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 clamp(20px, 4vw, 32px);
+    }
+
+    .abuse-page .resource-content-wrap > *:first-child {
+      margin-top: 0;
+    }
+
+    .abuse-page .resource-content-wrap > *:last-child {
+      margin-bottom: 0;
     }
 
     .abuse-page .resource-content-wrap p {
       margin: 0 0 1.2em;
     }
 
-    .abuse-page .resource-content-wrap h2 {
+    .abuse-page .resource-content-wrap h2,
+    .abuse-page .province-table-wrap h2 {
       margin: 2.2rem 0 0.9rem;
       font-size: clamp(28px, 3vw, 38px);
       line-height: 1.2;
       color: var(--pmpc-black);
     }
 
-    .abuse-page .resource-content-wrap h3 {
+    .abuse-page .resource-content-wrap h3,
+    .abuse-page .province-table-wrap h3 {
       margin: 0 0 0.9rem;
       font-size: clamp(21px, 2.2vw, 26px);
       line-height: 1.25;
       color: var(--pmpc-black);
     }
 
-    .abuse-page .resource-content-wrap a {
+    .abuse-page .resource-content-wrap a,
+    .abuse-page .province-table-wrap a {
       word-break: break-word;
-    }
-
-    /* Narrow centered content blocks to match the other abuse pages */
-    .abuse-page .resource-intro,
-    .abuse-page .general-links,
-    .abuse-page .other-resources,
-    .abuse-page .related-links {
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
     }
 
     .abuse-page .resource-intro {
@@ -113,12 +121,12 @@
     }
 
     .abuse-page .general-links {
-      margin-bottom: 2.4rem;
+      text-align: left;
     }
 
     .abuse-page .province-heading {
       text-align: center;
-      margin-top: 0;
+      margin-top: 2.4rem;
     }
 
     .abuse-page .province-grid {
@@ -159,6 +167,7 @@
 
     .abuse-page .other-resources {
       margin-top: 2.4rem;
+      text-align: left;
     }
 
     .abuse-page .other-resources h2,
@@ -186,6 +195,7 @@
       margin-top: 1.8rem;
       padding-top: 1.3rem;
       border-top: 1px solid rgba(0, 0, 0, 0.12);
+      text-align: left;
     }
 
     .abuse-page .related-links h2 {
@@ -225,8 +235,8 @@
 
     <!-- PAGE CONTENT -->
     <section class="resource-content-section" aria-label="Abuse support resources">
-      <div class="resource-content-wrap">
 
+      <div class="resource-content-wrap">
         <div class="resource-intro">
           <p>If you are looking for abuse resources, domestic violence support, sexual assault support, shelters, crisis lines, legal aid, or victim services, this page is meant to help you get started. It is not meant to be exhaustive. It is meant to make it easier to find practical support when leaving abuse or planning for safety.</p>
         </div>
@@ -238,7 +248,9 @@
           <p>Find even more resources at <a href="https://endingviolencecanada.org/getting-help-2/">Ending Violence Canada</a>.</p>
           <p>Financial abuse is one of the top reasons that it is difficult for people to leave abusers. Read <a href="https://www.annuity.org/financial-literacy/financial-abuse/">this general guide*</a> and <a href="https://www.annuity.org/financial-literacy/women/">this financial literacy guide*</a> for help.</p>
         </div>
+      </div>
 
+      <div class="province-table-wrap">
         <h2 class="province-heading">Provincial and Territorial Abuse Resources in Canada</h2>
 
         <div class="province-grid" aria-label="Provincial and territorial abuse resources">
@@ -387,7 +399,9 @@
           </article>
 
         </div>
+      </div>
 
+      <div class="resource-content-wrap">
         <div class="other-resources">
           <h2>Other Resources</h2>
           <h3>United States</h3>
@@ -408,8 +422,8 @@
           <h2>Related Abuse Pages</h2>
           <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Resources hub</a> and the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page.</p>
         </div>
-
       </div>
+
     </section>
 
   </main>
