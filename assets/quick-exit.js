@@ -5,14 +5,25 @@
   const QUICK_EXIT_URL = "https://www.google.com";
   const QUICK_EXIT_FLAG = "quickExitTriggered";
 
-  function redirectIfQuickExitFlagSet() {
+  function redirectIfReturningAfterQuickExit() {
+    let navType = "";
+
     try {
-      if (sessionStorage.getItem(QUICK_EXIT_FLAG) === "true") {
-        window.location.replace(QUICK_EXIT_URL);
-        return true;
+      const navEntries = performance.getEntriesByType("navigation");
+      if (navEntries && navEntries.length) {
+        navType = navEntries[0].type;
       }
     } catch (err) {}
-    return false;
+
+    const cameBackViaHistory =
+      navType === "back_forward" ||
+      (window.performance &&
+        window.performance.navigation &&
+        window.performance.navigation.type === 2);
+
+    if (cameBackViaHistory && sessionStorage.getItem(QUICK_EXIT_FLAG) === "true") {
+      window.location.replace(QUICK_EXIT_URL);
+    }
   }
 
   function positionQuickExit() {
@@ -97,12 +108,9 @@
     });
   }
 
-  if (redirectIfQuickExitFlagSet()) return;
+  redirectIfReturningAfterQuickExit();
 
-  window.addEventListener("pageshow", function () {
-    redirectIfQuickExitFlagSet();
-  });
-
+  window.addEventListener("pageshow", redirectIfReturningAfterQuickExit);
   window.addEventListener("resize", positionQuickExit);
   window.addEventListener("scroll", positionQuickExit, { passive: true });
 
