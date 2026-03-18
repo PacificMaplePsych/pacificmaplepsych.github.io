@@ -656,6 +656,20 @@ body {
   text-underline-offset: 3px;
 }
 
+.footer-social a img {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-social a:hover img,
+.footer-social a:focus img {
+  transform: translateY(-2px);
+  opacity: 0.75;
+}
+
+.footer-social a {
+  display: inline-block;
+}
+
 .footer-bottom {
   background: #453346;
   color: #ffffff;
