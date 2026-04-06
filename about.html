@@ -117,6 +117,28 @@
       opacity: 0.98;
     }
 
+    /* Welcome photo below both columns */
+    .about-page .about-welcome-wrap {
+      display: flex;
+      justify-content: center;
+      padding-top: clamp(18px, 3vw, 36px);
+    }
+
+    .about-page .about-welcome-wrap figure {
+      margin: 0;
+      width: 100%;
+      max-width: 620px;
+    }
+
+    .about-page .about-welcome-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+      border: 1px solid rgba(0, 0, 0, 0.10);
+    }
+
     @media (max-width: 900px) {
       .about-page .about-grid {
         grid-template-columns: 1fr;
@@ -327,7 +349,7 @@
       <div class="container-narrow">
         <div class="about-grid">
 
-          <!-- Left: floating image + centered logo below -->
+          <!-- Left: floating images -->
           <div class="about-left">
             <figure class="about-photo">
               <img
@@ -339,26 +361,13 @@
                 height="800"
               />
             </figure>
-            
+
             <br/>
-            
+
             <figure class="about-photo">
               <img
                 src="/images/about-pmpc.jpg"
                 alt="Rooms at Pacific Maple Psych Centre"
-                loading="lazy"
-                decoding="async"
-                width="1200"
-                height="1200"
-              />
-            </figure>
-            
-            <br/>
-            
-            <figure class="about-photo">
-              <img
-                src="/images/about-pmpc-welcome.jpg"
-                alt="Welcome to Pacific Maple Psych Centre"
                 loading="lazy"
                 decoding="async"
                 width="1200"
@@ -370,15 +379,15 @@
           <!-- Right: text -->
           <div class="about-text">
             <p class="p-body">
-              Founded in 2018, Pacific Maple Psych Centre is a multidisciplinary mental health practice offering both therapy and comprehensive psychological assessments. We are one of Vancouver's top autism assessment clinics for all ages. 
+              Founded in 2018, Pacific Maple Psych Centre is a multidisciplinary mental health practice offering both therapy and psychological assessments. We are one of Vancouver's top autism assessment clinics for all ages. 
             </p>
 
             <p class="p-body">
-              With clinicians that draw from neurodiversity-affirming, trauma-aware, and culturally responsive approaches, our practice is known for providing thoughtful, nuanced, and individualized care, tailored to the needs of the person before us.
+              With clinicians that draw from neurodiversity-affirming, trauma-informed, and culturally responsive approaches, our practice is known for providing thoughtful, nuanced, and individualized care, tailored to the needs of the person before us.
             </p>
 
             <p class="p-body">
-              We have compassion for people from diverse backgrounds, including those whose identities, values, or lifestyles may not always feel understood in conventional settings. As such, we strive to create an environment that is attentive and deeply respectful of each person’s perspective.
+              We have compassion for people from diverse backgrounds, including those whose identities, values, or lifestyles may not always feel understood in conventional settings. As such, we strive to create an environment that is attentive and deeply respectful of each person's perspective.
             </p>
 
             <p class="p-body">
@@ -388,13 +397,28 @@
             <p class="p-body">
               Though we provide virtual services across British Columbia, our physical location is conveniently situated in the beautifully restored Rogers Heritage Building, which is steps from the Waterfront Canada Line Station and the Granville SkyTrain Station, with parking at the back of the building.
             </p>
-            
+
             <p class="p-body">
             We occasionally expand our team and welcome inquiries from experienced psychologists. 
             </p>
           </div>
 
         </div>
+
+        <!-- Welcome photo: centered below both columns on desktop, after text on mobile -->
+        <div class="about-welcome-wrap">
+          <figure class="about-photo">
+            <img
+              src="/images/about-pmpc-welcome.jpg"
+              alt="Welcome to Pacific Maple Psych Centre"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="1200"
+            />
+          </figure>
+        </div>
+
       </div>
     </section>
 
@@ -436,7 +460,7 @@
             <summary class="faq-q">Are you neurodiversity-affirming and trauma-informed?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Yes. Our clinicians are familiar with neurodiversity-affirming care, trauma-informed support, culturally responsive practice, and other inclusive, anti-oppressive approaches. We aim to provide care that is respectful, compassionate, and responsive to each person’s context and needs.
+                Yes. Our clinicians are familiar with neurodiversity-affirming care, trauma-informed support, culturally responsive practice, and other inclusive, anti-oppressive approaches. We aim to provide care that is respectful, compassionate, and responsive to each person's context and needs.
               </p>
             </div>
           </details>
