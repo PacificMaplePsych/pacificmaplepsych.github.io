@@ -94,7 +94,7 @@ body {
   width: min(1180px, calc(100% - 44px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 48px;
   align-items: center;
 }
@@ -122,17 +122,18 @@ body {
 .hero-split-h1 {
   font-size: 38px;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
   color: #453346;
   margin: 0 0 18px 0;
 }
 
 .hero-split-h1-sub {
   display: block;
-  font-size: 46px;
+  font-size: 40px;
   font-weight: 700;
   color: #453346;
   white-space: nowrap;
+  margin-top: 2px;
 }
 
 .hero-h1-blue {
@@ -257,8 +258,8 @@ body {
 }
 
 .hero-badge-highlight {
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 600;
   color: #3d6780;
   line-height: 1.2;
 }
@@ -275,7 +276,7 @@ body {
 
   .hero-split-h1,
   .hero-split-h1-sub {
-    font-size: 30px;
+    font-size: 28px;
     white-space: normal;
   }
 
