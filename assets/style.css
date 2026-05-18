@@ -186,8 +186,8 @@ body {
 /* Trust dots row */
 .hero-trust-dots {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
+  flex-wrap: nowrap;
+  gap: 6px 16px;
   font-size: 13.5px;
   color: #555;
   font-weight: 500;
@@ -289,7 +289,7 @@ body {
   }
 }
 
-/* Mobile: stack vertically, photo below text */
+/* Mobile: stack vertically, photo above text */
 @media (max-width: 780px) {
   .hero-split-inner {
     grid-template-columns: 1fr;
@@ -298,6 +298,11 @@ body {
 
   .hero-split-left {
     align-items: flex-start;
+    order: 2;
+  }
+
+  .hero-split-right {
+    order: 1;
   }
 
   .hero-split-h1 {
@@ -307,11 +312,6 @@ body {
   .hero-split-h1-sub {
     font-size: 28px;
     white-space: normal;
-  }
-
-  .hero-split-right {
-    /* photo stacks below text on mobile */
-    order: 2;
   }
 
   .hero-team-photo {
@@ -330,6 +330,7 @@ body {
   }
 
   .hero-trust-dots {
+    flex-wrap: wrap;
     gap: 6px 12px;
     font-size: 12.5px;
   }
