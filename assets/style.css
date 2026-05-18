@@ -238,9 +238,15 @@ body {
   color: #888;
 }
 
-/* "Serving BC since / 2018" badge — top right */
-.hero-badge-top-right {
+/* "Top-rated for Autism Assessments" badge — top left */
+.hero-badge-top-left {
   top: 16px;
+  left: -14px;
+}
+
+/* "Serving BC since / 2018" badge — bottom right */
+.hero-badge-bottom-right {
+  bottom: 20px;
   right: -14px;
 }
 
@@ -249,12 +255,6 @@ body {
   font-weight: 800;
   color: #453346;
   line-height: 1;
-}
-
-/* "Top-rated for / Autism Assessments" badge — bottom left */
-.hero-badge-bottom-left {
-  bottom: 20px;
-  left: -14px;
 }
 
 .hero-badge-highlight {
@@ -319,14 +319,14 @@ body {
     object-position: center top;
   }
 
-  .hero-badge-top-right {
+  .hero-badge-top-left {
     top: 10px;
-    right: 8px;
+    left: 8px;
   }
 
-  .hero-badge-bottom-left {
+  .hero-badge-bottom-right {
     bottom: 10px;
-    left: 8px;
+    right: 8px;
   }
 
   .hero-trust-dots {
