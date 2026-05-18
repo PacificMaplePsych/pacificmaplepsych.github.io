@@ -246,7 +246,7 @@ body {
 
 /* "Serving BC since / 2018" badge — bottom right */
 .hero-badge-bottom-right {
-  bottom: 20px;
+  bottom: -10px;
   right: -14px;
 }
 
