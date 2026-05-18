@@ -83,7 +83,248 @@ body {
   line-height: 1.05;
 }
 
-/* ===== Home Hero ===== */
+/* ===== NEW Split Hero ===== */
+.home-hero-split {
+  background: #fff;
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--pmpc-line);
+}
+
+.hero-split-inner {
+  width: min(1180px, calc(100% - 44px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Left column */
+.hero-split-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.hero-location-badge {
+  display: inline-block;
+  background: #c9d1d9;
+  color: #453346;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.hero-split-h1 {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #453346;
+  margin: 0 0 18px 0;
+}
+
+.hero-split-h1-sub {
+  display: block;
+  font-size: 46px;
+  font-weight: 700;
+  color: #453346;
+}
+
+.hero-h1-blue {
+  color: #3d6780;
+}
+
+.hero-split-body {
+  font-size: 17px;
+  line-height: 1.55;
+  color: #333;
+  margin: 0 0 26px 0;
+}
+
+.hero-split-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+/* Dark filled button (Book an Appointment) */
+.btn-pill-dark {
+  background: #453346 !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(69, 51, 70, 0.30) !important;
+}
+
+.btn-pill-dark:hover,
+.btn-pill-dark:focus {
+  background: #3d2f3e !important;
+  color: #fff !important;
+  box-shadow: 0 10px 22px rgba(69, 51, 70, 0.40) !important;
+}
+
+/* Outline button (Explore Our Services) */
+.btn-pill-outline {
+  background: transparent !important;
+  color: #453346 !important;
+  border: 2px solid #453346 !important;
+  box-shadow: none !important;
+}
+
+.btn-pill-outline:hover,
+.btn-pill-outline:focus {
+  background: #453346 !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(69, 51, 70, 0.25) !important;
+}
+
+/* Trust dots row */
+.hero-trust-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 13.5px;
+  color: #555;
+  font-weight: 500;
+}
+
+.hero-dot {
+  white-space: nowrap;
+}
+
+/* Right column: photo + badges */
+.hero-split-right {
+  position: relative;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: visible; /* badges can extend outside */
+}
+
+.hero-team-photo {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Shared badge base */
+.hero-badge {
+  position: absolute;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 130px;
+}
+
+.hero-badge-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* "Serving BC since / 2018" badge — top right */
+.hero-badge-top-right {
+  top: 16px;
+  right: -14px;
+}
+
+.hero-badge-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #453346;
+  line-height: 1;
+}
+
+/* "Top-rated for / Autism Assessments" badge — bottom left */
+.hero-badge-bottom-left {
+  bottom: 20px;
+  left: -14px;
+}
+
+.hero-badge-highlight {
+  font-size: 15px;
+  font-weight: 800;
+  color: #3d6780;
+  line-height: 1.2;
+}
+
+/* Tablet: tighten layout */
+@media (max-width: 1050px) {
+  .home-hero-split {
+    padding: 36px 0 32px;
+  }
+
+  .hero-split-inner {
+    gap: 32px;
+  }
+
+  .hero-split-h1,
+  .hero-split-h1-sub {
+    font-size: 34px;
+  }
+
+  .hero-team-photo {
+    height: 380px;
+  }
+}
+
+/* Mobile: stack vertically, photo below text */
+@media (max-width: 780px) {
+  .hero-split-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-split-left {
+    align-items: flex-start;
+  }
+
+  .hero-split-h1,
+  .hero-split-h1-sub {
+    font-size: 30px;
+  }
+
+  .hero-split-right {
+    /* photo stacks below text on mobile */
+    order: 2;
+  }
+
+  .hero-team-photo {
+    height: 280px;
+    object-position: center top;
+  }
+
+  .hero-badge-top-right {
+    top: 10px;
+    right: 8px;
+  }
+
+  .hero-badge-bottom-left {
+    bottom: 10px;
+    left: 8px;
+  }
+
+  .hero-trust-dots {
+    gap: 6px 12px;
+    font-size: 12.5px;
+  }
+}
+
+/* ===== OLD Home Hero (keep in case used elsewhere) ===== */
 .home-hero {
   position: relative;
   min-height: 520px;
