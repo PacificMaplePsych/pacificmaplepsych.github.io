@@ -303,6 +303,7 @@ body {
 
   .hero-split-right {
     order: 1;
+    padding: 18px 14px 18px 14px;
   }
 
   .hero-split-h1 {
@@ -320,13 +321,13 @@ body {
   }
 
   .hero-badge-top-left {
-    top: 10px;
-    left: 8px;
+    top: -14px;
+    left: -10px;
   }
 
   .hero-badge-bottom-right {
-    bottom: 10px;
-    right: 8px;
+    bottom: -14px;
+    right: -10px;
   }
 
   .hero-trust-dots {
