@@ -120,7 +120,7 @@ body {
 }
 
 .hero-split-h1 {
-  font-size: 46px;
+  font-size: 38px;
   font-weight: 700;
   line-height: 1.15;
   color: #453346;
@@ -132,6 +132,7 @@ body {
   font-size: 46px;
   font-weight: 700;
   color: #453346;
+  white-space: nowrap;
 }
 
 .hero-h1-blue {
@@ -161,9 +162,9 @@ body {
 
 .btn-pill-dark:hover,
 .btn-pill-dark:focus {
-  background: #3d2f3e !important;
+  background: #7a5d7c !important;
   color: #fff !important;
-  box-shadow: 0 10px 22px rgba(69, 51, 70, 0.40) !important;
+  box-shadow: 0 10px 22px rgba(122, 93, 124, 0.40) !important;
 }
 
 /* Outline button (Explore Our Services) */
@@ -274,7 +275,12 @@ body {
 
   .hero-split-h1,
   .hero-split-h1-sub {
-    font-size: 34px;
+    font-size: 30px;
+    white-space: normal;
+  }
+
+  .hero-split-h1 {
+    font-size: 26px;
   }
 
   .hero-team-photo {
@@ -293,9 +299,13 @@ body {
     align-items: flex-start;
   }
 
-  .hero-split-h1,
+  .hero-split-h1 {
+    font-size: 24px;
+  }
+
   .hero-split-h1-sub {
-    font-size: 30px;
+    font-size: 28px;
+    white-space: normal;
   }
 
   .hero-split-right {
