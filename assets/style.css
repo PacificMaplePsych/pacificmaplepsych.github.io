@@ -103,7 +103,8 @@ body {
 .hero-split-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 0;
 }
 
@@ -236,6 +237,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #888;
+  text-align: center;
 }
 
 /* "Top-rated for Autism Assessments" badge — top left */
@@ -263,6 +265,7 @@ body {
   font-weight: 600;
   color: #3d6780;
   line-height: 1.2;
+  text-align: center;
 }
 
 /* Tablet: tighten layout */
