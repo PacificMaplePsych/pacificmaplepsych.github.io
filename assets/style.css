@@ -240,7 +240,7 @@ body {
 
 /* "Top-rated for Autism Assessments" badge — top left */
 .hero-badge-top-left {
-  top: -10px;
+  top: 10px;
   left: -14px;
 }
 
