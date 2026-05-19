@@ -335,6 +335,10 @@ body {
     right: -10px;
   }
 
+  .hero-split-actions {
+    justify-content: center;
+  }
+
   .hero-trust-dots {
     flex-wrap: wrap;
     gap: 6px 12px;
