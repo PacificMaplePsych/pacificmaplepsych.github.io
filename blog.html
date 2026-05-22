@@ -123,20 +123,50 @@
       <div class="container-narrow">
         <div class="blog-grid">
 
-          <div class="blog-text">
-            <p class="p-body">Blog coming soon!</p>
-          </div>
+          <div id="blog-posts"></div>
 
-          <div class="blog-logo">
-            <img
-              src="/images/Simple%20Logo%20180x180.png"
-              alt="Pacific Maple Psych Centre logo"
-              loading="lazy"
-              decoding="async"
-              width="180"
-              height="180"
-            />
-          </div>
+<script>
+
+fetch('/blog/posts.json')
+
+.then(response => response.json())
+
+.then(posts => {
+
+const container =
+document.getElementById('blog-posts');
+
+container.innerHTML =
+posts.map(post => `
+
+<article class="blog-card">
+
+<a href="${post.url}">
+
+<img
+src="${post.image}"
+alt="${post.title}"
+style="
+width:100%;
+max-width:300px;
+border-radius:12px;
+">
+
+<h2>${post.title}</h2>
+
+<p>${post.description}</p>
+
+<small>${post.date}</small>
+
+</a>
+
+</article>
+
+`).join('');
+
+});
+
+</script>
 
         </div>
       </div>
