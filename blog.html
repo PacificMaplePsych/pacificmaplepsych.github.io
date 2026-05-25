@@ -94,9 +94,25 @@
       margin-bottom: 3rem;
     }
 
-    /* Remove underline from description text inside card links */
-    .blog-card a p {
+    /* Override 2-column grid so posts use full width */
+    .blog-page .blog-grid {
+      display: block;
+    }
+
+    /* Center the posts with a comfortable reading width */
+    #blog-posts {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Remove underline from all text inside card links */
+    .blog-card a {
       text-decoration: none;
+    }
+
+    /* Re-apply underline on h2 only when hovering, for usability */
+    .blog-card a:hover h2 {
+      text-decoration: underline;
     }
 
     @media (max-width: 900px) {
