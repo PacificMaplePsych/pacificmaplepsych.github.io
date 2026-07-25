@@ -125,6 +125,53 @@
       .blog-page .blog-text { min-height: auto; }
       .blog-page .blog-logo { justify-content: center; }
     }
+
+    /* Numbered pagination */
+    .blog-pagination {
+      max-width: 600px;
+      margin: 2.5rem auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .blog-pagination a,
+    .blog-pagination span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 36px;
+      height: 36px;
+      padding: 0 10px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .blog-pagination a {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: #fff;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .blog-pagination a:hover {
+      background: #f5f0f6;
+      border-color: #7a5d7c;
+    }
+
+    .blog-pagination span.current {
+      background: #7a5d7c;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .blog-pagination span.ellipsis {
+      border: none;
+      color: #999;
+    }
   </style>
 </head>
 
@@ -151,8 +198,17 @@
         <div class="blog-grid">
 
           <div id="blog-posts"></div>
+          <nav class="blog-pagination" aria-label="Blog pagination"></nav>
 
 <script>
+
+const POSTS_PER_PAGE = 10;
+
+function getCurrentPage() {
+  const params = new URLSearchParams(window.location.search);
+  const page = parseInt(params.get('page'), 10);
+  return page && page > 0 ? page : 1;
+}
 
 fetch('/blog/posts.json')
 
@@ -160,11 +216,15 @@ fetch('/blog/posts.json')
 
 .then(posts => {
 
-const container =
-document.getElementById('blog-posts');
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const currentPage = Math.min(getCurrentPage(), totalPages);
 
-container.innerHTML =
-posts.map(post => `
+  const start = (currentPage - 1) * POSTS_PER_PAGE;
+  const pagePosts = posts.slice(start, start + POSTS_PER_PAGE);
+
+  const container = document.getElementById('blog-posts');
+
+  container.innerHTML = pagePosts.map(post => `
 
 <article class="blog-card">
 
@@ -190,6 +250,61 @@ border-radius:12px;
 </article>
 
 `).join('');
+
+  // Build numbered pagination, only shown when there's more than 1 page
+  const nav = document.querySelector('.blog-pagination');
+
+  if (totalPages <= 1) {
+    nav.innerHTML = '';
+    return;
+  }
+
+  function pageLink(pageNum) {
+    return `<a href="/blog.html?page=${pageNum}">${pageNum}</a>`;
+  }
+
+  let navHtml = '';
+
+  // Previous arrow
+  if (currentPage > 1) {
+    navHtml += `<a href="/blog.html?page=${currentPage - 1}" aria-label="Previous page">&laquo;</a>`;
+  }
+
+  // Always show page 1
+  navHtml += currentPage === 1
+    ? `<span class="current">1</span>`
+    : pageLink(1);
+
+  // Ellipsis after page 1 if needed
+  if (currentPage > 3) {
+    navHtml += `<span class="ellipsis">&hellip;</span>`;
+  }
+
+  // Pages around the current page
+  for (let p = Math.max(2, currentPage - 1); p <= Math.min(totalPages - 1, currentPage + 1); p++) {
+    navHtml += p === currentPage
+      ? `<span class="current">${p}</span>`
+      : pageLink(p);
+  }
+
+  // Ellipsis before last page if needed
+  if (currentPage < totalPages - 2) {
+    navHtml += `<span class="ellipsis">&hellip;</span>`;
+  }
+
+  // Always show last page (if more than 1 page total)
+  if (totalPages > 1) {
+    navHtml += currentPage === totalPages
+      ? `<span class="current">${totalPages}</span>`
+      : pageLink(totalPages);
+  }
+
+  // Next arrow
+  if (currentPage < totalPages) {
+    navHtml += `<a href="/blog.html?page=${currentPage + 1}" aria-label="Next page">&raquo;</a>`;
+  }
+
+  nav.innerHTML = navHtml;
 
 });
 
