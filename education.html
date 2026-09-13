@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQ2LJL5F');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mental Health Education Library | Pacific Maple Psych Centre</title>
+<meta name="description" content="Browse plain-language articles on anxiety, depression, ADHD, autism, burnout, relationships, and other common mental health topics from Pacific Maple Psych Centre.">
+<link rel="canonical" href="https://pacificmaplepsych.com/education.html">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  /* Scoped styles for the education hub page only */
+  .education-hub { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  .education-hub h1 { color: #7a5d7c; margin-bottom: 0.5rem; }
+  .education-hub .edu-intro { color: #333; line-height: 1.6; margin-bottom: 1.75rem; }
+
+  .edu-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 0.75rem 0;
+    z-index: 5;
+    border-bottom: 1px solid #e6e0e6;
+  }
+  .edu-search-bar input[type="search"] {
+    flex: 1;
+    padding: 0.65rem 0.9rem;
+    font-size: 1rem;
+    border: 1px solid #cbb9cc;
+    border-radius: 8px;
+    outline: none;
+  }
+  .edu-search-bar input[type="search"]:focus {
+    border-color: #7a5d7c;
+    box-shadow: 0 0 0 3px rgba(122, 93, 124, 0.18);
+  }
+  .edu-result-count { font-size: 0.85rem; color: #666; white-space: nowrap; }
+
+  .edu-toolbar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .edu-toolbar button {
+    background: none;
+    border: 1px solid #cbb9cc;
+    color: #7a5d7c;
+    border-radius: 6px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .edu-toolbar button:hover { background: #f5eef5; }
+
+  .edu-category {
+    border: 1px solid #e6e0e6;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  .edu-category summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.85rem 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #7a5d7c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .edu-category summary::-webkit-details-marker { display: none; }
+  .edu-category summary::after {
+    content: "+";
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+  .edu-category[open] summary::after { content: "\2212"; }
+  .edu-category .edu-count {
+    font-weight: 400;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-left: 0.5rem;
+  }
+  .edu-category ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 1.1rem 1rem;
+    columns: 1;
+    gap: 0;
+  }
+  @media (min-width: 640px) {
+    .edu-category ul { columns: 2; column-gap: 1.5rem; }
+  }
+  .edu-category li { break-inside: avoid; padding: 0.3rem 0; }
+  .edu-category li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .edu-category li a:hover { color: #7a5d7c; text-decoration: underline; }
+
+  .edu-no-results { color: #666; padding: 1.5rem 0; text-align: center; }
+  .edu-loading { color: #666; padding: 1.5rem 0; text-align: center; }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ2LJL5F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="site-header"></div>
+
+<main class="entry-content education-hub">
+  <h1>Mental Health Education Library</h1>
+  <p class="edu-intro">
+    A growing library of plain-language articles on anxiety, depression, ADHD, autism, burnout,
+    relationships, and other topics people commonly bring to therapy. Search by keyword, or browse
+    by category below.
+  </p>
+
+  <div class="edu-search-bar">
+    <input type="search" id="eduSearch" placeholder="Search topics (e.g. &quot;panic attacks&quot;, &quot;ADHD&quot;, &quot;grief&quot;)" aria-label="Search education articles">
+    <span class="edu-result-count" id="eduResultCount"></span>
+  </div>
+
+  <div class="edu-toolbar">
+    <button type="button" id="eduExpandAll">Expand all</button>
+    <button type="button" id="eduCollapseAll">Collapse all</button>
+  </div>
+
+  <p class="edu-loading" id="eduLoading">Loading articles&hellip;</p>
+  <div class="edu-categories" id="eduCategories" hidden></div>
+  <p class="edu-no-results" id="eduNoResults" hidden>No articles match your search. Try a different term.</p>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="/assets/main.js"></script>
+<script>
+(function () {
+  // Friendly display names and a fixed display order for the internal category keys.
+  var CATEGORY_LABELS = {
+    "Anxiety": "Anxiety",
+    "Depression": "Depression &amp; Mood",
+    "ADHD": "ADHD",
+    "Autism": "Autism",
+    "Burnout": "Burnout &amp; Stress",
+    "Relationships": "Relationships",
+    "General": "Grief, Self-Esteem &amp; Life Transitions",
+    "Additional Diagnoses": "Other Common Concerns"
+  };
+  var CATEGORY_ORDER = ["Anxiety","Depression","ADHD","Autism","Burnout","Relationships","General","Additional Diagnoses"];
+
+  var categoriesEl = document.getElementById("eduCategories");
+  var loadingEl = document.getElementById("eduLoading");
+  var noResultsEl = document.getElementById("eduNoResults");
+  var searchInput = document.getElementById("eduSearch");
+  var resultCountEl = document.getElementById("eduResultCount");
+
+  function escapeHtml(str) {
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function render(items) {
+    var byCategory = {};
+    items.forEach(function (item) {
+      if (!byCategory[item.category]) byCategory[item.category] = [];
+      byCategory[item.category].push(item);
+    });
+
+    var order = CATEGORY_ORDER.filter(function (c) { return byCategory[c]; });
+    // include any unexpected categories at the end, just in case
+    Object.keys(byCategory).forEach(function (c) {
+      if (order.indexOf(c) === -1) order.push(c);
+    });
+
+    var html = "";
+    order.forEach(function (cat) {
+      var list = byCategory[cat].slice().sort(function (a, b) {
+        return a.topic.localeCompare(b.topic);
+      });
+      var label = CATEGORY_LABELS[cat] || cat;
+      html += '<details class="edu-category" data-category="' + escapeHtml(cat) + '">';
+      html += '<summary>' + label + ' <span class="edu-count">(' + list.length + ')</span></summary>';
+      html += '<ul>';
+      list.forEach(function (item) {
+        html += '<li><a href="' + escapeHtml(item.url) + '">' + escapeHtml(item.topic) + '</a></li>';
+      });
+      html += '</ul></details>';
+    });
+
+    categoriesEl.innerHTML = html;
+    categoriesEl.hidden = false;
+    loadingEl.hidden = true;
+  }
+
+  function filter(query) {
+    query = query.trim().toLowerCase();
+    var total = 0;
+    var details = categoriesEl.querySelectorAll(".edu-category");
+    details.forEach(function (d) {
+      var anyVisible = false;
+      var items = d.querySelectorAll("li");
+      items.forEach(function (li) {
+        var text = li.textContent.toLowerCase();
+        var match = query === "" || text.indexOf(query) !== -1;
+        li.hidden = !match;
+        if (match) { anyVisible = true; total++; }
+      });
+      d.hidden = !anyVisible;
+      d.open = query !== "" && anyVisible;
+    });
+    noResultsEl.hidden = total !== 0 || query === "";
+    resultCountEl.textContent = query ? (total + (total === 1 ? " result" : " results")) : "";
+  }
+
+  searchInput.addEventListener("input", function () {
+    filter(searchInput.value);
+  });
+
+  document.getElementById("eduExpandAll").addEventListener("click", function () {
+    categoriesEl.querySelectorAll(".edu-category").forEach(function (d) { d.open = true; });
+  });
+  document.getElementById("eduCollapseAll").addEventListener("click", function () {
+    categoriesEl.querySelectorAll(".edu-category").forEach(function (d) { d.open = false; });
+  });
+
+  fetch("/education/education.json")
+    .then(function (res) { return res.json(); })
+    .then(render)
+    .catch(function () {
+      loadingEl.textContent = "Articles could not be loaded right now. Please refresh the page.";
+    });
+})();
+</script>
+</body>
+</html>
