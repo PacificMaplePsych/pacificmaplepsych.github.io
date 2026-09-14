@@ -44,7 +44,7 @@
   </url>
 
   <url>
-    <loc>https://pacificmaplepsych.com/services/asd-assessment.html</loc>
+    <loc>https://pacificmaplepsych.com/services/autism-assessment.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,11 +56,6 @@
   </url>
 
   <!-- Team bio pages -->
-  <url>
-    <loc>https://pacificmaplepsych.com/team/patricia-celan.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <url>
     <loc>https://pacificmaplepsych.com/team/mickey-stein.html</loc>
     <changefreq>monthly</changefreq>
@@ -81,7 +76,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-    <url>
+  <url>
     <loc>https://pacificmaplepsych.com/team/yuebo-yang.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -132,7 +127,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pacificmaplepsych.com/team/vanessa-hall.html</loc>
+    <loc>https://pacificmaplepsych.com/team/vanessa-hallenberg.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -142,7 +137,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pacificmaplepsych.com/team/jasmin-gish.html</loc>
+    <loc>https://pacificmaplepsych.com/team/jasmine-gish.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -160,6 +155,51 @@
     <loc>https://pacificmaplepsych.com/team/aliza-heiligman.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/aakriti-kallianpur.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/cailee-clark.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/claire-dewar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/irene-matijczak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/justin-graffi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/mabel-yu.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/rami-nijjar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/samveer-uppal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/team/sydney-harrison.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
@@ -198,22 +238,284 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+
   <url>
     <loc>https://pacificmaplepsych.com/resources/disability.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-  </url>  
+  </url>
 
   <url>
     <loc>https://pacificmaplepsych.com/resources/abuse.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+
+  <!-- Abuse resource sub-pages -->
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-resources.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-escape-planning.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-psychological-impact.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-signs-domestic.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-signs-animal.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-signs-reproductive.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-signs-therapist.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/resources/abuse-signs-trafficking.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <url>
     <loc>https://pacificmaplepsych.com/blog.html</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://pacificmaplepsych.com/education.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Education articles -->
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-cant-i-focus-no-matter-how-hard-i-try.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-do-i-lose-track-of-time-so-easily.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-do-i-start-projects-and-never-finish-them.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-do-i-interrupt-people-without-meaning-to.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-is-it-so-hard-to-sit-still.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-do-i-forget-things-constantly.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-do-i-procrastinate-even-on-things-i-care-about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/why-do-i-feel-restless-all-the-time.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/ADHD-in-women.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/adult-ADHD-in-BC.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/arguing-stubborn-people.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/building-emotional-regulation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/childhood-trauma-dating.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/covert-narcissism-emotional-abuse.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/creating-emotional-safety.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/early-dating-red-flags-narcissistic-patterns.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/effective-apologies.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/high-achievers-relationships.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/laughter-in-love.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/love-on-the-spectrum.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/love-with-ifs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/men-mental-health-month-male-loneliness.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/mental-health-awareness-month-26.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/mothering-men-with-potential.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/negative-sentiment-override.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/neurodivergent-couples.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/pride-and-prejudice.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/princess-treatment-psychology.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/psychogenic-erectile-dysfunction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/psychology-of-victim-mentality.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/rejection-sensitive-dysphoria.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/relationship-recovering-trust.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/scapegoating-mental-health.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/sexual-derogation-psychological-control.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/smart-couples-negative-loops.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/welcome-to-pmpc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/what-is-couples-therapy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/what-is-trauma-therapy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/whiplash-coaching.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/why-defensiveness-damages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/why-strong-women-stay-in-toxic-relationships.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
