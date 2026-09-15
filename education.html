@@ -16,9 +16,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="/assets/style.css">
 <style>
   /* Scoped styles for the education hub page only */
-  .education-hub { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-  .education-hub h1 { color: #7a5d7c; margin-bottom: 0.5rem; }
-  .education-hub .edu-intro { color: #333; line-height: 1.6; margin-bottom: 1.75rem; }
+  .education-hub { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+  .education-hub .edu-intro { color: #333; line-height: 1.6; margin: 1.75rem 0; }
 
   .edu-search-bar {
     display: flex;
@@ -124,27 +123,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="site-header"></div>
 
-<main class="entry-content education-hub">
-  <h1>Mental Health Education Library</h1>
-  <p class="edu-intro">
-    A growing library of plain-language articles on anxiety, depression, ADHD, autism, burnout,
-    relationships, and other topics people commonly bring to therapy. Search by keyword, or browse
-    by category below.
-  </p>
+<main class="entry-content">
 
-  <div class="edu-search-bar">
-    <input type="search" id="eduSearch" placeholder="Search topics (e.g. &quot;panic attacks&quot;, &quot;ADHD&quot;, &quot;grief&quot;)" aria-label="Search education articles">
-    <span class="edu-result-count" id="eduResultCount"></span>
+  <!-- TOP TITLE BAND (matches blog.html so the sticky nav doesn't overlap content) -->
+  <section class="page-title-band" aria-label="Education title">
+    <div class="container-narrow">
+      <h1>Mental Health Education Library</h1>
+    </div>
+  </section>
+
+  <div class="education-hub">
+    <p class="edu-intro">
+      A growing library of plain-language articles on anxiety, depression, ADHD, autism, burnout,
+      relationships, and other topics people commonly bring to therapy. Search by keyword, or browse
+      by category below.
+    </p>
+
+    <div class="edu-search-bar">
+      <input type="search" id="eduSearch" placeholder="Search topics (e.g. &quot;panic attacks&quot;, &quot;ADHD&quot;, &quot;grief&quot;)" aria-label="Search education articles">
+      <span class="edu-result-count" id="eduResultCount"></span>
+    </div>
+
+    <div class="edu-toolbar">
+      <button type="button" id="eduExpandAll">Expand all</button>
+      <button type="button" id="eduCollapseAll">Collapse all</button>
+    </div>
+
+    <p class="edu-loading" id="eduLoading">Loading articles&hellip;</p>
+    <div class="edu-categories" id="eduCategories" hidden></div>
+    <p class="edu-no-results" id="eduNoResults" hidden>No articles match your search. Try a different term.</p>
   </div>
-
-  <div class="edu-toolbar">
-    <button type="button" id="eduExpandAll">Expand all</button>
-    <button type="button" id="eduCollapseAll">Collapse all</button>
-  </div>
-
-  <p class="edu-loading" id="eduLoading">Loading articles&hellip;</p>
-  <div class="edu-categories" id="eduCategories" hidden></div>
-  <p class="edu-no-results" id="eduNoResults" hidden>No articles match your search. Try a different term.</p>
 </main>
 
 <div id="site-footer"></div>
