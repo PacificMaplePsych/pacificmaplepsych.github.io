@@ -107,16 +107,56 @@
   {
     "topic": "Why Do I Feel Like I Have to Do Things a Certain Number of Times",
     "url": "/education/articles/why-do-i-feel-like-i-have-to-do-things-a-certain-number-of-times.html",
-    "category": "Additional Diagnoses"
+    "category": "OCD"
   },
   {
     "topic": "Why Can't I Stop Checking Things Over and Over",
     "url": "/education/articles/why-cant-i-stop-checking-things-over-and-over.html",
-    "category": "Additional Diagnoses"
+    "category": "OCD"
   },
   {
     "topic": "Why Do I Have Thoughts That Scare Me and I Don't Know Why",
     "url": "/education/articles/why-do-i-have-thoughts-that-scare-me-and-i-dont-know-why.html",
-    "category": "Additional Diagnoses"
+    "category": "OCD"
+  },
+  {
+    "topic": "Why Do I Feel Unsafe Even When Nothing Is Wrong",
+    "url": "/education/articles/why-do-i-feel-unsafe-even-when-nothing-is-wrong.html",
+    "category": "PTSD & Trauma"
+  },
+  {
+    "topic": "Why Do I Have Nightmares About the Same Event",
+    "url": "/education/articles/why-do-i-have-nightmares-about-the-same-event.html",
+    "category": "PTSD & Trauma"
+  },
+  {
+    "topic": "Why Do My Moods Swing So Dramatically",
+    "url": "/education/articles/why-do-my-moods-swing-so-dramatically.html",
+    "category": "Bipolar Disorder"
+  },
+  {
+    "topic": "Why Do My Emotions Feel So Intense and Fast-Changing",
+    "url": "/education/articles/why-do-my-emotions-feel-so-intense-and-fast-changing.html",
+    "category": "Borderline Personality Disorder"
+  },
+  {
+    "topic": "Why Do I Feel Empty Without a Relationship or Goal",
+    "url": "/education/articles/why-do-i-feel-empty-without-a-relationship-or-goal.html",
+    "category": "Borderline Personality Disorder"
+  },
+  {
+    "topic": "Why Do I Feel Out of Control Around Food",
+    "url": "/education/articles/why-do-i-feel-out-of-control-around-food.html",
+    "category": "Eating Disorders"
+  },
+  {
+    "topic": "Why Do I Rely on Alcohol to Unwind",
+    "url": "/education/articles/why-do-i-rely-on-alcohol-to-unwind.html",
+    "category": "Substance Use"
+  },
+  {
+    "topic": "Why Can't I Stop Checking My Appearance in Mirrors",
+    "url": "/education/articles/why-cant-i-stop-checking-my-appearance-in-mirrors.html",
+    "category": "Body Dysmorphic Disorder"
   }
 ]
