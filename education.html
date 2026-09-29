@@ -160,18 +160,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/assets/main.js"></script>
 <script>
 (function () {
-  // Friendly display names and a fixed display order for the internal category keys.
+  // Display names and a fixed display order for the category keys used in education.json.
+  // Keep this list in sync with the categories in the master topics docx.
   var CATEGORY_LABELS = {
     "Anxiety": "Anxiety",
-    "Depression": "Depression &amp; Mood",
+    "Depression": "Depression",
     "ADHD": "ADHD",
     "Autism": "Autism",
-    "Burnout": "Burnout &amp; Stress",
+    "Burnout": "Burnout",
     "Relationships": "Relationships",
-    "General": "Grief, Self-Esteem &amp; Life Transitions",
-    "Additional Diagnoses": "Other Common Concerns"
+    "PTSD & Trauma": "PTSD &amp; Trauma",
+    "Grief": "Grief",
+    "OCD & Related Conditions": "OCD &amp; Related Conditions",
+    "Stress & Coping": "Stress &amp; Coping",
+    "Sleep": "Sleep",
+    "Emotional Wellbeing": "Emotional Wellbeing",
+    "Self-Esteem & Perfectionism": "Self-Esteem &amp; Perfectionism",
+    "Life Transitions": "Life Transitions",
+    "Parenting": "Parenting",
+    "Hormonal & Perinatal Mental Health": "Hormonal &amp; Perinatal Mental Health",
+    "Eating Disorders & Body Image": "Eating Disorders &amp; Body Image",
+    "Bipolar Disorder": "Bipolar Disorder",
+    "Personality Disorders": "Personality Disorders",
+    "Phobias": "Phobias",
+    "Health Anxiety & Somatic Symptoms": "Health Anxiety &amp; Somatic Symptoms",
+    "Substance Use & Addictive Behaviours": "Substance Use &amp; Addictive Behaviours",
+    "Therapy & Assessment Basics": "Therapy &amp; Assessment Basics"
   };
-  var CATEGORY_ORDER = ["Anxiety","Depression","ADHD","Autism","Burnout","Relationships","General","Additional Diagnoses"];
+  var CATEGORY_ORDER = ["Anxiety", "Depression", "ADHD", "Autism", "Burnout", "Relationships", "PTSD & Trauma", "Grief", "OCD & Related Conditions", "Stress & Coping", "Sleep", "Emotional Wellbeing", "Self-Esteem & Perfectionism", "Life Transitions", "Parenting", "Hormonal & Perinatal Mental Health", "Eating Disorders & Body Image", "Bipolar Disorder", "Personality Disorders", "Phobias", "Health Anxiety & Somatic Symptoms", "Substance Use & Addictive Behaviours", "Therapy & Assessment Basics"];
 
   var categoriesEl = document.getElementById("eduCategories");
   var loadingEl = document.getElementById("eduLoading");
