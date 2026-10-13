@@ -1,4 +1,4 @@
-// ===== Inject header and footer so you do not copy/paste per page  =====
+// ===== Inject header and footer so you do not copy/paste per page =====
 async function injectPartial(targetId, partialPath) {
   const el = document.getElementById(targetId);
   if (!el) return;
