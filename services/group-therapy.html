@@ -11,10 +11,13 @@
   })(window,document,'script','dataLayer','GTM-PQ2LJL5F');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Enables scroll-reveal styles only when JavaScript is running -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Group Therapy | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Virtual group therapy in British Columbia. Supportive, structured sessions to build skills, connection, and confidence." />
+  <title>Virtual Group Therapy in BC | Pacific Maple Psych Centre</title>
+  <meta name="description" content="Virtual group therapy across British Columbia for teens, young adults, and adults, led by registered psychologists. Eight weekly sessions at $60 each, plus a drop-in supportive group." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -382,92 +385,120 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"What is group therapy at Pacific Maple Psych Centre?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Group therapy at Pacific Maple Psych Centre is a structured virtual psychotherapy service in British Columbia where participants can build skills, receive support, and work through challenges in a guided group setting led by registered psychologists."
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalTherapy",
+      "@id": "https://pacificmaplepsych.com/services/group-therapy.html#service",
+      "name": "Virtual group therapy",
+      "description": "Virtual group psychotherapy for adolescents, young adults, and adults across British Columbia, led by registered psychologists.",
+      "url": "https://pacificmaplepsych.com/services/group-therapy.html",
+      "provider": {
+        "@type": "MedicalClinic",
+        "@id": "https://pacificmaplepsych.com/#medicalbusiness",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com/"
       },
-      {
-        "@type":"Question",
-        "name":"Who is group therapy for?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Our group therapy sessions are tailored for different age groups, including adolescents ages 13 to 18, young adults ages 19 to 29, adults ages 30 to 59, and a supportive group for ages 19 and older."
-        }
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "British Columbia"
       },
-      {
-        "@type":"Question",
-        "name":"What topics are addressed in group therapy?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Topics may include stress, anxiety, depression, panic disorder, substance use, social skills, anger, self-esteem, and other personal challenges. Sessions may incorporate cognitive-behavioural skills, mindfulness, and role-playing real-life social scenarios."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Are group therapy sessions virtual?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. Group therapy at Pacific Maple Psych Centre is offered virtually, allowing clients across British Columbia to attend."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"How long are the group therapy sessions?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Most group therapy sessions are 80 minutes long. The Supportive Group is a one-time 50-minute session."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"How much does group therapy cost?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Group therapy is $60.00 per session. The 8-week program fee applies regardless of attendance, and a $200.00 deposit is required to confirm registration and is applied toward session fees."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"What if group therapy is not the right fit for me?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Some people prefer more individualized support. If you are looking for one-to-one care, you can learn more about our individual therapy services at https://pacificmaplepsych.com/services/individual-therapy.html."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Do you also offer psychological assessments?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. If you are looking for diagnostic clarification or a more in-depth evaluation, you can learn more about our psychological assessment services at https://pacificmaplepsych.com/services/psychological-assessment.html."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Do you offer autism assessments as well?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. If autism assessment is the main concern, you can read more about our Autism Spectrum Disorder assessment services at https://pacificmaplepsych.com/services/autism-assessment.html."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"How do I register for group therapy?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"You can register through our online booking page for group therapy. Early registration is recommended because spaces are limited."
-        }
+      "offers": {
+        "@type": "Offer",
+        "price": "60.00",
+        "priceCurrency": "CAD",
+        "description": "Per session"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pacificmaplepsych.com/services/group-therapy.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is group therapy at Pacific Maple Psych Centre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Group therapy at Pacific Maple Psych Centre is structured, virtual psychotherapy for people across British Columbia. Small groups led by registered psychologists help participants build skills, receive support, and work through challenges alongside others with similar experiences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is group therapy for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our groups are organized by age: adolescents aged 13 to 18, young adults aged 19 to 29, and adults aged 30 to 59. A one-time Supportive Group is also available for anyone aged 19 and older."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What topics are addressed in group therapy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Topics may include stress, anxiety, depression, panic disorder, substance use, social skills, anger, low self-esteem, and other personal challenges. Sessions draw on cognitive behavioural skills, mindfulness, and role-playing real-life social situations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are group therapy sessions virtual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All group therapy sessions are held by secure video, so you can join from anywhere in British Columbia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long are group therapy sessions, and how big are the groups?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Age-based groups meet for 80 minutes per session over eight weekly sessions, with a maximum of eight members. The Supportive Group is a single 50-minute session with up to ten members."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does group therapy cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Group therapy is $60 per session. The eight-week program fee of $480 applies regardless of attendance, and a $200 deposit, applied toward your session fees, is required to confirm registration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I attend group therapy while seeing an individual therapist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many people combine group and individual therapy. Group sessions offer practice and connection, while individual sessions allow more time for your own history and goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if group therapy is not the right fit for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some people prefer one-to-one support. We also offer individual therapy for adolescents and adults in Vancouver and across British Columbia, including lower-cost sessions with supervised doctoral students."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you also offer psychological and autism assessments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If you are looking for diagnostic clarity, learn more about our psychological assessments, including ADHD and psychoeducational assessments, and our autism assessments for children, teens, and adults."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I register for group therapy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can register through our group therapy registration form. Spaces are limited, so early registration is recommended."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 
@@ -534,6 +565,40 @@
         <p class="p-body">
           We incorporate evidence-based techniques such as cognitive-behavioural skills, mindfulness, and real-life exposure to provide practical tools that extend beyond the therapy setting.
         </p>
+      </div>
+    </section>
+
+    <!-- WHY GROUP THERAPY -->
+    <section class="pm-svc" aria-labelledby="why-group-title">
+      <div class="container-narrow">
+        <div class="pm-svc-head" data-reveal>
+          <h2 class="pm-h2" id="why-group-title">Why people choose group therapy</h2>
+          <p class="pm-body">
+            Many people arrive believing they are the only one who feels the way they do. Hearing others describe the same worries is often where change begins. A group offers guidance and support, a fresh perspective, and a safe place to practise social situations that might otherwise feel overwhelming.
+          </p>
+        </div>
+        <div class="pm-twocol" data-reveal style="border-radius:22px;overflow:hidden">
+          <div class="pm-col-plum">
+            <h3>What a group can help you build</h3>
+            <ul>
+              <li>Confidence in social situations</li>
+              <li>Clearer, calmer communication</li>
+              <li>Practical coping skills for stress, anxiety, and low mood</li>
+              <li>A sense of connection and feeling less alone</li>
+              <li>Real-world practice through role-play and gradual exposure</li>
+            </ul>
+          </div>
+          <div class="pm-col-blue">
+            <h3>Group, individual, or both?</h3>
+            <ul>
+              <li>Group therapy is a lower-cost way to learn skills alongside others</li>
+              <li>Individual therapy offers more time on your own history and goals</li>
+              <li>Many people combine the two</li>
+              <li>Groups are virtual, so you can join from anywhere in BC</li>
+              <li>Not sure? Our team can help you decide</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -670,8 +735,31 @@
       </div>
     </section>
 
+    <!-- RELATED READING -->
+    <section class="pm-svc pm-tint-heather" aria-labelledby="reading-title">
+      <div class="container-narrow">
+        <div class="pm-svc-head" data-reveal>
+          <h2 class="pm-h2" id="reading-title">Related reading</h2>
+          <p class="pm-body">Short guides to some of the experiences our groups focus on.</p>
+        </div>
+        <div class="pm-reading" data-reveal-group>
+          <a class="pm-read" href="/education/articles/what-is-social-anxiety-disorder.html" data-reveal><em>Education</em><strong>What Is Social Anxiety Disorder</strong></a>
+          <a class="pm-read" href="/education/articles/why-do-i-feel-like-im-being-judged-constantly.html" data-reveal><em>Education</em><strong>Why Do I Feel Like I'm Being Judged Constantly</strong></a>
+          <a class="pm-read" href="/education/articles/why-do-i-feel-lonely-all-the-time.html" data-reveal><em>Education</em><strong>Why Do I Feel Lonely All the Time</strong></a>
+          <a class="pm-read" href="/education/articles/understanding-anger.html" data-reveal><em>Education</em><strong>Understanding Anger</strong></a>
+          <a class="pm-read" href="/education/articles/why-am-i-so-hard-on-myself.html" data-reveal><em>Education</em><strong>Why Am I So Hard on Myself</strong></a>
+          <a class="pm-read" href="/blog/posts/men-mental-health-month-male-loneliness.html" data-reveal><em>Blog</em><strong>Men's Mental Health Month: The Male Loneliness Epidemic</strong></a>
+        </div>
+        <div class="pm-reading-more">
+          <a class="pm-link" href="/education.html">Browse all education topics</a>
+          <a class="pm-link" href="/blog.html">Read the blog</a>
+          <a class="pm-link" href="/services/individual-therapy.html">Individual therapy</a>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="faq-wrap" aria-label="Frequently asked questions">
+    <section class="faq-wrap" id="faq" aria-label="Frequently asked questions">
       <div class="faq-inner">
         <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
 
@@ -681,7 +769,7 @@
             <summary class="faq-q">What is group therapy at Pacific Maple Psych Centre?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Group therapy at Pacific Maple Psych Centre is a structured virtual psychotherapy service in British Columbia where participants can build skills, receive support, and work through challenges in a guided group setting led by registered psychologists.
+                Group therapy at Pacific Maple Psych Centre is structured, virtual psychotherapy for people across British Columbia. Small groups led by registered psychologists help participants build skills, receive support, and work through challenges alongside others with similar experiences.
               </p>
             </div>
           </details>
@@ -690,7 +778,7 @@
             <summary class="faq-q">Who is group therapy for?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Our group therapy sessions are tailored for different age groups, including adolescents ages 13 to 18, young adults ages 19 to 29, adults ages 30 to 59, and a supportive group for ages 19 and older.
+                Our groups are organized by age: adolescents aged 13 to 18, young adults aged 19 to 29, and adults aged 30 to 59. A one-time Supportive Group is also available for anyone aged 19 and older.
               </p>
             </div>
           </details>
@@ -699,7 +787,7 @@
             <summary class="faq-q">What topics are addressed in group therapy?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Topics may include stress, anxiety, depression, panic disorder, substance use, social skills, anger, self-esteem, and other personal challenges. Sessions may incorporate cognitive-behavioural skills, mindfulness, and role-playing real-life social scenarios.
+                Topics may include stress, anxiety, depression, panic disorder, substance use, social skills, anger, low self-esteem, and other personal challenges. Sessions draw on cognitive behavioural skills, mindfulness, and role-playing real-life social situations.
               </p>
             </div>
           </details>
@@ -708,16 +796,16 @@
             <summary class="faq-q">Are group therapy sessions virtual?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Yes. Group therapy at Pacific Maple Psych Centre is offered virtually, allowing clients across British Columbia to attend.
+                Yes. All group therapy sessions are held by secure video, so you can join from anywhere in British Columbia.
               </p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-q">How long are the group therapy sessions?</summary>
+            <summary class="faq-q">How long are group therapy sessions, and how big are the groups?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Most group therapy sessions are 80 minutes long. The Supportive Group is a one-time 50-minute session.
+                Age-based groups meet for 80 minutes per session over eight weekly sessions, with a maximum of eight members. The Supportive Group is a single 50-minute session with up to ten members.
               </p>
             </div>
           </details>
@@ -726,7 +814,16 @@
             <summary class="faq-q">How much does group therapy cost?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Group therapy is $60.00 per session. The 8-week program fee ($480) applies regardless of attendance, and a $200.00 deposit is required to confirm registration and is applied toward session fees.
+                Group therapy is $60 per session. The eight-week program fee of $480 applies regardless of attendance, and a $200 deposit, applied toward your session fees, is required to confirm registration.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Can I attend group therapy while seeing an individual therapist?</summary>
+            <div class="faq-a">
+              <p class="p-body">
+                Yes. Many people combine group and <a href="/services/individual-therapy.html">individual therapy</a>. Group sessions offer practice and connection, while individual sessions allow more time for your own history and goals.
               </p>
             </div>
           </details>
@@ -735,25 +832,16 @@
             <summary class="faq-q">What if group therapy is not the right fit for me?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Some people prefer more individualized support. If you are looking for one-to-one care, we also offer <a href="/services/individual-therapy.html">individual therapy</a> for adolescents and adults in Vancouver and across British Columbia.
+                Some people prefer one-to-one support. We also offer <a href="/services/individual-therapy.html">individual therapy</a> for adolescents and adults in Vancouver and across British Columbia, including lower-cost sessions with supervised doctoral students.
               </p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-q">Do you also offer psychological assessments?</summary>
+            <summary class="faq-q">Do you also offer psychological and autism assessments?</summary>
             <div class="faq-a">
               <p class="p-body">
-                Yes. If you are looking for diagnostic clarification or a more in-depth evaluation, you can learn more about our <a href="/services/psychological-assessment.html">psychological assessment services</a>.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-q">Do you offer autism assessments as well?</summary>
-            <div class="faq-a">
-              <p class="p-body">
-                Yes. If autism assessment is the main concern, you can read more about our <a href="/services/autism-assessment.html">autism spectrum disorder assessment services</a>.
+                Yes. If you are looking for diagnostic clarity, learn more about our <a href="/services/psychological-assessment.html">psychological assessments</a>, including ADHD and psychoeducational assessments, and our <a href="/services/autism-assessment.html">autism assessments</a> for children, teens, and adults.
               </p>
             </div>
           </details>
@@ -762,7 +850,7 @@
             <summary class="faq-q">How do I register for group therapy?</summary>
             <div class="faq-a">
               <p class="p-body">
-                You can register through our <a href="https://pacificmaplepsych.com/booking/book-group-therapy.html">online booking page for group therapy</a>. Early registration is recommended because spaces are limited.
+                You can register through our <a href="https://pacificmaplepsych.com/booking/book-group-therapy.html">group therapy registration form</a>. Spaces are limited, so early registration is recommended.
               </p>
             </div>
           </details>
