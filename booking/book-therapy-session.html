@@ -12,10 +12,13 @@
   })(window,document,'script','dataLayer','GTM-PQ2LJL5F');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Enables scroll-reveal styles only when JavaScript is running -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Book a Therapy Session | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Book an individual or couples therapy session with Pacific Maple Psych Centre, virtually or in person, using our online scheduling portal." />
+  <meta name="description" content="Book individual or couples therapy in downtown Vancouver or online across BC. Book directly with a therapist, or start with a free consultation to find the right fit." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -50,25 +53,72 @@
   <link rel="stylesheet" href="/assets/style.css" />
 
   <style>
-    .book-therapy-page .sched-wrap {
-      padding: 54px 0;
-      background: #fff;
+    .bt-hero { background: var(--pm-mist); padding: clamp(40px, 6vw, 80px) 0; }
+    .bt-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+    .bt-hero h1 { font: 700 clamp(34px, 4.4vw, 54px)/1.08 Helvetica, Arial, sans-serif; color: var(--pm-plum); margin: 0 0 18px; letter-spacing: -0.01em; }
+    .bt-hero .pm-lede { margin-bottom: 0; }
+    .bt-book {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 18px 30px; border-radius: 999px;
+      background: var(--pm-plum); color: #fff !important; text-decoration: none;
+      font: 800 18px/1 Helvetica, Arial, sans-serif; letter-spacing: .01em;
+      box-shadow: 0 14px 30px rgba(69, 51, 70, .30);
+      transition: transform .25s var(--pm-ease), box-shadow .25s var(--pm-ease), background-color .2s ease;
     }
-
-    .book-therapy-page .sched-frame {
-      width: min(980px, calc(100% - 44px));
-      margin: 0 auto;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
-      border: 1px solid rgba(0,0,0,0.10);
-      background: #fff;
+    .bt-book svg { transition: transform .3s var(--pm-ease); }
+    .bt-book:hover, .bt-book:focus-visible { background: var(--pm-mauve); transform: translateY(-3px); box-shadow: 0 20px 36px rgba(69, 51, 70, .32); }
+    .bt-book:hover svg { transform: translateX(4px); }
+    .bt-book:focus-visible { outline: 3px solid rgba(61, 103, 128, .6); outline-offset: 4px; }
+    .bt-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 28px; }
+    .bt-contact { margin: 18px 0 0; font-size: 15.5px; color: var(--pm-muted); }
+    .bt-photo { position: relative; }
+    .bt-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; border-radius: 22px; display: block; box-shadow: 0 24px 50px rgba(43, 34, 48, .16); }
+    .bt-photo-note {
+      position: absolute; left: -16px; bottom: -18px; background: #fff; border-radius: 14px;
+      padding: 12px 16px; box-shadow: 0 10px 26px rgba(0, 0, 0, .14); font-size: 14px; line-height: 1.4; max-width: 250px;
     }
+    .bt-photo-note strong { display: block; color: var(--pm-plum); font-size: 15px; }
 
-    /* The embed already uses width="100%" */
-    .book-therapy-page iframe {
-      display: block;
-      border: 0;
+    .bt-ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .bt-way { background: #fff; border: 1px solid var(--pm-line); border-radius: 22px; padding: 28px 26px; display: flex; flex-direction: column; }
+    .bt-way.is-main { border: 2px solid var(--pm-plum); }
+    .bt-way h3 { margin: 0 0 6px; font: 700 21px/1.25 Helvetica, Arial, sans-serif; color: var(--pm-ink); }
+    .bt-way .bt-tag { font-size: 13.5px; font-weight: 700; color: var(--pm-harbour); margin: 0 0 12px; }
+    .bt-way p { font-size: 16px; line-height: 1.6; color: #3d3441; margin: 0 0 14px; }
+    .bt-way .pm-actions { margin-top: auto; padding-top: 6px; }
+
+    .bt-types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .entry-content a.bt-type { display: block; text-decoration: none; color: var(--pm-ink); }
+    .bt-type-img { overflow: hidden; border-radius: var(--pm-radius); aspect-ratio: 4 / 3; background: var(--pm-mist); }
+    .bt-type-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s var(--pm-ease); }
+    a.bt-type:hover .bt-type-img img { transform: scale(1.05); }
+    .bt-type h3 { margin: 14px 0 4px; font: 700 18px/1.3 Helvetica, Arial, sans-serif; color: var(--pm-plum); }
+    .bt-type p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--pm-muted); }
+    a.bt-type:hover h3 { color: var(--pm-mauve); }
+
+    .bt-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; max-width: 980px; margin: 0 auto; }
+    .bt-fact { padding: 20px 0; border-top: 1px solid var(--pm-line); }
+    .bt-fact h3 { margin: 0 0 6px; font-size: 17px; color: var(--pm-ink); }
+    .bt-fact p { margin: 0; font-size: 15.5px; line-height: 1.6; color: #3d3441; }
+
+    @media (max-width: 1050px) {
+      .bt-ways { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+      .bt-types { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .bt-hero-grid { grid-template-columns: 1fr; }
+      .bt-hero-copy { text-align: center; }
+      .bt-hero .pm-lede { margin-left: auto; margin-right: auto; }
+      .bt-hero-actions { justify-content: center; }
+      .bt-photo-note { left: 10px; }
+      .bt-facts { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .bt-types { grid-template-columns: 1fr; }
+      .bt-book { width: 100%; justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bt-book, .bt-book svg, .bt-type-img img { transition: none !important; transform: none !important; }
     }
   </style>
 </head>
@@ -83,29 +133,155 @@
 
   <main class="entry-content book-therapy-page">
 
-    <!-- TOP TITLE BAND -->
-    <section class="page-title-band" aria-label="Book a therapy session title">
-      <div class="container-narrow">
-        <h1>Book a Therapy Session</h1>
+    <!-- HERO -->
+    <section class="bt-hero" aria-labelledby="bt-title">
+      <div class="pm-wrap bt-hero-grid">
+        <div class="bt-hero-copy">
+          <h1 id="bt-title" data-reveal>Book a therapy session</h1>
+          <p class="pm-lede" data-reveal style="--d:.1s">
+            Reaching out is often the hardest part, and you have already started. Book directly with one of our psychologists, clinical counsellors, or supervised doctoral students, in person in downtown Vancouver or by secure video anywhere in British Columbia.
+          </p>
+          <div class="bt-hero-actions" data-reveal style="--d:.2s">
+            <a class="bt-book" href="https://pacificmaplepsych.janeapp.com/" target="_blank" rel="noopener">
+              Book an appointment
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="pm-btn pm-btn-line" href="/team/tsuba-shima.html#book-with-tsuba">Book a free consultation</a>
+          </div>
+          <p class="bt-contact" data-reveal style="--d:.3s">
+            Prefer to talk to a person? Call <a href="tel:+16047745501">604-774-5501</a> or email <a href="mailto:info@pacificmaplepsych.com">info@pacificmaplepsych.com</a>.
+          </p>
+        </div>
+        <div class="bt-photo" data-reveal="fade" style="--d:.15s">
+          <img src="/images/individual-therapy-page1.jpg" alt="A client talking with a therapist in a calm office" width="1600" height="900" loading="eager" decoding="async" />
+          <div class="bt-photo-note">
+            <strong>Therapists available now</strong>
+            Weekdays 8 a.m. to 8 p.m., weekends by request
+          </div>
+        </div>
       </div>
     </section>
 
-    
-        <div style="text-align: center; padding: 30px 20px 30px;">
-           <center>
-             <iframe frameborder='0' height='28' scrolling='no' src='https://pacificmaplepsych.janeapp.com/embed/book_online' width='177'></iframe>
-             </center>
-    <p>
-        Looking for info on our policies?
-        <a href="https://pacificmaplepsych.com/policies.html">Click here.</a>
-      </p>
-    </div>
-    
+    <!-- TWO WAYS TO START -->
+    <section class="pm-svc" aria-labelledby="ways-title">
+      <div class="pm-wrap">
+        <div class="pm-svc-head" data-reveal>
+          <h2 class="pm-h2" id="ways-title">Three ways to get started</h2>
+          <p class="pm-body">Choose whichever feels easiest. There is no wrong door, and our team will make sure you end up with the right clinician.</p>
+        </div>
+        <div class="bt-ways" data-reveal-group>
+          <article class="bt-way is-main" data-reveal>
+            <h3>Book directly</h3>
+            <p class="bt-tag">Best if you are ready to start</p>
+            <p>Choose your therapist, the type of session, and a time that suits you in our secure online booking system. You will create a short client profile, then receive a confirmation by email.</p>
+            <p>Not sure who to choose? <a href="/team.html">Browse our team</a> to read each clinician's focus and approach.</p>
+            <div class="pm-actions"><a class="pm-btn pm-btn-solid" href="https://pacificmaplepsych.janeapp.com/" target="_blank" rel="noopener">Book an appointment</a></div>
+          </article>
+          <article class="bt-way" data-reveal>
+            <h3>Start with a free consultation</h3>
+            <p class="bt-tag">Best if you have questions</p>
+            <p>Book a free consultation with our practice manager to talk through what you are looking for, your budget and schedule, and your preferred language. We will suggest the therapist who fits you best.</p>
+            <div class="pm-actions"><a class="pm-btn pm-btn-line" href="/team/tsuba-shima.html#book-with-tsuba">Book a free consultation</a></div>
+          </article>
+          <article class="bt-way" data-reveal>
+            <h3>Call or email us</h3>
+            <p class="bt-tag">Best if you prefer not to book online</p>
+            <p>You do not need to create an online profile to get in touch. Call or email and our team will help you book, answer questions about fees and insurance, and explain what to expect.</p>
+            <div class="pm-actions"><a class="pm-btn pm-btn-line" href="tel:+16047745501">Call 604-774-5501</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- THERAPY OPTIONS -->
+    <section class="pm-svc pm-tint-mist" aria-labelledby="types-title">
+      <div class="pm-wrap">
+        <div class="pm-svc-head" data-reveal>
+          <h2 class="pm-h2" id="types-title">Which kind of therapy are you looking for?</h2>
+          <p class="pm-body">Learn more before you book, or read about the clinicians who offer each service.</p>
+        </div>
+        <div class="bt-types" data-reveal-group>
+          <a class="bt-type" href="/services/individual-therapy.html" data-reveal>
+            <div class="bt-type-img"><img src="/images/service-individual-therapy.jpg" alt="" loading="lazy" decoding="async" width="765" height="507" /></div>
+            <h3>Individual therapy</h3>
+            <p>For teens and adults, with some clinicians also seeing children and families.</p>
+          </a>
+          <a class="bt-type" href="/services/couples-therapy.html" data-reveal>
+            <div class="bt-type-img"><img src="/images/service-couples-therapy.jpg" alt="" loading="lazy" decoding="async" /></div>
+            <h3>Couples therapy</h3>
+            <p>Communication, recurring conflict, trust, and life transitions, in person or online.</p>
+          </a>
+          <a class="bt-type" href="/services/group-therapy.html" data-reveal>
+            <div class="bt-type-img"><img src="/images/service-group-therapy.jpg" alt="" loading="lazy" decoding="async" /></div>
+            <h3>Group therapy</h3>
+            <p>Virtual groups for teens, young adults, and adults across BC, at $60 per session.</p>
+          </a>
+          <a class="bt-type" href="/team.html#Doctoral%20Students" data-reveal>
+            <div class="bt-type-img"><img src="/images/team/sydney-harrison.jpg" alt="" loading="lazy" decoding="async" style="object-position:center 25%" /></div>
+            <h3>Lower-cost student therapy</h3>
+            <p>$120 per session with supervised doctoral students, often covered by insurance.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOD TO KNOW -->
+    <section class="pm-svc" aria-labelledby="know-title">
+      <div class="pm-wrap">
+        <div class="pm-svc-head" data-reveal>
+          <h2 class="pm-h2" id="know-title">Good to know before you book</h2>
+        </div>
+        <div class="bt-facts" data-reveal>
+          <div class="bt-fact">
+            <h3>No referral needed</h3>
+            <p>You can book therapy yourself. A physician referral is only needed for MSP-covered psychiatric care.</p>
+          </div>
+          <div class="bt-fact">
+            <h3>In person or online</h3>
+            <p>Meet at our office in the Rogers Heritage Building, steps from Waterfront Station, or by secure video anywhere in BC.</p>
+          </div>
+          <div class="bt-fact">
+            <h3>Insurance and fees</h3>
+            <p>Many extended health plans reimburse therapy with registered psychologists and clinical counsellors. Select clinicians are registered with CVAP. See our <a href="/policies.html">policies</a> for details.</p>
+          </div>
+          <div class="bt-fact">
+            <h3>Faster access to psychiatry</h3>
+            <p>Clients in ongoing therapy can be referred internally to our consulting psychiatrists for an expedited, MSP-covered consultation.</p>
+          </div>
+          <div class="bt-fact">
+            <h3>Care in your language</h3>
+            <p>Sessions are available in English, Cantonese, Mandarin, Punjabi, and Urdu.</p>
+          </div>
+          <div class="bt-fact">
+            <h3>Cancellation policy</h3>
+            <p>Please give at least 48 hours' notice to cancel or reschedule. Our <a href="/policies.html">policies page</a> explains the fees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEEP LEARNING -->
+    <section class="pm-svc pm-tint-heather" aria-labelledby="learn-title">
+      <div class="container-narrow">
+        <div class="pm-svc-head" data-reveal>
+          <h2 class="pm-h2" id="learn-title">Not quite ready to book?</h2>
+          <p class="pm-body">That is completely fine. Read about what you are experiencing in our education library, explore everyday mental health topics on our blog, or find practical support in our resources hub.</p>
+        </div>
+        <div class="pm-reading" data-reveal-group>
+          <a class="pm-read" href="/education.html" data-reveal><em>Education</em><strong>Browse nearly 300 easy-to-read articles</strong></a>
+          <a class="pm-read" href="/resources.html" data-reveal><em>Resources</em><strong>Disability and abuse resources in BC</strong></a>
+          <a class="pm-read" href="/blog.html" data-reveal><em>Blog</em><strong>Mental health in everyday life and pop culture</strong></a>
+        </div>
+        <p class="pm-crisis" style="text-align:center">
+          Pacific Maple Psych Centre is not a crisis service. If you are in immediate danger, call 911. To reach the Suicide Crisis Helpline, call or text 9-8-8 at any time.
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <div id="site-footer"></div>
 
-  <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
   <script src="/assets/main.js" defer></script>
 </body>
 </html>
