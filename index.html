@@ -2,7 +2,7 @@
 <html lang="en-CA">
 <head>
 <meta charset="utf-8" />
-  
+
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -10,12 +10,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PQ2LJL5F');</script>
 <!-- End Google Tag Manager -->
-   
-  
+
+  <!-- Enables scroll-reveal styles only when JavaScript is running -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Pacific Maple Psych Centre | Psychological Assessments and Therapy in Vancouver, BC</title>
-  <meta name="description" content="Pacific Maple Psych Centre offers psychological assessments, individual therapy, group therapy, autism assessments, and couples therapy in Vancouver and across British Columbia." />
+  <title>Therapy &amp; Psychological Assessments in Vancouver, BC | Pacific Maple Psych Centre</title>
+  <meta name="description" content="Therapy and psychological assessments in downtown Vancouver and online across BC, including autism and ADHD assessments, with faster psychiatry access for clients." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,17 +25,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
-  <meta property="og:title" content="Pacific Maple Psych Centre | Psychological Assessments and Therapy" />
-  <meta property="og:description" content="Psychological assessments and therapy in Vancouver and across British Columbia. Autism assessments, individual, group, and couples therapy." />
+  <meta property="og:title" content="Therapy &amp; Psychological Assessments in Vancouver | Pacific Maple Psych Centre" />
+  <meta property="og:description" content="Psychologists, clinical counsellors, and consulting psychiatrists in downtown Vancouver and online across British Columbia." />
   <meta property="og:url" content="https://pacificmaplepsych.com/" />
-  <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
-  <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
+  <meta property="og:image" content="https://pacificmaplepsych.com/images/hero-team.jpg" />
+  <meta property="og:image:alt" content="The Pacific Maple Psych Centre team" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pacific Maple Psych Centre | Psychological Assessments and Therapy" />
-  <meta name="twitter:description" content="Psychological assessments and therapy in Vancouver and across British Columbia." />
-  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
-  <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
+  <meta name="twitter:title" content="Therapy &amp; Psychological Assessments in Vancouver | Pacific Maple Psych Centre" />
+  <meta name="twitter:description" content="Therapy and psychological assessments in downtown Vancouver and online across British Columbia." />
+  <meta name="twitter:image" content="https://pacificmaplepsych.com/images/hero-team.jpg" />
+  <meta name="twitter:image:alt" content="The Pacific Maple Psych Centre team" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://pacificmaplepsych.com/" />
@@ -47,343 +49,643 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-  <!-- Structured data (Organization + MedicalBusiness + WebSite) -->
+  <!-- Structured data (Organization + MedicalClinic + WebSite + FAQPage) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://pacificmaplepsych.com/#organization",
-        "name": "Pacific Maple Psych Centre",
-        "url": "https://pacificmaplepsych.com/",
-        "logo": "https://pacificmaplepsych.com/images/Simple%20Logo%20180x180.png"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pacificmaplepsych.com/#organization",
+      "name": "Pacific Maple Psych Centre",
+      "url": "https://pacificmaplepsych.com/",
+      "logo": "https://pacificmaplepsych.com/images/Simple%20Logo%20180x180.png",
+      "foundingDate": "2018",
+      "email": "info@pacificmaplepsych.com",
+      "telephone": "+1-604-774-5501",
+      "sameAs": [
+        "https://www.facebook.com/pacificmaplepsych",
+        "https://www.instagram.com/pacificmaplepsych",
+        "https://www.linkedin.com/company/pacific-maple-psych-centre",
+        "https://www.psychologytoday.com/ca/therapists/pacific-maple-psych-centre-vancouver-bc/1150103"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://pacificmaplepsych.com/#medicalbusiness",
+      "name": "Pacific Maple Psych Centre",
+      "description": "Multidisciplinary mental health clinic in downtown Vancouver offering individual, couples, and group therapy, autism, ADHD, psychoeducational, and mental health assessments, and expedited psychiatric consultation for active clients, in person and virtually across British Columbia.",
+      "url": "https://pacificmaplepsych.com/",
+      "image": "https://pacificmaplepsych.com/images/hero-team.jpg",
+      "logo": "https://pacificmaplepsych.com/images/Simple%20Logo%20180x180.png",
+      "telephone": "+1-604-774-5501",
+      "email": "info@pacificmaplepsych.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit #619 - 470 Granville St.",
+        "addressLocality": "Vancouver",
+        "addressRegion": "BC",
+        "postalCode": "V6C 1V4",
+        "addressCountry": "CA"
       },
-      {
-        "@type": "MedicalBusiness",
-        "@id": "https://pacificmaplepsych.com/#medicalbusiness",
-        "name": "Pacific Maple Psych Centre",
-        "url": "https://pacificmaplepsych.com/",
-        "image": "https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg",
-        "telephone": "+1-604-774-5501",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Unit #619 - 470 Granville St.",
-          "addressLocality": "Vancouver",
-          "addressRegion": "BC",
-          "postalCode": "V6C 1V4",
-          "addressCountry": "CA"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.2848407,
+        "longitude": -123.1143247
+      },
+      "hasMap": "https://www.google.com/maps/place/Pacific+Maple+Psych+Centre/@49.2848407,-123.1143247,17z",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vancouver"
         },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "08:00",
-            "closes": "19:00"
-          }
-        ],
-        "areaServed": ["Vancouver, BC", "British Columbia"],
-        "medicalSpecialty": ["Psychology", "Psychotherapy"],
-        "parentOrganization": { "@id": "https://pacificmaplepsych.com/#organization" }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://pacificmaplepsych.com/#website",
-        "url": "https://pacificmaplepsych.com/",
-        "name": "Pacific Maple Psych Centre",
-        "publisher": { "@id": "https://pacificmaplepsych.com/#organization" }
+        {
+          "@type": "AdministrativeArea",
+          "name": "British Columbia"
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "yue",
+        "cmn",
+        "pa",
+        "ur"
+      ],
+      "medicalSpecialty": [
+        "Psychiatric"
+      ],
+      "isAcceptingNewPatients": true,
+      "availableService": [
+        {
+          "@type": "MedicalTherapy",
+          "name": "Individual therapy",
+          "url": "https://pacificmaplepsych.com/services/individual-therapy.html"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "Couples therapy",
+          "url": "https://pacificmaplepsych.com/services/couples-therapy.html"
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "Group therapy",
+          "url": "https://pacificmaplepsych.com/services/group-therapy.html"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Autism spectrum disorder (ASD) assessment",
+          "url": "https://pacificmaplepsych.com/services/autism-assessment.html"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "ADHD assessment",
+          "url": "https://pacificmaplepsych.com/services/psychological-assessment.html#adhd"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Psychoeducational assessment",
+          "url": "https://pacificmaplepsych.com/services/psychological-assessment.html#psychoeducational"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Mental health assessment",
+          "url": "https://pacificmaplepsych.com/services/psychological-assessment.html#mental-health"
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "Independent medical evaluation",
+          "url": "https://pacificmaplepsych.com/services/psychological-assessment.html#ime"
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://pacificmaplepsych.com/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pacificmaplepsych.com/#website",
+      "url": "https://pacificmaplepsych.com/",
+      "name": "Pacific Maple Psych Centre",
+      "publisher": {
+        "@id": "https://pacificmaplepsych.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pacificmaplepsych.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Pacific Maple Psych Centre offer therapy, assessments, or both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. We offer individual therapy, couples therapy, and group therapy, as well as autism assessments, ADHD, psychoeducational, mental health, and integrated psychological assessments, and independent medical evaluations. Many clients use both, for example by starting therapy after an assessment clarifies what is going on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a referral to book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You can book psychology and counselling services yourself, without a referral from a doctor. A physician referral is only needed for MSP-covered psychiatric consultations, which our team helps coordinate for active clients."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is therapy covered by MSP or extended health insurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Psychology and counselling services are private-pay and are not covered by MSP, but many extended health plans reimburse services from registered psychologists and clinical counsellors. Please check your plan before your first session. Fees that are not reimbursed can be claimed as a medical expense on your taxes. Select clinicians are registered with the Crime Victim Assistance Program (CVAP), and B.C. Emergency Health Services (BCEHS) employees and their families can access support at no cost through our partnership with BCEHS. See our policies for details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there lower-cost therapy options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Supervised doctoral students offer therapy at $120 per session, and most insurers cover their sessions when the student is regularly supervised by a registered psychologist. Group therapy is $60 per session. For a limited time, doctoral student Sydney Harrison is also offering reduced-rate and pro bono therapy for clients in financial need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see a psychiatrist through Pacific Maple Psych Centre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, as an active client. If you are in ongoing therapy with us, working with one of our doctoral students, or completed an assessment with us in the past six months, your clinician can recommend an expedited internal referral to one of our consulting psychiatrists for a consultation on diagnosis or medication. Psychiatric consultations are covered by MSP, the psychiatrist sends a report to your primary care provider, and your follow-up care continues with your psychologist or therapist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer virtual appointments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Individual and couples therapy are available in person in downtown Vancouver or by secure video anywhere in British Columbia, and group therapy is fully virtual. Assessments usually combine a virtual interview with in-person testing at our downtown Vancouver office."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with children and teens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We provide autism, ADHD, and psychoeducational assessments for children, teens, and adults. Individual therapy is available for teens and adults, several of our clinicians also work with children and families, and our group therapy program includes a group for teens aged 13 to 18."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can international visitors book an assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We have provided assessments for international visitors, and people travelling to Vancouver for an assessment are welcome. You need to be physically in Canada for every part of the assessment, including any appointments held by video."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What languages do your clinicians speak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Care is available in English, Cantonese, Mandarin, Punjabi, and Urdu, and one clinician also speaks conversational Hindi. Let our team know your preferred language when you book."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon can I start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our therapists currently have openings for new clients, so therapy can often begin soon after you book. Assessments are typically scheduled within one to seven weeks, depending on the type of assessment and the clinician. You can book therapy online, complete the assessment intake form, or call 604-774-5501."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 
+  <!-- Heading typeface (homepage only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..600&display=swap" />
+
   <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="preload" as="image" href="/images/hero-team.jpg" />
 </head>
 
 <body>
-  
+
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ2LJL5F"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  
+
   <div id="site-header"></div>
 
-  <main class="entry-content">
+  <main class="entry-content pm-home">
 
-    <!-- NEW HERO -->
-    <section class="home-hero-split" aria-label="Hero">
-      <div class="hero-split-inner">
+    <!-- ============ HERO ============ -->
+    <section class="pm-hero" aria-labelledby="hero-title">
+      <div class="pm-wrap pm-hero-grid">
 
-        <!-- LEFT: Text content -->
-        <div class="hero-split-left">
-          <span class="hero-location-badge">Downtown Vancouver, British Columbia</span>
+        <div class="pm-hero-copy">
+          <p class="pm-hero-place" data-reveal style="--d:.05s">Downtown Vancouver and online across British Columbia</p>
 
-          <h1 class="hero-split-h1">
-            Enhancing clarity,<br>growth, and healing at
-            <span class="hero-split-h1-sub"><span class="hero-h1-blue">Pacific Maple Psych Centre</span></span>
-          </h1>
+          <h1 id="hero-title" data-reveal style="--d:.12s">Therapy and psychological assessments in downtown Vancouver</h1>
 
-          <p class="hero-split-body">
-            We are a multidisciplinary team of experienced psychiatrists, psychologists, psychometrists, and clinical counsellors providing high-quality, expert psychological assessments and compassionate psychotherapy services for individuals of all ages across BC.
+          <p class="pm-hero-text" data-reveal style="--d:.22s">
+            Psychologists, clinical counsellors, and consulting psychiatrists on one team, helping children, teens, adults, and couples understand what is going on and feel better.
           </p>
 
-          <div class="hero-split-actions">
-            <a class="btn-pill btn-pill-dark" href="https://pacificmaplepsych.com/book-now.html">Book an Appointment &rarr;</a>
-            <a class="btn-pill btn-pill-outline" href="https://pacificmaplepsych.com/services.html">Explore Our Services</a>
+          <div class="pm-actions" data-reveal style="--d:.32s">
+            <a class="pm-btn pm-btn-solid" href="/booking/book-therapy-session.html">Book therapy</a>
+            <a class="pm-btn pm-btn-line" href="/booking/book-assessment.html">Book an assessment</a>
           </div>
 
-          <div class="hero-trust-dots">
-            <span class="hero-dot">&#9679; In-Person &amp; Virtual</span>
-            <span class="hero-dot">&#9679; All Ages Welcome</span>
-            <span class="hero-dot">&#9679; Multilingual Team</span>
-            <span class="hero-dot">&#9679; Evidence-Based Care</span>
+          <ul class="pm-facts" data-reveal style="--d:.42s">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> In person and by secure video</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Children, teens, and adults</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Faster psychiatry access for clients</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Multilingual team</li>
+          </ul>
+        </div>
+
+        <div class="pm-hero-photo" data-reveal="fade" style="--d:.15s">
+          <img src="/images/hero-team.jpg" alt="Members of the Pacific Maple Psych Centre team" width="700" height="557" loading="eager" fetchpriority="high" decoding="async" />
+
+          <div class="hero-badge hero-badge-top-left">
+            <span class="hero-badge-label">Top-rated for</span>
+            <span class="hero-badge-highlight">Autism Assessments</span>
+          </div>
+
+          <div class="hero-badge hero-badge-bottom-right">
+            <span class="hero-badge-label">Serving BC since</span>
+            <span class="hero-badge-value">2018</span>
           </div>
         </div>
 
-        <!-- RIGHT: Photo with overlaid badges -->
-        <div class="hero-split-right">
-          <div class="hero-photo-wrap">
-            <img
-              src="https://pacificmaplepsych.com/images/hero-team.jpg"
-              alt="Pacific Maple Psych Centre team"
-              class="hero-team-photo"
-              loading="eager"
-              decoding="async"
-            />
+      </div>
+    </section>
 
-            <!-- Top-left: Top-rated badge -->
-            <div class="hero-badge hero-badge-top-left">
-              <span class="hero-badge-label">TOP-RATED FOR</span>
-              <span class="hero-badge-highlight">Autism Assessments</span>
+    <!-- ============ LIMITED-TIME NOTICE ============ -->
+    <aside class="pm-notice" aria-label="Reduced-rate therapy">
+      <div class="pm-wrap">
+        <p>For a limited time, doctoral student <a class="pm-light" href="/team/sydney-harrison.html">Sydney Harrison</a> is offering lower-cost or pro bono therapy to clients in financial need.</p>
+      </div>
+    </aside>
+
+    <!-- ============ NORMALIZING ============ -->
+    <section class="pm-section" aria-labelledby="concerns-title">
+      <div class="pm-wrap pm-concern-grid">
+        <div data-reveal>
+          <h2 class="pm-h2" id="concerns-title">You do not need to know exactly what is wrong before you reach out.</h2>
+          <p class="pm-lede">
+            Most people arrive with a feeling rather than a diagnosis. Something has felt heavy for a while, a relationship keeps hitting the same wall, or a question about attention or autism has never quite gone away.
+          </p>
+          <p class="pm-body">
+            That is a perfectly good place to start. If any of these sound familiar, our short, easy-to-read articles explain what might be going on, and our team can help you decide whether therapy, an assessment, or both would help.
+          </p>
+          <p class="pm-body"><a class="pm-link" href="/education.html">Browse all education topics</a></p>
+        </div>
+
+        <ul class="pm-concerns" data-reveal style="--d:.1s" aria-label="Common reasons people reach out">
+            <li><a href="/education/articles/why-cant-i-stop-overthinking-everything.html">My mind will not stop racing <span class="pm-tag">Anxiety</span></a></li>
+            <li><a href="/education/articles/why-cant-i-get-out-of-bed-some-days.html">Getting out of bed feels harder than it should <span class="pm-tag">Depression</span></a></li>
+            <li><a href="/education/articles/why-cant-i-focus-no-matter-how-hard-i-try.html">I keep wondering whether I have ADHD <span class="pm-tag">ADHD</span></a></li>
+            <li><a href="/education/articles/late-diagnosis-of-autism-what-it-means.html">I think I might be autistic <span class="pm-tag">Autism</span></a></li>
+            <li><a href="/education/articles/understanding-the-pursue-withdraw-pattern.html">My partner and I keep having the same argument <span class="pm-tag">Relationships</span></a></li>
+            <li><a href="/education/articles/why-cant-i-stop-thinking-about-the-past.html">Something from the past still feels present <span class="pm-tag">Trauma</span></a></li>
+            <li><a href="/education/articles/why-do-i-feel-like-i-have-nothing-left-to-give.html">I have nothing left to give at work <span class="pm-tag">Burnout</span></a></li>
+            <li><a href="/education/articles/signs-your-child-may-need-mental-health-support.html">My child is struggling and I am not sure why <span class="pm-tag">Parenting</span></a></li>
+            <li><a href="/resources/abuse-signs-domestic.html">My relationship does not feel safe <span class="pm-tag">Abuse</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="pm-section pm-tint-mist" id="our-services" aria-labelledby="services-title">
+      <div class="pm-wrap">
+        <div class="pm-paths-head" data-reveal>
+          <h2 class="pm-h2" id="services-title">Therapy, assessment, or both</h2>
+          <p class="pm-lede">
+            Therapy helps you change how you feel, think, and relate to others. An assessment answers a specific question, such as whether autism, ADHD, or a learning disability is part of the picture. Many of our clients do both, and moving between them is simple when your clinicians work on the same team.
+          </p>
+        </div>
+
+        <div class="pm-paths" data-reveal-group>
+          <article class="pm-path" data-reveal>
+            <div class="pm-path-img"><img src="/images/service-psychological-assessment.jpg" alt="A psychologist reviewing assessment results with a client" loading="lazy" decoding="async" width="764" height="509" /></div>
+            <div class="pm-path-body">
+              <h3 class="pm-h3">Assessments</h3>
+              <p>A thorough evaluation by a registered psychologist, with a written report, a feedback session, and practical recommendations.</p>
+              <ul class="pm-rows">
+              <li><a href="/services/autism-assessment.html">
+                <span class="pm-row-title">Autism assessment</span>
+                <span class="pm-row-desc">Children, teens, and adults, including MCFD and CLBC forms where applicable</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/services/psychological-assessment.html#adhd">
+                <span class="pm-row-title">ADHD assessment</span>
+                <span class="pm-row-desc">Attention, focus, and executive functioning at any age</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/services/psychological-assessment.html#psychoeducational">
+                <span class="pm-row-title">Psychoeducational assessment</span>
+                <span class="pm-row-desc">Learning disabilities, giftedness, and school accommodations</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/services/psychological-assessment.html#mental-health">
+                <span class="pm-row-title">Mental health assessment</span>
+                <span class="pm-row-desc">Diagnostic clarity for mood, anxiety, trauma, and more</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/services/psychological-assessment.html#ime">
+                <span class="pm-row-title">Independent medical evaluation</span>
+                <span class="pm-row-desc">Psycho-legal assessments with detailed written reports</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              </ul>
+              <div class="pm-actions"><a class="pm-btn pm-btn-solid" href="/booking/book-assessment.html">Book an assessment</a></div>
             </div>
+          </article>
 
-            <!-- Bottom-right: Serving BC since badge -->
-            <div class="hero-badge hero-badge-bottom-right">
-              <span class="hero-badge-label">SERVING BC SINCE</span>
-              <span class="hero-badge-value">2018</span>
+          <article class="pm-path" data-reveal>
+            <div class="pm-path-img"><img src="/images/service-individual-therapy.jpg" alt="A client talking with a therapist" loading="lazy" decoding="async" width="765" height="507" /></div>
+            <div class="pm-path-body">
+              <h3 class="pm-h3">Therapy</h3>
+              <p>Regular sessions with a psychologist, clinical counsellor, or supervised doctoral student, at our office or by video.</p>
+              <ul class="pm-rows">
+              <li><a href="/services/individual-therapy.html">
+                <span class="pm-row-title">Individual therapy</span>
+                <span class="pm-row-desc">For teens and adults, with some clinicians also seeing children and families</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/services/couples-therapy.html">
+                <span class="pm-row-title">Couples therapy</span>
+                <span class="pm-row-desc">Communication, recurring conflict, trust, and life transitions</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/services/group-therapy.html">
+                <span class="pm-row-title">Group therapy</span>
+                <span class="pm-row-desc">Virtual groups for teens, young adults, and adults across BC</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              <li><a href="/team.html#Doctoral%20Students">
+                <span class="pm-row-title">Lower-cost student therapy</span>
+                <span class="pm-row-desc">$120 per session with supervised doctoral students</span>
+                <svg class="pm-row-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
+              </ul>
+              <div class="pm-actions"><a class="pm-btn pm-btn-solid" href="/booking/book-therapy-session.html">Book therapy</a></div>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PSYCHIATRY (signature section) ============ -->
+    <section class="pm-section pm-psych pm-on-dark" aria-labelledby="psych-title">
+      <div class="pm-wrap pm-psych-grid">
+        <div data-reveal>
+          <h2 class="pm-h2" id="psych-title">Psychologists and psychiatrists, working on the same team</h2>
+          <p>
+            Psychologists and psychiatrists look at mental health from different angles. A psychologist takes the time to understand how you think, feel, and cope, and helps you change those patterns through assessment and therapy. A psychiatrist is a medical doctor who can establish or review a diagnosis and consider whether medication might help.
+          </p>
+          <p>
+            Many people need both, yet through the usual route a psychiatric consultation in BC can involve a long wait. At Pacific Maple, the two work side by side. If your clinician believes a medication review or a second diagnostic opinion would help, they can recommend an expedited consultation with one of our consulting psychiatrists.
+          </p>
+          <p>
+            Your care stays in one place. After the consultation, the psychiatrist sends a report to your family doctor or primary care provider, and you keep seeing the clinician who already knows your story.
+          </p>
+          <div class="pm-actions">
+            <a class="pm-btn pm-btn-solid" href="/booking/book-therapy-session.html">Start with therapy</a>
+            <a class="pm-btn pm-btn-line" href="/team.html#Psychiatrists">Meet our psychiatrists</a>
           </div>
         </div>
 
+        <div>
+          <ol class="pm-path-steps" data-reveal style="--d:.15s">
+            <li>
+              <h3>Start with therapy or an assessment</h3>
+              <p>Book with one of our psychologists, counsellors, or supervised doctoral students.</p>
+            </li>
+            <li>
+              <h3>Your clinician recommends a consultation</h3>
+              <p>If medication or a diagnostic review could help, they discuss it with you and, with your consent, coordinate the referral.</p>
+            </li>
+            <li>
+              <h3>See a psychiatrist sooner</h3>
+              <p>Psychiatric consultations are covered by MSP. Ongoing follow-up continues with your psychologist or therapist.</p>
+            </li>
+          </ol>
+          <p class="pm-small" style="margin-top:28px">
+            Internal referrals are available to active clients: people in ongoing therapy with us (usually every two weeks), people working with one of our doctoral students, and people who completed an assessment with us in the past six months. MSP-covered psychiatric care requires a physician referral. <a class="pm-light" href="/policies.html">Read our referral policy</a>.
+          </p>
+        </div>
       </div>
     </section>
-    <!-- END NEW HERO -->
 
-    <!-- ABOUT -->
-    <section class="home-section" id="about">
-      <div class="container-narrow">
+    <!-- ============ TEAM ============ -->
+    <section class="pm-section" aria-labelledby="team-title">
+      <div class="pm-wrap">
+        <div class="pm-team-head" data-reveal>
+          <div>
+            <h2 class="pm-h2" id="team-title">Meet some of the people you could work with</h2>
+            <p class="pm-lede">Registered psychologists, clinical counsellors, consulting psychiatrists, psychometrists, and supervised doctoral students.</p>
+          </div>
+          <a class="pm-btn pm-btn-line" href="/team.html">Meet the full team</a>
+        </div>
 
-        <p class="p-body">
-  <strong>For a limited time only, our doctoral student <a href="https://pacificmaplepsych.com/team/sydney-harrison.html">Sydney Harrison</a> is offering lower cost or pro bono therapy to clients in financial need.</strong>
-</p>
-        
-        <p class="p-body">
-          We are committed to helping you achieve optimal mental well-being and empowering you to live a fulfilling life. Our team strives to create a warm, non-judgmental, and inclusive environment where you feel heard, valued, and supported. As we believe in the power of collaboration, we work closely with you to develop personalized treatment plans that align with your goals and aspirations. Explore our services below, or book a consultation to find the right fit.
+        <div class="pm-team" data-reveal-group>
+          <a class="pm-person" href="/team/mickey-stein.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/mickey-stein.jpg" alt="Dr. Mickey Stein" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Dr. Mickey Stein, Ph.D.</p>
+            <p class="pm-person-role">Licensed Psychologist</p>
+            <p class="pm-person-focus">ADHD, autism, and learning assessments; CBT and psychodynamic therapy</p>
+          </a>
+          <a class="pm-person" href="/team/sydney-harrison.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/sydney-harrison.jpg" alt="Sydney Harrison" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Sydney Harrison, B.A.</p>
+            <p class="pm-person-role">Doctoral Student</p>
+            <p class="pm-person-focus">Anxiety, grief, and life transitions; reduced-rate options</p>
+          </a>
+          <a class="pm-person" href="/team/justin-graffi.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/justin-graffi.jpg" alt="Dr. Justin Graffi" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Dr. Justin Graffi, M.D.</p>
+            <p class="pm-person-role">Consulting Psychiatrist</p>
+            <p class="pm-person-focus">Psychiatric consultations for active clients</p>
+          </a>
+          <a class="pm-person" href="/team/irene-matijczak.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/irene-matijczak.jpg" alt="Dr. Irene Matijczak" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Dr. Irene Matijczak, Ph.D.</p>
+            <p class="pm-person-role">Registered Clinical Counsellor</p>
+            <p class="pm-person-focus">Therapy for individuals, couples, families, children, and youth</p>
+          </a>
+          <a class="pm-person" href="/team/camille-mori.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/camille-mori.jpg" alt="Dr. Camille Mori" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Dr. Camille Mori, Ph.D.</p>
+            <p class="pm-person-role">Licensed Psychologist</p>
+            <p class="pm-person-focus">Mood, anxiety, and autism assessments; therapy for youth and adults</p>
+          </a>
+          <a class="pm-person" href="/team/gurjot-chhina.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/gurjot-chhina.jpg" alt="Gurjot Chhina" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Gurjot Chhina, B.A.</p>
+            <p class="pm-person-role">Doctoral Student</p>
+            <p class="pm-person-focus">Therapy and assessment in English and Punjabi</p>
+          </a>
+          <a class="pm-person" href="/team/colleen-rainey.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/colleen-rainey.jpg" alt="Colleen Rainey" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Colleen Rainey, B.A.</p>
+            <p class="pm-person-role">Doctoral Student</p>
+            <p class="pm-person-focus">Trauma, anxiety, burnout, and self-criticism</p>
+          </a>
+          <a class="pm-person" href="/team/mabel-yu.html" data-reveal>
+            <div class="pm-person-img"><img src="/images/team/mabel-yu.jpg" alt="Dr. Mabel Yu" loading="lazy" decoding="async" width="400" height="500" /></div>
+            <p class="pm-person-name">Dr. Mabel Yu, Ph.D.</p>
+            <p class="pm-person-role">Licensed Psychologist</p>
+            <p class="pm-person-focus">Psychodiagnostic, psychoeducational, and cognitive assessments</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO START ============ -->
+    <section class="pm-section pm-tint-heather" aria-labelledby="start-title">
+      <div class="pm-wrap pm-steps-grid">
+        <div class="pm-steps-photo" data-reveal="fade">
+          <img src="/images/about-pmpc.jpg" alt="The Pacific Maple Psych Centre office in the Rogers Heritage Building" loading="lazy" decoding="async" width="610" height="609" />
+        </div>
+        <div data-reveal style="--d:.1s">
+          <h2 class="pm-h2" id="start-title">What happens when you reach out</h2>
+          <ol class="pm-steps">
+            <li>
+              <h3>Choose a service, or ask us to help you choose</h3>
+              <p>Book therapy online, complete the assessment intake form, or call 604-774-5501 if you are unsure which you need.</p>
+            </li>
+            <li>
+              <h3>We match you with the right clinician</h3>
+              <p>Our practice manager considers your concerns, age, preferred language, schedule, and budget.</p>
+            </li>
+            <li>
+              <h3>Meet in person or online</h3>
+              <p>Sessions take place at our office in the Rogers Heritage Building, steps from Waterfront Station, or by secure video anywhere in BC.</p>
+            </li>
+          </ol>
+          <p class="pm-small">Appointments are available Monday to Friday, 8 a.m. to 8 p.m., with weekends by special request.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="pm-section" id="faq" aria-labelledby="faq-title">
+      <div class="pm-wrap pm-faq-grid">
+        <div class="pm-faq-side" data-reveal>
+          <h2 class="pm-h2" id="faq-title">Questions people often ask</h2>
+          <p class="pm-body">Still unsure? Call <a class="pm-link" href="tel:+16047745501">604-774-5501</a> or email <a class="pm-link" href="mailto:info@pacificmaplepsych.com">info@pacificmaplepsych.com</a>.</p>
+          <p class="pm-small">AI tools may give inaccurate information about our services. For the most up-to-date details, please rely on this website or contact us to confirm which services we currently offer.</p>
+        </div>
+
+        <div class="pm-faq-list" data-reveal style="--d:.1s">
+            <details class="pm-faq-item">
+              <summary>Does Pacific Maple Psych Centre offer therapy, assessments, or both?</summary>
+              <div class="pm-faq-a"><p>Both. We offer <a href="/services/individual-therapy.html">individual therapy</a>, <a href="/services/couples-therapy.html">couples therapy</a>, and <a href="/services/group-therapy.html">group therapy</a>, as well as <a href="/services/autism-assessment.html">autism assessments</a>, ADHD, psychoeducational, mental health, and integrated <a href="/services/psychological-assessment.html">psychological assessments</a>, and independent medical evaluations. Many clients use both, for example by starting therapy after an assessment clarifies what is going on.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Do I need a referral to book?</summary>
+              <div class="pm-faq-a"><p>No. You can book psychology and counselling services yourself, without a referral from a doctor. A physician referral is only needed for MSP-covered psychiatric consultations, which our team helps coordinate for active clients.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Is therapy covered by MSP or extended health insurance?</summary>
+              <div class="pm-faq-a"><p>Psychology and counselling services are private-pay and are not covered by MSP, but many extended health plans reimburse services from registered psychologists and clinical counsellors. Please check your plan before your first session. Fees that are not reimbursed can be claimed as a medical expense on your taxes. Select clinicians are registered with the Crime Victim Assistance Program (CVAP), and B.C. Emergency Health Services (BCEHS) employees and their families can access support at no cost through our partnership with BCEHS. See our <a href="/policies.html">policies</a> for details.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Are there lower-cost therapy options?</summary>
+              <div class="pm-faq-a"><p>Yes. Supervised doctoral students offer therapy at $120 per session, and most insurers cover their sessions when the student is regularly supervised by a registered psychologist. Group therapy is $60 per session. For a limited time, doctoral student <a href="/team/sydney-harrison.html">Sydney Harrison</a> is also offering reduced-rate and pro bono therapy for clients in financial need.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Can I see a psychiatrist through Pacific Maple Psych Centre?</summary>
+              <div class="pm-faq-a"><p>Yes, as an active client. If you are in ongoing therapy with us, working with one of our doctoral students, or completed an assessment with us in the past six months, your clinician can recommend an expedited internal referral to one of our consulting psychiatrists for a consultation on diagnosis or medication. Psychiatric consultations are covered by MSP, the psychiatrist sends a report to your primary care provider, and your follow-up care continues with your psychologist or therapist.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Do you offer virtual appointments?</summary>
+              <div class="pm-faq-a"><p>Yes. Individual and couples therapy are available in person in downtown Vancouver or by secure video anywhere in British Columbia, and group therapy is fully virtual. Assessments usually combine a virtual interview with in-person testing at our downtown Vancouver office.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Do you work with children and teens?</summary>
+              <div class="pm-faq-a"><p>Yes. We provide autism, ADHD, and psychoeducational assessments for children, teens, and adults. Individual therapy is available for teens and adults, several of our clinicians also work with children and families, and our group therapy program includes a group for teens aged 13 to 18.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>Can international visitors book an assessment?</summary>
+              <div class="pm-faq-a"><p>Yes. We have provided assessments for international visitors, and people travelling to Vancouver for an assessment are welcome. You need to be physically in Canada for every part of the assessment, including any appointments held by video.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>What languages do your clinicians speak?</summary>
+              <div class="pm-faq-a"><p>Care is available in English, Cantonese, Mandarin, Punjabi, and Urdu, and one clinician also speaks conversational Hindi. Let our team know your preferred language when you book.</p></div>
+            </details>
+            <details class="pm-faq-item">
+              <summary>How soon can I start?</summary>
+              <div class="pm-faq-a"><p>Our therapists currently have openings for new clients, so therapy can often begin soon after you book. Assessments are typically scheduled within one to seven weeks, depending on the type of assessment and the clinician. You can <a href="/booking/book-therapy-session.html">book therapy online</a>, complete the <a href="/booking/book-assessment.html">assessment intake form</a>, or call 604-774-5501.</p></div>
+            </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESOURCES ============ -->
+    <section class="pm-section pm-tint-mist" aria-labelledby="learn-title">
+      <div class="pm-wrap">
+        <div class="pm-res-head">
+          <div data-reveal>
+            <h2 class="pm-h2" id="learn-title">Free resources while you decide</h2>
+            <p class="pm-lede">Read about what you are experiencing, find funding and support in BC, or learn more about safety in relationships.</p>
+          </div>
+          <div class="pm-res-photo" data-reveal="fade" style="--d:.1s">
+            <img src="/images/resources-education.jpg" alt="A Pacific Maple Psych Centre clinician presenting a mental health workshop" loading="lazy" decoding="async" width="1536" height="1024" />
+          </div>
+        </div>
+        <div class="pm-res" data-reveal-group>
+          <a class="pm-res-card" href="/education.html" data-reveal>
+            <h3>Education library</h3>
+            <p>Short, easy-to-read articles on nearly 300 topics, from panic attacks to a late autism diagnosis.</p>
+          </a>
+          <a class="pm-res-card" href="/blog.html" data-reveal>
+            <h3>Blog</h3>
+            <p>Long-form articles on relationships, neurodivergence, and the psychology of everyday life.</p>
+          </a>
+          <a class="pm-res-card" href="/resources/disability.html" data-reveal>
+            <h3>Disability resources</h3>
+            <p>Funding, benefits, and school and workplace supports available in British Columbia.</p>
+          </a>
+          <a class="pm-res-card" href="/resources/abuse.html" data-reveal>
+            <h3>Abuse resources</h3>
+            <p>Signs of abuse, safety planning, and support for deciding whether and when to leave.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLOSING CTA ============ -->
+    <section class="pm-section pm-close" aria-labelledby="close-title">
+      <div class="pm-narrow" data-reveal>
+        <h2 class="pm-h2" id="close-title">Start with a free consultation</h2>
+        <p class="pm-lede">Whether you are ready for therapy, curious about an assessment, or simply have a question, our team can help you find the right next step.</p>
+        <div class="pm-actions">
+          <a class="pm-btn pm-btn-solid" href="/book-now.html">Book a free consultation</a>
+          <a class="pm-btn pm-btn-line" href="/booking/book-therapy-session.html">Book therapy</a>
+          <a class="pm-btn pm-btn-line" href="/booking/book-assessment.html">Book an assessment</a>
+        </div>
+        <p class="pm-crisis">
+          Pacific Maple Psych Centre is not a crisis service. If you are in immediate danger, call 911. To reach the Suicide Crisis Helpline, call or text 9-8-8 at any time.
         </p>
-        <i>Note: AI tools may provide inaccurate information about our services. For the most up-to-date and accurate information, please review our website or contact us at <a href="mailto:info@pacificmaplepsych.com">info@pacificmaplepsych.com</a> to confirm which services we currently offer.</i>
-      </div>
-    </section>
-
-    <!-- OUR SERVICES BAND -->
-    <section class="home-band home-band-plum" id="our-services">
-      <div class="container-narrow">
-        <h2 class="section-h2">Our Services</h2>
-
-        <p class="p-body">
-          At Pacific Maple Psych Centre, we understand that every person's journey is unique. That's why we offer a range of personalized services tailored to meet your specific needs, with in-person appointments in downtown Vancouver and virtual care throughout British Columbia.
-        </p>
-
-        <p class="p-body">
-          Whether you are seeking a psychological assessment, individual therapy, group therapy, or autism assessment, our experienced and compassionate professionals are here to support you every step of the way.
-        </p>
-      </div>
-    </section>
-
-    <!-- 1) Psychological Assessments (image RIGHT) -->
-    <section class="service-row">
-      <div class="service-card home-band-blue">
-        <div class="service-card-inner">
-          <h3 class="service-h3">Psychological Assessments</h3>
-
-          <p class="p-body">
-            As leading mental health professionals in Vancouver and across BC, we offer a wide range of comprehensive psychological testing services. Our assessments cover various common psychiatric issues, including mood and anxiety disorders, PTSD, ADHD, OCD, bipolar disorder, schizophrenia, and various phobias.
-          </p>
-
-          <p class="p-body">
-            Additionally, we have a specialization in psychoeducational and learning disorder assessments, with a particular emphasis on assessing intellectual functioning. You will receive a clear written report and practical recommendations that can support school, workplace, and healthcare planning. The results of our assessments play a crucial role in aiding accurate diagnosis and effective treatment planning.
-          </p>
-
-          <div class="service-actions">
-            <a class="btn-pill" href="/services/psychological-assessment.html">Learn More</a>
-            <a class="btn-pill" href="/booking/book-assessment.html">Book Assessment</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-media">
-        <img
-          src="/images/service-psychological-assessment.jpg"
-          alt="Psychological assessment"
-          class="service-img"
-          loading="lazy"
-          decoding="async"
-          width="900"
-          height="600"
-        />
-      </div>
-    </section>
-
-    <!-- 2) Individual Therapy (image LEFT) -->
-    <section class="service-row">
-      <div class="service-media">
-        <img
-          src="/images/service-individual-therapy.jpg"
-          alt="Individual therapy"
-          class="service-img"
-          loading="lazy"
-          decoding="async"
-          width="900"
-          height="600"
-        />
-      </div>
-
-      <div class="service-card home-band-blue">
-        <div class="service-card-inner">
-          <h3 class="service-h3">Individual Therapy</h3>
-
-          <p class="p-body">
-            Our individual therapy for adolescents and adults covers the Vancouver and BC area and can be conducted in our downtown office or virtually. We offer a versatile approach that combines thought-based and emotion-centric explorations. This unique combination creates an atmosphere conducive to self-examination and personal growth.
-          </p>
-
-          <p class="p-body">
-            Our team specializes in a wide range of therapeutic modalities. Therapy is tailored to you and may include thought-based treatment such as cognitive behavioural therapy (CBT), emotion-focused approaches, exposure-based strategies, and more. We provide a comprehensive approach to treatment that addresses various aspects of any person's experience. Our goal is to help you understand patterns, build practical skills, and create meaningful change in daily life, relationships, and work.
-          </p>
-
-          <div class="service-actions">
-            <a class="btn-pill" href="/services/individual-therapy.html">Learn More</a>
-            <a class="btn-pill" href="/booking/book-therapy-session.html">Book Therapy Session</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3) Group Therapy (image RIGHT) -->
-    <section class="service-row">
-      <div class="service-card home-band-blue">
-        <div class="service-card-inner">
-          <h3 class="service-h3">Group Therapy</h3>
-
-          <p class="p-body">
-            We provide virtual group therapy sessions to cover beyond the Vancouver area. Our group therapy aims to offer guidance, support, and a fresh perspective, empowering individuals to unlock their social potential. By creating a safe and comfortable environment, we facilitate exposure to social situations that may otherwise feel overwhelming.
-          </p>
-
-          <p class="p-body">
-            Group therapy can be a powerful option for building confidence, improving communication, and feeling less alone while working toward your goals. Our group therapy services extend to offering support online across BC, utilizing virtual care to ensure accessibility to a wider population.
-          </p>
-
-          <div class="service-actions">
-            <a class="btn-pill" href="/services/group-therapy.html">Learn More</a>
-            <a class="btn-pill" href="/booking/book-group-therapy.html">Book Group Therapy</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-media">
-        <img
-          src="/images/service-group-therapy.jpg"
-          alt="Group therapy"
-          class="service-img"
-          loading="lazy"
-          decoding="async"
-          width="900"
-          height="600"
-        />
-      </div>
-    </section>
-
-    <!-- 4) Autism Assessments (image LEFT) -->
-    <section class="service-row">
-      <div class="service-media">
-        <img
-          src="/images/service-autism-assessment.jpg"
-          alt="Autism assessment"
-          class="service-img"
-          loading="lazy"
-          decoding="async"
-          width="900"
-          height="600"
-        />
-      </div>
-
-      <div class="service-card home-band-blue">
-        <div class="service-card-inner">
-          <h3 class="service-h3">Autism Assessments</h3>
-
-          <p class="p-body">
-            Our Vancouver-based team is committed to assisting individuals from all walks of life. Whether you're a concerned parent observing your child's development or an adult seeking self-understanding and an objective evaluation for autism (formally known as autism spectrum disorder or ASD), we are here to provide the support you need. We provide autism spectrum disorder (ASD) assessments for children, adolescents, and adults in Vancouver. Our approach is respectful, neurodiversity-affirming care within an evidence-informed process focused on understanding strengths, needs, and next steps.
-          </p>
-
-          <p class="p-body">
-            Together, we unlock a deeper understanding of autism and empower individuals to realize their full potential. You will receive clear feedback, written documentation, and recommendations that can guide supports at school, work, and home. Our team is dedicated to guiding you on this transformative journey of awareness and growth.
-          </p>
-
-          <div class="service-actions">
-            <a class="btn-pill" href="/services/autism-assessment.html">Learn More</a>
-            <a class="btn-pill" href="/booking/book-assessment.html">Book Assessment</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5) Couples Therapy (image RIGHT) -->
-    <section class="service-row">
-      <div class="service-card home-band-blue">
-        <div class="service-card-inner">
-          <h3 class="service-h3">Couples Therapy</h3>
-
-          <p class="p-body">
-            At Pacific Maple Psych Centre, we understand that relationships can be both incredibly fulfilling and deeply challenging. Even the strongest partnerships can experience periods of conflict, distance, or misunderstanding. Couples therapy helps partners rebuild connection, improve communication, and work through conflict in a supportive, structured setting.
-          </p>
-
-          <p class="p-body">
-            Our couples therapy services provide a supportive and nonjudgmental space for you and your partner to explore your relationship dynamics and work toward meaningful change. Whether you are navigating recurring arguments, trust concerns, or major life transitions, we help you understand patterns and build healthier ways of relating. Take the first step toward a stronger, more connected partnership, together.
-          </p>
-
-          <div class="service-actions">
-            <a class="btn-pill" href="/services/couples-therapy.html">Learn More</a>
-            <a class="btn-pill" href="/booking/book-therapy-session.html">Book Couples Therapy</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-media">
-        <img
-          src="/images/service-couples-therapy.jpg"
-          alt="Couples therapy"
-          class="service-img"
-          loading="lazy"
-          decoding="async"
-          width="900"
-          height="600"
-        />
-      </div>
-    </section>
-
-    <!-- PROFESSIONAL BAND -->
-    <section class="home-band home-band-plum">
-      <div class="container-narrow">
-        <h2 class="section-h2">Professional. Supportive. Confidential.</h2>
-
-        <p class="p-body">
-          We prioritize your privacy and well-being. Our mental health professionals adhere to strict ethical guidelines and evidence-based practices to support a safe, professional, and effective care experience.
-        </p>
-
-        <p class="p-body">
-          If you are looking for assessment or therapy in Vancouver or anywhere in British Columbia, we invite you to connect and schedule an appointment. Contact Pacific Maple Psych Centre today to discover which member of our team is the right fit to begin your journey of enhancing clarity, growth, and healing.
-        </p>
-
-        <a class="btn-pill" href="/team.html">Meet Our Team</a>
       </div>
     </section>
 
