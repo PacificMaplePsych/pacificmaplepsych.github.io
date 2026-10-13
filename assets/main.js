@@ -122,6 +122,47 @@ function bindNavbarInteractions() {
   document.body.appendChild(btn);
 })();
 
+// ===== Scroll reveal for elements marked data-reveal =====
+// Pages opt in by adding class "js" to <html> in the <head>; without it, nothing is hidden.
+function initReveal() {
+  const items = document.querySelectorAll("[data-reveal]");
+  if (!items.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("is-in"));
+    return;
+  }
+
+  // Stagger children of a group, e.g. team cards
+  document.querySelectorAll("[data-reveal-group]").forEach((group) => {
+    group.querySelectorAll(":scope > [data-reveal]").forEach((el, i) => {
+      if (!el.style.getPropertyValue("--d")) el.style.setProperty("--d", (i * 0.07).toFixed(2) + "s");
+    });
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+  );
+
+  items.forEach((el) => io.observe(el));
+}
+
+// Run reveal as early as possible so the hero animates in with the page
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initReveal);
+} else {
+  initReveal();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartial("site-header", "/assets/header.html");
   await injectPartial("site-footer", "/assets/footer.html");
