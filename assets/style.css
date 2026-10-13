@@ -11,7 +11,7 @@
   --nav-h-mobile: 110px;
 }
 
-/* ===== Globaal ===== */
+/* ===== Global ===== */
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -1033,12 +1033,12 @@ body {
 }
 .entry-content a.pm-btn-solid, .pm-btn-solid { background: var(--pm-plum); color: #fff; box-shadow: 0 8px 20px rgba(69, 51, 70, .22); }
 .entry-content a.pm-btn-solid:hover, .pm-btn-solid:hover { background: var(--pm-mauve); border-color: var(--pm-mauve); color: #fff; transform: translateY(-2px); box-shadow: 0 14px 26px rgba(69, 51, 70, .26); }
-.entry-content a.pm-btn-line, .pm-btn-line { background: transparent; color: var(--pm-plum); }
+.entry-content a.pm-btn-line, .pm-btn-line { background: #fff; color: var(--pm-plum); }
 .entry-content a.pm-btn-line:hover, .pm-btn-line:hover { background: var(--pm-plum); color: #fff; transform: translateY(-2px); }
 .pm-btn:focus-visible { outline: 3px solid rgba(61, 103, 128, .6); outline-offset: 3px; }
 .pm-on-dark .pm-btn-solid, .entry-content .pm-on-dark a.pm-btn-solid { background: #fff; color: var(--pm-plum); border-color: #fff; box-shadow: none; }
 .entry-content .pm-on-dark a.pm-btn-solid:hover { background: var(--pm-heather); border-color: var(--pm-heather); color: var(--pm-plum); }
-.entry-content .pm-on-dark a.pm-btn-line { color: #fff; border-color: rgba(255,255,255,.7); }
+.entry-content .pm-on-dark a.pm-btn-line { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
 .entry-content .pm-on-dark a.pm-btn-line:hover { background: #fff; color: var(--pm-plum); border-color: #fff; }
 
 /* Existing pill buttons get a gentle lift site-wide */
@@ -1063,7 +1063,7 @@ body {
   margin: 0 0 22px;
   text-wrap: balance;
 }
-.pm-hero-text { font-size: 19px; line-height: 1.6; color: #3d3441; max-width: 34em; margin: 0 auto; }
+.pm-hero-text { font-size: 18px; line-height: 1.6; color: #3d3441; max-width: 34em; margin: 0 auto; text-wrap: pretty; }
 .pm-facts { list-style: none; padding: 0; margin: 28px auto 0; display: grid; grid-template-columns: auto auto; justify-content: center; gap: 10px 28px; text-align: left; }
 .pm-facts li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.4; color: #3d3441; }
 .pm-facts svg { flex: 0 0 18px; margin-top: 1px; color: var(--pm-harbour); }
@@ -1333,3 +1333,50 @@ a.pm-res-card:hover h3 { color: var(--pm-mauve); }
 /* Keep in-page anchors clear of the fixed navbar */
 .entry-content [id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 @media (max-width: 1050px) { .entry-content [id] { scroll-margin-top: calc(var(--nav-h-mobile) + 12px); } }
+
+
+/* ---------- Booking pages (Book Now, therapy, assessment, group) ---------- */
+.pm-bk-policy { text-align: center; padding: 30px 20px 10px; }
+.pm-bk-policy p { margin: 0; }
+.pm-bk-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 460px)); justify-content: center; gap: 22px; padding: 24px 22px 10px; }
+.pm-bk-card {
+  background: var(--home-plum); border-radius: 14px; padding: 30px 28px; text-align: center;
+  border: 1px solid rgba(0, 0, 0, .10); box-shadow: 0 10px 24px rgba(0, 0, 0, .10);
+  display: flex; flex-direction: column;
+}
+.pm-bk-card h2 { margin: 0 0 4px; font: 800 21px/1.25 Helvetica, Arial, sans-serif; color: #111; }
+.pm-bk-card .pm-bk-tag { margin: 0 0 14px; font-size: 14px; font-weight: 700; color: var(--pm-plum); }
+.pm-bk-card p { margin: 0 0 14px; font-size: 15.5px; line-height: 1.6; color: #2b2230; }
+.pm-bk-card .pm-actions { justify-content: center; margin-top: auto; padding-top: 6px; }
+.pm-bk-card .pm-bk-alt { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid rgba(69, 51, 70, .2); font-size: 15px; }
+
+.pm-bk-types { display: grid; grid-template-columns: repeat(var(--cols, 3), 1fr); gap: 20px; }
+.entry-content a.pm-bk-type { display: block; text-decoration: none; color: var(--pm-ink); }
+.pm-bk-type-img { overflow: hidden; border-radius: var(--pm-radius); aspect-ratio: 4 / 3; background: var(--pm-mist); }
+.pm-bk-type-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s var(--pm-ease); }
+a.pm-bk-type:hover .pm-bk-type-img img { transform: scale(1.05); }
+.pm-bk-type h3 { margin: 14px 0 4px; font: 700 18px/1.3 Helvetica, Arial, sans-serif; color: var(--pm-plum); }
+.pm-bk-type p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--pm-muted); }
+a.pm-bk-type:hover h3 { color: var(--pm-mauve); }
+
+.pm-bk-photo { padding: clamp(40px, 6vw, 72px) 22px; text-align: center; }
+.pm-bk-photo img { width: min(1000px, 100%); height: auto; border-radius: 16px; display: inline-block; box-shadow: 0 18px 40px rgba(43, 34, 48, .14); }
+
+.pm-bk-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; max-width: 980px; margin: 0 auto; }
+.pm-bk-fact { padding: 20px 0; border-top: 1px solid var(--pm-line); }
+.pm-bk-fact h3 { margin: 0 0 6px; font-size: 17px; color: var(--pm-ink); }
+.pm-bk-fact p { margin: 0; font-size: 15.5px; line-height: 1.6; color: #3d3441; }
+
+@media (max-width: 1050px) {
+  .pm-bk-types { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .pm-bk-cards { grid-template-columns: minmax(0, 520px); }
+  .pm-bk-facts { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .pm-bk-types { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-bk-type-img img { transition: none !important; transform: none !important; }
+}
