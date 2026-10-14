@@ -1306,6 +1306,8 @@ a.pm-res-card:hover h3 { color: var(--pm-mauve); }
 @media (max-width: 900px) {
   .pm-hero-grid, .pm-concern-grid, .pm-paths, .pm-psych-grid, .pm-steps-grid, .pm-faq-grid, .pm-twocol, .pm-res-head { grid-template-columns: 1fr; }
   .pm-hero-photo { padding: 8px 8px 0; margin-top: 8px; }
+  /* Mobile: photo sits under the location bubble, above the heading */
+  .pm-hero-photo { order: -1; margin: 0 0 18px; }
 
   .pm-steps-photo img { aspect-ratio: 16 / 10; }
   .pm-faq-side { position: static; }
@@ -1626,7 +1628,12 @@ html.pm-ready body::after {
 @media (max-width: 900px) {
   .svc-hero-grid, .svc-split, .svc-aud, .svc-lists, .svc-cta-grid { grid-template-columns: 1fr; }
   .svc-split.flip > :first-child { order: 0; }
-  .svc-hero-photo { max-width: 620px; }
+  /* Mobile: photo sits under the breadcrumbs, above the heading */
+  .svc-hero-grid { display: flex; flex-direction: column; gap: 0; }
+  .svc-hero-grid > div:first-child { display: contents; }
+  .svc-hero-grid > div:first-child > * { order: 2; }
+  .svc-hero-grid > div:first-child > .svc-crumbs { order: 0; }
+  .svc-hero-photo { order: 1; width: 100%; max-width: 620px; margin: 0 auto 26px; }
 }
 @media (max-width: 600px) {
   .svc-cards, .svc-approaches, .svc-types, .svc-steps, .svc-facts { grid-template-columns: 1fr; }
