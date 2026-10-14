@@ -160,16 +160,43 @@ function initReveal() {
   items.forEach((el) => io.observe(el));
 }
 
-// Run reveal as early as possible so the hero animates in with the page
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initReveal);
-} else {
+// ===== Loading screen =====
+// The loading screen is drawn by style.css. The page is revealed once everything
+// (images, embedded forms, header and footer) has loaded, or after 8 seconds at most.
+let pmPageLoaded = document.readyState === "complete";
+let pmPartialsLoaded = false;
+let pmIsReady = false;
+
+function pmMarkReady() {
+  if (pmIsReady) return;
+  pmIsReady = true;
+  document.documentElement.classList.add("pm-ready");
+  // Start scroll animations only once the page is visible, so the hero animates in
   initReveal();
 }
+
+function pmCheckReady() {
+  if (pmPageLoaded && pmPartialsLoaded) pmMarkReady();
+}
+
+window.addEventListener("load", () => {
+  pmPageLoaded = true;
+  pmCheckReady();
+});
+
+// Safety net for slow connections or embeds that never finish loading
+setTimeout(pmMarkReady, 8000);
+
+// Pages restored with the browser Back button should appear immediately
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) pmMarkReady();
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartial("site-header", "/assets/header.html");
   await injectPartial("site-footer", "/assets/footer.html");
+  pmPartialsLoaded = true;
+  pmCheckReady();
 
   setFooterYear();
   bindNavbarInteractions();

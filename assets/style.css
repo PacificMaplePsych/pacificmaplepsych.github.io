@@ -1286,7 +1286,7 @@ a.pm-res-card:hover h3 { color: var(--pm-mauve); }
   opacity: 0; transform: translateY(16px);
   transition: opacity .8s var(--pm-ease), transform .8s var(--pm-ease);
   transition-delay: var(--d, 0s);
-  animation: pm-failsafe 0s linear 2.5s forwards;
+  animation: pm-failsafe 0s linear 10s forwards;
 }
 .js [data-reveal].is-in { opacity: 1; transform: none; animation: none; }
 .js [data-reveal="fade"] { transform: none; }
@@ -1414,4 +1414,58 @@ a.pm-bk-type:hover h3 { color: var(--pm-mauve); }
 @media (max-width: 1050px) {
   .dropdown.no-mobile-dropdown .dropdown-content,
   .dropdown.no-mobile-dropdown .dropdown-content.open { display: none !important; }
+}
+
+
+/* =====================================================================
+   Site-wide loading screen
+   Shows a white screen, then the logo and "Loading...", until main.js
+   marks the page ready (all images, forms and the header/footer loaded).
+   A CSS failsafe hides it after 10 seconds even if scripts fail.
+   ===================================================================== */
+body::before,
+body::after {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100000;
+  transition: opacity .45s ease, visibility .45s ease;
+}
+body::before {
+  content: "";
+  inset: 0;
+  background: #fff;
+  animation: pm-loader-out 0s linear 10s forwards;
+}
+body::after {
+  content: "Loading\2026";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 112px;
+  width: 220px;
+  text-align: center;
+  font: 700 16px/1.4 Helvetica, Arial, sans-serif;
+  letter-spacing: .04em;
+  color: #453346;
+  background: url("/images/Simple%20Logo%20180x180.png") center top / 96px 96px no-repeat;
+  opacity: 0;
+  animation:
+    pm-loader-in .4s ease .25s forwards,
+    pm-loader-pulse 1.6s ease-in-out .65s infinite,
+    pm-loader-out 0s linear 10s forwards;
+}
+html.pm-ready body::before,
+html.pm-ready body::after {
+  opacity: 0;
+  visibility: hidden;
+  animation: none;
+}
+@keyframes pm-loader-in { to { opacity: 1; } }
+@keyframes pm-loader-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+@keyframes pm-loader-out { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: pm-loader-in 0s linear .25s forwards, pm-loader-out 0s linear 10s forwards; }
+}
+@media print {
+  body::before, body::after { display: none; }
 }
