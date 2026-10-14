@@ -1380,3 +1380,8 @@ a.pm-bk-type:hover h3 { color: var(--pm-mauve); }
 @media (prefers-reduced-motion: reduce) {
   .pm-bk-type-img img { transition: none !important; transform: none !important; }
 }
+
+/* Therapy booking: tighter button spacing, breathing room before the next section */
+.pm-bk-card .pm-actions { margin-top: 4px; padding-top: 0; }
+.pm-bk-card .pm-bk-alt { margin-top: 18px; }
+.pm-bk-cards-end { padding-bottom: 72px; }
