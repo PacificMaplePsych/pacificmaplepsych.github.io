@@ -11,7 +11,7 @@
   --nav-h-mobile: 110px;
 }
 
-/* ===== Globaal ===== */
+/* ===== Global ===== */
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -1385,3 +1385,27 @@ a.pm-bk-type:hover h3 { color: var(--pm-mauve); }
 .pm-bk-card .pm-actions { margin-top: 4px; padding-top: 0; }
 .pm-bk-card .pm-bk-alt { margin-top: 18px; }
 .pm-bk-cards-end { padding-bottom: 72px; }
+
+/* Resources hub tiles: same slow zoom as the Services tiles */
+.resource-tile { overflow: hidden; }
+.resource-tile img { transition: transform .9s var(--pm-ease); }
+.resource-tile:hover img, .resource-tile:focus-visible img { transform: scale(1.035); }
+
+/* About page photos: slow zoom inside a rounded frame */
+.entry-content.about-page .about-photo {
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+}
+.entry-content.about-page .about-photo img {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform .9s var(--pm-ease);
+}
+.entry-content.about-page .about-photo:hover img { transform: scale(1.035); }
+
+@media (prefers-reduced-motion: reduce) {
+  .resource-tile img, .entry-content.about-page .about-photo img { transition: none !important; transform: none !important; }
+}
