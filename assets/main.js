@@ -12,7 +12,7 @@ async function injectPartial(targetId, partialPath) {
   }
 }
 
-// ===== Footer year =====
+// ===== Footerr year =====
 function setFooterYear() {
   const y = document.getElementById("footerYear");
   if (y) y.textContent = String(new Date().getFullYear());
