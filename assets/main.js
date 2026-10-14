@@ -157,7 +157,44 @@ function initReveal() {
     { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
   );
 
-  items.forEach((el) => io.observe(el));
+  items.forEach((el) => {
+    // Anything the visitor has already scrolled past appears straight away
+    if (el.getBoundingClientRect().bottom < 0) {
+      el.classList.add("is-in");
+      return;
+    }
+    io.observe(el);
+  });
+
+}
+
+// ===== Service pages: highlight the current section in the "on this page" bar =====
+function initJumpBar() {
+  // Highlight the current section in a service page's "on this page" bar
+  const jumpLinks = document.querySelectorAll(".svc-jump a[href^='#']");
+  if (!jumpLinks.length) return;
+  {
+    const map = new Map();
+    jumpLinks.forEach((a) => {
+      const sec = document.getElementById(a.getAttribute("href").slice(1));
+      if (sec) map.set(sec, a);
+    });
+    const so = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            jumpLinks.forEach((l) => l.classList.remove("is-active"));
+            const a = map.get(entry.target);
+            a.classList.add("is-active");
+            const ul = a.closest("ul");
+            if (ul) ul.scrollLeft = a.offsetLeft - ul.clientWidth / 2 + a.offsetWidth / 2;
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    map.forEach((_, sec) => so.observe(sec));
+  }
 }
 
 // ===== Loading screen =====
@@ -173,6 +210,7 @@ function pmMarkReady() {
   document.documentElement.classList.add("pm-ready");
   // Start scroll animations only once the page is visible, so the hero animates in
   initReveal();
+  initJumpBar();
 }
 
 function pmCheckReady() {
