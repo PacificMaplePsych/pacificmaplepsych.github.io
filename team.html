@@ -164,8 +164,8 @@
     }
 
     .person-photo {
-      width: 112px;
-      height: 112px;
+      width: 168px;
+      height: 168px;
       object-fit: cover;
       display: block;
     }
@@ -270,6 +270,40 @@
       .back-top-wrap { padding-bottom: 22px; }
       .team-jump { margin-bottom: 46px; }
     }
+
+    /* Availability Spotlight */
+    .spotlight { width: min(1240px, calc(100% - 44px)); margin: 0 auto; }
+    .spotlight-head { padding: 8px 0 44px; }
+    .spot-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 44px 56px; padding-bottom: 64px; }
+    .spot-card { width: 280px; max-width: 92vw; text-align: center; }
+    .spot-photo {
+      display: block; width: 260px; max-width: 100%; aspect-ratio: 1 / 1; margin: 0 auto;
+      border-radius: 18px; overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.12); box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    }
+    .spot-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+    .spot-photo:hover img, .spot-photo:focus-visible img { transform: scale(1.04); }
+    .spot-note { font-size: 0.9rem; line-height: 1.5; color: #444; margin: 0 auto 16px; max-width: 260px; }
+
+    .full-team-head { width: min(1240px, calc(100% - 44px)); margin: 0 auto; border-top: 1px solid rgba(0,0,0,0.14); padding: 52px 0 28px; }
+    .full-team-title { margin: 0; font-size: clamp(30px, 3.8vw, 44px); font-weight: 900; line-height: 1.1; color: #111; }
+
+    /* Person anchors from the spotlight, with a soft highlight when jumped to */
+    .person[id] { scroll-margin-top: calc(var(--nav-h, 120px) + 24px); }
+    @media (max-width: 1050px) { .person[id] { scroll-margin-top: calc(var(--nav-h-mobile, 110px) + 20px); } }
+    .person:target .person-photo-link { box-shadow: 0 0 0 5px rgba(122, 93, 124, 0.45), 0 14px 28px rgba(0,0,0,0.14); }
+
+    /* Back to top at the end of each section */
+    .back-top-inline { width: auto; padding: 0 0 40px; }
+    .back-top-inline .back-top { margin-top: 0; }
+
+    @media (max-width: 700px) {
+      .spot-grid { gap: 40px; padding-bottom: 52px; }
+      .full-team-head { padding-top: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .spot-photo img { transition: none; transform: none !important; }
+    }
   </style>
 </head>
 
@@ -291,6 +325,50 @@
     </section>
 
     <section class="team-wrap" aria-label="Team directory">
+
+      <!-- AVAILABILITY SPOTLIGHT -->
+      <section class="spotlight team-anchor" id="Availability" aria-labelledby="spotlight-title">
+        <div class="section-head spotlight-head">
+          <h2 class="section-title" id="spotlight-title">Availability Spotlight</h2>
+          <p class="section-desc">These clinicians have the most immediate availability at this time.</p>
+        </div>
+        <div class="spot-grid">
+          <div class="spot-card">
+            <a class="spot-photo" href="#person-sydney-harrison" aria-label="Learn more about Sydney Harrison">
+              <img src="https://pacificmaplepsych.com/images/team/sydney-harrison.jpg" alt="Sydney Harrison" width="260" height="260" loading="eager" decoding="async" />
+            </a>
+            <div class="person-name">Sydney Harrison, B.A.</div>
+            <div class="person-sub">Doctoral Student</div>
+            <p class="spot-note">Therapy for adults and youth; reduced-rate and pro bono options available for a limited time</p>
+            <a class="btn-dark" href="#person-sydney-harrison">Learn More</a>
+          </div>
+          <div class="spot-card">
+            <a class="spot-photo" href="#person-irene-matijczak" aria-label="Learn more about Dr. Irene Matijczak">
+              <img src="https://pacificmaplepsych.com/images/team/irene-matijczak.jpg" alt="Dr. Irene Matijczak" width="260" height="260" loading="eager" decoding="async" />
+            </a>
+            <div class="person-name">Dr. Irene Matijczak, Ph.D.</div>
+            <div class="person-sub">Registered Clinical Counsellor</div>
+            <p class="spot-note">Therapy for individuals, couples, families, children, and youth</p>
+            <a class="btn-dark" href="#person-irene-matijczak">Learn More</a>
+          </div>
+          <div class="spot-card">
+            <a class="spot-photo" href="#person-tsuba-shima" aria-label="Learn more about Tsuba Shima">
+              <img src="https://pacificmaplepsych.com/images/team/tsuba-shima.jpg" alt="Tsuba Shima" width="260" height="260" loading="eager" decoding="async" />
+            </a>
+            <div class="person-name">Tsuba Shima, B.A.</div>
+            <div class="person-sub">Practice Manager</div>
+            <p class="spot-note">Free consultations to help you find the right clinician</p>
+            <a class="btn-dark" href="#person-tsuba-shima">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FULL TEAM -->
+      <div class="full-team-head">
+        <h2 class="full-team-title">Meet the Full Team</h2>
+        <p class="section-desc">Jump to a group, or scroll to see everyone.</p>
+      </div>
+
       <nav class="team-jump" aria-label="Jump to team sections">
         <a class="jump-btn" href="/team.html#Psychiatrists">Psychiatrists</a>
         <a class="jump-btn" href="/team.html#Psychologists">Psychologists</a>
@@ -360,6 +438,9 @@
             </div>
           </div>
 
+        </div>
+        <div class="back-top-wrap back-top-inline">
+          <a class="back-top" href="/team.html#top">Back to top</a>
         </div>
       </section>
 
@@ -517,6 +598,9 @@
           </div>
 
         </div>
+        <div class="back-top-wrap back-top-inline">
+          <a class="back-top" href="/team.html#top">Back to top</a>
+        </div>
       </section>
 
       <!-- PSYCHOMETRISTS -->
@@ -574,6 +658,9 @@
           </div>
 
         </div>
+        <div class="back-top-wrap back-top-inline">
+          <a class="back-top" href="/team.html#top">Back to top</a>
+        </div>
       </section>
 
       <!-- COUNSELLORS -->
@@ -604,7 +691,7 @@
             </div>
           </div>
 
-          <div class="person">
+          <div class="person" id="person-irene-matijczak">
             <a class="person-photo-link" href="/team/irene-matijczak.html" aria-label="Learn more about Dr. Irene Matijczak">
               <img class="person-photo" src="https://pacificmaplepsych.com/images/team/irene-matijczak.jpg" alt="Dr. Irene Matijczak" />
             </a>
@@ -643,6 +730,9 @@
           </div>
 
         </div>
+        <div class="back-top-wrap back-top-inline">
+          <a class="back-top" href="/team.html#top">Back to top</a>
+        </div>
       </section>
 
       <!-- DOCTORAL STUDENTS -->
@@ -654,7 +744,7 @@
 
         <div class="people-grid">
 
-           <div class="person">
+           <div class="person" id="person-sydney-harrison">
             <a class="person-photo-link" href="/team/sydney-harrison.html" aria-label="Learn more about Sydney Harrison">
               <img class="person-photo" src="https://pacificmaplepsych.com/images/team/sydney-harrison.jpg" alt="Sydney Harrison" />
             </a>
@@ -826,6 +916,9 @@
           </div>
           
         </div>
+        <div class="back-top-wrap back-top-inline">
+          <a class="back-top" href="/team.html#top">Back to top</a>
+        </div>
       </section>
 
       <!-- ADMIN -->
@@ -837,7 +930,7 @@
 
         <div class="people-grid">
 
-          <div class="person">
+          <div class="person" id="person-tsuba-shima">
             <a class="person-photo-link" href="/team/tsuba-shima.html" aria-label="Learn more about Tsuba Shima">
               <img class="person-photo" src="https://pacificmaplepsych.com/images/team/tsuba-shima.jpg" alt="Tsuba Shima" />
             </a>
@@ -867,11 +960,10 @@
           </div>
 
         </div>
+        <div class="back-top-wrap back-top-inline">
+          <a class="back-top" href="/team.html#top">Back to top</a>
+        </div>
       </section>
-
-      <div class="back-top-wrap">
-        <a class="back-top" href="/team.html#top">Back to top</a>
-      </div>
 
     </section>
   </main>
