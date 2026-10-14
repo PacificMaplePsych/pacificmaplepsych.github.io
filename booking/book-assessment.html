@@ -107,6 +107,15 @@
     display: block;
     overflow: hidden;
   }
+
+  /* On phones the form wraps onto more lines, so give it extra height
+     to keep the whole form visible without an inner scrollbar */
+  @media (max-width: 600px) {
+    #assessment-form { height: 1850px; }
+  }
+  @media (max-width: 380px) {
+    #assessment-form { height: 1950px; }
+  }
 </style>
 
     <!-- TYPES -->
