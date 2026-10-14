@@ -1409,3 +1409,9 @@ a.pm-bk-type:hover h3 { color: var(--pm-mauve); }
 @media (prefers-reduced-motion: reduce) {
   .resource-tile img, .entry-content.about-page .about-photo img { transition: none !important; transform: none !important; }
 }
+
+/* Mobile menu: Team and Book Now link straight to their pages, no dropdown */
+@media (max-width: 1050px) {
+  .dropdown.no-mobile-dropdown .dropdown-content,
+  .dropdown.no-mobile-dropdown .dropdown-content.open { display: none !important; }
+}

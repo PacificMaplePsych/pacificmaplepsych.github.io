@@ -50,6 +50,9 @@ function bindNavbarInteractions() {
     const content = dropdown.querySelector(".dropdown-content");
     if (!toggle || !content) return;
 
+    // Team and Book Now go straight to their pages on mobile (no dropdown)
+    if (dropdown.classList.contains("no-mobile-dropdown")) return;
+
     toggle.addEventListener("click", (e) => {
       if (window.innerWidth <= navBreakPx) {
         e.preventDefault();
@@ -73,7 +76,8 @@ function bindNavbarInteractions() {
     const a = e.target.closest("a");
     if (!a) return;
 
-    const isToggle = a.classList.contains("dropdown-toggle");
+    const isToggle =
+      a.classList.contains("dropdown-toggle") && !a.closest(".no-mobile-dropdown");
     if (window.innerWidth <= navBreakPx && menu.classList.contains("active") && !isToggle) {
       setMenuOpen(false);
     }
