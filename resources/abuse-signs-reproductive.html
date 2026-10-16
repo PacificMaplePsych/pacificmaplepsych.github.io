@@ -46,6 +46,100 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Signs of Reproductive Abuse",
+      "description": "Learn the signs of reproductive abuse and reproductive coercion, including pregnancy pressure, birth control sabotage, forced abortion, forced pregnancy, and control over fertility decisions.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-signs-reproductive.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-signs-reproductive.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is reproductive coercion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reproductive coercion is behaviour that interferes with someone’s ability to make their own decisions about contraception, pregnancy, or parenthood. It includes pressuring someone to get pregnant or not, sabotaging birth control, and forcing or preventing an abortion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the signs of birth control sabotage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Signs can include a partner hiding, throwing away, or tampering with your birth control; refusing to use or secretly removing condoms; lying about using contraception; or pressuring you to stop a method you want to keep."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it illegal to tamper with or remove a condom without consent in Canada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be. The Supreme Court of Canada has held that secretly sabotaging a condom can cancel consent and amount to sexual assault (R. v. Hutchinson, 2014). In 2022, the Court also found that if condom use is a condition of consent, sex without one is not consensual (R. v. Kirkpatrick). If this has happened to you, a sexual assault centre or victim service can explain your options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a partner force me to have, or not have, an abortion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. In Canada, decisions about a pregnancy belong to the pregnant person. A partner can share their feelings, but threatening, pressuring, or forcing someone to continue or end a pregnancy is abuse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it abusive to pressure a partner to have a baby?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sharing a wish to have children is normal. It becomes abusive when one partner uses threats, guilt, ultimatums, deception, or punishment to override the other person’s choice, or keeps pushing after a clear no."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can men experience reproductive abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Men can experience reproductive abuse, for example when a partner lies about using birth control or tampers with condoms to cause a pregnancy. Reproductive abuse is about control, and it can be committed by and against people of any gender."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I protect my birth control if my partner is interfering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A health care provider can talk with you privately about methods that are harder for a partner to detect or interfere with, such as an IUD, implant, or injection, and about emergency contraception. In BC, Options for Sexual Health offers confidential sexual health care and the free Sex Sense line at 1-800-739-7367."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is reproductive coercion linked to other forms of abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. Reproductive coercion frequently occurs alongside other forms of domestic abuse, and pregnancy can be a time when abuse begins or gets worse. If you are worried about your safety, an escape and safety plan can help."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -123,6 +217,103 @@
     .abuse-page .related-links h2 {
       margin-top: 0;
     }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    line-height:1.7;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -146,7 +337,7 @@
     <!-- PAGE CONTENT -->
     <section class="resource-content-section" aria-label="Signs of reproductive abuse and reproductive coercion">
       <div class="resource-content-wrap">
-        <p>Reproductive abuse happens when someone tries to control another person’s reproductive choices through manipulation, coercion, threats, or interference with contraception, pregnancy, or fertility decisions. It is an often-overlooked form of abuse that strips away autonomy and turns deeply personal decisions about one’s body and future into tools of control.</p>
+        <p>Reproductive abuse happens when someone tries to control another person’s reproductive choices through manipulation, coercion, threats, or interference with contraception, pregnancy, or fertility decisions. It is an often-overlooked form of <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">domestic abuse</a> that strips away autonomy and turns deeply personal decisions about one’s body and future into tools of control.</p>
 
         <p>Reproductive abuse can include pregnancy pressure, birth control sabotage, forced pregnancy, forced abortion, coercion around fertility treatment, or controlling whether someone is allowed to have children at all. The core issue is the same: one person is trying to take away another person’s right to make free decisions about reproduction.</p>
 
@@ -154,7 +345,7 @@
           <p><strong>Important reminder:</strong> if someone is pressuring, deceiving, threatening, or interfering with your reproductive choices, that is not love or partnership. It is control.</p>
         </div>
 
-        <p>The best way to protect yourself is to recognize early signs of manipulation around reproductive choices. Once you realize your reproductive autonomy is being violated, plan your next steps carefully. Abusers often tie control of fertility to emotional dependence, financial dependence, or long-term entrapment, so safety planning may matter here too.</p>
+        <p>The best way to protect yourself is to recognize early signs of manipulation around reproductive choices. Once you realize your reproductive autonomy is being violated, plan your next steps carefully. Abusers often tie control of fertility to emotional dependence, financial dependence, or long-term entrapment, so safety planning may matter here too. The <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">abuse escape and safety planning</a> page can help you prepare.</p>
 
         <h2>How Men Can Engage in Reproductive Abuse</h2>
         <p>Some men engage in reproductive abuse by pressuring, manipulating, or forcing women into pregnancy. These men, sometimes called <a href="https://patriciacelan.medium.com/beware-the-womb-chaser-the-fertility-gold-digger-01aa949b2a56">“womb-chasers” or fertility gold-diggers</a>, may see women not as full human beings with autonomy, but as ways to fulfill desires for legacy, control, emotional security, or the image of being a family man.</p>
@@ -168,9 +359,13 @@
           <li>Using religion, family pressure, or gendered shame to insist that “a real woman” gives him children</li>
         </ul>
 
-        <p>The effects can be severe. A woman may feel trapped in pregnancies she never truly wanted, robbed of agency, and reduced to a reproductive role rather than treated as a person with goals, boundaries, and full humanity. This can lead to resentment, emotional withdrawal, chronic conflict, psychological harm, and sometimes separation or divorce.</p>
+        <p>The effects can be severe. A woman may feel trapped in pregnancies she never truly wanted, robbed of agency, and reduced to a reproductive role rather than treated as a person with goals, boundaries, and full humanity. This can lead to resentment, emotional withdrawal, chronic conflict, psychological harm, and sometimes separation or divorce. The <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">psychological impact of abuse</a> page describes these effects and how people heal.</p>
 
         <p>Conversely, some men abuse women by preventing them from having desired children, such as forcing a woman to have an abortion, use contraception, or undergo permanent sterilization. Controlling someone’s reproductive autonomy in either direction is abusive.</p>
+
+        <div class="support-note">
+          <p><strong>If you are in immediate danger, call 911.</strong> For free, confidential support in British Columbia 24 hours a day, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808.</p>
+        </div>
 
         <h2>How Women Can Engage in Reproductive Abuse</h2>
         <p>Some women engage in reproductive abuse by manipulating or deceiving men into fatherhood against their will. In these cases, pregnancy or childbearing may be used to secure attachment, financial support, or control over a partner’s life and choices. Reproduction becomes a tool of power rather than a shared decision rooted in trust and consent.</p>
@@ -193,10 +388,54 @@
 
         <p>Healthy partnership means respecting each other’s reproductive boundaries. Consent, not coercion, should guide decisions about sex, birth control, pregnancy, and parenthood. If someone is pressuring, threatening, deceiving, or forcing reproductive choices on you, that is not love. That is entitlement, objectification, and control.</p>
 
+        <p>If your birth control or pregnancy decisions are being interfered with, a doctor, nurse practitioner, or sexual health clinic can help confidentially. In BC, <a href="https://www.optionsforsexualhealth.org/">Options for Sexual Health</a> offers confidential care and the free Sex Sense line at 1-800-739-7367.</p>
+
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About Reproductive Abuse</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">What is reproductive coercion?</summary>
+        <div class="faq-a"><p>Reproductive coercion is behaviour that interferes with someone’s ability to make their own decisions about contraception, pregnancy, or parenthood. It includes pressuring someone to get pregnant or not, sabotaging birth control, and forcing or preventing an abortion.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What are the signs of birth control sabotage?</summary>
+        <div class="faq-a"><p>Signs can include a partner hiding, throwing away, or tampering with your birth control; refusing to use or secretly removing condoms; lying about using contraception; or pressuring you to stop a method you want to keep.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is it illegal to tamper with or remove a condom without consent in Canada?</summary>
+        <div class="faq-a"><p>It can be. The Supreme Court of Canada has held that secretly sabotaging a condom can cancel consent and amount to sexual assault (R. v. Hutchinson, 2014). In 2022, the Court also found that if condom use is a condition of consent, sex without one is not consensual (<a href="https://scc-csc.gc.ca/judgments-jugements/cb/2022/39287">R. v. Kirkpatrick</a>). If this has happened to you, a sexual assault centre or victim service can explain your options.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can a partner force me to have, or not have, an abortion?</summary>
+        <div class="faq-a"><p>No. In Canada, decisions about a pregnancy belong to the pregnant person. A partner can share their feelings, but threatening, pressuring, or forcing someone to continue or end a pregnancy is abuse.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is it abusive to pressure a partner to have a baby?</summary>
+        <div class="faq-a"><p>Sharing a wish to have children is normal. It becomes abusive when one partner uses threats, guilt, ultimatums, deception, or punishment to override the other person’s choice, or keeps pushing after a clear no.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can men experience reproductive abuse?</summary>
+        <div class="faq-a"><p>Yes. Men can experience reproductive abuse, for example when a partner lies about using birth control or tampers with condoms to cause a pregnancy. Reproductive abuse is about control, and it can be committed by and against people of any gender.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">How can I protect my birth control if my partner is interfering?</summary>
+        <div class="faq-a"><p>A health care provider can talk with you privately about methods that are harder for a partner to detect or interfere with, such as an IUD, implant, or injection, and about emergency contraception. In BC, <a href="https://www.optionsforsexualhealth.org/">Options for Sexual Health</a> offers confidential sexual health care and the free Sex Sense line at 1-800-739-7367.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is reproductive coercion linked to other forms of abuse?</summary>
+        <div class="faq-a"><p>Often, yes. Reproductive coercion frequently occurs alongside other forms of <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">domestic abuse</a>, and pregnancy can be a time when abuse begins or gets worse. If you are worried about your safety, an <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">escape and safety plan</a> can help.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
+
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
-          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page.</p>
+          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page, as well as the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a> and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
     </section>
 

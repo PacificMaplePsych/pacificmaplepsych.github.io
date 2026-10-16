@@ -46,6 +46,100 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Signs of Elder Abuse and Child Abuse",
+      "description": "Learn common signs of elder abuse and child abuse, including physical, emotional, behavioural, and caregiving warning signs that a third party may notice.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to report child abuse in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Everyone in BC has a legal duty to report if they believe a child or youth under 19 may be at risk, not only teachers or health care workers. If the child is in immediate danger, call 911 first. Otherwise, call Provincial Centralized Screening at 1-800-663-9122, 24 hours a day. Learn more from the Government of BC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I am not sure it is abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do not need proof to make a report. If you have reason to believe a child may be at risk, report your concerns and let a child welfare worker assess the situation. Investigating on your own can put the child at greater risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the family know I made the report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Child welfare workers generally keep the identity of the person who reported confidential, and BC law protects people who report in good faith. You can ask the screening worker about confidentiality when you call."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if a child tells me they are being abused?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stay calm, listen, and tell them you believe them and that it is not their fault. Do not press for details, promise to keep it secret, or confront the person they named. Write down what they said in their own words and report it as soon as possible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the signs a child is being groomed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Warning signs include an adult giving a child special attention, gifts, or privileges; spending time alone with the child; testing physical boundaries; and asking the child to keep secrets. Grooming often targets the family’s trust as well, so the adult may seem especially helpful or generous."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is elder financial abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elder financial abuse is the misuse of an older adult’s money or property, such as theft, pressure to change a will, misuse of a power of attorney, or using their bank cards without permission. It is one of the most common forms of elder abuse and is often committed by someone the person knows and trusts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can I call about elder abuse in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If an older adult is in immediate danger, call 911. For information and support, call the Seniors Abuse and Information Line (SAIL) run by Seniors First BC at 1-866-437-1940. You can also contact the adult protection program at your local health authority."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Could these signs have another explanation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Some signs, such as confusion, weight loss, falls, or changes in behaviour, can come from illness, medication, dementia, or developmental differences. No single sign proves abuse. Look for patterns, and let trained professionals assess the situation."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -140,6 +234,102 @@
     .abuse-page .related-links h2 {
       margin-top: 0;
     }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
   </style>
 </head>
 
@@ -168,10 +358,17 @@
         <p>This page is specifically focused on warning signs that a <em>third party</em> may recognize in a vulnerable elder, child, or adolescent. Many people search for signs of child abuse, signs of elder abuse, or how to recognize abuse in someone else. These lists are meant to help identify concerning patterns that may warrant immediate attention.</p>
 
         <div class="support-note">
-          <p><strong>Important:</strong> everyone has a legal duty to report suspected child abuse, even if they do not work with children. In many situations, elder abuse may also need to be reported, though the exact duty can vary depending on the victim’s living situation and local laws.</p>
+          <p><strong>Important:</strong> in British Columbia, everyone has a legal duty to report if they believe a child or youth under 19 may be at risk, even if they do not work with children. Call Provincial Centralized Screening at 1-800-663-9122, 24 hours a day. The rules for reporting abuse of older adults are different, but you can still report concerns about an older adult and get guidance.</p>
         </div>
 
-        <p>These lists are not all-inclusive. Additional signs not seen on this page may also indicate abuse. If you suspect abuse, contact Child Protection Services or Adult Protection Services in your area. If you are unsure where to start, try calling the police non-emergency line or another local protective service for direction.</p>
+        <div class="support-note">
+          <p><strong>If you are in immediate danger, call 911.</strong> For free, confidential support in British Columbia 24 hours a day, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808.</p>
+          <p>If you are a young person and someone is hurting you, you can talk to Kids Help Phone any time at 1-800-668-6868 or by texting CONNECT to 686868.</p>
+        </div>
+
+        <p>These lists are not all-inclusive. Additional signs not seen on this page may also indicate abuse. At the same time, no single sign proves abuse. Some signs can come from illness, medication, dementia, or developmental differences, so look for patterns and let trained professionals assess the situation. You do not need proof to make a report.</p>
+
+        <p>If you suspect child abuse in BC, call 1-800-663-9122. For concerns about an older adult, contact the adult protection program at your local health authority, or call the Seniors Abuse and Information Line run by <a href="https://seniorsfirstbc.ca/">Seniors First BC</a> at 1-866-437-1940. Outside BC, contact your local child protection or adult protection service, or call the police non-emergency line for direction.</p>
 
         <h2>Signs of Elder Abuse</h2>
         <ul>
@@ -205,6 +402,8 @@
           />
         </div>
 
+        <p>Financial abuse is one of the most common forms of elder abuse and is often committed by someone the older adult knows and trusts, such as a family member, caregiver, or person holding power of attorney.</p>
+
         <h2>Signs of Child or Adolescent Abuse</h2>
         <p><em>Note: “child” may also mean “adolescent,” and “parent” may also mean “caretaker.”</em></p>
 
@@ -233,6 +432,8 @@
           <li>Exaggerated or absent emotional response from parent regarding injury</li>
         </ul>
 
+        <p>If a child tells you they are being hurt, stay calm, listen, and tell them you believe them and that it is not their fault. Do not press for details or promise to keep it secret. Write down what they said in their own words and report it as soon as you can. Children who have been abused can heal, especially with safe, supportive adults around them. The <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">psychological impact of abuse</a> page explains more.</p>
+
         <div class="centered-image-block">
           <p>See this <a href="https://cordiscosaile.com/navigating-child-sex-abuse/">guide on Navigating Child Sex Abuse</a>.</p>
           <img
@@ -245,10 +446,52 @@
           />
         </div>
 
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About Elder and Child Abuse</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">Do I have to report child abuse in BC?</summary>
+        <div class="faq-a"><p>Yes. Everyone in BC has a legal duty to report if they believe a child or youth under 19 may be at risk, not only teachers or health care workers. If the child is in immediate danger, call 911 first. Otherwise, call Provincial Centralized Screening at 1-800-663-9122, 24 hours a day. <a href="https://www2.gov.bc.ca/gov/content/safety/public-safety/protecting-children/reporting-child-abuse">Learn more from the Government of BC</a>.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What if I am not sure it is abuse?</summary>
+        <div class="faq-a"><p>You do not need proof to make a report. If you have reason to believe a child may be at risk, report your concerns and let a child welfare worker assess the situation. Investigating on your own can put the child at greater risk.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Will the family know I made the report?</summary>
+        <div class="faq-a"><p>Child welfare workers generally keep the identity of the person who reported confidential, and BC law protects people who report in good faith. You can ask the screening worker about confidentiality when you call.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What should I do if a child tells me they are being abused?</summary>
+        <div class="faq-a"><p>Stay calm, listen, and tell them you believe them and that it is not their fault. Do not press for details, promise to keep it secret, or confront the person they named. Write down what they said in their own words and report it as soon as possible.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What are the signs a child is being groomed?</summary>
+        <div class="faq-a"><p>Warning signs include an adult giving a child special attention, gifts, or privileges; spending time alone with the child; testing physical boundaries; and asking the child to keep secrets. Grooming often targets the family’s trust as well, so the adult may seem especially helpful or generous.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What is elder financial abuse?</summary>
+        <div class="faq-a"><p>Elder financial abuse is the misuse of an older adult’s money or property, such as theft, pressure to change a will, misuse of a power of attorney, or using their bank cards without permission. It is one of the most common forms of elder abuse and is often committed by someone the person knows and trusts.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Who can I call about elder abuse in BC?</summary>
+        <div class="faq-a"><p>If an older adult is in immediate danger, call 911. For information and support, call the Seniors Abuse and Information Line (SAIL) run by <a href="https://seniorsfirstbc.ca/">Seniors First BC</a> at 1-866-437-1940. You can also contact the adult protection program at your local health authority.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Could these signs have another explanation?</summary>
+        <div class="faq-a"><p>Yes. Some signs, such as confusion, weight loss, falls, or changes in behaviour, can come from illness, medication, dementia, or developmental differences. No single sign proves abuse. Look for patterns, and let trained professionals assess the situation.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
+
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
           <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
     </section>
 

@@ -46,6 +46,108 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Psychological Impact of Abuse",
+      "description": "Learn about the psychological impact of abuse on children and adults, including trauma, anxiety, depression, trust issues, and post-traumatic growth after abuse.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-psychological-impact.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-psychological-impact.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the long-term effects of emotional abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Emotional abuse can lead to lasting anxiety, depression, low self-esteem, self-doubt, difficulty trusting others, and trouble setting boundaries. Many survivors also notice changes in sleep, concentration, and physical health. These effects are common responses to prolonged stress, and they can improve with support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can abuse cause PTSD or complex PTSD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Abuse can lead to post-traumatic stress disorder, and repeated or prolonged abuse, especially in childhood or in a close relationship, is associated with complex PTSD. Complex PTSD includes trauma symptoms along with ongoing difficulties in emotional regulation, self-worth, and relationships. Only a qualified professional can diagnose these conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I still feel anxious after leaving an abusive relationship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After living with danger or unpredictability, the nervous system can stay on high alert even once you are safe. Being easily startled, scanning for threats, and feeling uneasy when things are calm are common. With time, safety, and support, the body can learn that the danger has passed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I miss someone who hurt me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Missing an abusive partner is very common and does not mean the abuse was acceptable or that you want to go back. Cycles of harm followed by affection can create a powerful emotional attachment known as a trauma bond. Our article Understanding Trauma Bonds explains how this happens and how people break free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do I blame myself for the abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abusers often shift responsibility onto the person they are harming, and over time that message can start to feel true. Self-blame can also feel safer than accepting that you had little control over what happened. Abuse is always the responsibility of the person who chooses to abuse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can children recover from abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Children can be remarkably resilient, especially when they are safe, have at least one caring and stable adult in their life, and receive trauma-informed support. Early support makes a meaningful difference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to heal from abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no fixed timeline. Healing depends on how long the abuse lasted, whether you are now safe, the support around you, and what other stressors you are facing. Progress is often uneven, and difficult days do not mean you are going backwards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of therapy helps after abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trauma-focused approaches such as trauma-focused cognitive behavioural therapy, cognitive processing therapy, and EMDR have strong research support for trauma symptoms. A good therapist will also work at your pace, focus on safety, and help with self-worth and relationships. Pacific Maple Psych Centre offers trauma-informed individual therapy in Vancouver and virtually across BC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I get support right now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you are in immediate danger, call 911. If you are having thoughts of suicide, call or text 9-8-8, the Suicide Crisis Helpline, any time. VictimLinkBC offers free, confidential support for people affected by abuse 24 hours a day by phone or text at 1-800-563-0808."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -123,6 +225,103 @@
     .abuse-page .related-links h2 {
       margin-top: 0;
     }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    line-height:1.7;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -151,7 +350,7 @@
         <h2>How Abuse Affects Mental Health</h2>
         <p>The psychological effects of abuse can be immediate or long-term. In many cases, the longer someone remains in an abusive situation, the more deeply it can shape their sense of safety, identity, and relationships. Abuse can change the way people think about themselves, other people, and the world around them.</p>
 
-        <p>Some survivors feel constantly on edge. Others feel numb, ashamed, hopeless, disconnected, or confused. Many people struggle with self-doubt because abuse often teaches them to question their own reality. These reactions are common trauma responses. They do not mean you are weak, broken, or beyond help.</p>
+        <p>Some survivors feel constantly on edge. Others feel numb, ashamed, hopeless, disconnected, or confused. Many people struggle with self-doubt because abuse often teaches them to question their own reality. These reactions are common trauma responses. They do not mean you are weak, broken, or beyond help. If you are still unsure whether what you experienced was abuse, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">signs of domestic abuse</a> and <a href="https://pacificmaplepsych.com/resources/abuse-signs-reproductive.html">signs of reproductive abuse</a> pages describe common patterns.</p>
 
         <div class="support-note">
           <p><strong>Important reminder:</strong> the psychological impact of abuse is real, even if the abuse was minimized, denied, normalized, or never left obvious physical injuries.</p>
@@ -177,7 +376,7 @@
         <p>At the same time, difficult childhood experiences do not guarantee a tragic future. Children can be remarkably resilient, especially when they receive support, stability, protection, and trauma-informed care. Healing and recovery are possible.</p>
 
         <h2>Long-Term Effects of Abuse in Adulthood</h2>
-        <p>The effects of abuse can continue into adulthood whether the abuse happened in childhood, adulthood, or both. Survivors may struggle with self-esteem, boundaries, guilt, shame, fear, intimacy, and trust. They may find themselves drawn to familiar unhealthy patterns even when they consciously want something different.</p>
+        <p>The effects of abuse can continue into adulthood whether the abuse happened in childhood, adulthood, or both. Survivors may struggle with self-esteem, boundaries, guilt, shame, fear, intimacy, and trust. They may find themselves drawn to familiar unhealthy patterns even when they consciously want something different. Some also feel a strong attachment to the person who hurt them, which is explained in our article on <a href="https://pacificmaplepsych.com/education/articles/understanding-trauma-bonds.html">trauma bonds</a>.</p>
 
         <p>Abusive experiences can increase the risk of mental health concerns such as:</p>
 
@@ -209,10 +408,14 @@
           <li>Using trusted community supports and <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources</a></li>
           <li>Learning trauma-informed coping skills</li>
           <li>Working on boundaries, self-trust, and self-worth</li>
-          <li>Exploring evidence-based support for <a href="http://www.llbc.leg.bc.ca/public/PubDocs/bcdocs/402511/asw_2006.pdf">depression</a>, <a href="https://www.anxietycanada.com/free-downloadable-pdf-resources/">anxiety</a>, or <a href="https://www.camh.ca/-/media/files/guides-and-publications/women-and-abuse-en.pdf">trauma therapy</a></li>
+          <li>Exploring evidence-based support for <a href="https://www.sfu.ca/carmha/publications/antidepressant-skills-workbook.html">depression</a>, <a href="https://www.anxietycanada.com/free-downloadable-pdf-resources/">anxiety</a>, or <a href="https://www.canada.ca/en/public-health/topics/mental-health-wellness/post-traumatic-stress-disorder.html">trauma</a></li>
         </ul>
 
         <p>Healing is rarely linear. Progress can be uneven. But setbacks do not erase growth, and struggling does not mean you are failing.</p>
+
+        <div class="support-note">
+          <p><strong>Need support now?</strong> If you are in immediate danger, call 911. If you are having thoughts of suicide, call or text 9-8-8 any time. For confidential support related to abuse, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808, 24 hours a day.</p>
+        </div>
 
         <h2>Post-Traumatic Growth After Abuse</h2>
         <p>Hopelessness is common after abuse, especially when someone feels that too much has already been taken from them. But surviving abuse does <strong>not</strong> mean your life is ruined or that you are permanently defined by what happened.</p>
@@ -223,10 +426,56 @@
 
         <p>If you have made it this far, you have already shown resilience. What happened to you matters, and so does what happens next. Recovery is possible, and your future does not have to look like your past.</p>
 
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About the Impact of Abuse</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">What are the long-term effects of emotional abuse?</summary>
+        <div class="faq-a"><p>Emotional abuse can lead to lasting anxiety, depression, low self-esteem, self-doubt, difficulty trusting others, and trouble setting boundaries. Many survivors also notice changes in sleep, concentration, and physical health. These effects are common responses to prolonged stress, and they can improve with support.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can abuse cause PTSD or complex PTSD?</summary>
+        <div class="faq-a"><p>Yes. Abuse can lead to post-traumatic stress disorder, and repeated or prolonged abuse, especially in childhood or in a close relationship, is associated with complex PTSD. Complex PTSD includes trauma symptoms along with ongoing difficulties in emotional regulation, self-worth, and relationships. Only a qualified professional can diagnose these conditions.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Why do I still feel anxious after leaving an abusive relationship?</summary>
+        <div class="faq-a"><p>After living with danger or unpredictability, the nervous system can stay on high alert even once you are safe. Being easily startled, scanning for threats, and feeling uneasy when things are calm are common. With time, safety, and support, the body can learn that the danger has passed.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Why do I miss someone who hurt me?</summary>
+        <div class="faq-a"><p>Missing an abusive partner is very common and does not mean the abuse was acceptable or that you want to go back. Cycles of harm followed by affection can create a powerful emotional attachment known as a trauma bond. Our article <a href="https://pacificmaplepsych.com/education/articles/understanding-trauma-bonds.html">Understanding Trauma Bonds</a> explains how this happens and how people break free.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Why do I blame myself for the abuse?</summary>
+        <div class="faq-a"><p>Abusers often shift responsibility onto the person they are harming, and over time that message can start to feel true. Self-blame can also feel safer than accepting that you had little control over what happened. Abuse is always the responsibility of the person who chooses to abuse.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can children recover from abuse?</summary>
+        <div class="faq-a"><p>Yes. Children can be remarkably resilient, especially when they are safe, have at least one caring and stable adult in their life, and receive trauma-informed support. Early support makes a meaningful difference.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">How long does it take to heal from abuse?</summary>
+        <div class="faq-a"><p>There is no fixed timeline. Healing depends on how long the abuse lasted, whether you are now safe, the support around you, and what other stressors you are facing. Progress is often uneven, and difficult days do not mean you are going backwards.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What kind of therapy helps after abuse?</summary>
+        <div class="faq-a"><p>Trauma-focused approaches such as trauma-focused cognitive behavioural therapy, cognitive processing therapy, and EMDR have strong research support for trauma symptoms. A good therapist will also work at your pace, focus on safety, and help with self-worth and relationships. Pacific Maple Psych Centre offers <a href="https://pacificmaplepsych.com/services/individual-therapy.html">trauma-informed individual therapy</a> in Vancouver and virtually across BC.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Where can I get support right now?</summary>
+        <div class="faq-a"><p>If you are in immediate danger, call 911. If you are having thoughts of suicide, call or text 9-8-8, the Suicide Crisis Helpline, any time. <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> offers free, confidential support for people affected by abuse 24 hours a day by phone or text at 1-800-563-0808.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
+
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
-          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a>, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
+          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a>, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-reproductive.html">Signs of Reproductive Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
     </section>
 

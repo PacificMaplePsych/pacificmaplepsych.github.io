@@ -46,6 +46,116 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Signs of Domestic Abuse",
+      "description": "Learn the warning signs of domestic abuse and relationship abuse, including physical, emotional, psychological, verbal, sexual, and financial abuse, plus the cycle of abuse.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-signs-domestic.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-signs-domestic.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the most common warning signs of domestic abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common signs include a partner who controls money, who you see, or where you go; frequent put-downs or name-calling; jealousy and accusations; threats; damaging your belongings; pressuring you sexually; and physical harm such as pushing, hitting, or choking. Feeling afraid of your partner or constantly changing your behaviour to avoid their anger is an important sign in itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it be abuse if my partner has never hit me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Emotional, psychological, verbal, sexual, financial, and reproductive abuse can all happen without physical violence. These forms of abuse can be just as harmful, and they often appear before physical violence begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is coercive control?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coercive control is an ongoing pattern of behaviour used to dominate a partner, such as monitoring their phone or location, isolating them from friends and family, controlling money, making rules about daily life, and using threats or humiliation. Its harm comes from the pattern as a whole, so each incident on its own can look minor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is gaslighting in a relationship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gaslighting is when someone repeatedly denies or distorts what happened so that you start to doubt your own memory, perception, or sanity. Over time it can leave a person feeling confused and dependent on the abuser’s version of events. Our article What Is Gaslighting explains it in more detail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is choking or strangulation so dangerous?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Strangulation can cause serious injury or death within minutes, sometimes without leaving visible marks, and symptoms such as trouble breathing or swallowing can appear hours later. It is also one of the strongest warning signs that an abusive partner may become more dangerous. Anyone who has been choked or strangled should seek medical care, even if they feel fine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do people stay in abusive relationships?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "People stay for many reasons, including fear of what the abuser will do, financial dependence, children, housing, love and hope that the partner will change, isolation, shame, and the confusion created by cycles of abuse and reconciliation. Leaving is often a process rather than a single event. Our escape and safety planning page covers how to prepare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can men be victims of domestic abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. People of any gender can experience abuse, in relationships of any gender pairing. Men may face extra barriers to reaching out, such as shame or fear of not being believed, but support services are available to them too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it still abuse if it only happens when my partner is drunk or stressed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Alcohol, drugs, and stress can make abuse worse, but they do not cause it, and they do not excuse it. Many people drink or feel stressed without hurting their partners. The person who chooses to abuse is responsible for that behaviour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can I contact in BC if I am experiencing domestic abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you are in immediate danger, call 911. VictimLinkBC offers free, confidential support 24 hours a day by phone or text at 1-800-563-0808 and can connect you with transition houses, victim services, and safety planning. Our abuse resources page lists more options across Canada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can therapy help after domestic abuse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Therapy can help you make sense of what happened, rebuild trust in your own perceptions, manage trauma symptoms, and set boundaries in future relationships. Pacific Maple Psych Centre offers trauma-informed individual therapy in Vancouver and virtually across BC. You can read more about the psychological impact of abuse and what recovery can look like."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -135,6 +245,103 @@
     .abuse-page .related-links h2 {
       margin-top: 0;
     }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    line-height:1.7;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -162,6 +369,7 @@
 
         <p>Abuse can happen in romantic relationships, marriages, dating relationships, and family relationships. These lists are not all-inclusive. Other signs not listed here may also indicate abuse.</p>
 
+
         <div class="support-note">
           <p><strong>Need a starting point?</strong> For a self-quiz to see whether you may be receiving or inflicting abuse, click <a href="https://pacificmaplepsych.com/resources/AbuseQuizFillable.pdf">here</a>.</p>
           <p>If you are not directly involved in an abusive situation but suspect a child or elder you know may be a victim, click <a href="https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html">here</a> for signs of abuse that may be noticed by a third party.</p>
@@ -177,10 +385,16 @@
           <li>Force-feeding, denying food, or committing other acts of bodily harm</li>
         </ul>
 
+        <p>Choking or strangulation is especially serious. It can cause severe injury or death within minutes, often without visible marks, and it is one of the strongest warning signs that an abusive partner may become more dangerous. Anyone who has been choked or strangled should seek medical care, even if they feel fine.</p>
+
+        <div class="support-note">
+          <p><strong>If you are in immediate danger, call 911.</strong> For free, confidential support in British Columbia 24 hours a day, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808.</p>
+        </div>
+
         <h2>Signs of Psychological Abuse</h2>
         <ul>
           <li><strong>Intimidation:</strong> intense stares, breaking the victim’s possessions, damaging property such as punching walls, slamming doors, or using rage to scare the victim into silence</li>
-          <li><strong>Gaslighting:</strong> lying about reality to intentionally cause the victim to question their memory, perception, or sanity. This may involve blaming the victim for abuse.</li>
+          <li><strong>Gaslighting:</strong> lying about reality to intentionally cause the victim to question their memory, perception, or sanity. This may involve blaming the victim for abuse. Learn more in <a href="https://pacificmaplepsych.com/education/articles/what-is-gaslighting.html">What Is Gaslighting</a>.</li>
           <li><strong>Shifting responsibility:</strong> projecting one’s personal problems onto the abuse victim or playing victim in order to guilt and control the true victim</li>
           <li><strong>Silent treatment or abandonment:</strong> punishing the victim by refusing to speak to them or abandoning them in order to force compliance</li>
         </ul>
@@ -203,6 +417,8 @@
           <li><strong>Unpredictability:</strong> emotional outbursts, mood swings, contradictions, or being charming with strangers while aggressive with the victim</li>
         </ul>
 
+        <p>Emotional and psychological abuse can be harder to recognize than physical harm, but its effects can be just as lasting. The <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">psychological impact of abuse</a> page explains how these patterns can affect mental health and how people recover.</p>
+
         <h2>Signs of Sexual Abuse</h2>
         <ul>
           <li><strong>Molestation:</strong> unwanted touching of intimate areas such as genitals or chest</li>
@@ -222,7 +438,7 @@
           <li><strong>Debt:</strong> borrowing money or making credit card charges without repayment, damaging the victim’s credit history</li>
         </ul>
 
-        <p>More information on financial abuse is available in <a href="https://www.annuity.org/financial-literacy/financial-abuse/">this guide</a> and <a href="https://www.annuity.org/financial-literacy/women/">this guide</a>.</p>
+        <p>For practical steps to protect your money and documents, see <a href="https://stepstojustice.ca/steps/domestic-violence/2-protect-yourself-from-financial-abuse-2/">this guide to protecting yourself from financial abuse</a> from Steps to Justice.</p>
 
         <div class="centered-image">
           <img
@@ -240,18 +456,70 @@
 
         <ul>
           <li><strong>Phase 1. Tension building:</strong> anger builds with little provocation, leading to minor abuse and excuses. As tension increases, the victim may try to placate the abuser and may begin to assume guilt.</li>
-          <li><strong>Phase 2. Incident:</strong> the high point of violence or other abuse. This may last up to 24 hours. The abuser often minimizes the severity of what happened. The victim may seek help if the situation feels life-threatening or dangerous for children.</li>
+          <li><strong>Phase 2. Incident:</strong> the high point of violence or other abuse. This phase may be brief or may last longer. The abuser often minimizes the severity of what happened. The victim may seek help if the situation feels life-threatening or dangerous for children.</li>
           <li><strong>Phase 3. Reconciliation:</strong> the abuser becomes loving, kind, and remorseful while fearing the victim may leave. Guilt, promises, and affection may be used to pull the victim back in.</li>
           <li><strong>Phase 4. Calm:</strong> the victim may believe this phase reflects who the abuser “really” is and hope that change is possible. Some victims remain because of fear, damaged self-esteem, financial dependence, children, or social pressures.</li>
           <li><strong>Cycle repeats:</strong> abuse often escalates as the pattern repeats and can become increasingly dangerous over time.</li>
         </ul>
 
+        <p>Not every abusive relationship follows this cycle. Some involve constant control with no clear calm phase, sometimes called coercive control. If you are thinking about leaving, or want to be prepared in case you need to, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">abuse escape and safety planning</a> page walks through practical steps.</p>
+
         <p>Victims can include wives, husbands, intimate partners of any gender pairing, pregnant women, children, and elders.</p>
+
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About Domestic Abuse</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">What are the most common warning signs of domestic abuse?</summary>
+        <div class="faq-a"><p>Common signs include a partner who controls money, who you see, or where you go; frequent put-downs or name-calling; jealousy and accusations; threats; damaging your belongings; pressuring you sexually; and physical harm such as pushing, hitting, or choking. Feeling afraid of your partner or constantly changing your behaviour to avoid their anger is an important sign in itself.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can it be abuse if my partner has never hit me?</summary>
+        <div class="faq-a"><p>Yes. Emotional, psychological, verbal, sexual, financial, and reproductive abuse can all happen without physical violence. These forms of abuse can be just as harmful, and they often appear before physical violence begins.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What is coercive control?</summary>
+        <div class="faq-a"><p>Coercive control is an ongoing pattern of behaviour used to dominate a partner, such as monitoring their phone or location, isolating them from friends and family, controlling money, making rules about daily life, and using threats or humiliation. Its harm comes from the pattern as a whole, so each incident on its own can look minor.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What is gaslighting in a relationship?</summary>
+        <div class="faq-a"><p>Gaslighting is when someone repeatedly denies or distorts what happened so that you start to doubt your own memory, perception, or sanity. Over time it can leave a person feeling confused and dependent on the abuser’s version of events. Our article <a href="https://pacificmaplepsych.com/education/articles/what-is-gaslighting.html">What Is Gaslighting</a> explains it in more detail.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Why is choking or strangulation so dangerous?</summary>
+        <div class="faq-a"><p>Strangulation can cause serious injury or death within minutes, sometimes without leaving visible marks, and symptoms such as trouble breathing or swallowing can appear hours later. It is also one of the strongest warning signs that an abusive partner may become more dangerous. Anyone who has been choked or strangled should seek medical care, even if they feel fine.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Why do people stay in abusive relationships?</summary>
+        <div class="faq-a"><p>People stay for many reasons, including fear of what the abuser will do, financial dependence, children, housing, love and hope that the partner will change, isolation, shame, and the confusion created by cycles of abuse and reconciliation. Leaving is often a process rather than a single event. Our <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">escape and safety planning page</a> covers how to prepare.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can men be victims of domestic abuse?</summary>
+        <div class="faq-a"><p>Yes. People of any gender can experience abuse, in relationships of any gender pairing. Men may face extra barriers to reaching out, such as shame or fear of not being believed, but support services are available to them too.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is it still abuse if it only happens when my partner is drunk or stressed?</summary>
+        <div class="faq-a"><p>Yes. Alcohol, drugs, and stress can make abuse worse, but they do not cause it, and they do not excuse it. Many people drink or feel stressed without hurting their partners. The person who chooses to abuse is responsible for that behaviour.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Who can I contact in BC if I am experiencing domestic abuse?</summary>
+        <div class="faq-a"><p>If you are in immediate danger, call 911. <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> offers free, confidential support 24 hours a day by phone or text at 1-800-563-0808 and can connect you with transition houses, victim services, and safety planning. Our <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a> lists more options across Canada.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">How can therapy help after domestic abuse?</summary>
+        <div class="faq-a"><p>Therapy can help you make sense of what happened, rebuild trust in your own perceptions, manage trauma symptoms, and set boundaries in future relationships. Pacific Maple Psych Centre offers <a href="https://pacificmaplepsych.com/services/individual-therapy.html">trauma-informed individual therapy</a> in Vancouver and virtually across BC. You can read more about the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">psychological impact of abuse</a> and what recovery can look like.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
 
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
-          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a>, the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page.</p>
+          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a>, the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
     </section>
 

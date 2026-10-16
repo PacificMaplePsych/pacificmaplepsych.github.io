@@ -46,6 +46,100 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Signs of Animal Abuse and Neglect",
+      "description": "Learn common signs of animal abuse, animal neglect, and animal cruelty, including physical injury, fear responses, poor living conditions, untreated wounds, and when to report concerns.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-signs-animal.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-signs-animal.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I report animal abuse in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact the BC SPCA Animal Helpline at 1-855-622-7722, open 8 a.m. to 6 p.m. every day except statutory holidays. Outside those hours, contact your local police or RCMP. If an animal or person is in immediate danger, call 911."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information should I include in a report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Write down dates, times, and locations, describe the animal and the people involved, and note injuries, living conditions, and anything you saw or heard directly. Photos or video taken safely and legally can help. Never put yourself at risk to gather evidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between animal abuse and animal neglect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abuse usually means deliberately causing harm, such as hitting, kicking, or throwing an animal. Neglect means failing to provide what the animal needs, such as food, water, shelter, hygiene, exercise, or veterinary care. Both can cause serious suffering, and both should be reported."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is animal abuse connected to domestic violence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. Research has found that abusers sometimes harm or threaten pets to frighten and control a partner or children, and that animal cruelty in a home can be a warning sign of other violence. See our signs of domestic abuse page for more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I want to leave an abusive relationship but I am worried about my pet. What can I do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Worry about a pet’s safety keeps many people from leaving. Include your pet’s food, medications, and ownership or vet records in your escape plan, and ask VictimLinkBC or a transition house about pet-friendly options or temporary foster care. Our escape and safety planning page has a full checklist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if a child is hurting animals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stay calm, stop the behaviour, and supervise closely. Young children may need to be taught gentle handling and empathy. Repeated or deliberate cruelty is more concerning and can sometimes signal that a child is distressed or exposed to violence, so it is worth speaking with a doctor or child mental health professional. Our signs of elder and child abuse page may also help."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it illegal to leave a dog in a hot car in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BC’s animal protection law prohibits causing or allowing an animal to be in distress, which includes exposure to excessive heat. A car can become dangerously hot within minutes, even with the windows cracked. If an animal seems to be in distress in a vehicle, call the BC SPCA or police right away."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I report animal abuse anonymously?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can ask the BC SPCA or police about anonymous reporting. Keep in mind that a report from a direct witness who can be contacted for follow-up is often more useful for an investigation."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -146,6 +240,102 @@
         width: 100%;
       }
     }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
   </style>
 </head>
 
@@ -171,12 +361,16 @@
       <div class="resource-content-wrap">
         <p>Animals are especially vulnerable to abuse because they cannot clearly communicate what is happening to them and often cannot escape without human help. Many people search for signs of animal abuse, animal neglect, or animal cruelty because they suspect something is wrong but are not sure what they are seeing. This page is meant to help identify common warning signs.</p>
 
-        <p>Animal cruelty can also be associated with broader patterns of violence. Someone who abuses animals may also pose a risk to vulnerable humans. That does not mean every concern proves a larger pattern, but it does mean signs of animal abuse should be taken seriously.</p>
+        <p>Animal cruelty can also be associated with broader patterns of violence. Someone who abuses animals may also pose a risk to vulnerable humans. That does not mean every concern proves a larger pattern, but it does mean signs of animal abuse should be taken seriously. In abusive relationships, some abusers harm or threaten pets to frighten and control a partner or children, and worry about a pet’s safety can make it harder for someone to leave. Learn more on our <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">signs of domestic abuse</a> and <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">escape and safety planning</a> pages.</p>
 
         <p>Sometimes young children harm pets without fully understanding the consequences. That still needs to be addressed seriously, but the response may involve education, supervision, and support around empathy, emotional regulation, and safe handling. In other situations, a person may secretly abuse an animal for power, control, punishment, or emotional release.</p>
 
         <div class="support-note">
-          <p><strong>If you suspect animal abuse:</strong> document what you saw as clearly as you can, including dates, injuries, behaviour changes, living conditions, and anything you directly witnessed. Then contact your local police department, humane society, rescue organization, animal control service, or shelter. Anonymous reports may be possible, but direct witness information can strengthen a case.</p>
+          <p><strong>If you suspect animal abuse:</strong> document what you saw as clearly as you can, including dates, injuries, behaviour changes, living conditions, and anything you directly witnessed. Then contact the <a href="https://www.spca.bc.ca/report-cruelty/">BC SPCA Animal Helpline</a> at 1-855-622-7722 (8 a.m. to 6 p.m. daily) or, outside BC, your local humane society, SPCA, or animal control service. Outside helpline hours, contact your local police or RCMP. Anonymous reports may be possible, but direct witness information can strengthen a case.</p>
+        </div>
+
+        <div class="support-note">
+          <p><strong>If you are in immediate danger, call 911.</strong> For free, confidential support in British Columbia 24 hours a day, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808.</p>
         </div>
 
         <p>These lists are not all-inclusive. Additional signs not seen on this page may also indicate abuse or neglect.</p>
@@ -222,7 +416,7 @@
         <ul>
           <li>Being left in a kennel or chained outside all the time</li>
           <li>Having little room to stand or move while tied or caged</li>
-          <li>Being left in a car with closed windows on a hot day</li>
+          <li>Being left in a car on a warm day, even with the windows cracked</li>
           <li>Being abandoned in a vacated house or empty yard</li>
           <li>Too many animals living together, which may indicate hoarding</li>
         </ul>
@@ -238,10 +432,52 @@
           />
         </div>
 
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About Animal Abuse</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">How do I report animal abuse in BC?</summary>
+        <div class="faq-a"><p>Contact the <a href="https://www.spca.bc.ca/report-cruelty/">BC SPCA Animal Helpline</a> at 1-855-622-7722, open 8 a.m. to 6 p.m. every day except statutory holidays. Outside those hours, contact your local police or RCMP. If an animal or person is in immediate danger, call 911.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What information should I include in a report?</summary>
+        <div class="faq-a"><p>Write down dates, times, and locations, describe the animal and the people involved, and note injuries, living conditions, and anything you saw or heard directly. Photos or video taken safely and legally can help. Never put yourself at risk to gather evidence.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What is the difference between animal abuse and animal neglect?</summary>
+        <div class="faq-a"><p>Abuse usually means deliberately causing harm, such as hitting, kicking, or throwing an animal. Neglect means failing to provide what the animal needs, such as food, water, shelter, hygiene, exercise, or veterinary care. Both can cause serious suffering, and both should be reported.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is animal abuse connected to domestic violence?</summary>
+        <div class="faq-a"><p>Often, yes. Research has found that abusers sometimes harm or threaten pets to frighten and control a partner or children, and that animal cruelty in a home can be a warning sign of other violence. See our <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">signs of domestic abuse</a> page for more.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">I want to leave an abusive relationship but I am worried about my pet. What can I do?</summary>
+        <div class="faq-a"><p>Worry about a pet’s safety keeps many people from leaving. Include your pet’s food, medications, and ownership or vet records in your escape plan, and ask VictimLinkBC or a transition house about pet-friendly options or temporary foster care. Our <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">escape and safety planning</a> page has a full checklist.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What should I do if a child is hurting animals?</summary>
+        <div class="faq-a"><p>Stay calm, stop the behaviour, and supervise closely. Young children may need to be taught gentle handling and empathy. Repeated or deliberate cruelty is more concerning and can sometimes signal that a child is distressed or exposed to violence, so it is worth speaking with a doctor or child mental health professional. Our <a href="https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html">signs of elder and child abuse</a> page may also help.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is it illegal to leave a dog in a hot car in BC?</summary>
+        <div class="faq-a"><p>BC’s animal protection law prohibits causing or allowing an animal to be in distress, which includes exposure to excessive heat. A car can become dangerously hot within minutes, even with the windows cracked. If an animal seems to be in distress in a vehicle, call the BC SPCA or police right away.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can I report animal abuse anonymously?</summary>
+        <div class="faq-a"><p>You can ask the BC SPCA or police about anonymous reporting. Keep in mind that a report from a direct witness who can be contacted for follow-up is often more useful for an investigation.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
+
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
-          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html">Signs of Elder &amp; Child Abuse</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
+          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html">Signs of Elder &amp; Child Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">Abuse Resources</a> page.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
     </section>
 

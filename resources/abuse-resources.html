@@ -46,6 +46,108 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Abuse Resources in Canada and the United States",
+      "description": "Abuse resources in Canada and the United States, including shelters, crisis lines, sexual assault support, victim services, legal aid, and financial abuse help.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-resources.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-resources.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who can I call in BC if I am being abused?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you are in immediate danger, call 911. VictimLinkBC offers free, confidential, multilingual support 24 hours a day by phone or text at 1-800-563-0808, and can connect you with transition houses, victim services, counselling, and safety planning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find a shelter or transition house in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShelterSafe BC lists transition houses and safe homes across the province, and VictimLinkBC can help you find available space at any hour. Transition houses provide free, confidential short-term housing and support for women and their children leaving violence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there help for men who are being abused?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VictimLinkBC and victim services programs support people of all genders, and can help men find counselling, safety planning, and housing options. Some programs are specific to women, so it helps to ask a crisis line which services fit your situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get free legal help if I am leaving an abusive relationship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Possibly. Legal Aid BC offers free family law information and advice, and survivors of family violence who cannot afford a lawyer may qualify for representation. Every province and territory has a legal aid program, listed in the table on this page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who do I call to report child abuse in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a child is in immediate danger, call 911 first. Otherwise, call Provincial Centralized Screening at 1-800-663-9122, which is answered 24 hours a day. Everyone in BC has a legal duty to report if they believe a child or youth may be at risk. Learn more on our signs of elder and child abuse page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can older adults get help with abuse in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Seniors Abuse and Information Line (SAIL), run by Seniors First BC, offers information and support at 1-866-437-1940. If an older adult is in immediate danger, call 911."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a crisis line for Indigenous people?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Hope for Wellness Help Line offers free, culturally grounded support to Indigenous people across Canada 24 hours a day at 1-855-242-3310."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I am having thoughts of suicide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call or text 9-8-8 anywhere in Canada, any time, to reach the Suicide Crisis Helpline. In the United States, call or text 988. If you are in immediate danger, call 911."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I get help in the United States?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 911 in an emergency. The National Domestic Violence Hotline is available 24 hours a day at 1-800-799-7233, or text START to 88788. The National Sexual Assault Hotline run by RAINN is at 1-800-656-4673."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -213,6 +315,109 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .abuse-page .support-note {
+      margin: 1.7rem 0;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid #7a5d7c;
+      background: rgba(122, 93, 124, 0.08);
+    }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
   </style>
 </head>
 
@@ -238,7 +443,12 @@
 
       <div class="resource-content-wrap">
         <div class="resource-intro">
-          <p>If you are looking for abuse resources, domestic violence support, sexual assault support, shelters, crisis lines, legal aid, or victim services, this page is meant to help you get started. It is not meant to be exhaustive. It is meant to make it easier to find practical support when leaving abuse or planning for safety.</p>
+          <p>If you are looking for abuse resources, domestic violence support, sexual assault support, shelters, crisis lines, legal aid, or victim services, this page is meant to help you get started. It is not meant to be exhaustive. It is meant to make it easier to find practical support when leaving abuse or planning for safety. If you are preparing to leave, our <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">escape and safety planning</a> page has a checklist and practical steps.</p>
+        </div>
+
+        <div class="support-note">
+          <p><strong>If you are in immediate danger, call 911.</strong> For free, confidential support in British Columbia 24 hours a day, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808.</p>
+          <p>Anywhere in Canada, call or text 9-8-8 if you are having thoughts of suicide. Young people can reach Kids Help Phone at 1-800-668-6868 or by texting CONNECT to 686868. Indigenous people can reach the Hope for Wellness Help Line at 1-855-242-3310.</p>
         </div>
 
         <div class="general-links">
@@ -261,12 +471,15 @@
               <li><a href="https://sheltersafe.ca/british-columbia/">ShelterSafe BC</a></li>
               <li><a href="https://www.bchousing.org/housing-assistance/women-fleeing-violence/transition-houses-safe-homes">BC Transition Houses</a></li>
               <li><a href="https://www.bwss.org/">BWSS</a> &amp; <a href="https://www.salalsvsc.ca/">Salal Sexual Violence Support Centre (formerly WAVAW)</a></li>
-              <li><a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLink BC Helpline</a></li>
+              <li><a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLink BC Helpline</a> (1-800-563-0808, 24/7)</li>
               <li><a href="http://www.options.bc.ca/program/fraser-health-crisis-line">Fraser Health Crisis Line</a></li>
               <li><a href="http://www.crisiscentre.bc.ca">Crisis Centre of BC</a></li>
               <li><a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/bcs-criminal-justice-system/understanding-criminal-justice/key-parts/victim-services/victim-service-programs">Victim Services BC</a></li>
               <li><a href="https://www2.gov.bc.ca/gov/content/life-events/divorce/family-justice">Family Legal Advice BC</a></li>
               <li><a href="https://www.transitionhouse.net/">Victoria Women’s Transition House</a></li>
+              <li><a href="https://legalaid.bc.ca/">Legal Aid BC</a></li>
+              <li><a href="https://www2.gov.bc.ca/gov/content/safety/public-safety/protecting-children/reporting-child-abuse">Report child abuse</a> (1-800-663-9122, 24/7)</li>
+              <li><a href="https://seniorsfirstbc.ca/">Seniors First BC</a> (elder abuse line 1-866-437-1940)</li>
             </ul>
           </article>
 
@@ -406,22 +619,69 @@
           <h2>Other Resources</h2>
           <h3>United States</h3>
           <ul>
-            <li><a href="https://www.rainn.org/">RAINN</a></li>
-            <li><a href="https://www.thehotline.org/">The Hotline</a></li>
+            <li><a href="https://www.rainn.org/">RAINN</a> (National Sexual Assault Hotline, 1-800-656-4673)</li>
+            <li><a href="https://www.thehotline.org/">The Hotline</a> (National Domestic Violence Hotline, 1-800-799-7233)</li>
+            <li><a href="https://humantraffickinghotline.org/en">National Human Trafficking Hotline</a> (1-888-373-7888)</li>
+            <li>988 Suicide &amp; Crisis Lifeline (call or text 988)</li>
             <li><a href="https://www.wannatalkaboutit.com/">Netflix Resources</a></li>
             <li><a href="https://www.southjerseyrecovery.com/treatment-programs/dual-diagnosis/personality-disorders/">Personality Disorder &amp; Recovery*</a></li>
             <li><a href="https://www.therecoveryvillage.com/resources/domestic-violence/">Domestic Violence Resources &amp; Recovery*</a></li>
             <li><a href="https://www.cordiscosaile.com/navigating-child-sex-abuse/">Navigating Child Sex Abuse*</a></li>
-            <li><a href="https://seniorsfirstbc.ca/">Seniors First BC (elder abuse help line)</a></li>
             <li><a href="https://www.cordiscosaile.com/rideshare-safety-tips/">Rideshare Safety Tips*</a></li>
           </ul>
           <p class="footnote"><small>*Shared by request</small></p>
         </div>
 
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About Abuse Resources</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">Who can I call in BC if I am being abused?</summary>
+        <div class="faq-a"><p>If you are in immediate danger, call 911. <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> offers free, confidential, multilingual support 24 hours a day by phone or text at 1-800-563-0808, and can connect you with transition houses, victim services, counselling, and safety planning.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">How do I find a shelter or transition house in BC?</summary>
+        <div class="faq-a"><p><a href="https://sheltersafe.ca/british-columbia/">ShelterSafe BC</a> lists transition houses and safe homes across the province, and VictimLinkBC can help you find available space at any hour. Transition houses provide free, confidential short-term housing and support for women and their children leaving violence.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is there help for men who are being abused?</summary>
+        <div class="faq-a"><p>Yes. VictimLinkBC and victim services programs support people of all genders, and can help men find counselling, safety planning, and housing options. Some programs are specific to women, so it helps to ask a crisis line which services fit your situation.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can I get free legal help if I am leaving an abusive relationship?</summary>
+        <div class="faq-a"><p>Possibly. <a href="https://legalaid.bc.ca/">Legal Aid BC</a> offers free family law information and advice, and survivors of family violence who cannot afford a lawyer may qualify for representation. Every province and territory has a legal aid program, listed in the table on this page.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Who do I call to report child abuse in BC?</summary>
+        <div class="faq-a"><p>If a child is in immediate danger, call 911 first. Otherwise, call Provincial Centralized Screening at 1-800-663-9122, which is answered 24 hours a day. Everyone in BC has a legal duty to report if they believe a child or youth may be at risk. Learn more on our <a href="https://pacificmaplepsych.com/resources/abuse-signs-elder-child.html">signs of elder and child abuse</a> page.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Where can older adults get help with abuse in BC?</summary>
+        <div class="faq-a"><p>The Seniors Abuse and Information Line (SAIL), run by <a href="https://seniorsfirstbc.ca/">Seniors First BC</a>, offers information and support at 1-866-437-1940. If an older adult is in immediate danger, call 911.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Is there a crisis line for Indigenous people?</summary>
+        <div class="faq-a"><p>Yes. The Hope for Wellness Help Line offers free, culturally grounded support to Indigenous people across Canada 24 hours a day at 1-855-242-3310.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What if I am having thoughts of suicide?</summary>
+        <div class="faq-a"><p>Call or text 9-8-8 anywhere in Canada, any time, to reach the Suicide Crisis Helpline. In the United States, call or text 988. If you are in immediate danger, call 911.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Where can I get help in the United States?</summary>
+        <div class="faq-a"><p>Call 911 in an emergency. The National Domestic Violence Hotline is available 24 hours a day at 1-800-799-7233, or text START to 88788. The National Sexual Assault Hotline run by RAINN is at 1-800-656-4673.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
+
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
-          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a> and the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page.</p>
+          <p>You may also want to visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a>, the <a href="https://pacificmaplepsych.com/resources/abuse-escape-planning.html">Abuse Escape &amp; Safety Planning</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, and the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
 
     </section>

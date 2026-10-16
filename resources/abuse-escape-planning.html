@@ -46,6 +46,100 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Abuse Escape and Safety Planning",
+      "description": "Escape planning and safety plan information for leaving an abusive relationship, including what to pack, where to go, financial barriers, and divorce myths in Canada.",
+      "author": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pacific Maple Psych Centre",
+        "url": "https://pacificmaplepsych.com"
+      },
+      "dateModified": "2026-10-15",
+      "url": "https://pacificmaplepsych.com/resources/abuse-escape-planning.html",
+      "mainEntityOfPage": "https://pacificmaplepsych.com/resources/abuse-escape-planning.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should I pack if I have to leave abuse quickly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Focus first on essentials you may not be able to replace easily: identification, medications, keys, money, phone access, important legal and financial documents, and anything necessary for children or pets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I have no money and nowhere to go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Financial abuse is common and can make leaving much harder. If trusted friends or family are not a safe option, transition houses, shelters, and public support services may help with temporary housing, safety planning, and practical next steps. VictimLinkBC at 1-800-563-0808 can connect you with options, and our abuse resources page lists more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I am not ready to leave yet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do not have to wait until you are fully ready to begin planning. Quietly thinking through exits, documents, finances, transportation, and emergency contacts can still be part of a safety plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can leaving an abusive relationship be dangerous?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The time around separation is often when the risk of serious violence is highest, because the abuser may escalate when they feel they are losing control. This is why planning ahead, telling only trusted people, and getting support from a victim service or transition house worker can make leaving safer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I keep my phone and accounts safe while planning to leave?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abusers sometimes monitor phones, location sharing, email, and shared accounts. Consider using a device your partner cannot access, checking location sharing settings, and changing passwords from a safe device. Be aware that sudden changes may alert an abuser. Tech Safe BC has guides on technology safety for survivors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I take my children with me when I leave?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parenting arrangements depend on your circumstances, so get legal advice as early as you safely can. If your children are in danger, their safety comes first. Legal Aid BC offers free family law help, and some survivors of family violence may qualify for legal representation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I stay if I leave an abusive partner in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Transition houses and safe homes offer free, confidential short-term housing for women and their children leaving violence, and some programs serve people of all genders. ShelterSafe BC lists shelters across the province, and VictimLinkBC can help you find space any time of day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get a protection order in BC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Under BC’s Family Law Act, you can apply to court for a protection order against a family member, including a current or former partner, if you are at risk of family violence. Police can also seek a peace bond or criminal conditions. Legal Aid BC and victim service workers can help you understand which option fits your situation."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/quick-exit.css" />
 
@@ -116,6 +210,110 @@
     .abuse-page .related-links h2 {
       margin-top: 0;
     }
+
+    /* FAQ accordion, matching the education article pattern */
+    .faq-wrap{
+    background:#fff;
+    padding:0;
+    margin-top:46px;
+    }
+
+    .faq-inner{
+    max-width:820px;
+    margin:0 auto;
+    }
+
+    .faq-title{
+    margin:0 0 20px;
+    color:#1a1a1a;
+    font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    }
+
+    .faq-list{
+    display:grid;
+    gap:14px;
+    }
+
+    .faq-item{
+    border:1px solid rgba(0,0,0,0.12);
+    border-radius:14px;
+    background:#fff;
+    overflow:hidden;
+    }
+
+    .faq-q{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 50px 16px 20px;
+    font-weight:700;
+    color:#1a1a1a;
+    font-size:1rem;
+    line-height:1.45;
+    position:relative;
+    }
+
+    .faq-q::-webkit-details-marker{
+    display:none;
+    }
+
+    .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    line-height:1;
+    font-weight:400;
+    }
+
+    .faq-item[open] .faq-q::after{
+    content:"\2212";
+    }
+
+    .faq-a{
+    padding:0 20px 18px;
+    }
+
+    .faq-a p{
+    margin:0;
+    font-size:1rem;
+    }
+
+    .abuse-page .resource-content-wrap .faq-wrap{
+    margin-top:46px;
+    }
+
+    .abuse-page .resource-content-wrap .faq-title{
+    margin:0 0 20px;
+    font-size:clamp(24px,3.4vw,34px);
+    line-height:1.15;
+    color:#1a1a1a;
+    }
+
+    .abuse-page .resource-content-wrap .faq-a p{
+    margin:0;
+    line-height:1.7;
+    }
+
+    .abuse-page .last-reviewed{
+    margin-top:2rem;
+    font-size:0.9rem;
+    color:#5f5f5f;
+    }
+
+    .abuse-page .support-note {
+      margin: 1.7rem 0;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid #7a5d7c;
+      background: rgba(122, 93, 124, 0.08);
+    }
+
+    .abuse-page .support-note p:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -141,13 +339,22 @@
       <div class="resource-content-wrap">
         <p>Trying to leave an abusive relationship can be overwhelming, especially when safety, finances, housing, children, pets, or legal concerns are involved. This page offers escape planning and safety plan guidance for people preparing to leave abuse, whether you are planning ahead or worried you may need to leave suddenly.</p>
 
-        <h2>How to Leave an Abusive Relationship Safely</h2>
-        <p>It takes an average of 7 attempts to leave an abusive relationship. There are many possible reasons. Challenges can include finding a place to live, facing legal issues, financial obstacles, and emotional difficulties like having mixed feelings about the abuser or returning out of fear of threats. This page provides some information to help you prepare for your escape.</p>
+        <div class="support-note">
+          <p><strong>If you are in immediate danger, call 911.</strong> For free, confidential support in British Columbia 24 hours a day, call or text <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808.</p>
+        </div>
 
-        <p>Stay safe by ensuring arguments always occur in a place where you have access to a safe exit. Rehearse your exit plan regularly: which doors, windows, or stairs will you take? Review and optimize your safety plan every month.</p>
+        <h2>How to Leave an Abusive Relationship Safely</h2>
+        <p>Many people leave and return several times before leaving for good. A figure of seven attempts is often quoted, though every situation is different. There are many possible reasons. Challenges can include finding a place to live, facing legal issues, financial obstacles, and emotional difficulties like having mixed feelings about the abuser or returning out of fear of threats. Those mixed feelings are common, and the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">psychological impact of abuse</a> page explains why. This page provides some information to help you prepare for your escape.</p>
+
+        <p>Stay safe by trying to move arguments to a place where you have access to a safe exit, and away from rooms with likely weapons, such as the kitchen, garage, or bathroom. Rehearse your exit plan regularly: which doors, windows, or stairs will you take? Review and optimize your safety plan every month.</p>
+
+        <p>The time around leaving can be the most dangerous period in an abusive relationship, because abuse often escalates when the abuser feels they are losing control. Planning with support from a victim service or transition house worker can make leaving safer. <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808 can connect you with someone any time of day.</p>
+
+        <h2>Technology Safety When Planning to Leave</h2>
+        <p>Abusers sometimes monitor phones, location sharing, email, social media, and shared accounts. If possible, research and plan from a device your partner cannot access, check which apps share your location, and change important passwords from a safe device. Be aware that sudden changes can alert an abuser, so think through timing. <a href="https://techsafe.bcsth.ca/">Tech Safe BC</a> offers guides on technology safety for survivors.</p>
 
         <h2>Emergency Escape Kit Checklist</h2>
-        <p>Abuse typically escalates, and you don’t always have the option to plan ahead for leaving the relationship. In case you need to leave suddenly, put together an emergency escape kit containing all or some of the following items:</p>
+        <p>Abuse typically escalates, as described in the cycle of abuse on our <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">signs of domestic abuse</a> page, and you don’t always have the option to plan ahead for leaving the relationship. In case you need to leave suddenly, put together an emergency escape kit containing all or some of the following items:</p>
 
         <ul>
           <li>Cash and prepaid, untraceable credit cards</li>
@@ -169,16 +376,16 @@
 
         <p><strong>B.</strong> Funding and financial abuse is often a barrier. Consider disclosing your situation to someone who you trust will not let the conversation make it back to your abuser. That person may be able to provide you a short-term place to stay, or may be able to connect you to someone else in the community who can offer you some options.</p>
 
-        <p><strong>C.</strong> If you don't have access to that kind of community support, seek out public services like shelters. More information is available on the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a>.</p>
+        <p><strong>C.</strong> If you don't have access to that kind of community support, seek out public services like transition houses and shelters. <a href="https://sheltersafe.ca/british-columbia/">ShelterSafe BC</a> lists shelters across the province. More information is available on the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a>.</p>
 
         <h2>Divorce Myths and Facts in Canada</h2>
         <p>Many people are afraid of leaving an abusive marriage because they believe several myths about the difficulty of divorcing.</p>
 
         <p><span style="text-decoration: underline;">MYTH</span>: Divorces are always unaffordable.<br>
-        <span style="text-decoration: underline;">FACT</span>: Costs vary widely. A <a href="https://justice.gc.ca/eng/rp-pr/fl-lf/divorce/jf-pf/ecds-cfds.html">Government of Canada Justice page</a> cites average legal fees of about $1,845 for an uncontested divorce in Canada and $13,638 for a contested divorce. Court processes, conflict level, and whether children or property issues are involved can all affect the total cost.</p>
+        <span style="text-decoration: underline;">FACT</span>: Costs vary widely. A <a href="https://justice.gc.ca/eng/rp-pr/fl-lf/divorce/jf-pf/ecds-cfds.html">Government of Canada Justice page</a> cites a 2015 survey that found average legal fees of about $1,845 for an uncontested divorce in Canada and $13,638 for a contested divorce. Court processes, conflict level, and whether children or property issues are involved can all affect the total cost.</p>
 
         <p><span style="text-decoration: underline;">MYTH</span>: Divorce lawyers are too unaffordable to even initiate divorce.<br>
-        <span style="text-decoration: underline;">FACT</span>: Free or lower-cost legal help may be available. If you are in British Columbia, Legal Aid BC offers family law legal help and may provide representation in serious family issues where safety is at risk. Some lawyers may also offer limited-scope services or alternative fee structures depending on the case.</p>
+        <span style="text-decoration: underline;">FACT</span>: Free or lower-cost legal help may be available. If you are in British Columbia, <a href="https://legalaid.bc.ca/">Legal Aid BC</a> offers family law legal help and may provide representation in serious family issues where safety is at risk. Some lawyers may also offer limited-scope services or alternative fee structures depending on the case.</p>
 
         <p><span style="text-decoration: underline;">MYTH</span>: Your spouse can lie about you to take all your money and “win” the divorce.<br>
         <span style="text-decoration: underline;">FACT</span>: Canada has no-fault divorce. In general, the reason the marriage ended does not determine who gets a fair share of family assets. Property division can still be complex, but false accusations do not simply let one spouse “win” the divorce.</p>
@@ -186,20 +393,55 @@
         <p><span style="text-decoration: underline;">MYTH</span>: Leaving your home due to abuse will mean losing the house in the divorce.<br>
         <span style="text-decoration: underline;">FACT</span>: You do not need to remain in the home to preserve possible property rights. If your name is on title, if you contributed financially, or if there is shared equity, those issues can still be addressed during separation or divorce. Get legal advice for your specific situation where possible.</p>
 
-        <h2>Common Questions About Escape Planning</h2>
-        <p><strong>What should I pack if I have to leave abuse quickly?</strong><br>
-        Focus first on essentials you may not be able to replace easily: identification, medications, keys, money, phone access, important legal and financial documents, and anything necessary for children or pets.</p>
+        <p>If a partner has been controlling your birth control or pregnancy decisions, that is also a form of abuse. The <a href="https://pacificmaplepsych.com/resources/abuse-signs-reproductive.html">signs of reproductive abuse</a> page explains what this can look like.</p>
 
-        <p><strong>What if I have no money and nowhere to go?</strong><br>
-        Financial abuse is common and can make leaving much harder. If trusted friends or family are not a safe option, shelters and public support services may help with temporary housing, safety planning, and practical next steps. Visit the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a> for more options.</p>
 
-        <p><strong>What if I am not ready to leave yet?</strong><br>
-        You do not have to wait until you are fully ready to begin planning. Quietly thinking through exits, documents, finances, transportation, and emergency contacts can still be part of a safety plan.</p>
+        <section class="faq-wrap" aria-label="Frequently asked questions">
+        <div class="faq-inner">
+        <h2 class="faq-title">Common Questions About Escape Planning</h2>
+        <div class="faq-list">
+        <details class="faq-item">
+        <summary class="faq-q">What should I pack if I have to leave abuse quickly?</summary>
+        <div class="faq-a"><p>Focus first on essentials you may not be able to replace easily: identification, medications, keys, money, phone access, important legal and financial documents, and anything necessary for children or pets.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What if I have no money and nowhere to go?</summary>
+        <div class="faq-a"><p>Financial abuse is common and can make leaving much harder. If trusted friends or family are not a safe option, transition houses, shelters, and public support services may help with temporary housing, safety planning, and practical next steps. <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> at 1-800-563-0808 can connect you with options, and our <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a> lists more.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">What if I am not ready to leave yet?</summary>
+        <div class="faq-a"><p>You do not have to wait until you are fully ready to begin planning. Quietly thinking through exits, documents, finances, transportation, and emergency contacts can still be part of a safety plan.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Why can leaving an abusive relationship be dangerous?</summary>
+        <div class="faq-a"><p>The time around separation is often when the risk of serious violence is highest, because the abuser may escalate when they feel they are losing control. This is why planning ahead, telling only trusted people, and getting support from a victim service or transition house worker can make leaving safer.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">How can I keep my phone and accounts safe while planning to leave?</summary>
+        <div class="faq-a"><p>Abusers sometimes monitor phones, location sharing, email, and shared accounts. Consider using a device your partner cannot access, checking location sharing settings, and changing passwords from a safe device. Be aware that sudden changes may alert an abuser. <a href="https://techsafe.bcsth.ca/">Tech Safe BC</a> has guides on technology safety for survivors.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can I take my children with me when I leave?</summary>
+        <div class="faq-a"><p>Parenting arrangements depend on your circumstances, so get legal advice as early as you safely can. If your children are in danger, their safety comes first. <a href="https://legalaid.bc.ca/">Legal Aid BC</a> offers free family law help, and some survivors of family violence may qualify for legal representation.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Where can I stay if I leave an abusive partner in BC?</summary>
+        <div class="faq-a"><p>Transition houses and safe homes offer free, confidential short-term housing for women and their children leaving violence, and some programs serve people of all genders. <a href="https://sheltersafe.ca/british-columbia/">ShelterSafe BC</a> lists shelters across the province, and <a href="https://www2.gov.bc.ca/gov/content/justice/criminal-justice/victims-of-crime/victimlinkbc">VictimLinkBC</a> can help you find space any time of day.</p></div>
+        </details>
+        <details class="faq-item">
+        <summary class="faq-q">Can I get a protection order in BC?</summary>
+        <div class="faq-a"><p>Yes. Under BC’s Family Law Act, you can apply to court for a protection order against a family member, including a current or former partner, if you are at risk of family violence. Police can also seek a peace bond or criminal conditions. <a href="https://legalaid.bc.ca/">Legal Aid BC</a> and victim service workers can help you understand which option fits your situation.</p></div>
+        </details>
+        </div>
+        </div>
+        </section>
 
         <div class="related-links">
           <h2>Related Abuse Pages</h2>
-          <p>Looking for more support? Visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a> or go directly to the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a>.</p>
+          <p>Looking for more support? Visit the <a href="https://pacificmaplepsych.com/resources/abuse.html">Abuse Info Hub</a>, the <a href="https://pacificmaplepsych.com/resources/abuse-signs-domestic.html">Signs of Domestic Abuse</a> page, the <a href="https://pacificmaplepsych.com/resources/abuse-psychological-impact.html">Psychological Impact of Abuse</a> page, or go directly to the <a href="https://pacificmaplepsych.com/resources/abuse-resources.html">abuse resources page</a>.</p>
         </div>
+
+        <p class="last-reviewed">Last reviewed: October 2026</p>
       </div>
     </section>
 
