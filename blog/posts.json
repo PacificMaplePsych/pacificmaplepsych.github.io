@@ -1,261 +1,298 @@
 [
   {
-    "title": "From Patient Zero to Opalite: Healing and Rebuilding After Harm ",
+    "title": "From Patient Zero to Opalite: Healing and Rebuilding After Harm",
     "date": "2026-10-03",
     "description": "Placed side by side, Taylor Swift's Patient Zero and Opalite trace a therapeutic arc: recognizing unhealthy patterns, trusting your instincts, supporting others, and creating a different future after relationship trauma.",
     "image": "/images/blog/patient-zero-opalite.jpg",
-    "url": "/blog/posts/patient-zero-opalite.html"
+    "url": "/blog/posts/patient-zero-opalite.html",
+    "categories": ["pop-culture", "trauma"]
   },
   {
     "title": "The Cost of Psychoanalyzing Your Partner",
     "date": "2026-09-30",
     "description": "Some relationship analysis builds empathy, and some becomes a way to overrule a partner. Learn the difference between helpful insight and harmful psychoanalysis, why over-interpretation damages intimacy, and how to repair conflict by describing behaviour instead of diagnosing it.",
     "image": "/images/blog/psychoanalysis-relationships.jpg",
-    "url": "/blog/posts/psychoanalysis-relationships.html"
+    "url": "/blog/posts/psychoanalysis-relationships.html",
+    "categories": ["relationships"]
   },
   {
     "title": "When Words Become Armour: What The Correspondent Teaches Us About Vulnerability and Relationship Repair",
     "date": "2026-09-23",
     "description": "A book club discussion of Virginia Evans's The Correspondent raises a question many couples face: when does communication build closeness, and when does it become a way to avoid it? Exploring articulation, vulnerability, and relationship repair.",
     "image": "/images/blog/the-correspondent.jpg",
-    "url": "/blog/posts/the-correspondent.html"
+    "url": "/blog/posts/the-correspondent.html",
+    "categories": ["pop-culture", "relationships"]
   },
   {
     "title": "The Psychology of Redeeming Love",
     "date": "2026-09-18",
     "description": "Learn which of Michael Hosea's qualities reflect real markers of secure, healthy love, where steadfastness shades into the burnt out pursuer, and what healthy standards in dating actually look like when compassion has to coexist with boundaries.",
     "image": "/images/blog/redeeming-love-psychology.jpg",
-    "url": "/blog/posts/redeeming-love-psychology.html"
+    "url": "/blog/posts/redeeming-love-psychology.html",
+    "categories": ["pop-culture", "relationships"]
   },
   {
     "title": "What Pride and Prejudice Teaches Us About Relationships",
     "date": "2026-09-11",
     "description": "Healthy love requires two people who are both willing to be wrong, and both willing to do something with that realization. Learn what the story of a prideful Mr. Darcy and a prejudiced Elizabeth Bennet teaches us about chemistry versus compatibility, the difference between insight and repair, the importance of self-reflection and humility, and why real change in a relationship has to be voluntary.",
     "image": "/images/blog/pride-and-prejudice.jpg",
-    "url": "/blog/posts/pride-and-prejudice.html"
+    "url": "/blog/posts/pride-and-prejudice.html",
+    "categories": ["pop-culture", "relationships"]
   },
   {
     "title": "Shamed into Greatness: The \"Whiplash\" Method",
     "date": "2026-09-03",
     "description": "Does tough love work? A psychologist's look at the 'Whiplash' method of motivation, why shame-based coaching feels effective in hustle culture, and the research-backed alternative that builds accountability without burnout.",
     "image": "/images/blog/whiplash-coaching.jpg",
-    "url": "/blog/posts/whiplash-coaching.html"
+    "url": "/blog/posts/whiplash-coaching.html",
+    "categories": ["pop-culture", "wellbeing"]
   },
   {
     "title": "Meet the Parts of You That Show Up in Conflict: An IFS Guide to Love",
     "date": "2026-08-31",
     "description": "Reassurance-seeking, over-functioning, defensiveness, and shutting down all look like separate problems until you look at them through Internal Family Systems. Learn what parts, Self, and unblending actually are, and how naming the part in charge of a conflict can change it before it starts.",
     "image": "/images/blog/love-with-ifs.jpg",
-    "url": "/blog/posts/love-with-ifs.html"
+    "url": "/blog/posts/love-with-ifs.html",
+    "categories": ["relationships"]
   },
   {
     "title": "The Psychology of Princess Treatment: Why Chivalry Is Making a Comeback",
     "date": "2026-08-29",
     "description": "Princess treatment is trending, but it is not about entitlement. Learn the psychology behind responsiveness, generosity, and why chivalry is resurging in modern dating.",
     "image": "/images/blog/princess-treatment-psychology.jpg",
-    "url": "/blog/posts/princess-treatment-psychology.html"
+    "url": "/blog/posts/princess-treatment-psychology.html",
+    "categories": ["relationships"]
   },
   {
     "title": "Creating Emotional Safety in Love",
     "date": "2026-08-27",
     "description": "Emotional safety is not something one partner provides for the other, it is co-created. Learn what taking responsibility for your own wounds looks like, how the language of emotional safety gets weaponized, and how both partners can build real safety together.",
     "image": "/images/blog/creating-emotional-safety.jpg",
-    "url": "/blog/posts/creating-emotional-safety.html"
+    "url": "/blog/posts/creating-emotional-safety.html",
+    "categories": ["relationships"]
   },
   {
     "title": "Laugh Your Way to a Happy Relationship",
     "date": "2026-08-26",
     "description": "The honeymoon period doesn't have to end. Learn research-backed habits, including Gottman's 5:1 ratio, love maps, bids for connection, and gracious repair, that help couples in Vancouver keep laughing together for the long run.",
     "image": "/images/blog/laughter-in-love.jpg",
-    "url": "/blog/posts/laughter-in-love.html"
+    "url": "/blog/posts/laughter-in-love.html",
+    "categories": ["relationships"]
   },
   {
     "title": "The Anatomy of Effective Apologies and Reconciliation",
     "date": "2026-08-24",
     "description": "A good apology is not a magic sentence. Learn what research says an effective apology actually contains, what making amends requires beyond words, and how to tell whether a relationship is worth reconciling in the first place.",
     "image": "/images/blog/effective-apologies.jpg",
-    "url": "/blog/posts/effective-apologies.html"
+    "url": "/blog/posts/effective-apologies.html",
+    "categories": ["relationships"]
   },
   {
     "title": "When Insecurity Becomes a Strategy: The Psychology of Sexual Derogation",
     "date": "2026-08-23",
     "description": "Sexual criticism is difficult to verify, which is exactly what makes it powerful. Learn what the research says about sexual derogation, conditional desire, and reassurance labour, how to tell honest feedback from manipulation, and how couples therapy in Vancouver can help.",
     "image": "/images/blog/sexual-derogation-psychological-control.jpg",
-    "url": "/blog/posts/sexual-derogation-psychological-control.html"
+    "url": "/blog/posts/sexual-derogation-psychological-control.html",
+    "categories": ["trauma", "relationships"]
   },
   {
     "title": "Covert Narcissism and Emotional Abuse",
     "date": "2026-08-21",
     "description": "Some narcissistic partners are loud and impossible to miss. Others seem thoughtful, sensitive, and remarkably self-aware, then quietly rewrite every conflict as your fault. Learn how covert narcissism shows up in relationships, how to tell it apart from ordinary insecurity or neurodivergence, and how couples in Vancouver can find real accountability and repair.",
     "image": "/images/blog/covert-narcissism-emotional-abuse.jpg",
-    "url": "/blog/posts/covert-narcissism-emotional-abuse.html"
+    "url": "/blog/posts/covert-narcissism-emotional-abuse.html",
+    "categories": ["trauma", "relationships"]
   },
   {
     "title": "Couples Therapy: What It Actually Is, When to Consider It, and What to Expect",
     "date": "2026-08-17",
     "description": "Couples therapy in Vancouver isn't just for relationships in crisis. Learn what marriage counselling in BC actually involves, common myths, and how to bring it up to a hesitant partner.",
     "image": "/images/blog/what-is-couples-therapy.jpg",
-    "url": "/blog/posts/what-is-couples-therapy.html"
+    "url": "/blog/posts/what-is-couples-therapy.html",
+    "categories": ["therapy", "relationships"]
   },
   {
     "title": "Mothering Men With Unrealized Potential: Over-Functioning in Love",
     "date": "2026-08-14",
     "description": "Mothering a partner means reminding, managing, and coaching a grown man toward the person he could become. Learn why this pattern forms, how it affects both partners, and how therapy in Vancouver can help you step out of the role without giving up on love.",
     "image": "/images/blog/mothering-men-with-potential.jpg",
-    "url": "/blog/posts/mothering-men-with-potential.html"
+    "url": "/blog/posts/mothering-men-with-potential.html",
+    "categories": ["relationships"]
   },
   {
     "title": "Stop Arguing With Stubborn People: Protect Your Peace",
     "date": "2026-08-10",
     "description": "Some disagreements can't be resolved because two people are each holding an honest but different truth. Learn why explaining harder doesn't help, why long texts and emails make conflict worse, and how therapy in Vancouver can help you find peace even when a gap in perspective remains.",
     "image": "/images/blog/arguing-stubborn-people.jpg",
-    "url": "/blog/posts/arguing-stubborn-people.html"
+    "url": "/blog/posts/arguing-stubborn-people.html",
+    "categories": ["relationships"]
   },
   {
     "title": "Has Your Relationship Reached the Point of No Return? Understanding Negative Sentiment Override",
     "date": "2026-08-07",
     "description": "Negative Sentiment Override happens when almost every interaction in a relationship starts to feel negative, even when neither partner means it that way. Learn what NSO is, why it forms, and how couples therapy can help partners find their way back to each other.",
     "image": "/images/blog/negative-sentiment-override.jpg",
-    "url": "/blog/posts/negative-sentiment-override.html"
+    "url": "/blog/posts/negative-sentiment-override.html",
+    "categories": ["relationships"]
   },
   {
     "title": "Mindfulness, Rumination, and Self-Awareness: What Actually Builds Emotional Regulation",
     "date": "2026-08-06",
     "description": "Mindfulness, rumination, and self-awareness can all look like paying close attention to your inner world, but only some of it leads anywhere. Learn what separates healthy reflection from overthinking, and what actually builds emotional regulation in Vancouver.",
     "image": "/images/blog/building-emotional-regulation.jpg",
-    "url": "/blog/posts/building-emotional-regulation.html"
+    "url": "/blog/posts/building-emotional-regulation.html",
+    "categories": ["wellbeing"]
   },
   {
     "title": "Why High Achievers Still Struggle in Relationships",
     "date": "2026-08-05",
     "description": "High intelligence and career success don't protect anyone from emotional blind spots. Learn why physicians, CEOs, and founders often struggle most in their closest relationships, and why therapy still matters at the top.",
     "image": "/images/blog/high-achievers-relationships.jpg",
-    "url": "/blog/posts/high-achievers-relationships.html"
+    "url": "/blog/posts/high-achievers-relationships.html",
+    "categories": ["relationships"]
   },
   {
     "title": "When Mental Health Becomes a Scapegoat in Relationship Conflict",
     "date": "2026-08-04",
     "description": "Mental health language can help couples understand conflict, or it can become a shortcut for explaining the entire conflict away. Learn the difference between explanation and exoneration, and how couples in Vancouver can find their way back to mutual accountability.",
     "image": "/images/blog/scapegoating-mental-health.jpg",
-    "url": "/blog/posts/scapegoating-mental-health.html"
+    "url": "/blog/posts/scapegoating-mental-health.html",
+    "categories": ["relationships", "wellbeing"]
   },
   {
     "title": "How Neurodivergence Can Change the Way Couples Communicate",
     "date": "2026-08-03",
     "description": "Neurodivergence often changes how couples argue, text, and repair after conflict. Learn why feedback can feel like an attack, why texting rarely solves relationship problems, and when to talk in person instead.",
     "image": "/images/blog/neurodivergent-couples.jpg",
-    "url": "/blog/posts/neurodivergent-couples.html"
+    "url": "/blog/posts/neurodivergent-couples.html",
+    "categories": ["neurodivergence", "relationships"]
   },
   {
     "title": "Rejection Sensitive Dysphoria (RSD): Why Criticism Feels So Intense",
     "date": "2026-08-02",
     "description": "Rejection Sensitive Dysphoria can make ordinary feedback feel unbearable. Learn what RSD is, how it overlaps with ADHD and autism, and how to get an accurate assessment in Vancouver.",
     "image": "/images/blog/rejection-sensitive-dysphoria.jpg",
-    "url": "/blog/posts/rejection-sensitive-dysphoria.html"
+    "url": "/blog/posts/rejection-sensitive-dysphoria.html",
+    "categories": ["neurodivergence", "wellbeing"]
   },
   {
     "title": "Psychogenic Erectile Dysfunction: When Anxiety Enters the Bedroom",
     "date": "2026-08-02",
     "description": "Psychogenic erectile dysfunction is driven by anxiety, stress, and relationship dynamics rather than physical illness. Learn how the anxiety cycle works, why it rarely reflects attraction, and how couples in Vancouver can find support.",
     "image": "/images/blog/psychogenic-erectile-dysfunction.jpg",
-    "url": "/blog/posts/psychogenic-erectile-dysfunction.html"
+    "url": "/blog/posts/psychogenic-erectile-dysfunction.html",
+    "categories": ["relationships", "wellbeing"]
   },
   {
     "title": "How Childhood Trauma Can Affect Adult Dating",
     "date": "2026-08-01",
     "description": "Childhood trauma, and the adult relational trauma that often follows it, can quietly reshape adult dating, turning small conflicts into major threats and ordinary rejection into overwhelming pain. Learn what's actually happening in the brain and how EMDR and hypnotherapy can help you heal.",
     "image": "/images/blog/childhood-trauma-dating.jpg",
-    "url": "/blog/posts/childhood-trauma-dating.html"
+    "url": "/blog/posts/childhood-trauma-dating.html",
+    "categories": ["trauma", "relationships"]
   },
   {
     "title": "Why Smart Couples Get Stuck in Negative Communication Loops",
     "date": "2026-07-31",
     "description": "Even intelligent, well-intentioned couples can fall into negative communication loops where every conversation turns into an argument. Learn why these patterns form, what's really being fought about, and how the Gottman Method helps couples break the cycle.",
     "image": "/images/blog/smart-couples-negative-loops.jpg",
-    "url": "/blog/posts/smart-couples-negative-loops.html"
+    "url": "/blog/posts/smart-couples-negative-loops.html",
+    "categories": ["relationships"]
   },
   {
     "title": "Can a Relationship Recover After Trust in Communication Is Lost?",
     "date": "2026-07-30",
     "description": "Trust in communication breaks down slowly, one unresolved argument at a time. Learn the difference between conflict and emotional safety, why some couples can't repair after arguments, and how to move forward when one partner wants to process everything and the other shuts down.",
     "image": "/images/blog/relationship-recovering-trust.jpg",
-    "url": "/blog/posts/relationship-recovering-trust.html"
+    "url": "/blog/posts/relationship-recovering-trust.html",
+    "categories": ["relationships"]
   },
   {
     "title": "ADHD in Women: Why It Gets Missed for So Long",
     "date": "2026-07-27",
     "description": "ADHD in women is often internalized, masked, and misdiagnosed as anxiety or depression for years. Learn why it gets missed, what it actually looks like, and how to get a proper assessment in Vancouver.",
     "image": "/images/blog/ADHD-in-women.jpg",
-    "url": "/blog/posts/ADHD-in-women.html"
+    "url": "/blog/posts/ADHD-in-women.html",
+    "categories": ["neurodivergence"]
   },
   {
     "title": "Adult ADHD in British Columbia: Signs, Late Diagnosis, and How to Get Assessed",
     "date": "2026-07-20",
     "description": "A peer-reviewed BC study found a nearly four-fold rise in adult ADHD diagnoses since the pandemic, growing fastest in women. Learn the signs, why diagnosis comes late, and how to book a psychological assessment in Vancouver.",
     "image": "/images/blog/adult-ADHD-in-BC.jpg",
-    "url": "/blog/posts/adult-ADHD-in-BC.html"
+    "url": "/blog/posts/adult-ADHD-in-BC.html",
+    "categories": ["neurodivergence", "therapy"]
   },
   {
     "title": "What Is Trauma Therapy and How Does It Work?",
     "date": "2026-07-13",
     "description": "Trauma isn't only about single catastrophic events. Learn what qualifies as trauma, how PTSD differs from a general trauma response, and how trauma therapy actually works for teens and adults in Vancouver.",
     "image": "/images/blog/what-is-trauma-therapy.jpg",
-    "url": "/blog/posts/what-is-trauma-therapy.html"
+    "url": "/blog/posts/what-is-trauma-therapy.html",
+    "categories": ["therapy", "trauma"]
   },
   {
     "title": "Why Strong Women Stay in Toxic Relationships: When Your Greatest Strengths Are Used Against You",
     "date": "2026-07-06",
     "description": "It isn't weakness that keeps strong women in toxic relationships. Research shows it's empathy, self-reflection, and emotional intelligence: the exact traits a toxic partner learns to exploit. Individual therapy in Vancouver can help.",
     "image": "/images/blog/why-strong-women-stay-in-toxic-relationships.jpg",
-    "url": "/blog/posts/why-strong-women-stay-in-toxic-relationships.html"
+    "url": "/blog/posts/why-strong-women-stay-in-toxic-relationships.html",
+    "categories": ["trauma", "relationships"]
   },
   {
     "title": "The Psychology of Victim Mentality: Why This Pattern Pushes People Away",
     "date": "2026-06-29",
     "description": "Psychologists call it the Tendency for Interpersonal Victimhood. Learn what the research says about why a persistent victim identity strains relationships, and how individual therapy in Vancouver can help.",
     "image": "/images/blog/psychology-of-victim-mentality.jpg",
-    "url": "/blog/posts/psychology-of-victim-mentality.html"
+    "url": "/blog/posts/psychology-of-victim-mentality.html",
+    "categories": ["wellbeing", "relationships"]
   },
   {
     "title": "Why Defensiveness Damages Relationships (And What Emotionally Intelligent People Do Instead)",
     "date": "2026-06-22",
     "description": "Why do good people get defensive when they hurt someone? Learn the psychology behind defensiveness, the difference between intent and impact, and how therapy in Vancouver can help you communicate without losing connection.",
     "image": "/images/blog/why-defensiveness-damages.jpg",
-    "url": "/blog/posts/why-defensiveness-damages.html"
+    "url": "/blog/posts/why-defensiveness-damages.html",
+    "categories": ["relationships"]
   },
   {
     "title": "What Love on the Spectrum Teaches Us About Autism",
     "date": "2026-06-15",
     "description": "What does Love on the Spectrum reveal about autism, relationships, and identity? Explore the show's cultural impact, common questions about adult autism diagnosis, and how to access an autism assessment in Vancouver, BC.",
     "image": "/images/blog/love-on-the-spectrum.jpg",
-    "url": "/blog/posts/love-on-the-spectrum.html"
+    "url": "/blog/posts/love-on-the-spectrum.html",
+    "categories": ["pop-culture", "neurodivergence"]
   },
   {
     "title": "Men's Mental Health Month: The Male Loneliness Epidemic",
     "date": "2026-06-08",
     "description": "Explore the male loneliness epidemic during Men's Mental Health Month, including statistics on emotional isolation, ADHD, autism, depression, anxiety, and how men can build stronger connection and wellbeing.",
     "image": "/images/blog/men-mental-health-month-male-loneliness.jpg",
-    "url": "/blog/posts/men-mental-health-month-male-loneliness.html"
+    "url": "/blog/posts/men-mental-health-month-male-loneliness.html",
+    "categories": ["wellbeing"]
   },
   {
     "title": "Early Dating Red Flags: Narcissistic Patterns",
     "date": "2026-06-01",
     "description": "Learn early dating red flags, narcissistic relationship patterns, trauma bonding, attachment wounds, and how to tell the difference between chemistry and healthy compatibility.",
     "image": "/images/blog/healing-attachment-wounds.jpg",
-    "url": "/blog/posts/early-dating-red-flags-narcissistic-patterns.html"
+    "url": "/blog/posts/early-dating-red-flags-narcissistic-patterns.html",
+    "categories": ["relationships", "trauma"]
   },
   {
     "title": "Mental Health Awareness Month: How You Can Master Awareness of Your Mental Health this Month (and Onwards!)",
     "date": "2026-05-25",
     "description": "Mental Health Awareness Month reflections on self-awareness, emotional wellbeing, and practical ways to better understand yourself through self-reflection, mindfulness, and personal growth.",
     "image": "/images/blog/mental-health-awareness-month-26.jpg",
-    "url": "/blog/posts/mental-health-awareness-month-26.html"
+    "url": "/blog/posts/mental-health-awareness-month-26.html",
+    "categories": ["general"]
   },
   {
     "title": "Welcome to the Pacific Maple Psych Centre Blog",
     "date": "2026-05-21",
     "description": "An introduction to the Pacific Maple Psych Centre blog, outlining our approach to mental health education, evidence-based psychology, and the topics we will explore including anxiety, trauma, relationships, neurodivergence, personal growth, and more.",
     "image": "/images/blog/welcome-to-pmpc.jpg",
-    "url": "/blog/posts/welcome-to-pmpc.html"
+    "url": "/blog/posts/welcome-to-pmpc.html",
+    "categories": ["general"]
   }
 ]
