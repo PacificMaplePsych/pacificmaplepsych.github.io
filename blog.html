@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Blog | Pacific Maple Psych Centre</title>
-  <meta name="description" content="Pacific Maple Psych Centre blog." />
+  <meta name="description" content="Reflections from the clinicians at Pacific Maple Psych Centre in Vancouver on relationships, healing after harm, ADHD and autism, emotional wellbeing, and what books, films, and songs can teach us about ourselves." />
 
   <meta name="theme-color" content="#7a5d7c" />
 
@@ -23,14 +23,14 @@
   <meta property="og:site_name" content="Pacific Maple Psych Centre" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Blog | Pacific Maple Psych Centre" />
-  <meta property="og:description" content="Pacific Maple Psych Centre blog." />
+  <meta property="og:description" content="Reflections from the clinicians at Pacific Maple Psych Centre on love and conflict, healing after harm, neurodivergent minds, and what books, films, and songs can teach us about ourselves." />
   <meta property="og:url" content="https://pacificmaplepsych.com/blog.html" />
   <meta property="og:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta property="og:image:alt" content="Pacific Maple Psych Centre logo" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blog | Pacific Maple Psych Centre" />
-  <meta name="twitter:description" content="Pacific Maple Psych Centre blog." />
+  <meta name="twitter:description" content="Reflections from the clinicians at Pacific Maple Psych Centre on love and conflict, healing after harm, neurodivergent minds, and what books, films, and songs can teach us about ourselves." />
   <meta name="twitter:image" content="https://pacificmaplepsych.com/images/Full%20Logo%20With%20Text.jpg" />
   <meta name="twitter:image:alt" content="Pacific Maple Psych Centre logo" />
 
@@ -46,131 +46,304 @@
   <meta name="robots" content="index,follow" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+  <!-- Blog structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Pacific Maple Psych Centre Blog",
+    "url": "https://pacificmaplepsych.com/blog.html",
+    "description": "Reflections from the clinicians at Pacific Maple Psych Centre on relationships, healing after harm, ADHD and autism, emotional wellbeing, and the psychology of books, films, and songs.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pacific Maple Psych Centre",
+      "url": "https://pacificmaplepsych.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..600&display=swap" />
+
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific tweaks to restore 2-column layout + floating styled image -->
   <style>
-    .blog-page .blog-wrap {
-      padding: clamp(34px, 5vw, 64px) 0;
-      background: #fff;
-    }
-
-    .blog-page .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr 200px; /* narrower right column pulls image left */
-      gap: clamp(18px, 3.2vw, 44px);
-      align-items: center;
-    }
-
-    .blog-page .blog-text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 220px;
-    }
-
-    /* Right column: align image toward the center by pinning it to left edge of the right column */
-    .blog-page .blog-logo {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .blog-page .blog-logo img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      display: block;
-
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(0, 0, 0, 0.10);
-      background: #fff;
-    }
-
-    /* Spacing between blog post cards */
-    .blog-card {
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    /* Override 2-column grid so posts use full width */
-    .blog-page .blog-grid {
-      display: block;
-    }
-
-    /* Center the posts with a comfortable reading width */
-    #blog-posts {
-      max-width: 600px;
+    /* ===== Blog hub (all classes prefixed "bh-" so nothing else on the site is affected) ===== */
+    .bh-wrap {
+      width: min(1180px, calc(100% - 44px));
       margin: 0 auto;
     }
 
-    /* Remove underline from all text inside card links */
-    .blog-card a {
-      text-decoration: none;
+    /* Intro line under the BLOG title */
+    .bh-intro {
+      max-width: 640px;
+      margin: 18px auto 0;
+      text-align: center;
+      font-family: var(--pm-serif, Georgia, serif);
+      font-size: clamp(17px, 1.6vw, 20px);
+      line-height: 1.55;
+      color: var(--pm-muted, #5d5361);
     }
 
-    /* Re-apply underline on h2 only when hovering, for usability */
-    .blog-card a:hover h2 {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 900px) {
-      .blog-page .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .blog-page .blog-text { min-height: auto; }
-      .blog-page .blog-logo { justify-content: center; }
-    }
-
-    /* Numbered pagination */
-    .blog-pagination {
-      max-width: 600px;
-      margin: 2.5rem auto 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .blog-pagination a,
-    .blog-pagination span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 36px;
-      height: 36px;
-      padding: 0 10px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      text-decoration: none;
-      color: #333;
-    }
-
-    .blog-pagination a {
-      border: 1px solid rgba(0, 0, 0, 0.12);
+    .bh-section {
       background: #fff;
-      transition: background 0.15s ease, border-color 0.15s ease;
+      padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px);
     }
 
-    .blog-pagination a:hover {
-      background: #f5f0f6;
-      border-color: #7a5d7c;
+    /* Category pill */
+    .bh-pill {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--pm-heather, #f6f0f4);
+      color: var(--pm-mauve, #7a5d7c);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.3;
     }
 
-    .blog-pagination span.current {
-      background: #7a5d7c;
-      color: #fff;
+    .bh-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .bh-date {
+      font-size: 14px;
+      color: var(--pm-muted, #5d5361);
+    }
+
+    /* ----- Featured (newest) post ----- */
+    .bh-featured {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: clamp(24px, 5vw, 64px);
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      padding-bottom: clamp(36px, 5vw, 56px);
+      border-bottom: 1px solid var(--pm-line, #e3dce2);
+    }
+
+    .bh-featured-img {
+      aspect-ratio: 3 / 2;
+      border-radius: var(--pm-radius, 14px);
+      overflow: hidden;
+      background: var(--pm-heather, #f6f0f4);
+    }
+
+    .bh-featured-img img,
+    .bh-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--pm-ease, ease);
+    }
+
+    .bh-featured:hover .bh-featured-img img,
+    .bh-card:hover .bh-card-img img {
+      transform: scale(1.03);
+    }
+
+    .bh-eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pm-harbour, #3d6780);
+      margin-bottom: 12px;
+    }
+
+    .bh-featured h2 {
+      font-family: var(--pm-serif, Georgia, serif);
+      font-weight: 500;
+      font-size: clamp(28px, 3.4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--pm-plum, #453346);
+      margin: 0 0 16px;
+    }
+
+    .bh-featured:hover h2 {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+    }
+
+    .bh-featured p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--pm-muted, #5d5361);
+      margin: 0 0 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ----- Topic tabs ----- */
+    .bh-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      margin: clamp(32px, 5vw, 52px) 0 clamp(28px, 4vw, 40px);
+      border-top: 1px solid var(--pm-line, #e3dce2);
+      border-bottom: 1px solid var(--pm-line, #e3dce2);
+    }
+
+    .bh-tab {
+      appearance: none;
+      background: none;
+      border: 0;
+      border-right: 1px solid var(--pm-line, #e3dce2);
+      border-bottom: 3px solid transparent;
+      margin-bottom: -1px;
+      padding: 16px 18px 13px;
+      font: inherit;
+      font-size: 15px;
+      color: var(--pm-muted, #5d5361);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .bh-tabs::-webkit-scrollbar { display: none; }
+    .bh-tab:last-child { border-right: 0; }
+
+    .bh-tab:hover {
+      background: var(--pm-heather, #f6f0f4);
+      color: var(--pm-plum, #453346);
+    }
+
+    .bh-tab[aria-selected="true"] {
+      background: var(--pm-heather, #f6f0f4);
+      color: var(--pm-plum, #453346);
+      font-weight: 700;
+      border-bottom-color: var(--pm-mauve, #7a5d7c);
+    }
+
+    .bh-tab:focus-visible {
+      outline: 2px solid var(--pm-mauve, #7a5d7c);
+      outline-offset: -2px;
+    }
+
+    .bh-tab .bh-count {
+      font-weight: 400;
+      font-size: 13px;
+      opacity: 0.7;
+      margin-left: 4px;
+    }
+
+    /* ----- Card grid ----- */
+    .bh-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.6vw, 34px);
+    }
+
+    .bh-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .bh-card-img {
+      aspect-ratio: 3 / 2;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--pm-heather, #f6f0f4);
+      margin-bottom: 18px;
+    }
+
+    .bh-card .bh-pills { margin-bottom: 10px; }
+
+    .bh-card h3 {
+      font-family: var(--pm-serif, Georgia, serif);
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 1.28;
+      color: var(--pm-plum, #453346);
+      margin: 0 0 10px;
+    }
+
+    .bh-card:hover h3 {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .bh-card p {
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--pm-muted, #5d5361);
+      margin: 0 0 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .bh-card .bh-date { margin-top: auto; }
+
+    .bh-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--pm-muted, #5d5361);
+      padding: 40px 0;
+    }
+
+    /* ----- Show more ----- */
+    .bh-more-wrap {
+      text-align: center;
+      margin-top: clamp(36px, 5vw, 56px);
+    }
+
+    .bh-more {
+      appearance: none;
+      font: inherit;
+      font-size: 15px;
       font-weight: 600;
+      padding: 13px 30px;
+      border-radius: 8px;
+      border: 1px solid var(--pm-mauve, #7a5d7c);
+      background: #fff;
+      color: var(--pm-mauve, #7a5d7c);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
-    .blog-pagination span.ellipsis {
-      border: none;
-      color: #999;
+    .bh-more:hover {
+      background: var(--pm-mauve, #7a5d7c);
+      color: #fff;
+    }
+
+    @media (max-width: 960px) {
+      .bh-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 760px) {
+      .bh-featured { grid-template-columns: 1fr; }
+
+      /* Tabs stay one swipeable row on phones */
+      .bh-tab { padding: 14px 16px 11px; font-size: 14.5px; }
+    }
+
+    @media (max-width: 560px) {
+      .bh-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bh-featured-img img,
+      .bh-card-img img { transition: none; }
     }
   </style>
 </head>
@@ -189,134 +362,181 @@
     <section class="page-title-band" aria-label="Blog title">
       <div class="container-narrow">
         <h1>Blog</h1>
+        <p class="bh-intro">Reflections from the clinicians at Pacific Maple Psych Centre on the psychology of everyday life.</p>
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="blog-wrap" aria-label="Pacific Maple Psych Centre blog">
-      <div class="container-narrow">
-        <div class="blog-grid">
+    <section class="bh-section" aria-label="Pacific Maple Psych Centre blog posts">
+      <div class="bh-wrap">
 
-          <div id="blog-posts"></div>
-          <nav class="blog-pagination" aria-label="Blog pagination"></nav>
+        <!-- Newest post from posts.json is placed here automatically -->
+        <div id="bh-featured"></div>
 
-<script>
+        <div class="bh-tabs" id="bh-tabs" role="tablist" aria-label="Filter articles by topic"></div>
 
-const POSTS_PER_PAGE = 16;
+        <div class="bh-grid" id="bh-grid" aria-live="polite"></div>
 
-function getCurrentPage() {
-  const params = new URLSearchParams(window.location.search);
-  const page = parseInt(params.get('page'), 10);
-  return page && page > 0 ? page : 1;
-}
-
-fetch('/blog/posts.json')
-
-.then(response => response.json())
-
-.then(posts => {
-
-  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
-  const currentPage = Math.min(getCurrentPage(), totalPages);
-
-  const start = (currentPage - 1) * POSTS_PER_PAGE;
-  const pagePosts = posts.slice(start, start + POSTS_PER_PAGE);
-
-  const container = document.getElementById('blog-posts');
-
-  container.innerHTML = pagePosts.map(post => `
-
-<article class="blog-card">
-
-<a href="${post.url}">
-
-<img
-src="${post.image}"
-alt="${post.title}"
-style="
-width:100%;
-max-width:300px;
-border-radius:12px;
-">
-
-<h2>${post.title}</h2>
-
-<p>${post.description}</p>
-
-<small>${post.date}</small>
-
-</a>
-
-</article>
-
-`).join('');
-
-  // Build numbered pagination, only shown when there's more than 1 page
-  const nav = document.querySelector('.blog-pagination');
-
-  if (totalPages <= 1) {
-    nav.innerHTML = '';
-    return;
-  }
-
-  function pageLink(pageNum) {
-    return `<a href="/blog.html?page=${pageNum}">${pageNum}</a>`;
-  }
-
-  let navHtml = '';
-
-  // Previous arrow
-  if (currentPage > 1) {
-    navHtml += `<a href="/blog.html?page=${currentPage - 1}" aria-label="Previous page">&laquo;</a>`;
-  }
-
-  // Always show page 1
-  navHtml += currentPage === 1
-    ? `<span class="current">1</span>`
-    : pageLink(1);
-
-  // Ellipsis after page 1 if needed
-  if (currentPage > 3) {
-    navHtml += `<span class="ellipsis">&hellip;</span>`;
-  }
-
-  // Pages around the current page
-  for (let p = Math.max(2, currentPage - 1); p <= Math.min(totalPages - 1, currentPage + 1); p++) {
-    navHtml += p === currentPage
-      ? `<span class="current">${p}</span>`
-      : pageLink(p);
-  }
-
-  // Ellipsis before last page if needed
-  if (currentPage < totalPages - 2) {
-    navHtml += `<span class="ellipsis">&hellip;</span>`;
-  }
-
-  // Always show last page (if more than 1 page total)
-  if (totalPages > 1) {
-    navHtml += currentPage === totalPages
-      ? `<span class="current">${totalPages}</span>`
-      : pageLink(totalPages);
-  }
-
-  // Next arrow
-  if (currentPage < totalPages) {
-    navHtml += `<a href="/blog.html?page=${currentPage + 1}" aria-label="Next page">&raquo;</a>`;
-  }
-
-  nav.innerHTML = navHtml;
-
-});
-
-</script>
-
+        <div class="bh-more-wrap">
+          <button type="button" class="bh-more" id="bh-more" hidden>Show more articles</button>
         </div>
+
+        <noscript>
+          <p style="text-align:center;">Please enable JavaScript to browse our articles.</p>
+        </noscript>
+
       </div>
     </section>
 
   </main>
 
   <div id="site-footer"></div>
+
+<script>
+/* =====================================================================
+   BLOG TOPICS
+   The order here is the order the tabs appear in (after "All").
+   To add a topic later: add one line here, then use its key in posts.json.
+   A tab only appears once at least one post uses it.
+   ===================================================================== */
+const TOPICS = {
+  "relationships":   "Relationships",
+  "trauma":          "Trauma & Abuse",
+  "neurodivergence": "ADHD & Autism",
+  "wellbeing":       "Emotional Wellbeing",
+  "therapy":         "Therapy & Assessment",
+  "pop-culture":     "Pop Culture",
+  "general":         "General"
+};
+
+const CARDS_PER_LOAD = 12;
+
+/* ===================================================================== */
+
+let allPosts = [];
+let currentTopic = "all";
+let shown = CARDS_PER_LOAD;
+
+function esc(str) {
+  return String(str == null ? "" : str)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* Reads "2026-10-03" as a calendar date (avoids showing the day before in Pacific time) */
+function formatDate(iso) {
+  const parts = String(iso || "").split("-").map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return esc(iso);
+  const d = new Date(parts[0], parts[1] - 1, parts[2]);
+  return d.toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" });
+}
+
+/* Posts with no categories (or only unknown ones) fall under General */
+function topicsOf(post) {
+  const list = Array.isArray(post.categories) ? post.categories : [];
+  const known = list.filter(c => TOPICS[c]);
+  return known.length ? known : ["general"];
+}
+
+function pills(post, max) {
+  return '<div class="bh-pills">' +
+    topicsOf(post).slice(0, max).map(c => `<span class="bh-pill">${esc(TOPICS[c])}</span>`).join("") +
+    '</div>';
+}
+
+function renderFeatured(post) {
+  document.getElementById("bh-featured").innerHTML = `
+    <a class="bh-featured" href="${esc(post.url)}">
+      <div class="bh-featured-img">
+        <img src="${esc(post.image)}" alt="${esc(post.title)}" />
+      </div>
+      <div>
+        <span class="bh-eyebrow">Latest article</span>
+        ${pills(post, 3)}
+        <h2>${esc(post.title)}</h2>
+        <p>${esc(post.description)}</p>
+        <span class="bh-date">${formatDate(post.date)}</span>
+      </div>
+    </a>`;
+}
+
+function postsForTopic(topic) {
+  /* "All" skips the featured post so it isn't shown twice; topic tabs include everything in that topic */
+  if (topic === "all") return allPosts.slice(1);
+  return allPosts.filter(p => topicsOf(p).includes(topic));
+}
+
+function renderTabs() {
+  const used = Object.keys(TOPICS).filter(key => postsForTopic(key).length > 0);
+  const tabs = [["all", "All", allPosts.length]].concat(
+    used.map(key => [key, TOPICS[key], postsForTopic(key).length])
+  );
+
+  document.getElementById("bh-tabs").innerHTML = tabs.map(([key, label, count]) => `
+    <button type="button" class="bh-tab" role="tab" data-topic="${key}"
+      aria-selected="${key === currentTopic}">${esc(label)}<span class="bh-count">${count}</span></button>
+  `).join("");
+
+  document.querySelectorAll(".bh-tab").forEach(btn => {
+    btn.addEventListener("click", () => selectTopic(btn.dataset.topic));
+  });
+}
+
+function renderGrid() {
+  const list = postsForTopic(currentTopic);
+  const grid = document.getElementById("bh-grid");
+
+  grid.innerHTML = list.length
+    ? list.slice(0, shown).map(post => `
+      <a class="bh-card" href="${esc(post.url)}">
+        <div class="bh-card-img">
+          <img src="${esc(post.image)}" alt="${esc(post.title)}" loading="lazy" />
+        </div>
+        ${pills(post, 2)}
+        <h3>${esc(post.title)}</h3>
+        <p>${esc(post.description)}</p>
+        <span class="bh-date">${formatDate(post.date)}</span>
+      </a>`).join("")
+    : '<p class="bh-empty">New articles on this topic are on the way.</p>';
+
+  document.getElementById("bh-more").hidden = list.length <= shown;
+}
+
+function selectTopic(topic, updateUrl = true) {
+  currentTopic = (topic === "all" || TOPICS[topic]) ? topic : "all";
+  shown = CARDS_PER_LOAD;
+
+  document.querySelectorAll(".bh-tab").forEach(btn => {
+    btn.setAttribute("aria-selected", btn.dataset.topic === currentTopic);
+  });
+  renderGrid();
+
+  /* Gives each topic a shareable link, e.g. /blog.html?topic=pop-culture */
+  if (updateUrl) {
+    const url = currentTopic === "all" ? "/blog.html" : `/blog.html?topic=${currentTopic}`;
+    history.replaceState(null, "", url);
+  }
+}
+
+document.getElementById("bh-more").addEventListener("click", () => {
+  shown += CARDS_PER_LOAD;
+  renderGrid();
+});
+
+fetch("/blog/posts.json")
+  .then(res => res.json())
+  .then(posts => {
+    allPosts = posts;
+    if (!allPosts.length) return;
+
+    renderFeatured(allPosts[0]);
+
+    const requested = new URLSearchParams(window.location.search).get("topic");
+    currentTopic = (requested && TOPICS[requested]) ? requested : "all";
+
+    renderTabs();
+    selectTopic(currentTopic, false);
+  });
+</script>
 
   <script src="/assets/main.js" defer></script>
 </body>
