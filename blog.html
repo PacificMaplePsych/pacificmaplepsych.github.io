@@ -75,20 +75,49 @@
       margin: 0 auto;
     }
 
-    /* Intro line under the BLOG title */
-    .bh-intro {
-      max-width: 640px;
-      margin: 18px auto 0;
+    /* Intro line + divider, above the featured article */
+    .bh-lede {
       text-align: center;
+      margin: 0 auto clamp(36px, 5vw, 56px);
+    }
+
+    .bh-intro {
+      max-width: 780px;
+      margin: 0 auto;
       font-family: var(--pm-serif, Georgia, serif);
-      font-size: clamp(17px, 1.6vw, 20px);
-      line-height: 1.55;
-      color: var(--pm-muted, #5d5361);
+      font-style: italic;
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.5;
+      color: var(--pm-plum, #453346);
+    }
+
+    /* Short centred rule with a small mauve diamond in the middle */
+    .bh-divider {
+      position: relative;
+      display: block;
+      width: 160px;
+      height: 1px;
+      margin: 26px auto 0;
+      background: linear-gradient(to right,
+        transparent, var(--pm-line, #e3dce2) 15%,
+        var(--pm-mauve, #7a5d7c) 50%,
+        var(--pm-line, #e3dce2) 85%, transparent);
+    }
+
+    .bh-divider::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      background: var(--pm-mauve, #7a5d7c);
+      transform: translate(-50%, -50%) rotate(45deg);
     }
 
     .bh-section {
       background: #fff;
-      padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px);
+      padding: clamp(36px, 5vw, 60px) 0 clamp(56px, 8vw, 96px);
     }
 
     /* Category pill */
@@ -362,12 +391,17 @@
     <section class="page-title-band" aria-label="Blog title">
       <div class="container-narrow">
         <h1>Blog</h1>
-        <p class="bh-intro">Reflections from the clinicians at Pacific Maple Psych Centre on the psychology of everyday life.</p>
       </div>
     </section>
 
     <section class="bh-section" aria-label="Pacific Maple Psych Centre blog posts">
       <div class="bh-wrap">
+
+        <!-- Intro line + divider -->
+        <div class="bh-lede">
+          <p class="bh-intro">Reflections from the clinicians at Pacific Maple Psych Centre on the psychology of everyday life.</p>
+          <span class="bh-divider" aria-hidden="true"></span>
+        </div>
 
         <!-- Newest post from posts.json is placed here automatically -->
         <div id="bh-featured"></div>
