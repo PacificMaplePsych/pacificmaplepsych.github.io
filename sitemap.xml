@@ -2366,6 +2366,86 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/autism-and-executive-functioning-difficulties.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/understanding-neurodiversity-affirming-therapy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/what-are-cognitive-processing-therapy-and-prolonged-exposure.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/understanding-nightmare-disorder.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/how-to-support-a-partner-with-anxiety.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/premarital-counselling-what-to-expect.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/preventing-burnout-and-building-sustainable-work-habits.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/progressive-muscle-relaxation-explained.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/individual-therapy-for-relationship-patterns.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/how-is-adhd-diagnosed-in-adults.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/how-to-talk-to-your-employer-about-burnout.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/how-is-depression-diagnosed.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/what-is-a-trauma-response.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/should-i-get-assessed-for-adhd-as-an-adult.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/emotion-focused-therapy-eft-for-individuals-and-couples.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/finding-an-eating-disorder-informed-therapist.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Blog posts -->
   <url>
@@ -2550,6 +2630,11 @@
   </url>
   <url>
     <loc>https://pacificmaplepsych.com/blog/posts/why-strong-women-stay-in-toxic-relationships.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/blog/posts/world-menopause-day-pain.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
