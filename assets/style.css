@@ -1575,12 +1575,15 @@ html.pm-ready body::after {
 .svc-type.svc-type-wide { grid-column: 1 / -1; justify-self: center; width: calc((200% - 22px) / 3); }
 .svc-type-wide .svc-type-img { aspect-ratio: 4 / 1; }
 .svc-type-wide .svc-type-img img { object-position: center 25%; }
-/* Text below the photo runs in two columns: description on the left, list and button on the right */
-.svc-type-wide .svc-type-body { padding: 24px 28px; display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 32px; align-items: start; }
-.svc-type-wide .svc-type-body > h3, .svc-type-wide .svc-type-body > .svc-who { grid-column: 1 / -1; }
-.svc-type-wide .svc-type-body > p:not(.svc-who) { grid-column: 1; grid-row: 3 / span 2; margin: 0; }
-.svc-type-wide .svc-type-body > ul { grid-column: 2; grid-row: 3; }
-.svc-type-wide .svc-type-body > .pm-actions { grid-column: 2; grid-row: 4; }
+/* Above phone width: centred title and button, with description and list in two columns between them */
+@media (min-width: 601px) {
+  .svc-type-wide .svc-type-body { padding: 26px 28px; display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 32px; align-items: start; }
+  .svc-type-wide .svc-type-body > h3, .svc-type-wide .svc-type-body > .svc-who { grid-column: 1 / -1; text-align: center; }
+  .svc-type-wide .svc-type-body > .svc-who { margin-bottom: 16px; }
+  .svc-type-wide .svc-type-body > p:not(.svc-who) { grid-column: 1; grid-row: 3; margin: 0; }
+  .svc-type-wide .svc-type-body > ul { grid-column: 2; grid-row: 3; margin: 0; }
+  .svc-type-wide .svc-type-body > .pm-actions { grid-column: 1 / -1; grid-row: 4; justify-content: center; margin-top: 0; padding-top: 22px; }
+}
 
 /* Two-column checklists */
 .svc-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -1649,8 +1652,6 @@ html.pm-ready body::after {
 @media (max-width: 600px) {
   .svc-cards, .svc-approaches, .svc-types, .svc-steps, .svc-facts { grid-template-columns: 1fr; }
   .svc-type-wide .svc-type-img { aspect-ratio: 16 / 10; }
-  .svc-type-wide .svc-type-body { padding: 22px; display: flex; }
-  .svc-type-wide .svc-type-body > p:not(.svc-who) { margin: 0 0 10px; }
   .svc-group { grid-template-columns: 1fr; }
   .svc-group img { min-height: 0; aspect-ratio: 310 / 254; height: auto; }
   .svc-hero .pm-actions .pm-btn { flex: 1 1 100%; }
