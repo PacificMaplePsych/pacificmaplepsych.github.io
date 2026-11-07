@@ -3761,6 +3761,71 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/social-media-and-teen-mental-health.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/2slgbtq-affirming-therapy-what-it-means.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/religious-trauma.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/racial-trauma-and-race-based-stress.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/what-is-moral-injury.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/first-responder-mental-health-in-bc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/international-student-mental-health-in-bc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/workplace-bullying-and-toxic-workplaces.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/long-covid-and-mental-health.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/supporting-a-parent-with-dementia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/trauma-dumping-vs-healthy-sharing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/dopamine-detox-myth-vs-evidence.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pacificmaplepsych.com/education/articles/what-self-care-actually-means.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Blog posts -->
   <url>
