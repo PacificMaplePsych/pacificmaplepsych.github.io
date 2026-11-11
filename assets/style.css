@@ -64,7 +64,7 @@ body {
 
 /* ===== Global Title Band (used on About/Blog/Policies/Book Now/Services/etc.) ===== */
 .page-title-band {
-  background: #e0edf7;
+  background: #e6f4f7;
   padding: clamp(42px, 7vw, 78px) 0;
   border-top: 1px solid var(--pmpc-line);
   border-bottom: 1px solid var(--pmpc-line);
@@ -1491,7 +1491,7 @@ html.pm-ready body::after {
 .entry-content .svc-crumbs a:hover { color: var(--pm-plum); text-decoration: underline; }
 
 /* Hero */
-.svc-hero { background: var(--pm-mist); padding: clamp(30px, 5vw, 64px) 0 clamp(44px, 6vw, 80px); }
+.svc-hero { background: #e6f4f7; padding: clamp(30px, 5vw, 64px) 0 clamp(44px, 6vw, 80px); }
 .svc-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
 .svc-hero h1 {
   font-family: var(--pm-serif); font-weight: 500; color: var(--pm-plum);
