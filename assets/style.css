@@ -859,7 +859,7 @@ body {
 }
 
 /* ===== PMPC Footer ===== */
-.site-footer { width: 100%; }
+.site-footer { width: 100%; --footer-gradient: linear-gradient(90deg, #1f6aa5 0%, #5e2b8a 100%); }
 
 .footer-map {
   width: 100%;
@@ -875,7 +875,7 @@ body {
 }
 
 .footer-main {
-  background: linear-gradient(90deg, #1f6aa5 0%, #5e2b8a 100%);
+  background: var(--footer-gradient);
   color: #ffffff;
 }
 
@@ -935,7 +935,7 @@ body {
 }
 
 .footer-bottom {
-  background: linear-gradient(90deg, #1f6aa5 0%, #5e2b8a 100%);
+  background: var(--footer-gradient);
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
