@@ -875,7 +875,7 @@ body {
 }
 
 .footer-main {
-  background: linear-gradient(90deg, #17406a 0%, #34174d 100%);
+  background: linear-gradient(90deg, #1f6aa5 0%, #5e2b8a 100%);
   color: #ffffff;
 }
 
@@ -935,7 +935,7 @@ body {
 }
 
 .footer-bottom {
-  background: linear-gradient(90deg, #17406a 0%, #34174d 100%);
+  background: linear-gradient(90deg, #1f6aa5 0%, #5e2b8a 100%);
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
