@@ -1660,3 +1660,26 @@ html.pm-ready body::after {
 @media (prefers-reduced-motion: reduce) {
   .svc-card, .svc-type-img img { transition: none !important; transform: none !important; }
 }
+
+/* Soft white glow with a fade to blue-grey, shared by page headers */
+.page-title-band,
+.svc-hero {
+  position: relative;
+}
+
+.page-title-band::before,
+.svc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 500px at 50% 30%, rgba(255,255,255,0.85), rgba(255,255,255,0) 60%),
+    linear-gradient(180deg, rgba(215,201,204,0.0), rgba(201,212,221,0.8));
+  pointer-events: none;
+}
+
+/* Keep the header content above the overlay */
+.page-title-band > *,
+.svc-hero > * {
+  position: relative;
+}
