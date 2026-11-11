@@ -1109,7 +1109,7 @@ body {
 .pm-path .pm-actions { margin-top: auto; }
 
 /* ---------- Psychiatry band (signature section) ---------- */
-.pm-psych { background: var(--pm-plum); color: #fff; position: relative; overflow: hidden; }
+.pm-psych { background: #1c80c2; color: #fff; position: relative; overflow: hidden; }
 .pm-psych::before {
   content: ""; position: absolute; right: -180px; top: -180px; width: 520px; height: 520px; border-radius: 50%;
   background: radial-gradient(circle, rgba(201, 209, 217, .14), rgba(201, 209, 217, 0) 70%);
