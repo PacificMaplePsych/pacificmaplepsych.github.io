@@ -263,7 +263,7 @@ body {
 .hero-badge-highlight {
   font-size: 14px;
   font-weight: 600;
-  color: #3d6780;
+  color: #0a7b91;
   line-height: 1.2;
   text-align: center;
 }
@@ -971,7 +971,7 @@ body {
   --pm-ink: #2b2230;
   --pm-plum: #502271;
   --pm-mauve: #7a5d7c;
-  --pm-harbour: #3d6780;
+  --pm-harbour: #0a7b91;
   --pm-mist: #eef1f5;
   --pm-heather: #f6f0f4;
   --pm-line: #e3dce2;
@@ -1046,7 +1046,7 @@ body {
 
 /* ---------- Homepage hero ---------- */
 .pm-home { color: var(--pm-ink); }
-.pm-hero { padding: clamp(36px, 6vw, 72px) 0 clamp(44px, 6vw, 80px); background: var(--pm-mist); }
+.pm-hero { padding: clamp(36px, 6vw, 72px) 0 clamp(44px, 6vw, 80px); background: linear-gradient(135deg, #f3eefa 0%, #e6f4f7 100%); }
 .pm-hero-top { text-align: center; margin-bottom: clamp(22px, 3vw, 34px); }
 .pm-hero-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
 .pm-hero h1 em { font-style: italic; }
