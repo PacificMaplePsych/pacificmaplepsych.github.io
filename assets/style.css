@@ -64,7 +64,7 @@ body {
 
 /* ===== Global Title Band (used on About/Blog/Policies/Book Now/Services/etc.) ===== */
 .page-title-band {
-  background: var(--home-blue);
+  background: linear-gradient(90deg, #b3dcf0 0%, #c3ebd6 100%);
   padding: clamp(42px, 7vw, 78px) 0;
   border-top: 1px solid var(--pmpc-line);
   border-bottom: 1px solid var(--pmpc-line);
